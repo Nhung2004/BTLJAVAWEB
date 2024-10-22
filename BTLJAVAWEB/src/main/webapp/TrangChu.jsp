@@ -52,7 +52,24 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="DangKy.jsp" class="active">Home<br></a></li>
+            <li class="dropdown"><a href="#"><span>Products</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Romantic Books</a></li>
+              <li class="dropdown"><a href="#"><span>Other Books</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Action Books </a></li>
+                  <li><a href="#"> </a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -74,12 +91,16 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
+          
+          
+          
           <li><a href="#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#about">Đăng Ký</a>
+      <a href="DangKy.jsp" class="btn-getstarted" style="whilespace=:nowrap;">Dang Ky </a>
+      <a href="DangNhap.jsp" class="btn-getstarted" ">Dang Nhap</a>
 
     </div>
   </header>
@@ -104,36 +125,37 @@
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <i class="bi bi-binoculars"></i>
-              <h3><a href="">Lorem Ipsum</a></h3>
+              <h3><a href="SanPham.jsp">Textbooks</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
             <div class="icon-box">
               <i class="bi bi-bullseye"></i>
-              <h3><a href="">Dolor Sitema</a></h3>
+              <h3><a href="">Reference Books</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <i class="bi bi-fullscreen-exit"></i>
-              <h3><a href="">Sedare Perspiciatis</a></h3>
+              <h3><a href="">Specialized Books</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
             <div class="icon-box">
               <i class="bi bi-card-list"></i>
-              <h3><a href="">Magni Dolores</a></h3>
+              <h3><a href="">Research Books</a></h3>
             </div>
           </div>
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
             <div class="icon-box">
               <i class="bi bi-gem"></i>
-              <h3><a href="">Nemos Enimade</a></h3>
+              <h3><a href="">Literature</a></h3>
             </div>
           </div>
         </div>
 
       </div>
+      
 
     </section><!-- /Hero Section -->
 
