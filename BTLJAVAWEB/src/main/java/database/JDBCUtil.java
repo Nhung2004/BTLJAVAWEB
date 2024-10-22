@@ -13,7 +13,7 @@ public class JDBCUtil {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             
             // Chuỗi URL kết nối cơ sở dữ liệu
-            String url = "jdbc:sqlserver://DESKTOP-D49US8A\\SQLEXPRESS:1433;databaseName=databasejava";
+            String url = "jdbc:sqlserver://ADMIN-PC:1433;databaseName=databasejava;encrypt=true;trustServerCertificate=true";
             String userName = "sa";
             String password = "123456789";
 

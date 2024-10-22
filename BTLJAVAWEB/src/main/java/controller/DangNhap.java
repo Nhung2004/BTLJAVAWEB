@@ -47,8 +47,8 @@ public class DangNhap extends HttpServlet {
 	    kh.setTendangnhap(tendangnhap);
 	    kh.setMatkhau(matkhau);
 
-	    KhachHangDAO khd = new KhachHangDAO();
-	    KhachHang khachhang = khd.selectByIDandPassword(kh);
+	    KhachHangDAO khd = new KhachHangDAO(); 
+	    KhachHang khachhang = khd.selectByIDandPassword(kh); 
 
 	    String url = "";
 	    if (khachhang != null) {
