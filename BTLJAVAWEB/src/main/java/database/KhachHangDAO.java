@@ -123,7 +123,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 			Connection con = JDBCUtil.getConnection();
 			// buoc2 tao ra doi tuong statement
 			String            sql = "select*from KhachHang where tendangnhap=? and matkhau=?";
-			PreparedStatement st  = con.prepareStatement(sql);
+			PreparedStatement st  = con.prepareStatement(sql); // abc
 			st.setString(1, t.getTendangnhap());
 			st.setString(2, t.getMatkhau());
 			// buoc 3 thuc thi cau lenh sql
