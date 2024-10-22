@@ -1,55 +1,69 @@
 package database;
 
 import java.sql.Connection;
-import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class JDBCUtil {
-    public static Connection getConnection() {
-        Connection c = null;
-        try {
-            // Tải lớp trình điều khiển JDBC
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            
-            // Chuỗi URL kết nối cơ sở dữ liệu
-            String url = "jdbc:sqlserver://ADMIN-PC:1433;databaseName=databasejava;encrypt=true;trustServerCertificate=true";
-            String userName = "sa";
-            String password = "123456789";
+public class JDBCUtil implements ConnectionPool
+{
+	private final int MAX_POOL_SIZE = 10;
 
-            // Thiết lập kết nối cơ sở dữ liệu
-            c = DriverManager.getConnection(url, userName, password);
-            
-            // Kiểm tra xem kết nối đã được thiết lập thành công chưa
-            if (c != null) {
-                System.out.println("Kết nối thành công!");
-                DatabaseMetaData metaData = c.getMetaData();
-                System.out.println("Driver name: " + metaData.getDriverName());
-                System.out.println("Database URL: " + metaData.getURL());
-            } else {
-                System.out.println("Kết nối không thành công.");
-            }
-            
-        } catch (ClassNotFoundException e) {
-            // Xử lý ngoại lệ khi không tìm thấy lớp trình điều khiển JDBC
-            e.printStackTrace();
-        } catch (SQLException e) {
-            // Xử lý ngoại lệ liên quan đến kết nối cơ sở dữ liệu
-            e.printStackTrace();
-        }
+	private final Queue<Connection> connectionPool;
+	private static JDBCUtil         instance;
 
-        return c;
-    }
-    
-    
-    public static void closeConnection(Connection c) {
-        try {
-            if (c != null) {
-                c.close();
-                System.out.println("Đã đóng kết nối.");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+	private JDBCUtil()
+	{
+		connectionPool = new LinkedList<>();
+		try
+		{
+			// Load the driver only once
+			Class.forName(DatabaseConfig.DB_DRIVER);
+
+			// Pre-fill the connection pool
+			for (int i = 0; i < MAX_POOL_SIZE; i++)
+			{
+				Connection connection = DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USER_NAME, DatabaseConfig.PASSWORD);
+				connectionPool.add(connection);
+			}
+		} catch (SQLException | ClassNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	public static JDBCUtil getInstance()
+	{
+		if (instance == null)
+		{
+			synchronized (JDBCUtil.class)
+			{
+				if (instance == null)
+				{
+					instance = new JDBCUtil();
+				}
+			}
+		}
+		return instance;
+	}
+
+	@Override
+	public Connection getConnection(String objectName) throws SQLException
+	{
+		if (connectionPool.isEmpty())
+		{
+			return DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USER_NAME, DatabaseConfig.PASSWORD);
+		}
+		return connectionPool.poll();
+	}
+
+	@Override
+	public void closeConnection(Connection con, String objectName) throws SQLException
+	{
+		if (con != null && connectionPool.size() < MAX_POOL_SIZE)
+		{
+			connectionPool.add(con);
+		}
+	}
 }

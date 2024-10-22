@@ -21,7 +21,15 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 		try
 		{
 			// Bước 1: tạo kết nối đến CSDL
-			Connection con = JDBCUtil.getConnection();
+			Connection con;
+			try
+			{
+				con = JDBCUtil.getConnection();
+			} catch (Exception e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			// Bước 2: tạo ra đối tượng statement
 			String            sql = "SELECT * FROM khachhang";
