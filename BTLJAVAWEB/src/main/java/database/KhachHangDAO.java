@@ -1,4 +1,3 @@
-// co sua
 package database;
 
 import java.sql.Connection;
@@ -12,347 +11,285 @@ import model.KhachHang;
 public class KhachHangDAO implements DAOinterface<KhachHang>
 {
 
+	// Reference to connection pool instance
+	private final JDBCUtil connectionPool = JDBCUtil.getInstance();
+
 	public ArrayList<KhachHang> data = new ArrayList<>();
 
 	@Override
 	public ArrayList<KhachHang> selectAll()
 	{
-		ArrayList<KhachHang> ketQua = new ArrayList<KhachHang>();
+		ArrayList<KhachHang> resultList = new ArrayList<>();
+		Connection           con        = null;
+
 		try
 		{
-			// Bước 1: tạo kết nối đến CSDL
-			Connection con;
-			try
-			{
-				con = JDBCUtil.getConnection();
-			} catch (Exception e)
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			// Bước 2: tạo ra đối tượng statement
+			con = connectionPool.getConnection("selectAll");
 			String            sql = "SELECT * FROM khachhang";
 			PreparedStatement st  = con.prepareStatement(sql);
+			ResultSet         rs  = st.executeQuery();
 
-			// Bước 3: thực thi câu lệnh SQL
-			System.out.println(sql);
-			ResultSet rs = st.executeQuery();
-
-			// Bước 4:
 			while (rs.next())
 			{
-				String  maKhacHang        = rs.getString("makhachhang");
-				String  tenDangNhap       = rs.getString("tendangnhap");
-				String  matKhau           = rs.getString("matkhau");
-				String  hoVaTen           = rs.getString("hoten");
-				String  gioiTinh          = rs.getString("gioitinh");
-				String  diaChi            = rs.getString("diachi");
-				String  diaChiNhanHang    = rs.getString("diachinhanhang");
-				String  diaChiMuaHang     = rs.getString("diachimuahang");
-				Date    ngaySinh          = rs.getDate("ngaysinh");
-				String  soDienThoai       = rs.getString("sodienthoai");
-				String  email             = rs.getString("email");
-				boolean dangKyNhanBangTin = rs.getBoolean("dangkynhanbangtin");
-
-				KhachHang kh = new KhachHang(maKhacHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi, diaChiNhanHang, diaChiMuaHang, ngaySinh,
-				    soDienThoai, email, dangKyNhanBangTin);
-				ketQua.add(kh);
+				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hoten"),
+				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
+				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbangtin"));
+				resultList.add(kh);
 			}
 
-			// Bước 5:
-			JDBCUtil.closeConnection(con);
 		} catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally
+		{
+			if (con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "selectAll");
+				} catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
 		}
 
-		return ketQua;
+		return resultList;
 	}
 
 	@Override
-	public KhachHang selectById(KhachHang t)
+	public KhachHang selectById(KhachHang khachHang)
 	{
-		KhachHang ketQua = null;
+		KhachHang  kh  = null;
+		Connection con = null;
+
 		try
 		{
-			// Bước 1: tạo kết nối đến CSDL
-			Connection con = JDBCUtil.getConnection();
-
-			// Bước 2: tạo ra đối tượng statement
-			String            sql = "SELECT * FROM khachhang WHERE makhachhang=?";
+			con = connectionPool.getConnection("selectById");
+			String            sql = "SELECT * FROM khachhang WHERE makhachhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
-			st.setString(1, t.getMakhachhang());
-
-			// Bước 3: thực thi câu lệnh SQL
-			System.out.println(sql);
+			st.setString(1, khachHang.getMakhachhang());
 			ResultSet rs = st.executeQuery();
 
-			// Bước 4:
-			while (rs.next())
+			if (rs.next())
 			{
-				String  maKhacHang        = rs.getString("makhachhang");
-				String  tenDangNhap       = rs.getString("tendangnhap");
-				String  matKhau           = rs.getString("matkhau");
-				String  hoVaTen           = rs.getString("hoten");
-				String  gioiTinh          = rs.getString("gioitinh");
-				String  diaChi            = rs.getString("diachi");
-				String  diaChiNhanHang    = rs.getString("diachinhanhang");
-				String  diaChiMuaHang     = rs.getString("diachimuahang");
-				Date    ngaySinh          = rs.getDate("ngaysinh");
-				String  soDienThoai       = rs.getString("sodienthoai");
-				String  email             = rs.getString("email");
-				boolean dangKyNhanBangTin = rs.getBoolean("dangkynhanbangtin");
-
-				ketQua = new KhachHang(maKhacHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi, diaChiNhanHang, diaChiMuaHang, ngaySinh, soDienThoai,
-				    email, dangKyNhanBangTin);
+				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hoten"),
+				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
+				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbangtin"));
 			}
-
-			// Bước 5:
-			JDBCUtil.closeConnection(con);
-		} catch (SQLException e)
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return ketQua;
-	}
-
-	//
-	public KhachHang selectByIDandPassword(KhachHang t)
-	{
-		KhachHang KetQua = null;
-
-		// buoc1 tao ket noi den co so du lieu
-		try
-		{
-			Connection con = JDBCUtil.getConnection();
-			// buoc2 tao ra doi tuong statement
-			String            sql = "select*from KhachHang where tendangnhap=? and matkhau=?";
-			PreparedStatement st  = con.prepareStatement(sql); // abc
-			st.setString(1, t.getTendangnhap());
-			st.setString(2, t.getMatkhau());
-			// buoc 3 thuc thi cau lenh sql
-			System.out.println(sql);
-			ResultSet rs = st.executeQuery();
-			// buoc 4
-			while (rs.next())
-			{
-				String  maKhacHang        = rs.getString("makhachhang");
-				String  tenDangNhap       = rs.getString("tendangnhap");
-				String  matKhau           = rs.getString("matkhau");
-				String  hoVaTen           = rs.getString("hovaten");
-				String  gioiTinh          = rs.getString("gioitinh");
-				String  diaChi            = rs.getString("diachi");
-				String  diaChiNhanHang    = rs.getString("diachinhanhang");
-				String  diaChiMuaHang     = rs.getString("diachimuahang");
-				Date    ngaySinh          = rs.getDate("ngaysinh");
-				String  soDienThoai       = rs.getString("sodienthoai");
-				String  email             = rs.getString("email");
-				boolean dangKyNhanBangTin = rs.getBoolean("dangkynhanbangtin");
-
-				KetQua = new KhachHang(maKhacHang, tenDangNhap, matKhau, hoVaTen, gioiTinh, diaChi, diaChiNhanHang, diaChiMuaHang, ngaySinh, soDienThoai,
-				    email, dangKyNhanBangTin);
-			}
-			// buoc 5
-			JDBCUtil.closeConnection(con);
 
 		} catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally
+		{
+			if (con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "selectById");
+				} catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
 		}
-		return KetQua;
 
+		return kh;
 	}
 
 	@Override
-
-	public int insert(KhachHang t)
+	public int insert(KhachHang kh)
 	{
-		int ketQua = 0;
+		int        result = 0;
+		Connection con    = null;
+
 		try
 		{
-			// Bước 1: tạo kết nối đến CSDL
-			Connection con = JDBCUtil.getConnection();
+			con = connectionPool.getConnection("insert");
+			String            sql = "INSERT INTO khachhang (makhachhang, tendangnhap, matkhau, hoten, gioitinh, diachi, diachinhanhang, diachimuahang, ngaysinh, sodienthoai, email, dangkynhanbangtin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			PreparedStatement st  = con.prepareStatement(sql);
 
-			// Bước 2: tạo ra đối tượng statement
-			String sql = "insert into KhachHang values(?,?,?,?,?,?,?,?,?,?,?)";
+			st.setString(1, kh.getMakhachhang());
+			st.setString(2, kh.getTendangnhap());
+			st.setString(3, kh.getMatkhau());
+			st.setString(4, kh.getHovaten());
+			st.setString(5, kh.getGioitinh());
+			st.setString(6, kh.getDiachi());
+			st.setString(7, kh.getDiachinhanhang());
+			st.setString(8, kh.getDiachimuahang());
+			st.setDate(9, (Date) kh.getNgaysinh());
+			st.setString(10, kh.getSodienthoai());
+			st.setString(11, kh.getEmail());
+			st.setBoolean(12, kh.isDangKyNhanBangTin());
 
-			PreparedStatement st = con.prepareStatement(sql);
-			st.setString(1, t.getMakhachhang());
-			st.setString(2, t.getTendangnhap());
-			st.setString(3, t.getMatkhau());
-			st.setString(4, t.getHovaten());
-			st.setString(5, t.getGioitinh());
-			st.setString(6, t.getDiachi());
-			st.setString(7, t.getDiachinhanhang());
-			st.setString(8, t.getDiachimuahang());
+			result = st.executeUpdate();
 
-			// Đảm bảo rằng `ngaysinh` là kiểu `java.sql.Date` hoặc `Timestamp` phù hợp với kiểu dữ liệu trong
-			// DB
-			st.setDate(9, (Date) t.getNgaysinh());
-			// Nếu cột là `DATETIME`, dùng dòng sau thay vì `setDate`
-			// st.setTimestamp(9, new java.sql.Timestamp(t.getNgaysinh().getTime()));
-
-			st.setString(10, t.getSodienthoai());
-			st.setString(11, t.getEmail());
-			st.setBoolean(12, t.isDangKyNhanBangTin());
-
-			// Bước 3: thực thi câu lệnh SQL
-			ketQua = st.executeUpdate();
-
-			// Bước 4: in ra câu lệnh SQL và số dòng bị ảnh hưởng
-			System.out.println("Bạn đã thực thi: " + sql);
-			System.out.println("Có " + ketQua + " dòng bị thay đổi!");
-
-			// Bước 5: đóng kết nối
-			JDBCUtil.closeConnection(con);
 		} catch (SQLException e)
 		{
 			e.printStackTrace();
-
+		} finally
+		{
+			if (con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "insert");
+				} catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
 		}
 
-		return ketQua;
+		return result;
 	}
 
 	@Override
 	public int insertAll(ArrayList<KhachHang> arr)
 	{
-		int dem = 0;
-		for (KhachHang KhachHang : arr)
+		int count = 0;
+		for (KhachHang kh : arr)
 		{
-			dem += this.insert(KhachHang);
+			count += insert(kh);
 		}
-		return dem;
+		return count;
 	}
 
 	@Override
-	public int delete(KhachHang t)
+	public int delete(KhachHang kh)
 	{
-		int ketQua = 0;
+		int        result = 0;
+		Connection con    = null;
+
 		try
 		{
-			// Bước 1: tạo kết nối đến CSDL
-			Connection con = JDBCUtil.getConnection();
+			con = connectionPool.getConnection("delete");
+			String            sql = "DELETE FROM khachhang WHERE makhachhang = ?";
+			PreparedStatement st  = con.prepareStatement(sql);
+			st.setString(1, kh.getMakhachhang());
+			result = st.executeUpdate();
 
-			// Bước 2: tạo ra đối tượng statement
-			String sql = "DELETE from khachhang " + " WHERE makhachhang=?";
-
-			PreparedStatement st = con.prepareStatement(sql);
-			st.setString(1, t.getMakhachhang());
-
-			// Bước 3: thực thi câu lệnh SQL
-			System.out.println(sql);
-			ketQua = st.executeUpdate();
-
-			// Bước 4:
-			System.out.println("Bạn đã thực thi: " + sql);
-			System.out.println("Có " + ketQua + " dòng bị thay đổi!");
-
-			// Bước 5:
-			JDBCUtil.closeConnection(con);
 		} catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally
+		{
+			if (con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "delete");
+				} catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
 		}
 
-		return ketQua;
+		return result;
 	}
 
 	@Override
 	public int deleteAll(ArrayList<KhachHang> arr)
 	{
-		int dem = 0;
-		for (KhachHang KhachHang : arr)
+		int count = 0;
+		for (KhachHang kh : arr)
 		{
-			dem += this.delete(KhachHang);
+			count += delete(kh);
 		}
-		return dem;
+		return count;
 	}
 
 	@Override
-	public int update(KhachHang t)
+	public int update(KhachHang kh)
 	{
-		int ketQua = 0;
+		int        result = 0;
+		Connection con    = null;
+
 		try
 		{
-			// Bước 1: tạo kết nối đến CSDL
-			Connection con = JDBCUtil.getConnection();
+			con = connectionPool.getConnection("update");
+			String            sql = "UPDATE khachhang SET tendangnhap = ?, matkhau = ?, hoten = ?, gioitinh = ?, diachi = ?, diachinhanhang = ?, diachimuahang = ?, ngaysinh = ?, sodienthoai = ?, email = ?, dangkynhanbangtin = ? WHERE makhachhang = ?";
+			PreparedStatement st  = con.prepareStatement(sql);
 
-			// Bước 2: tạo ra đối tượng statement
-			String sql = "UPDATE khachhang " + " SET " + " tendangnhap=?" + ", matkhau=?" + ", hoten=?" + ", gioitinh=?" + ", diachi=?"
-			    + ", diachinhanhang=?" + ", diachimuahang=?" + ", ngaysinh=?" + ", sodienthoai=?" + ", email=?" + ", dangkynhanbangtin=?"
-			    + " WHERE makhachhang=?";
+			st.setString(1, kh.getTendangnhap());
+			st.setString(2, kh.getMatkhau());
+			st.setString(3, kh.getHovaten());
+			st.setString(4, kh.getGioitinh());
+			st.setString(5, kh.getDiachi());
+			st.setString(6, kh.getDiachinhanhang());
+			st.setString(7, kh.getDiachimuahang());
+			st.setDate(8, (Date) kh.getNgaysinh());
+			st.setString(9, kh.getSodienthoai());
+			st.setString(10, kh.getEmail());
+			st.setBoolean(11, kh.isDangKyNhanBangTin());
+			st.setString(12, kh.getMakhachhang());
 
-			PreparedStatement st = con.prepareStatement(sql);
-			st.setString(1, t.getMakhachhang());
-			st.setString(2, t.getTendangnhap());
-			st.setString(3, t.getMatkhau());
-			st.setString(4, t.getHovaten());
-			st.setString(5, t.getGioitinh());
-			st.setString(6, t.getDiachi());
-			st.setString(7, t.getDiachinhanhang());
-			st.setString(8, t.getDiachimuahang());
-			st.setDate(9, (Date) t.getNgaysinh());
-			st.setString(10, t.getSodienthoai());
-			st.setString(11, t.getEmail());
-			st.setBoolean(12, t.isDangKyNhanBangTin());
-			// Bước 3: thực thi câu lệnh SQL
+			result = st.executeUpdate();
 
-			System.out.println(sql);
-			ketQua = st.executeUpdate();
-
-			// Bước 4:
-			System.out.println("Bạn đã thực thi: " + sql);
-			System.out.println("Có " + ketQua + " dòng bị thay đổi!");
-
-			// Bước 5:
-			JDBCUtil.closeConnection(con);
 		} catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally
+		{
+			if (con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "update");
+				} catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
 		}
 
-		return ketQua;
+		return result;
 	}
 
 	public boolean kiemTraTenDangNhap(String tenDangNhap)
 	{
-		boolean ketQua = false;
+		boolean    ketQua = false;
+		Connection con    = null;
+
 		try
 		{
-			// Bước 1: tạo kết nối đến CSDL
-			Connection con = JDBCUtil.getConnection();
+			// Step 1: Get a connection from the pool
+			con = connectionPool.getConnection("kiemTraTenDangNhap");
 
-			// Bước 2: tạo ra đối tượng statement
-			String            sql = "SELECT * FROM khachhang WHERE tenDangNhap=?";
+			// Step 2: Create a statement
+			String            sql = "SELECT * FROM khachhang WHERE tendangnhap = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, tenDangNhap);
 
-			// Bước 3: thực thi câu lệnh SQL
+			// Step 3: Execute the SQL query
 			System.out.println(sql);
 			ResultSet rs = st.executeQuery();
 
-			// Bước 4:
-			while (rs.next())
+			// Step 4: Check if the result set has any data
+			if (rs.next())
 			{
 				ketQua = true;
 			}
 
-			// Bước 5:
-			JDBCUtil.closeConnection(con);
 		} catch (SQLException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally
+		{
+			// Step 5: Return the connection to the pool
+			if (con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "kiemTraTenDangNhap");
+				} catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
 		}
-
 		return ketQua;
 	}
 }

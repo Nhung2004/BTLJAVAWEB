@@ -11,7 +11,7 @@ public class JDBCUtil implements ConnectionPool
 	private final int MAX_POOL_SIZE = 10;
 
 	private final Queue<Connection> connectionPool;
-	private static JDBCUtil         instance;
+	private static JDBCUtil         instance; 
 
 	private JDBCUtil()
 	{
@@ -22,7 +22,7 @@ public class JDBCUtil implements ConnectionPool
 			Class.forName(DatabaseConfig.DB_DRIVER);
 
 			// Pre-fill the connection pool
-			for (int i = 0; i < MAX_POOL_SIZE; i++)
+			for (int i = 0; i < MAX_POOL_SIZE; i++) 
 			{
 				Connection connection = DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USER_NAME, DatabaseConfig.PASSWORD);
 				connectionPool.add(connection);
@@ -33,7 +33,7 @@ public class JDBCUtil implements ConnectionPool
 		}
 	}
 
-	public static JDBCUtil getInstance()
+	public static JDBCUtil getInstance() 
 	{
 		if (instance == null)
 		{
