@@ -12,7 +12,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 {
 
 	// Reference to connection pool instance
-	private final JDBCUtil connectionPool = JDBCUtil.getInstance();
+	private final JDBCUtil connectionPool = JDBCUtil.getInstance(); 
 
 	public ArrayList<KhachHang> data = new ArrayList<>();
 
@@ -25,13 +25,13 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 		try
 		{
 			con = connectionPool.getConnection("selectAll");
-			String            sql = "SELECT * FROM khachhang";
+			String            sql = "SELECT * FROM KhachHang";
 			PreparedStatement st  = con.prepareStatement(sql);
 			ResultSet         rs  = st.executeQuery();
 
 			while (rs.next())
 			{
-				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hoten"),
+				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
 				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
 				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbangtin"));
 				resultList.add(kh);
@@ -65,15 +65,15 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 
 		try
 		{
-			con = connectionPool.getConnection("selectById");
-			String            sql = "SELECT * FROM khachhang WHERE makhachhang = ?";
+			con = connectionPool.getConnection("selectByIDandPassword");
+			String            sql = "SELECT * FROM KhachHang WHERE makhachhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, khachHang.getMakhachhang());
 			ResultSet rs = st.executeQuery();
 
 			if (rs.next())
 			{
-				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hoten"),
+				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
 				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
 				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbangtin"));
 			}
@@ -97,6 +97,52 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 
 		return kh;
 	}
+	
+	public KhachHang selectByIDandPassword(KhachHang khachHang)
+	{
+		KhachHang  kh  = null;
+		Connection con = null;
+
+		try
+		{
+			con = connectionPool.getConnection("selectById");
+			String            sql = "SELECT * FROM KhachHang WHERE tendangnhap = ? and matkhau = ?";
+			PreparedStatement st  = con.prepareStatement(sql);
+			st.setString(1, khachHang.getTendangnhap());
+			st.setString(2, khachHang.getMatkhau());
+			ResultSet rs = st.executeQuery();
+			
+			// In ra Tên đăng nhập và Mật khẩu lên Console (Debugging purpose)
+			System.out.println("Querying with username: " + khachHang.getTendangnhap());
+			System.out.println("Querying with password: " + khachHang.getMatkhau());
+
+
+			if (rs.next())
+			{
+				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
+				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
+				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbangtin"));
+			}
+
+		} catch (SQLException e)
+		{
+			e.printStackTrace();
+		} finally
+		{
+			if (con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "selectByIDandPassword");
+				} catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return kh;
+	}
 
 	@Override
 	public int insert(KhachHang kh)
@@ -107,7 +153,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 		try
 		{
 			con = connectionPool.getConnection("insert");
-			String            sql = "INSERT INTO khachhang (makhachhang, tendangnhap, matkhau, hoten, gioitinh, diachi, diachinhanhang, diachimuahang, ngaysinh, sodienthoai, email, dangkynhanbangtin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String            sql = "INSERT INTO KhachHang (makhachhang, tendangnhap, matkhau, hovaten, gioitinh, diachi, diachinhanhang, diachimuahang, ngaysinh, sodienthoai, email, dangkynhanbangtin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			st.setString(1, kh.getMakhachhang());
@@ -165,7 +211,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 		try
 		{
 			con = connectionPool.getConnection("delete");
-			String            sql = "DELETE FROM khachhang WHERE makhachhang = ?";
+			String            sql = "DELETE FROM KhachHang WHERE makhachhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, kh.getMakhachhang());
 			result = st.executeUpdate();
@@ -210,7 +256,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 		try
 		{
 			con = connectionPool.getConnection("update");
-			String            sql = "UPDATE khachhang SET tendangnhap = ?, matkhau = ?, hoten = ?, gioitinh = ?, diachi = ?, diachinhanhang = ?, diachimuahang = ?, ngaysinh = ?, sodienthoai = ?, email = ?, dangkynhanbangtin = ? WHERE makhachhang = ?";
+			String            sql = "UPDATE KhachHang SET tendangnhap = ?, matkhau = ?, hovaten = ?, gioitinh = ?, diachi = ?, diachinhanhang = ?, diachimuahang = ?, ngaysinh = ?, sodienthoai = ?, email = ?, dangkynhanbangtin = ? WHERE makhachhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			st.setString(1, kh.getTendangnhap());
@@ -251,7 +297,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 	public boolean kiemTraTenDangNhap(String tenDangNhap)
 	{
 		boolean    ketQua = false;
-		Connection con    = null;
+		Connection con    = null; 
 
 		try
 		{
@@ -259,7 +305,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 			con = connectionPool.getConnection("kiemTraTenDangNhap");
 
 			// Step 2: Create a statement
-			String            sql = "SELECT * FROM khachhang WHERE tendangnhap = ?";
+			String            sql = "SELECT * FROM KhachHang WHERE tendangnhap = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, tenDangNhap);
 

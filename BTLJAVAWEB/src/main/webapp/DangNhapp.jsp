@@ -8,25 +8,15 @@
 </head>
 <body>
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="NewFile.css" rel="stylesheet">
 <script src="js/bootstrap.bundle.min.js"></script>
 <style>
 #msg{
-color:red;
-
-
+	color:red;
 }
 </style>
-
-
-
-
 </body>
 
-<%
-String baoloi=request.getAttribute("baoloi")+"";
-baoloi=(baoloi.equals("null"))?"":baoloi;
-%>
+<%String baoloi=request.getAttribute("baoloi")+"";baoloi=(baoloi.equals("null"))?"":baoloi;%>
 <div class="container">
 <form action="dang-nhap" method="post">
   <div class="mb-3">
@@ -43,6 +33,5 @@ baoloi=(baoloi.equals("null"))?"":baoloi;
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
 </div>
 </html>

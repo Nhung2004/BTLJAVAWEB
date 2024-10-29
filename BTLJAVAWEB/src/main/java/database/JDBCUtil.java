@@ -8,38 +8,39 @@ import java.util.Queue;
 
 public class JDBCUtil implements ConnectionPool
 {
-	private final int MAX_POOL_SIZE = 10;
-
 	private final Queue<Connection> connectionPool;
-	private static JDBCUtil         instance; 
+	private static JDBCUtil         instance;
+	
+	// Kiểm tra số lượng connection đã tạo
+	private int                     currentConnectionCount = 0;
 
 	private JDBCUtil()
 	{
 		connectionPool = new LinkedList<>();
 		try
 		{
-			// Load the driver only once
+			// Load driver
 			Class.forName(DatabaseConfig.DB_DRIVER);
 
-			// Pre-fill the connection pool
-			for (int i = 0; i < MAX_POOL_SIZE; i++) 
+			// Khởi tạo Connection Pool với số lượng kết nối = MIN
+			for (int i = 0; i < DatabaseConfig.DB_MIN_CONNECTIONS; i++)
 			{
-				Connection connection = DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USER_NAME, DatabaseConfig.PASSWORD);
-				connectionPool.add(connection);
+				addNewConnectionToPool();
 			}
-		} catch (SQLException | ClassNotFoundException e)
+		}
+		catch (SQLException | ClassNotFoundException e)
 		{
 			e.printStackTrace();
 		}
 	}
 
-	public static JDBCUtil getInstance() 
+	public static JDBCUtil getInstance()
 	{
-		if (instance == null)
+		if(instance == null)
 		{
 			synchronized (JDBCUtil.class)
 			{
-				if (instance == null)
+				if(instance == null)
 				{
 					instance = new JDBCUtil();
 				}
@@ -48,22 +49,67 @@ public class JDBCUtil implements ConnectionPool
 		return instance;
 	}
 
-	@Override
-	public Connection getConnection(String objectName) throws SQLException
+	private void addNewConnectionToPool() throws SQLException
 	{
-		if (connectionPool.isEmpty())
+		if(currentConnectionCount < DatabaseConfig.DB_MAX_CONNECTIONS)
+		{
+			Connection connection = DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USER_NAME,
+			    DatabaseConfig.PASSWORD);
+			connectionPool.add(connection);
+			currentConnectionCount++;
+		}
+	}
+
+	@Override
+	public synchronized Connection getConnection(String objectName) throws SQLException
+	{
+		if(connectionPool.isEmpty() && currentConnectionCount < DatabaseConfig.DB_MAX_CONNECTIONS)
+		{
+			addNewConnectionToPool();
+		}
+
+		if(connectionPool.isEmpty())
 		{
 			return DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USER_NAME, DatabaseConfig.PASSWORD);
 		}
+
 		return connectionPool.poll();
 	}
 
 	@Override
-	public void closeConnection(Connection con, String objectName) throws SQLException
+	public synchronized void closeConnection(Connection con, String objectName) throws SQLException
 	{
-		if (con != null && connectionPool.size() < MAX_POOL_SIZE)
+		if(con != null)
 		{
-			connectionPool.add(con);
+			if(connectionPool.size() < DatabaseConfig.DB_MAX_CONNECTIONS)
+			{
+				connectionPool.add(con);
+			}
+			else
+			{
+				con.close();
+				currentConnectionCount--;
+			}
+		}
+	}
+
+	public synchronized void closeAllConnections()
+	{
+		while (!connectionPool.isEmpty())
+		{
+			try
+			{
+				Connection conn = connectionPool.poll();
+				if(conn != null)
+				{
+					conn.close();
+					currentConnectionCount--;
+				}
+			}
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+			}
 		}
 	}
 }

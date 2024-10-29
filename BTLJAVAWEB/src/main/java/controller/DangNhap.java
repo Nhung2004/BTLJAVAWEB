@@ -48,12 +48,12 @@ public class DangNhap extends HttpServlet {
 	    kh.setMatkhau(matkhau);
 
 	    KhachHangDAO khd = new KhachHangDAO(); 
-	    KhachHang khachhang = khd.selectByIDandPassword(kh); 
+	    KhachHang khachhang = khd.selectByIDandPassword(kh);
 
 	    String url = "";
 	    if (khachhang != null) {
 	        HttpSession session = request.getSession();
-	        session.setAttribute("khachhang", khachhang);
+	        session.setAttribute("KhachHang", khachhang);
 	        url = "/TrangChu.jsp";  // Chuyển đến trang chủ khi đăng nhập thành công
 	    } else {
 	        request.setAttribute("baoloi", "Tên đăng nhập hoặc mật khẩu không đúng");
