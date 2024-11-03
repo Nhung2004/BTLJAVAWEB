@@ -1,5 +1,3 @@
-/* Perfectly Modified (22/10) */
-/* Seperated the config to DatabaseConfig.txt successfully (23/10) */
 package database;
 
 import java.io.BufferedReader;
@@ -10,8 +8,17 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public class DatabaseConfig
 {
+	public static String DB_DRIVER          = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	public static String CONNECTION_URL     = "jdbc:sqlserver://ADMIN-PC:1433;databaseName=databasejava;encrypt=true;trustServerCertificate=true";
+	public static String USER_NAME          = "sa";
+	public static String PASSWORD           = "123456789";
+	public static int    DB_MIN_CONNECTIONS = 2;
+	public static int    DB_MAX_CONNECTIONS = 10;
+
+	/*
 	public static String WORKSPACE;
 	public static String HOST_NAME;
 	public static String DB_PORT;
@@ -20,7 +27,7 @@ public class DatabaseConfig
 	public static String TRUST_SERVER_CERTIFICATE;
 	public static String USER_NAME;
 	public static String PASSWORD;
-	public static String DB_DRIVER; 
+	public static String DB_DRIVER;
 	public static int    DB_MIN_CONNECTIONS;
 	public static int    DB_MAX_CONNECTIONS;
 
@@ -116,7 +123,7 @@ public class DatabaseConfig
 				{
 					currentSection = line.substring(1, line.length() - 1);
 				}
-				
+
 				// Key value để lấy từ file Config
 				else
 				{
@@ -136,4 +143,6 @@ public class DatabaseConfig
 		}
 		return configMap;
 	}
+	*/
+
 }

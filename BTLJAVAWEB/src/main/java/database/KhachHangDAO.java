@@ -65,7 +65,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 
 		try
 		{
-			con = connectionPool.getConnection("selectByIDandPassword");
+			con = connectionPool.getConnection("selectByID");
 			String            sql = "SELECT * FROM KhachHang WHERE makhachhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, khachHang.getMakhachhang());
@@ -105,7 +105,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 
 		try
 		{
-			con = connectionPool.getConnection("selectById");
+			con = connectionPool.getConnection("selectByIdandPassword");
 			String            sql = "SELECT * FROM KhachHang WHERE tendangnhap = ? and matkhau = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, khachHang.getTendangnhap());
