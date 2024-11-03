@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import model.DonHang;
 
-public class DonHangDAO implements DAOinterface<DonHang>
+public class DonHangDAO implements DAOInterface<DonHang>
 {
 	private ArrayList<DonHang> data = new ArrayList<DonHang>();
 

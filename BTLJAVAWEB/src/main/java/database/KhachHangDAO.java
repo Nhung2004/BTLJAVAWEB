@@ -8,10 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import model.KhachHang;
 
-public class KhachHangDAO implements DAOinterface<KhachHang>
+public class KhachHangDAO implements DAOInterface<KhachHang>
 {
-
-	// Reference to connection pool instance
 	private final JDBCUtil connectionPool = JDBCUtil.getInstance(); 
 
 	public ArrayList<KhachHang> data = new ArrayList<>();
