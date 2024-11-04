@@ -96,6 +96,10 @@ public class SanPham {
 	public SanPham() {
 		super();
 	}
+	public void setImagePath(String imagePath) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	
