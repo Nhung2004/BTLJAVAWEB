@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Trang Dang ky</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="NewFile.css" rel="stylesheet">
-<script src="js/bootstrap.bundle.min.js"></script>
-<style>
+	<meta charset="UTF-8">
+	<title>Trang Dang ky</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<style>
 #msg{
 color:red;
 
@@ -19,9 +18,6 @@ color:red;
 color:red;
 }
 </style>
-
-
-
 </head>
 <body>
 <%
@@ -170,7 +166,7 @@ email = (email.equals("null"))?"":email;
 
 </div>
 </form>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 <script type="text/javascript">
@@ -192,7 +188,5 @@ email = (email.equals("null"))?"":email;
    function kiemtradongy(){
 	   
    }
-  
-
 </script>
 </html>

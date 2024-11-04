@@ -3,19 +3,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<script src="js/bootstrap.bundle.min.js"></script>
-<style>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<style>
 #msg{
 	color:red;
 }
 </style>
-</body>
-
+</head>
+<body>
 <%String baoloi=request.getAttribute("baoloi")+"";baoloi=(baoloi.equals("null"))?"":baoloi;%>
 <div class="container">
 <form action="dang-nhap" method="post">
@@ -34,4 +32,5 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
+</body>
 </html>
