@@ -1,7 +1,7 @@
 [SQL]
 DatabaseDriver=com.microsoft.sqlserver.jdbc.SQLServerDriver
 Workspace=sqlserver
-Hostname=ADMIN-PC
+Hostname=DESKTOP-D49US8A\SQLEXPRESS
 Port=1433
 DatabaseName=databasejava
 Encrypt=true

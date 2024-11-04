@@ -149,7 +149,7 @@ email = (email.equals("null"))?"":email;
 <input class="form-control" type="email" id="email" name="email" value="<%=email%>"></div>
 
 <div class="mt-3">
-<label for="dongy" class="form-check-label"><b>Đông ý với điều khoản công ty</b></label>
+<label for="dongy" class="form-check-label"><b>Đồng ý với điều khoản của cửa hàng</b></label>
 <input type="checkbox" class="form-check-input" id="dongy">
 </div>
 

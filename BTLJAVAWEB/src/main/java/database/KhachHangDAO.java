@@ -33,7 +33,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 			{
 				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
 				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbangtin"));
+				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 				resultList.add(kh);
 			}
 
@@ -75,7 +75,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 			{
 				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
 				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbangtin"));
+				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 			}
 
 		} catch (SQLException e)
@@ -121,7 +121,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 			{
 				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
 				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbangtin"));
+				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 			}
 
 		} catch (SQLException e)
@@ -153,7 +153,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 		try
 		{
 			con = connectionPool.getConnection("insert");
-			String            sql = "INSERT INTO KhachHang (makhachhang, tendangnhap, matkhau, hovaten, gioitinh, diachi, diachinhanhang, diachimuahang, ngaysinh, sodienthoai, email, dangkynhanbangtin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String            sql = "INSERT INTO KhachHang (makhachhang, tendangnhap, matkhau, hovaten, gioitinh, diachi, diachinhanhang, diachimuahang, ngaysinh, sodienthoai, email, dangkynhanbantin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			st.setString(1, kh.getMakhachhang());
@@ -256,7 +256,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 		try
 		{
 			con = connectionPool.getConnection("update");
-			String            sql = "UPDATE KhachHang SET tendangnhap = ?, matkhau = ?, hovaten = ?, gioitinh = ?, diachi = ?, diachinhanhang = ?, diachimuahang = ?, ngaysinh = ?, sodienthoai = ?, email = ?, dangkynhanbangtin = ? WHERE makhachhang = ?";
+			String            sql = "UPDATE KhachHang SET tendangnhap = ?, matkhau = ?, hovaten = ?, gioitinh = ?, diachi = ?, diachinhanhang = ?, diachimuahang = ?, ngaysinh = ?, sodienthoai = ?, email = ?, dangkynhanbantin = ? WHERE makhachhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			st.setString(1, kh.getTendangnhap());
