@@ -6,11 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Logger;
+
 import model.KhachHang;
 
 public class KhachHangDAO implements DAOInterface<KhachHang>
 {
 	private final JDBCUtil connectionPool = JDBCUtil.getInstance(); 
+	private static final Logger logger = Logger.getLogger(KhachHangDAO.class.getName());
 
 	public ArrayList<KhachHang> data = new ArrayList<>();
 
@@ -110,9 +113,9 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			st.setString(2, khachHang.getMatkhau());
 			ResultSet rs = st.executeQuery();
 			
-			// In ra Tên đăng nhập và Mật khẩu lên Console (Debugging purpose)
-			System.out.println("Querying with username: " + khachHang.getTendangnhap());
-			System.out.println("Querying with password: " + khachHang.getMatkhau());
+			// Trả về Tên đăng nhập và Mật khẩu lên Console (Để dễ dàng Debug hơn)
+			logger.info("Querying with username: " + khachHang.getTendangnhap());
+			logger.info("Querying with password: " + khachHang.getMatkhau());
 
 
 			if (rs.next())

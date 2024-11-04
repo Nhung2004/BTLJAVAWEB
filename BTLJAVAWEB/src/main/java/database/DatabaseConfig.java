@@ -11,19 +11,19 @@ import java.util.Map;
 @SuppressWarnings("unused")
 public class DatabaseConfig
 {
-	public static String DB_DRIVER          = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-	public static String CONNECTION_URL     = "jdbc:sqlserver://ADMIN-PC:1433;databaseName=databasejava;encrypt=true;trustServerCertificate=true";
-	public static String USER_NAME          = "sa";
-	public static String PASSWORD           = "123456789";
-	public static int    DB_MIN_CONNECTIONS = 2;
-	public static int    DB_MAX_CONNECTIONS = 5;
+	public static final String DB_DRIVER          = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+	public static final String CONNECTION_URL     = "jdbc:sqlserver://ADMIN-PC:1433;databaseName=databasejava;encrypt=true;trustServerCertificate=true";
+	public static final String USER_NAME          = "sa";
+	public static final String PASSWORD           = "123456789";
+	public static final int    DB_MIN_CONNECTIONS = 2;
+	public static final int    DB_MAX_CONNECTIONS = 5; 
 	
 	private DatabaseConfig() 
 	{
     throw new IllegalStateException("Utility class");
   }
 
-	/*
+/*
 	public static String WORKSPACE;
 	public static String HOST_NAME;
 	public static String DB_PORT;
@@ -148,6 +148,6 @@ public class DatabaseConfig
 		}
 		return configMap;
 	}
-	*/
+*/
 
 }
