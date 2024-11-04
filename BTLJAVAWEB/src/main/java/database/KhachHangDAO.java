@@ -8,10 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import model.KhachHang;
 
-public class KhachHangDAO implements DAOinterface<KhachHang>
+public class KhachHangDAO implements DAOInterface<KhachHang>
 {
-
-	// Reference to connection pool instance
 	private final JDBCUtil connectionPool = JDBCUtil.getInstance(); 
 
 	public ArrayList<KhachHang> data = new ArrayList<>();
@@ -65,7 +63,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 
 		try
 		{
-			con = connectionPool.getConnection("selectByIDandPassword");
+			con = connectionPool.getConnection("selectByID");
 			String            sql = "SELECT * FROM KhachHang WHERE makhachhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, khachHang.getMakhachhang());
@@ -105,7 +103,7 @@ public class KhachHangDAO implements DAOinterface<KhachHang>
 
 		try
 		{
-			con = connectionPool.getConnection("selectById");
+			con = connectionPool.getConnection("selectByIdandPassword");
 			String            sql = "SELECT * FROM KhachHang WHERE tendangnhap = ? and matkhau = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, khachHang.getTendangnhap());

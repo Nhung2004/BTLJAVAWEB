@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import model.TheLoai;
 
-public class TheLoaiDAO implements DAOinterface<TheLoai> {
+public class TheLoaiDAO implements DAOInterface<TheLoai> {
 
 	private ArrayList<TheLoai> data=new ArrayList<TheLoai>();
 

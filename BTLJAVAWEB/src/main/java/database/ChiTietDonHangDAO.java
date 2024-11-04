@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import model.ChiTietDonHang;
 
-public class ChiTietDonHangDAO implements DAOinterface<ChiTietDonHang>{
+public class ChiTietDonHangDAO implements DAOInterface<ChiTietDonHang>{
 	private ArrayList<ChiTietDonHang> data=new ArrayList<ChiTietDonHang>();
 
 	@Override
