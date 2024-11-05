@@ -9,6 +9,10 @@
   <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
+  
+  <!-- fontsomeaws -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -213,12 +217,12 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">Nguyễn Hưng</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
+              <h6>Nguyễn Hưng</h6>
               <span>Web Designer</span>
             </li>
             <li>
@@ -278,7 +282,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.jsp">
           <i class="bi bi-grid"></i>
-          <span>Trang chủ</span>
+          <span>DashBoard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
@@ -315,7 +319,7 @@
       <li class="nav-item">
         <a class="nav-link " href="pages-blank.jsp">
           <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
+          <span>Products</span>
         </a>
       </li><!-- End Blank Page Nav -->
 
@@ -326,56 +330,114 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Blank Page</h1>
+      <h1>Book Store</h1>
+
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Pages</li>
-          <li class="breadcrumb-item active">Blank</li>
+          <li class="breadcrumb-item"><a href="index.jsp"><i class="fa-solid fa-house"></i>
+</a></li>
+          <li class="breadcrumb-item"></li>
+          <li class="breadcrumb-item active"><i class="bi bi-book"></i></li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
-
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-6">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-lg-6">
-
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Example Card</h5>
-              <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
-            </div>
-          </div>
-
-        </div>
+    <!-- main -->
+   <div class="pagetitle">
+  <h1>Thêm Sản Phẩm</h1>
+</div>
+<form action="product?action=add" method="post" enctype="multipart/form-data">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="tensanpham" class="form-label">Tên Sản Phẩm</label>
+        <input type="text" class="form-control" id="tensanpham" name="tensanpham" required>
       </div>
+      <div class="mb-3">
+        <label for="giaban" class="form-label">Giá Bán</label>
+        <input type="number" class="form-control" id="giaban" name="giaban" required>
+      </div>
+      <div class="mb-3">
+        <label for="soluong" class="form-label">Số Lượng</label>
+        <input type="number" class="form-control" id="soluong" name="soluong" required>
+      </div>
+      <div class="mb-3">
+        <label for="hinhanh" class="form-label">Ảnh Sản Phẩm</label>
+        <input type="file" class="form-control" id="hinhanh" name="hinhanh" accept="image/*" required onchange="previewImage(event)">
+      </div>
+      <!-- Thẻ img hiển thị ảnh xem trước -->
+      <div class="mb-3">
+        <img id="preview" src="#" alt="Xem trước ảnh" style="display:none; width: 100%; max-height: 300px; margin-top: 10px;">
+      </div>
+      <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+        <button type="reset" class="btn btn-secondary">Đặt lại</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+<script>
+  function previewImage(event) {
+    const preview = document.getElementById('preview');
+    const file = event.target.files[0];
+    
+    if (file) {
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = 'block';
+    } else {
+      preview.src = '#';
+      preview.style.display = 'none';
+    }
+  }
+</script>
+
+    <hr>
+    <br>
+    <br>
+    
+
+    <div class="row mt-4">
+    <h4 class="text-center"><b>Danh Sách Sản Phẩm</b></h4>
+    <div class="table-responsive mt-3">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>Mã Sản Phẩm</th>
+                    <th>Tên Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Ảnh</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="product" items="${products}">
+                    <tr>
+                        <td class="text-center">${product.masanpham}</td>
+                        <td>${product.tensanpham}</td>
+                        <td class="text-end">${product.giaban} ₫</td>
+                        <td class="text-center">${product.soluong}</td>
+                        <td class="text-center">
+                            <img src="${product.imagePath}" alt="${product.tensanpham}" width="80" height="80" class="rounded" />
+                        </td>
+                        <td class="text-center">
+                            <a href="product?action=edit&id=${product.masanpham}" class="btn btn-sm btn-primary">Sửa</a>
+                            <a href="product?action=delete&id=${product.masanpham}" class="btn btn-sm btn-danger">Xóa</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+     
     </section>
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

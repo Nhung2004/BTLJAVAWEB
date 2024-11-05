@@ -278,7 +278,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="index.jsp">
           <i class="bi bi-grid"></i>
-          <span>Trang chủ</span>
+          <span>DashBoard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
@@ -315,7 +315,7 @@
       <li class="nav-item">
         <a class="nav-link " href="pages-blank.jsp">
           <i class="bi bi-file-earmark"></i>
-          <span>Blank</span>
+          <span>Products</span>
         </a>
       </li><!-- End Blank Page Nav -->
 
