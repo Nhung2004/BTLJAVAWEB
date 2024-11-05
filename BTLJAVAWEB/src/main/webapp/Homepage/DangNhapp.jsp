@@ -1,22 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Đăng Nhập</title>
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <style>
+        #msg {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<style>
-#msg{
-	color:red;
-}
-</style>
-</body>
+<%
+    String baoloi = request.getAttribute("baoloi") + "";
+    baoloi = (baoloi.equals("null")) ? "" : baoloi;
+%>
 
-<%String baoloi=request.getAttribute("baoloi")+"";baoloi=(baoloi.equals("null"))?"":baoloi;%>
 <!--  
 <div class="container">
 <form action="dang-nhap" method="post">
