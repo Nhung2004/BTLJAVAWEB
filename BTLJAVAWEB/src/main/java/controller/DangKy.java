@@ -17,7 +17,7 @@ import model.KhachHang;
 /**
  * Servlet implementation class DangKy
  */
-@WebServlet(name = "DangKy", urlPatterns = { "/dang-ky" })
+@WebServlet(name = "Homepage/DangKy", urlPatterns = { "/dang-ky" })
 public class DangKy extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -88,14 +88,14 @@ public class DangKy extends HttpServlet {
         String url = "";
 
         if (baoloi.length() > 0) {
-            url = "/DangKy.jsp"; 
+            url = "/Homepage/DangKy.jsp"; 
         } else {
 
             Random rd = new Random();
             String makhachhang = System.currentTimeMillis() + rd.nextInt(1000) + "";
             KhachHang kh = new KhachHang(makhachhang, tendangnhap, nhaplaimatkhau, hovaten, gioitinh, diachikhachhang, diachinhanhang, diachimuahang, ngaySinhDate, dienthoai, email, false);
             khachHangDAO.insert(kh);
-            url = "/DangNhapp.jsp";
+            url = "/Homepage/DangNhapp.jsp";
 
         }
 

@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Đăng Nhập</title>
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <style>
         #msg {
             color: red;
@@ -18,9 +18,9 @@
     baoloi = (baoloi.equals("null")) ? "" : baoloi;
 %>
 
-<!--  
+ 
 <div class="container">
-<form action="dang-nhap" method="post">
+<form action="${pageContext.request.contextPath}/dang-nhap" method="post">
   <div class="mb-3">
     <div class="msg" id="baoloi">
       <%=baoloi %>
@@ -37,7 +37,8 @@
 </form>
 </div>
 </html>
--->
+
+<!-- 
   <main>
     <div class="container">
 
@@ -48,7 +49,7 @@
 
               <div class="d-flex justify-content-center py-4">
                
-              </div><!-- End Logo -->
+              </div>
 
               <div class="card mb-3">
 
@@ -93,10 +94,6 @@
               </div>
 
               <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
                 Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
               </div>
 
@@ -107,4 +104,4 @@
       </section>
 
     </div>
-  </main><!-- End #main -->
+  </main> -->

@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Trang Đăng Ký</title>
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <style>
         #msg, .msg {
             color: red;
@@ -55,7 +55,7 @@
 
 <div class="container">
     <h1 class="text-center">Đăng Ký Tài Khoản</h1>
-    <form action="dang-ky" method="get">
+    <form action="${pageContext.request.contextPath}/dang-ky" method="get">
         <div class="msg" id="baoloi">
             <%= baoloi %>
         </div>
@@ -136,7 +136,7 @@
 </div>
 
 <!-- Vendor JS Files -->
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Customize JS -->
 <script>
