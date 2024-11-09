@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Gp Bootstrap Template</title>
+  <title>Trang chủ</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -99,7 +99,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a href="DangKy.jsp" class="btn-getstarted" style="whilespace=:nowrap;">Dang Ky </a>
+      <a href="DangKy.jsp" class="btn-getstarted" style="whilespace=:nowrap;">Dang Ky</a>
       <a href="DangNhapp.jsp" class="btn-getstarted" ">Dang Nhap</a>
 
     </div>
