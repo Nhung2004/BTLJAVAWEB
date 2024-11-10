@@ -12,6 +12,9 @@
 <link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
 
+<!-- Main CSS File -->
+<link href="${pageContext.request.contextPath}/assets/css/DangNhap.css" rel="stylesheet">
+
 </head>
 <body>
 	<%
@@ -63,8 +66,8 @@
 										</div>
 										<div class="col-12">
 											<p class="small mb-0">
-												Don't have an account?
-												<a href="${pageContext.request.contextPath}/Homepage/DangKy.jsp">Create an account</a>
+												Bạn chưa có tài khoản ư?
+												<a href="${pageContext.request.contextPath}/Homepage/DangKy.jsp">Tạo tài khoản mới</a>
 											</p>
 										</div>
 									</form>
