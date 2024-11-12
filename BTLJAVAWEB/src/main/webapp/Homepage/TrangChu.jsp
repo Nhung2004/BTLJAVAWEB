@@ -22,7 +22,7 @@
 
 <!-- Vendor CSS Files -->
 <link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/vendor/aos/aos.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
@@ -40,138 +40,8 @@
 </head>
 
 <body class="index-page">
-
-	<header id="header" class="header d-flex align-items-center fixed-top">
-		<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-			<a href="${pageContext.request.contextPath}/Dashboard/index.jsp" class="logo d-flex align-items-center me-auto me-lg-0">
-				<!-- Uncomment the line below if you also wish to use an image logo -->
-				<!-- <img src="${pageContext.request.contextPath}/assets/img/logo.png" alt=""> -->
-				<h1 class="sitename">GP</h1>
-				<span></span>
-			</a>
-
-			<nav id="navmenu" class="navmenu">
-				<ul>
-					<li>
-						<a href="DangKy.jsp" class="active">
-							Home
-							<br>
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="#">
-							<span>Products</span>
-							<i class="bi bi-chevron-down toggle-dropdown"></i>
-						</a>
-						<ul>
-							<li>
-								<a href="#">Romantic Books</a>
-							</li>
-							<li class="dropdown">
-								<a href="#">
-									<span>Other Books</span>
-									<i class="bi bi-chevron-down toggle-dropdown"></i>
-								</a>
-								<ul>
-									<li>
-										<a href="#">Action Books </a>
-									</li>
-									<li>
-										<a href="#"> </a>
-									</li>
-									<li>
-										<a href="#">Deep Dropdown 3</a>
-									</li>
-									<li>
-										<a href="#">Deep Dropdown 4</a>
-									</li>
-									<li>
-										<a href="#">Deep Dropdown 5</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Dropdown 2</a>
-							</li>
-							<li>
-								<a href="#">Dropdown 3</a>
-							</li>
-							<li>
-								<a href="#">Dropdown 4</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="#about">About</a>
-					</li>
-					<li>
-						<a href="#services">Services</a>
-					</li>
-					<li>
-						<a href="#portfolio">Portfolio</a>
-					</li>
-					<li>
-						<a href="#team">Team</a>
-					</li>
-					<li class="dropdown">
-						<a href="#">
-							<span>Dropdown</span>
-							<i class="bi bi-chevron-down toggle-dropdown"></i>
-						</a>
-						<ul>
-							<li>
-								<a href="#">Dropdown 1</a>
-							</li>
-							<li class="dropdown">
-								<a href="#">
-									<span>Deep Dropdown</span>
-									<i class="bi bi-chevron-down toggle-dropdown"></i>
-								</a>
-								<ul>
-									<li>
-										<a href="#">Deep Dropdown 1</a>
-									</li>
-									<li>
-										<a href="#">Deep Dropdown 2</a>
-									</li>
-									<li>
-										<a href="#">Deep Dropdown 3</a>
-									</li>
-									<li>
-										<a href="#">Deep Dropdown 4</a>
-									</li>
-									<li>
-										<a href="#">Deep Dropdown 5</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Dropdown 2</a>
-							</li>
-							<li>
-								<a href="#">Dropdown 3</a>
-							</li>
-							<li>
-								<a href="#">Dropdown 4</a>
-							</li>
-						</ul>
-					</li>
-
-
-
-					<li>
-						<a href="#contact">Contact</a>
-					</li>
-				</ul>
-				<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-			</nav>
-
-			<a href="DangKy.jsp" class="btn-getstarted" style="whilespace =: nowrap;">Dang Ky</a>
-			<a href="DangNhapp.jsp" class="btn-getstarted"">Dang Nhap</a>
-
-		</div>
-	</header>
+	<!-- Tách riêng header ra file Header.jsp -->
+	<jsp:include page="Header.jsp" />
 
 	<main class="main">
 
@@ -185,10 +55,9 @@
 				<div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
 					<div class="col-xl-6 col-lg-8">
 						<h2>
-							Powerful Digital Solutions With GP
-							<span>.</span>
+							Website bán sách của nhóm 13
 						</h2>
-						<p>We are team of talented digital marketers</p>
+						<p>Các danh mục sách nổi bật bao gồm</p>
 					</div>
 				</div>
 
@@ -197,7 +66,7 @@
 						<div class="icon-box">
 							<i class="bi bi-binoculars"></i>
 							<h3>
-								<a href="SanPham.jsp">Textbooks</a>
+								<a href="SanPham.jsp">Ngoại ngữ</a>
 							</h3>
 						</div>
 					</div>
@@ -205,7 +74,7 @@
 						<div class="icon-box">
 							<i class="bi bi-bullseye"></i>
 							<h3>
-								<a href="">Reference Books</a>
+								<a href="">IT</a>
 							</h3>
 						</div>
 					</div>
@@ -213,7 +82,7 @@
 						<div class="icon-box">
 							<i class="bi bi-fullscreen-exit"></i>
 							<h3>
-								<a href="">Specialized Books</a>
+								<a href="">Văn học</a>
 							</h3>
 						</div>
 					</div>
@@ -221,7 +90,7 @@
 						<div class="icon-box">
 							<i class="bi bi-card-list"></i>
 							<h3>
-								<a href="">Research Books</a>
+								<a href="">Tiểu thuyết</a>
 							</h3>
 						</div>
 					</div>
@@ -229,7 +98,7 @@
 						<div class="icon-box">
 							<i class="bi bi-gem"></i>
 							<h3>
-								<a href="">Literature</a>
+								<a href="">Life Skill</a>
 							</h3>
 						</div>
 					</div>
@@ -1256,7 +1125,7 @@
 					<strong class="px-1 sitename">GP</strong>
 					<span>All Rights Reserved</span>
 				</p>
-				
+
 				<!-- 
 				<div class="credits">
 					 
@@ -1265,7 +1134,7 @@
 					
 				</div>
 				-->
-				
+
 			</div>
 		</div>
 

@@ -1,108 +1,157 @@
 package model;
 
-public class SanPham {
-	private String masanpham;
-	private String tensanpham;
-	private TacGia tacgia;
-	private int namxuatban;
-	private double giaban;
-	private double gianhap;
-	private double giagoc;
-	private int soluong;
+public class SanPham
+{
+	private String  masanpham;
+	private String  tensanpham;
+	private TacGia  tacgia;
+	private int     namxuatban;
+	private double  giaban;
+	private double  gianhap;
+	private double  giagoc;
+	private int     soluong;
 	private TheLoai theloai;
-	private String ngonngu;
-	private String mota;
-	public SanPham(String masanpham, String tensanpham, TacGia tacgia, int namxuatban, double giaban, double gianhap,
-			double giagoc, int soluong, TheLoai theloai, String ngonngu, String mota) {
+	private String  ngonngu;
+	private String  mota;
+
+	public SanPham(
+	        String masanpham, String tensanpham, TacGia tacgia, int namxuatban, double giaban, double gianhap, double giagoc,
+	        int soluong, TheLoai theloai, String ngonngu, String mota
+	)
+	{
 		super();
-		this.masanpham = masanpham;
+		this.masanpham  = masanpham;
 		this.tensanpham = tensanpham;
-		this.tacgia = tacgia;
+		this.tacgia     = tacgia;
 		this.namxuatban = namxuatban;
-		this.giaban = giaban;
-		this.gianhap = gianhap;
-		this.giagoc = giagoc;
-		this.soluong = soluong;
-		this.theloai = theloai;
-		this.ngonngu = ngonngu;
-		this.mota = mota;
+		this.giaban     = giaban;
+		this.gianhap    = gianhap;
+		this.giagoc     = giagoc;
+		this.soluong    = soluong;
+		this.theloai    = theloai;
+		this.ngonngu    = ngonngu;
+		this.mota       = mota;
 	}
-	public String getMasanpham() {
+
+	public String getMasanpham()
+	{
 		return masanpham;
 	}
-	public void setMasanpham(String masanpham) {
+
+	public void setMasanpham(String masanpham)
+	{
 		this.masanpham = masanpham;
 	}
-	public String getTensanpham() {
+
+	public String getTensanpham()
+	{
 		return tensanpham;
 	}
-	public void setTensanpham(String tensanpham) {
+
+	public void setTensanpham(String tensanpham)
+	{
 		this.tensanpham = tensanpham;
 	}
-	public TacGia getTacgia() {
+
+	public TacGia getTacgia()
+	{
 		return tacgia;
 	}
-	public void setTacgia(TacGia tacgia) {
+
+	public void setTacgia(TacGia tacgia)
+	{
 		this.tacgia = tacgia;
 	}
-	public int getNamxuatban() {
+
+	public int getNamxuatban()
+	{
 		return namxuatban;
 	}
-	public void setNamxuatban(int namxuatban) {
+
+	public void setNamxuatban(int namxuatban)
+	{
 		this.namxuatban = namxuatban;
 	}
-	public double getGiaban() {
+
+	public double getGiaban()
+	{
 		return giaban;
 	}
-	public void setGiaban(double giaban) {
+
+	public void setGiaban(double giaban)
+	{
 		this.giaban = giaban;
 	}
-	public double getGianhap() {
+
+	public double getGianhap()
+	{
 		return gianhap;
 	}
-	public void setGianhap(double gianhap) {
+
+	public void setGianhap(double gianhap)
+	{
 		this.gianhap = gianhap;
 	}
-	public double getGiagoc() {
+
+	public double getGiagoc()
+	{
 		return giagoc;
 	}
-	public void setGiagoc(double giagoc) {
+
+	public void setGiagoc(double giagoc)
+	{
 		this.giagoc = giagoc;
 	}
-	public int getSoluong() {
+
+	public int getSoluong()
+	{
 		return soluong;
 	}
-	public void setSoluong(int soluong) {
+
+	public void setSoluong(int soluong)
+	{
 		this.soluong = soluong;
 	}
-	public TheLoai getTheloai() {
+
+	public TheLoai getTheloai()
+	{
 		return theloai;
 	}
-	public void setTheloai(TheLoai theloai) {
+
+	public void setTheloai(TheLoai theloai)
+	{
 		this.theloai = theloai;
 	}
-	public String getNgonngu() {
+
+	public String getNgonngu()
+	{
 		return ngonngu;
 	}
-	public void setNgonngu(String ngonngu) {
+
+	public void setNgonngu(String ngonngu)
+	{
 		this.ngonngu = ngonngu;
 	}
-	public String getMota() {
+
+	public String getMota()
+	{
 		return mota;
 	}
-	public void setMota(String mota) {
+
+	public void setMota(String mota)
+	{
 		this.mota = mota;
 	}
-	public SanPham() {
+
+	public SanPham()
+	{
 		super();
 	}
-	public void setImagePath(String imagePath) {
+
+	public void setImagePath(String imagePath)
+	{
 		// TODO Auto-generated method stub
-		
+
 	}
-	
-	
-	
-	
 
 }

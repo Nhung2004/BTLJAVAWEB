@@ -1,28 +1,40 @@
 package model;
 
-public class TheLoai {
+public class TheLoai
+{
 	private String matheloai;
 	private String tentheloai;
-	public TheLoai(String matheloai, String tentheloai) {
+
+	public TheLoai(String matheloai, String tentheloai)
+	{
 		super();
-		this.matheloai = matheloai;
+		this.matheloai  = matheloai;
 		this.tentheloai = tentheloai;
 	}
-	public TheLoai() {
+
+	public TheLoai()
+	{
 		super();
 	}
-	public String getmatheloai() {
+
+	public String getmatheloai()
+	{
 		return matheloai;
 	}
-	public void setmatheloai(String matheloai) {
+
+	public void setmatheloai(String matheloai)
+	{
 		this.matheloai = matheloai;
 	}
-	public String gettentheloai() {
+
+	public String gettentheloai()
+	{
 		return tentheloai;
 	}
-	public void settentheloai(String tentheloai) {
+
+	public void settentheloai(String tentheloai)
+	{
 		this.tentheloai = tentheloai;
 	}
-	
 
 }

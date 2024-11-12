@@ -44,10 +44,10 @@
 
 <body>
 	<!-- Tách riêng header ra file Header.jsp -->
-	<jsp:include page="../Utils/Header.jsp" />
+	<jsp:include page="Header.jsp" />
 
 	<!-- Tách riêng sidebar ra file Sidebar.jsp -->
-	<jsp:include page="../Utils/Sidebar.jsp" />
+	<jsp:include page="Sidebar.jsp" />
 
 	<main id="main" class="main">
 

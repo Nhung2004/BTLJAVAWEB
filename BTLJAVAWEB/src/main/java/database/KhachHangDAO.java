@@ -10,7 +10,7 @@ import model.KhachHang;
 
 public class KhachHangDAO implements DAOInterface<KhachHang>
 {
-	private final JDBCUtil connectionPool = JDBCUtil.getInstance(); 
+	private final JDBCUtil connectionPool = JDBCUtil.getInstance();
 
 	public ArrayList<KhachHang> data = new ArrayList<>();
 
@@ -29,23 +29,26 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 			while (rs.next())
 			{
-				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
-				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"),
+				        rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"),
+				        rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
+				        rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 				resultList.add(kh);
 			}
 
-		} catch (SQLException e)
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		} finally
 		{
-			if (con != null)
+			if(con != null)
 			{
 				try
 				{
 					connectionPool.closeConnection(con, "selectAll");
-				} catch (SQLException e)
+				}
+				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
@@ -69,24 +72,27 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			st.setString(1, khachHang.getMakhachhang());
 			ResultSet rs = st.executeQuery();
 
-			if (rs.next())
+			if(rs.next())
 			{
-				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
-				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"),
+				        rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"),
+				        rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
+				        rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 			}
 
-		} catch (SQLException e)
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		} finally
 		{
-			if (con != null)
+			if(con != null)
 			{
 				try
 				{
 					connectionPool.closeConnection(con, "selectById");
-				} catch (SQLException e)
+				}
+				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
@@ -95,7 +101,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		return kh;
 	}
-	
+
 	public KhachHang selectByIDandPassword(KhachHang khachHang)
 	{
 		KhachHang  kh  = null;
@@ -109,30 +115,32 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			st.setString(1, khachHang.getTendangnhap());
 			st.setString(2, khachHang.getMatkhau());
 			ResultSet rs = st.executeQuery();
-			
+
 			// In ra Tên đăng nhập và Mật khẩu lên Console (Debugging purpose)
 			System.out.println("Querying with username: " + khachHang.getTendangnhap());
 			System.out.println("Querying with password: " + khachHang.getMatkhau());
 
-
-			if (rs.next())
+			if(rs.next())
 			{
-				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"),
-				    rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				    rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"),
+				        rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"),
+				        rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
+				        rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 			}
 
-		} catch (SQLException e)
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		} finally
 		{
-			if (con != null)
+			if(con != null)
 			{
 				try
 				{
 					connectionPool.closeConnection(con, "selectByIDandPassword");
-				} catch (SQLException e)
+				}
+				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
@@ -169,17 +177,19 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 			result = st.executeUpdate();
 
-		} catch (SQLException e)
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		} finally
 		{
-			if (con != null)
+			if(con != null)
 			{
 				try
 				{
 					connectionPool.closeConnection(con, "insert");
-				} catch (SQLException e)
+				}
+				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
@@ -214,17 +224,19 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			st.setString(1, kh.getMakhachhang());
 			result = st.executeUpdate();
 
-		} catch (SQLException e)
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		} finally
 		{
-			if (con != null)
+			if(con != null)
 			{
 				try
 				{
 					connectionPool.closeConnection(con, "delete");
-				} catch (SQLException e)
+				}
+				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
@@ -272,17 +284,19 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 			result = st.executeUpdate();
 
-		} catch (SQLException e)
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		} finally
 		{
-			if (con != null)
+			if(con != null)
 			{
 				try
 				{
 					connectionPool.closeConnection(con, "update");
-				} catch (SQLException e)
+				}
+				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
@@ -295,7 +309,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 	public boolean kiemTraTenDangNhap(String tenDangNhap)
 	{
 		boolean    ketQua = false;
-		Connection con    = null; 
+		Connection con    = null;
 
 		try
 		{
@@ -312,23 +326,25 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			ResultSet rs = st.executeQuery();
 
 			// Step 4: Check if the result set has any data
-			if (rs.next())
+			if(rs.next())
 			{
 				ketQua = true;
 			}
 
-		} catch (SQLException e)
+		}
+		catch (SQLException e)
 		{
 			e.printStackTrace();
 		} finally
 		{
 			// Step 5: Return the connection to the pool
-			if (con != null)
+			if(con != null)
 			{
 				try
 				{
 					connectionPool.closeConnection(con, "kiemTraTenDangNhap");
-				} catch (SQLException e)
+				}
+				catch (SQLException e)
 				{
 					e.printStackTrace();
 				}
