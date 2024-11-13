@@ -75,15 +75,15 @@
 				</li>
 
 				<li>
-					<a href="#services">Danh mục</a>
+					<a href="#services">Services</a>
 				</li>
 
 				<li>
-					<a href="#portfolio">Sản phẩm</a>
+					<a href="#portfolio">Portfolio</a>
 				</li>
 
 				<li>
-					<a href="#team">Nhóm</a>
+					<a href="#team">Team</a>
 				</li>
 
 				<li class="dropdown">
@@ -139,7 +139,7 @@
 				</li>
 
 				<li>
-					<a href="#contact">Liên hệ</a>
+					<a href="#contact">Contact</a>
 				</li>
 			</ul>
 			<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

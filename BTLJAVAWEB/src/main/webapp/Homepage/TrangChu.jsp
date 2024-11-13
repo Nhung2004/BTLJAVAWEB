@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+<title>Trang chủ</title>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Trang chủ</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 
@@ -29,14 +30,6 @@
 
 <!-- Main CSS File -->
 <link href="${pageContext.request.contextPath}/assets/css/GpMain.css" rel="stylesheet">
-
-<!-- =======================================================
-  * Template Name: Gp
-  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-  * Updated: Aug 15 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
@@ -51,12 +44,9 @@
 			<img src="${pageContext.request.contextPath}/assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
 
 			<div class="container">
-
 				<div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
 					<div class="col-xl-6 col-lg-8">
-						<h2>
-							Website bán sách của nhóm 13
-						</h2>
+						<h2>Website bán sách của nhóm 13</h2>
 						<p>Các danh mục sách nổi bật bao gồm</p>
 					</div>
 				</div>
@@ -64,36 +54,40 @@
 				<div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
 					<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
 						<div class="icon-box">
-							<i class="bi bi-binoculars"></i>
+							<i class="bi bi-journal-bookmark"></i>
 							<h3>
 								<a href="SanPham.jsp">Ngoại ngữ</a>
 							</h3>
 						</div>
 					</div>
+
 					<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
 						<div class="icon-box">
-							<i class="bi bi-bullseye"></i>
+							<i class="bi bi-motherboard"></i>
 							<h3>
 								<a href="">IT</a>
 							</h3>
 						</div>
 					</div>
+
 					<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
 						<div class="icon-box">
-							<i class="bi bi-fullscreen-exit"></i>
+							<i class="bi bi-vector-pen"></i>
 							<h3>
 								<a href="">Văn học</a>
 							</h3>
 						</div>
 					</div>
+
 					<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
 						<div class="icon-box">
-							<i class="bi bi-card-list"></i>
+							<i class="bi bi-pencil-square"></i>
 							<h3>
 								<a href="">Tiểu thuyết</a>
 							</h3>
 						</div>
 					</div>
+
 					<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
 						<div class="icon-box">
 							<i class="bi bi-gem"></i>
@@ -103,15 +97,17 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
-
-
 		</section>
 		<!-- /Hero Section -->
 
 		<!-- About Section -->
 		<section id="about" class="about section">
+
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>Tổng quan</h2>
+			</div>
 
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -139,24 +135,22 @@
 						<p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
 					</div>
 				</div>
-
 			</div>
-
 		</section>
 		<!-- /About Section -->
 
-		<!-- Clients Section -->
+		<!-- Tech Section -->
 		<section id="clients" class="clients section">
-
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
-
 				<div class="swiper init-swiper">
+				
+					<!-- Tech Script -->
 					<script type="application/json" class="swiper-config">
             {
               "loop": true,
-              "speed": 600,
+              "speed": 500,
               "autoplay": {
-                "delay": 5000
+                "delay": 2500
               },
               "slidesPerView": "auto",
               "pagination": {
@@ -188,33 +182,38 @@
 						<div class="swiper-slide">
 							<img src="${pageContext.request.contextPath}/assets/img/clients/client-1.png" class="img-fluid" alt="">
 						</div>
+
 						<div class="swiper-slide">
 							<img src="${pageContext.request.contextPath}/assets/img/clients/client-2.png" class="img-fluid" alt="">
 						</div>
+
 						<div class="swiper-slide">
 							<img src="${pageContext.request.contextPath}/assets/img/clients/client-3.png" class="img-fluid" alt="">
 						</div>
+
 						<div class="swiper-slide">
 							<img src="${pageContext.request.contextPath}/assets/img/clients/client-4.png" class="img-fluid" alt="">
 						</div>
+
 						<div class="swiper-slide">
 							<img src="${pageContext.request.contextPath}/assets/img/clients/client-5.png" class="img-fluid" alt="">
 						</div>
+
 						<div class="swiper-slide">
 							<img src="${pageContext.request.contextPath}/assets/img/clients/client-6.png" class="img-fluid" alt="">
 						</div>
+
 						<div class="swiper-slide">
 							<img src="${pageContext.request.contextPath}/assets/img/clients/client-7.png" class="img-fluid" alt="">
 						</div>
+
 						<div class="swiper-slide">
 							<img src="${pageContext.request.contextPath}/assets/img/clients/client-8.png" class="img-fluid" alt="">
 						</div>
 					</div>
 					<div class="swiper-pagination"></div>
 				</div>
-
 			</div>
-
 		</section>
 		<!-- /Clients Section -->
 
@@ -278,8 +277,8 @@
 
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Services</h2>
-				<p>Check our Services</p>
+				<h2>Danh mục</h2>
+				<p>Các thể loại sách nổi bật</p>
 			</div>
 			<!-- End Section Title -->
 
@@ -400,8 +399,8 @@
 
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Portfolio</h2>
-				<p>Check our Portfolio</p>
+				<h2>Sản phẩm</h2>
+				<p>Xem qua một số sản phẩm bán chạy</p>
 			</div>
 			<!-- End Section Title -->
 
@@ -586,7 +585,7 @@
 								<div class="stats-item d-flex">
 									<i class="bi bi-emoji-smile flex-shrink-0"></i>
 									<div>
-										<span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+										<span data-purecounter-start="0" data-purecounter-end="2320" data-purecounter-duration="10" class="purecounter"></span>
 										<p>
 											<strong>Happy Clients</strong>
 											<span>consequuntur quae</span>
@@ -793,8 +792,8 @@
 
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Team</h2>
-				<p>our Team</p>
+				<h2>Nhóm</h2>
+				<p>Thành viên nhóm</p>
 			</div>
 			<!-- End Section Title -->
 
@@ -922,8 +921,8 @@
 
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Contact</h2>
-				<p>Contact Us</p>
+				<h2>Liên hệ</h2>
+				<p>Địa chỉ của shop</p>
 			</div>
 			<!-- End Section Title -->
 
