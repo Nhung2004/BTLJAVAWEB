@@ -37,42 +37,25 @@
 	<jsp:include page="Header.jsp" />
 
 	<main class="main">
-		<!-- About Section -->
+		<!-- Blank Section -->
 		<section id="about" class="about section">
-
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>About us</h2>
+				<!-- Title here -->
 			</div>
 
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
 				<div class="row gy-4">
 					<div class="col-lg-6 order-1 order-lg-2">
-						<img src="${pageContext.request.contextPath}/assets/img/about.jpg" class="img-fluid" alt="About Us">
+						<!-- Picture here -->
 					</div>
 					<div class="col-lg-6 order-2 order-lg-1 content">
-						<h3>Welcome to G13</h3>
-						<p class="fst-italic">Your one-stop destination for books across all genres! Whether you’re looking for the latest bestsellers, timeless classics, or hidden gems, we’re here to help you find the perfect read.</p>
-						<ul>
-							<li>
-								<i class="bi bi-check2-all"></i>
-								<span>Discover a curated selection of books that caters to every interest and age.</span>
-							</li>
-							<li>
-								<i class="bi bi-check2-all"></i>
-								<span>Connect with fellow book enthusiasts through our platform.</span>
-							</li>
-							<li>
-								<i class="bi bi-check2-all"></i>
-								<span>Explore categories, manage your favorites, and inspire a love for reading.</span>
-							</li>
-						</ul>
-						<p>At G13, every book is a gateway to new worlds, and we’re thrilled to be part of your reading journey.</p>
+						<!-- Content here -->
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- /About Section -->
+		<!-- /Blank Section -->
 
 		<!-- About Section -->
 		<section id="about" class="about section">
