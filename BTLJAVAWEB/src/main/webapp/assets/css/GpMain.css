@@ -45,11 +45,11 @@
 }
 
 .dark-background {
-  --background-color: #060606;
-  --default-color: #ffffff;
-  --heading-color: #ffffff;
-  --surface-color: #252525;
-  --contrast-color: #2a2727;
+  --background-color: #454545;
+  --default-color: #b3b3b3;
+  --heading-color: #b3b3b3;
+  --surface-color: #8c8c8c;
+  --contrast-color: #707070;
 }
 
 /* Smooth scroll */
@@ -214,7 +214,7 @@ h6 {
 /* Index Page Header
 ------------------------------*/
 .index-page .header {
-  --background-color: rgba(0, 0, 0, 0);
+  --background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Index Page Header on Scroll
