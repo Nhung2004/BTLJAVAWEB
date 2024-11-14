@@ -55,7 +55,7 @@
 						<div class="icon-box">
 							<i class="bi bi-journal-bookmark"></i>
 							<h3>
-								<a href="SanPham.jsp">Foreign</a>
+								<a href="">Foreign</a>
 							</h3>
 						</div>
 					</div>
@@ -136,6 +136,98 @@
 					</div>
 					<!-- End Product Item -->
 
+					<!-- Product Item -->
+					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<div class="service-item position-relative border p-3 rounded">
+							<div class="image">
+								<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" alt="Book 1" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;">
+							</div>
+							<a href="product-details.html" class="stretched-link">
+								<h3>Book Title 2</h3>
+							</a>
+							<p>Short description of Book 2. Perfect for enthusiasts of genre X.</p>
+
+							<!-- Adjusted Price Display -->
+							<p class="price">
+								<span style="font-size: larger; font-weight: bold;">$19.99 </span>
+								&nbsp;&nbsp;
+								<span style="text-decoration: line-through; color: gray;">$30.99</span>
+								&nbsp;&nbsp;
+								<span style="color: green; font-weight: bold;">| Save 29%</span>
+							</p>
+						</div>
+					</div>
+					<!-- End Product Item -->
+					
+					<!-- Product Item -->
+					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<div class="service-item position-relative border p-3 rounded">
+							<div class="image">
+								<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" alt="Book 1" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;">
+							</div>
+							<a href="product-details.html" class="stretched-link">
+								<h3>Book Title 2</h3>
+							</a>
+							<p>Short description of Book 2. Perfect for enthusiasts of genre X.</p>
+
+							<!-- Adjusted Price Display -->
+							<p class="price">
+								<span style="font-size: larger; font-weight: bold;">$19.99 </span>
+								&nbsp;&nbsp;
+								<span style="text-decoration: line-through; color: gray;">$30.99</span>
+								&nbsp;&nbsp;
+								<span style="color: green; font-weight: bold;">| Save 29%</span>
+							</p>
+						</div>
+					</div>
+					<!-- End Product Item -->
+					
+					<!-- Product Item -->
+					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<div class="service-item position-relative border p-3 rounded">
+							<div class="image">
+								<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" alt="Book 1" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;">
+							</div>
+							<a href="product-details.html" class="stretched-link">
+								<h3>Book Title 2</h3>
+							</a>
+							<p>Short description of Book 2. Perfect for enthusiasts of genre X.</p>
+
+							<!-- Adjusted Price Display -->
+							<p class="price">
+								<span style="font-size: larger; font-weight: bold;">$19.99 </span>
+								&nbsp;&nbsp;
+								<span style="text-decoration: line-through; color: gray;">$30.99</span>
+								&nbsp;&nbsp;
+								<span style="color: green; font-weight: bold;">| Save 29%</span>
+							</p>
+						</div>
+					</div>
+					<!-- End Product Item -->
+					
+					<!-- Product Item -->
+					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+						<div class="service-item position-relative border p-3 rounded">
+							<div class="image">
+								<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" alt="Book 1" class="img-fluid" style="width: 100%; height: 200px; object-fit: cover;">
+							</div>
+							<a href="product-details.html" class="stretched-link">
+								<h3>Book Title 2</h3>
+							</a>
+							<p>Short description of Book 2. Perfect for enthusiasts of genre X.</p>
+
+							<!-- Adjusted Price Display -->
+							<p class="price">
+								<span style="font-size: larger; font-weight: bold;">$19.99 </span>
+								&nbsp;&nbsp;
+								<span style="text-decoration: line-through; color: gray;">$30.99</span>
+								&nbsp;&nbsp;
+								<span style="color: green; font-weight: bold;">| Save 29%</span>
+							</p>
+						</div>
+					</div>
+					<!-- End Product Item -->
+					
 					<!-- Product Item -->
 					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
 						<div class="service-item position-relative border p-3 rounded">

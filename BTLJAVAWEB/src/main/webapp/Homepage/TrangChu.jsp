@@ -39,17 +39,84 @@
 	<main class="main">
 
 		<!-- Hero Section -->
-		<section id="hero" class="hero section dark-background">
+		<section id="hero" class="hero section light-background">
 
 			<img src="${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg" alt="" data-aos="fade-in">
 
 			<div class="container">
-				<div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-					<div class="col-xl-6 col-lg-8">
-						<h2>Group 13 Books Selling Website</h2>
-						<p>Popular books of the store</p>
-					</div>
-				</div>
+			<div class="col-3 p-3 rounded shadow-sm bg-light mb-4">
+  <h5 class="text-center font-weight-bold mb-3 text-danger">Sản Phẩm Được Yêu Thích Nhất</h5>
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
+      <span class="heart-icon">❤️</span>
+      Sách Tiếng Anh
+    </a>
+    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
+      <span class="heart-icon">❤️</span>
+      Sách Kỹ Năng
+    </a>
+    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
+      <span class="heart-icon">❤️</span>
+      Sách Truyện Tranh
+    </a>
+    <a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
+      <span class="heart-icon">❤️</span>
+      Tiểu Thuyết
+    </a>
+  </div>
+</div>
+
+<style>
+  /* Cải tiến mục Sản Phẩm Bán Chạy Nhất */
+  .list-group-item {
+    background-color: #f8f9fa;
+    color: #007bff;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .list-group-item:hover {
+    background-color: #0056b3 !important;
+    color: #fff !important;
+  }
+
+  .badge-pill {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .list-group-item:hover .badge-pill {
+    background-color: #ffc107 !important;
+  }
+
+  /* Cải tiến mục Sản Phẩm Được Yêu Thích Nhất */
+  .favorite-item {
+    background-color: #fff5f5;
+    color: #007bff;
+    border: 1px solid #ffd1dc;
+    transition: all 0.3s ease;
+  }
+
+  .favorite-item:hover {
+    background-color: #ffebeb;
+    color: #dc3545;
+  }
+
+  .heart-icon {
+    color: #ff4d4d;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .favorite-item:hover .heart-icon {
+    transform: scale(1.2);
+    color: #dc3545;
+    filter: drop-shadow(0 0 5px #ff4d4d); /* Thêm ánh sáng */
+  }
+</style>
+			
+			
+				
 
 				<div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
 					<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
@@ -545,7 +612,7 @@
 		<!-- /Stats Section -->
 
 		<!-- Customer Review Section -->
-		<section id="testimonials" class="testimonials section dark-background">
+		<section id="testimonials" class="testimonials section light2-background">
 			<img src="${pageContext.request.contextPath}/assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
 
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -637,67 +704,56 @@
 			<div class="container">
 				<div class="row gy-4">
 					<!-- Event Item -->
-					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="100">
-						<div class="event-card">
-							<img src="${pageContext.request.contextPath}/assets/img/team/team-1.jpg" class="img-fluid" alt="Event Image">
-							<div class="event-details">
-								<h4>Book Launch: The Lost World</h4>
-								<p>
-									<strong>Date:</strong>
-									March 25, 2024
-								</p>
-								<p>
-									<strong>Location:</strong>
-									New York City
-								</p>
-								<p>Join us for the exciting launch of the latest book, "The Lost World," by author John Doe.</p>
-								<a href="#" class="btn btn-primary">Learn More</a>
-							</div>
-						</div>
-					</div>
-					<!-- End Event Item -->
+<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="100">
+    <div class="event-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
+        <h3>Book Launch: The Lost World</h3>
+        <p class="price">March 25, 2024</p>
+        <ul class="text-start">
+            <li>Location: New York City</li>
+            <li>Launch of "The Lost World" by John Doe</li>
+            <li>Special guest appearances and book signing</li>
+        </ul>
+        <div class="d-flex justify-content-center mt-auto">
+            <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+    </div>
+</div>
+<!-- End Event Item -->
 
-					<!-- Event Item -->
-					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="200">
-						<div class="event-card">
-							<img src="${pageContext.request.contextPath}/assets/img/team/team-2.jpg" class="img-fluid" alt="Event Image">
-							<div class="event-details">
-								<h4>Author Meet-and-Greet</h4>
-								<p>
-									<strong>Date:</strong>
-									April 10, 2024
-								</p>
-								<p>
-									<strong>Location:</strong>
-									Virtual (Zoom)
-								</p>
-								<p>Meet your favorite author, Sarah Johnson, and ask her about her creative process.</p>
-								<a href="#" class="btn btn-primary">Register Now</a>
-							</div>
-						</div>
-					</div>
-					<!-- End Event Item -->
+<!-- Event Item -->
+<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="200">
+    <div class="event-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
+        <h3>Author Meet-and-Greet</h3>
+        <p class="price">April 10, 2024</p>
+        <ul class="text-start">
+            <li>Location: Virtual (Zoom)</li>
+            <li>Meet Sarah Johnson, author of "The Lost River"</li>
+            <li>Q&A session with fans</li>
+        </ul>
+        <div class="d-flex justify-content-center mt-auto">
+            <a href="#" class="btn btn-primary">Register Now</a>
+        </div>
+    </div>
+</div>
+<!-- End Event Item -->
 
-					<!-- Event Item -->
-					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="300">
-						<div class="event-card">
-							<img src="${pageContext.request.contextPath}/assets/img/team/team-3.jpg" class="img-fluid" alt="Event Image">
-							<div class="event-details">
-								<h4>Book Discussion: The Great Adventure</h4>
-								<p>
-									<strong>Date:</strong>
-									May 5, 2024
-								</p>
-								<p>
-									<strong>Location:</strong>
-									Online Webinar
-								</p>
-								<p>Join us for an engaging discussion on the book, "The Great Adventure," with fellow book lovers.</p>
-								<a href="#" class="btn btn-primary">Learn More</a>
-							</div>
-						</div>
-					</div>
-					<!-- End Event Item -->
+<!-- Event Item -->
+<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="300">
+    <div class="event-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
+        <h3>Book Discussion: The Great Adventure</h3>
+        <p class="price">May 5, 2024</p>
+        <ul class="text-start">
+            <li>Location: Online Webinar</li>
+            <li>Discuss "The Great Adventure" with book enthusiasts</li>
+            <li>Open forum and live chat</li>
+        </ul>
+        <div class="d-flex justify-content-center mt-auto">
+            <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+    </div>
+</div>
+<!-- End Event Item -->
+
 				</div>
 			</div>
 		</section>

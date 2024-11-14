@@ -139,19 +139,19 @@
 				</li>
 
 				<li>
-					<a href="#about">About us</a>
+					<a href="TrangChu.jsp#about">About us</a>
 				</li>
 
 				<li>
-					<a href="#services">Top gernes</a>
+					<a href="TrangChu.jsp#services">Top gernes</a>
 				</li>
 
 				<li>
-					<a href="#portfolio">Preview</a>
+					<a href="TrangChu.jsp#portfolio">Preview</a>
 				</li>
 
 				<li>
-					<a href="#team">Team</a>
+					<a href="TrangChu.jsp#team">Events</a>
 				</li>
 
 				<li>
