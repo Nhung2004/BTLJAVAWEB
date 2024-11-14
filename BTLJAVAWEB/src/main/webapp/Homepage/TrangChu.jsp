@@ -41,13 +41,13 @@
 		<!-- Hero Section -->
 		<section id="hero" class="hero section dark-background">
 
-			<img src="${pageContext.request.contextPath}/assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+			<img src="${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg" alt="" data-aos="fade-in">
 
 			<div class="container">
 				<div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
 					<div class="col-xl-6 col-lg-8">
-						<h2>Website bán sách của nhóm 13</h2>
-						<p>Các danh mục sách nổi bật bao gồm</p>
+						<h2>Group 13 Books Selling Website</h2>
+						<p>Popular books of the store</p>
 					</div>
 				</div>
 
@@ -56,7 +56,7 @@
 						<div class="icon-box">
 							<i class="bi bi-journal-bookmark"></i>
 							<h3>
-								<a href="SanPham.jsp">Ngoại ngữ</a>
+								<a href="SanPham.jsp">Foreign</a>
 							</h3>
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 						<div class="icon-box">
 							<i class="bi bi-motherboard"></i>
 							<h3>
-								<a href="">IT</a>
+								<a href="">ITs</a>
 							</h3>
 						</div>
 					</div>
@@ -74,7 +74,7 @@
 						<div class="icon-box">
 							<i class="bi bi-vector-pen"></i>
 							<h3>
-								<a href="">Văn học</a>
+								<a href="">Literature</a>
 							</h3>
 						</div>
 					</div>
@@ -83,7 +83,7 @@
 						<div class="icon-box">
 							<i class="bi bi-pencil-square"></i>
 							<h3>
-								<a href="">Tiểu thuyết</a>
+								<a href="">Light Novel</a>
 							</h3>
 						</div>
 					</div>
@@ -106,45 +106,44 @@
 
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Tổng quan</h2>
+				<h2>About us</h2>
 			</div>
 
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
-
 				<div class="row gy-4">
 					<div class="col-lg-6 order-1 order-lg-2">
-						<img src="${pageContext.request.contextPath}/assets/img/about.jpg" class="img-fluid" alt="">
+						<img src="${pageContext.request.contextPath}/assets/img/about.jpg" class="img-fluid" alt="About Us">
 					</div>
 					<div class="col-lg-6 order-2 order-lg-1 content">
-						<h3>Voluptatem dignissimos provident</h3>
-						<p class="fst-italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<h3>Welcome to G13</h3>
+						<p class="fst-italic">Your one-stop destination for books across all genres! Whether you’re looking for the latest bestsellers, timeless classics, or hidden gems, we’re here to help you find the perfect read.</p>
 						<ul>
 							<li>
 								<i class="bi bi-check2-all"></i>
-								<span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+								<span>Discover a curated selection of books that caters to every interest and age.</span>
 							</li>
 							<li>
 								<i class="bi bi-check2-all"></i>
-								<span>Duis aute irure dolor in reprehenderit in voluptate velit.</span>
+								<span>Connect with fellow book enthusiasts through our platform.</span>
 							</li>
 							<li>
 								<i class="bi bi-check2-all"></i>
-								<span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span>
+								<span>Explore categories, manage your favorites, and inspire a love for reading.</span>
 							</li>
 						</ul>
-						<p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</p>
+						<p>At G13, every book is a gateway to new worlds, and we’re thrilled to be part of your reading journey.</p>
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- /About Section -->
 
-		<!-- Tech Section -->
+		<!-- Client Section -->
 		<section id="clients" class="clients section">
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
 				<div class="swiper init-swiper">
-				
-					<!-- Tech Script -->
+
+					<!-- Client Script -->
 					<script type="application/json" class="swiper-config">
             {
               "loop": true,
@@ -224,42 +223,51 @@
 
 				<div class="row gy-4">
 					<div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
-						<img src="${pageContext.request.contextPath}/assets/img/features-bg.jpg" alt="">
+						<img src="${pageContext.request.contextPath}/assets/img/features-bg.jpg" alt="Features">
 					</div>
 					<div class="col-lg-6">
 
 						<div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
-							<i class="bi bi-archive flex-shrink-0"></i>
+							<i class="bi bi-bookmark-heart flex-shrink-0"></i>
 							<div>
-								<h4>Est labore ad</h4>
-								<p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+								<h4>Personalized Recommendations</h4>
+								<p>Discover books that match your interests based on your reading history and favorite genres.</p>
 							</div>
 						</div>
 						<!-- End Features Item-->
 
 						<div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
-							<i class="bi bi-basket flex-shrink-0"></i>
+							<i class="bi bi-collection flex-shrink-0"></i>
 							<div>
-								<h4>Harum esse qui</h4>
-								<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+								<h4>Extensive Book Collections</h4>
+								<p>Browse an extensive library of bestsellers, new releases, and timeless classics, all in one place.</p>
 							</div>
 						</div>
 						<!-- End Features Item-->
 
 						<div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
-							<i class="bi bi-broadcast flex-shrink-0"></i>
+							<i class="bi bi-cash-stack flex-shrink-0"></i>
 							<div>
-								<h4>Aut occaecati</h4>
-								<p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+								<h4>Exclusive Discounts & Deals</h4>
+								<p>Enjoy special discounts and deals on select titles, with new offers added regularly.</p>
 							</div>
 						</div>
 						<!-- End Features Item-->
 
 						<div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
-							<i class="bi bi-camera-reels flex-shrink-0"></i>
+							<i class="bi bi-star flex-shrink-0"></i>
 							<div>
-								<h4>Beatae veritatis</h4>
-								<p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+								<h4>Verified Customer Reviews</h4>
+								<p>Read honest reviews from our community to help you make the best choice for your next read.</p>
+							</div>
+						</div>
+						<!-- End Features Item-->
+
+						<div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="600">
+							<i class="bi bi-truck flex-shrink-0"></i>
+							<div>
+								<h4>Fast and Reliable Shipping</h4>
+								<p>Get your books delivered quickly and securely, with real-time order tracking available.</p>
 							</div>
 						</div>
 						<!-- End Features Item-->
@@ -272,281 +280,187 @@
 		</section>
 		<!-- /Features Section -->
 
-		<!-- Services Section -->
+		<!-- Top Gernes Section -->
 		<section id="services" class="services section">
 
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Danh mục</h2>
-				<p>Các thể loại sách nổi bật</p>
+				<h2>Top Genres</h2>
+				<p>Discover the most popular genres at our bookstore</p>
 			</div>
 			<!-- End Section Title -->
-
 			<div class="container">
-
 				<div class="row gy-4">
-
 					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
 						<div class="service-item position-relative">
 							<div class="icon">
-								<i class="bi bi-activity"></i>
+								<i class="bi bi-book-half"></i>
 							</div>
-							<a href="service-details.html" class="stretched-link">
-								<h3>Nesciunt Mete</h3>
+							<a href="genre-details.html" class="stretched-link">
+								<h3>Foreign</h3>
 							</a>
-							<p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+							<p>Explore a world of knowledge with foreign books from various cultures and authors around the globe.</p>
 						</div>
 					</div>
-					<!-- End Service Item -->
+					<!-- End Top Gernes Item -->
 
 					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
 						<div class="service-item position-relative">
 							<div class="icon">
-								<i class="bi bi-broadcast"></i>
+								<i class="bi bi-code-slash"></i>
 							</div>
-							<a href="service-details.html" class="stretched-link">
-								<h3>Eosle Commodi</h3>
+							<a href="genre-details.html" class="stretched-link">
+								<h3>IT</h3>
 							</a>
-							<p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+							<p>Stay updated with the latest advancements in technology, coding, and software development.</p>
 						</div>
 					</div>
-					<!-- End Service Item -->
+					<!-- End Top Gernes Item -->
 
 					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
 						<div class="service-item position-relative">
 							<div class="icon">
-								<i class="bi bi-easel"></i>
+								<i class="bi bi-lightbulb"></i>
 							</div>
-							<a href="service-details.html" class="stretched-link">
-								<h3>Ledo Markt</h3>
+							<a href="genre-details.html" class="stretched-link">
+								<h3>Life Skills</h3>
 							</a>
-							<p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+							<p>Enhance your personal and professional life with books on self-improvement, leadership, and communication.</p>
 						</div>
 					</div>
-					<!-- End Service Item -->
+					<!-- End Top Gernes Item -->
 
 					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
 						<div class="service-item position-relative">
 							<div class="icon">
-								<i class="bi bi-bounding-box-circles"></i>
+								<i class="bi bi-book"></i>
 							</div>
-							<a href="service-details.html" class="stretched-link">
-								<h3>Asperiores Commodit</h3>
+							<a href="genre-details.html" class="stretched-link">
+								<h3>Novel</h3>
 							</a>
-							<p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-							<a href="service-details.html" class="stretched-link"></a>
+							<p>Dive into captivating stories and complex characters in our collection of contemporary and classic novels.</p>
 						</div>
 					</div>
-					<!-- End Service Item -->
+					<!-- End Top Gernes Item -->
 
 					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
 						<div class="service-item position-relative">
 							<div class="icon">
-								<i class="bi bi-calendar4-week"></i>
+								<i class="bi bi-bookmark-star"></i>
 							</div>
-							<a href="service-details.html" class="stretched-link">
-								<h3>Velit Doloremque</h3>
+							<a href="genre-details.html" class="stretched-link">
+								<h3>Light Novel</h3>
 							</a>
-							<p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-							<a href="service-details.html" class="stretched-link"></a>
+							<p>Enjoy engaging, easy-to-read light novels that transport you to fantastical worlds with every page.</p>
 						</div>
 					</div>
-					<!-- End Service Item -->
+					<!-- End Top Gernes Item -->
 
 					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
 						<div class="service-item position-relative">
 							<div class="icon">
-								<i class="bi bi-chat-square-text"></i>
+								<i class="bi bi-pen"></i>
 							</div>
-							<a href="service-details.html" class="stretched-link">
-								<h3>Dolori Architecto</h3>
+							<a href="genre-details.html" class="stretched-link">
+								<h3>Literature</h3>
 							</a>
-							<p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-							<a href="service-details.html" class="stretched-link"></a>
+							<p>Experience the beauty of language and timeless themes in our curated literature collection.</p>
 						</div>
 					</div>
-					<!-- End Service Item -->
-
-				</div>
-
-			</div>
-
-		</section>
-		<!-- /Services Section -->
-
-		<!-- Call To Action Section -->
-		<section id="call-to-action" class="call-to-action section dark-background">
-
-			<img src="${pageContext.request.contextPath}/assets/img/cta-bg.jpg" alt="">
-
-			<div class="container">
-				<div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-					<div class="col-xl-10">
-						<div class="text-center">
-							<h3>Call To Action</h3>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							<a class="cta-btn" href="#">Call To Action</a>
-						</div>
-					</div>
+					<!-- End Top Gernes Item -->
 				</div>
 			</div>
-
 		</section>
-		<!-- /Call To Action Section -->
+		<!-- /Top Gernes Section -->
 
 		<!-- Portfolio Section -->
 		<section id="portfolio" class="portfolio section">
 
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Sản phẩm</h2>
-				<p>Xem qua một số sản phẩm bán chạy</p>
+				<h2>Preview</h2>
+				<p>Check out some of our favorite books</p>
 			</div>
 			<!-- End Section Title -->
 
 			<div class="container">
-
 				<div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
 					<ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
 						<li data-filter="*" class="filter-active">All</li>
-						<li data-filter=".filter-app">App</li>
-						<li data-filter=".filter-product">Card</li>
-						<li data-filter=".filter-branding">Web</li>
+						<li data-filter=".filter-literature">Literature</li>
+						<li data-filter=".filter-it">IT</li>
+						<li data-filter=".filter-novel">Novel</li>
 					</ul>
 					<!-- End Portfolio Filters -->
 
 					<div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-literature">
 							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
-								<h4>App 1</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
+								<h4>Literature Book 1</h4>
+								<p>A classic tale of ...</p>
+								<a href="link-to-literature-book-1" title="More Details" class="details-link">
 									<i class="bi bi-link-45deg"></i>
 								</a>
 							</div>
 						</div>
 						<!-- End Portfolio Item -->
 
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-literature">
 							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
-								<h4>Product 1</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
+								<h4>Literature Book 2</h4>
+								<p>Exploring themes of ...</p>
+								<a href="link-to-literature-book-2" title="More Details" class="details-link">
 									<i class="bi bi-link-45deg"></i>
 								</a>
 							</div>
 						</div>
 						<!-- End Portfolio Item -->
 
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-it">
 							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
-								<h4>Branding 1</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
+								<h4>IT Book 1</h4>
+								<p>An essential guide to ...</p>
+								<a href="link-to-it-book-1" title="More Details" class="details-link">
 									<i class="bi bi-link-45deg"></i>
 								</a>
 							</div>
 						</div>
 						<!-- End Portfolio Item -->
 
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-it">
 							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
-								<h4>App 2</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
+								<h4>IT Book 2</h4>
+								<p>Understanding modern technologies ...</p>
+								<a href="link-to-it-book-2" title="More Details" class="details-link">
 									<i class="bi bi-link-45deg"></i>
 								</a>
 							</div>
 						</div>
 						<!-- End Portfolio Item -->
 
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-novel">
 							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
-								<h4>Product 2</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
+								<h4>Novel Book 1</h4>
+								<p>A gripping story of ...</p>
+								<a href="link-to-novel-book-1" title="More Details" class="details-link">
 									<i class="bi bi-link-45deg"></i>
 								</a>
 							</div>
 						</div>
 						<!-- End Portfolio Item -->
 
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-novel">
 							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
 							<div class="portfolio-info">
-								<h4>Branding 2</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>App 3</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Product 3</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-							<div class="portfolio-info">
-								<h4>Branding 3</h4>
-								<p>Lorem ipsum, dolor sit</p>
-								<a href="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link">
-									<i class="bi bi-zoom-in"></i>
-								</a>
-								<a href="portfolio-details.html" title="More Details" class="details-link">
+								<h4>Novel Book 2</h4>
+								<p>A journey through ...</p>
+								<a href="link-to-novel-book-2" title="More Details" class="details-link">
 									<i class="bi bi-link-45deg"></i>
 								</a>
 							</div>
@@ -555,129 +469,109 @@
 
 					</div>
 					<!-- End Portfolio Container -->
-
 				</div>
-
 			</div>
-
 		</section>
 		<!-- /Portfolio Section -->
 
 		<!-- Stats Section -->
 		<section id="stats" class="stats section">
-
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
-
 				<div class="row gy-4 align-items-center justify-content-between">
-
 					<div class="col-lg-5">
 						<img src="${pageContext.request.contextPath}/assets/img/stats-img.jpg" alt="" class="img-fluid">
 					</div>
-
 					<div class="col-lg-6">
-
-						<h3 class="fw-bold fs-2 mb-3">Voluptatem dignissimos provident quasi</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit</p>
-
+						<h3 class="fw-bold fs-2 mb-3">Our Bookstore at a Glance</h3>
+						<p>Explore our monthly performance and customer satisfaction data.</p>
 						<div class="row gy-4">
-
 							<div class="col-lg-6">
 								<div class="stats-item d-flex">
-									<i class="bi bi-emoji-smile flex-shrink-0"></i>
+									<i class="bi bi-book-half flex-shrink-0"></i>
 									<div>
-										<span data-purecounter-start="0" data-purecounter-end="2320" data-purecounter-duration="10" class="purecounter"></span>
+										<span data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="3" class="purecounter"></span>
 										<p>
-											<strong>Happy Clients</strong>
-											<span>consequuntur quae</span>
+											<strong>Books Sold</strong>
+											<span> per month</span>
 										</p>
 									</div>
 								</div>
 							</div>
 							<!-- End Stats Item -->
-
 							<div class="col-lg-6">
 								<div class="stats-item d-flex">
-									<i class="bi bi-journal-richtext flex-shrink-0"></i>
+									<i class="bi bi-currency-dollar flex-shrink-0"></i>
 									<div>
-										<span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+										<span data-purecounter-start="0" data-purecounter-end="75000" data-purecounter-duration="3" class="purecounter"></span>
 										<p>
-											<strong>Projects</strong>
-											<span>adipisci atque cum quia aut</span>
+											<strong>Monthly Income</strong>
+											<span> in USD</span>
 										</p>
 									</div>
 								</div>
 							</div>
 							<!-- End Stats Item -->
-
 							<div class="col-lg-6">
 								<div class="stats-item d-flex">
-									<i class="bi bi-headset flex-shrink-0"></i>
+									<i class="bi bi-star-fill flex-shrink-0"></i>
 									<div>
-										<span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+										<span data-purecounter-start="0" data-purecounter-end="4.8" data-purecounter-duration="3" class="purecounter"></span>
 										<p>
-											<strong>Hours Of Support</strong>
-											<span>aut commodi quaerat</span>
+											<strong>Customer Rating</strong>
+											<span> out of 5</span>
 										</p>
 									</div>
 								</div>
 							</div>
 							<!-- End Stats Item -->
-
 							<div class="col-lg-6">
 								<div class="stats-item d-flex">
-									<i class="bi bi-people flex-shrink-0"></i>
+									<i class="bi bi-arrow-repeat flex-shrink-0"></i>
 									<div>
-										<span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
+										<span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="3" class="purecounter"></span>
 										<p>
-											<strong>Hard Workers</strong>
-											<span>rerum asperiores dolor</span>
+											<strong>Returning Customers</strong>
+											<span> percentage</span>
 										</p>
 									</div>
 								</div>
 							</div>
 							<!-- End Stats Item -->
-
 						</div>
-
 					</div>
-
 				</div>
-
 			</div>
-
 		</section>
 		<!-- /Stats Section -->
 
-		<!-- Testimonials Section -->
+		<!-- Customer Review Section -->
 		<section id="testimonials" class="testimonials section dark-background">
-
 			<img src="${pageContext.request.contextPath}/assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
 
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
-
 				<div class="swiper init-swiper">
 					<script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+            </script>
 					<div class="swiper-wrapper">
 
 						<div class="swiper-slide">
 							<div class="testimonial-item">
 								<img src="${pageContext.request.contextPath}/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-								<h3>Saul Goodman</h3>
-								<h4>Ceo &amp; Founder</h4>
+								<h3>Anna Roberts</h3>
+								<h4>Verified Buyer</h4>
 								<div class="stars">
 									<i class="bi bi-star-fill"></i>
 									<i class="bi bi-star-fill"></i>
@@ -685,41 +579,33 @@
 									<i class="bi bi-star-fill"></i>
 									<i class="bi bi-star-fill"></i>
 								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
+								<p>"Incredible variety and top-notch customer service! My go-to bookstore every time!"</p>
 							</div>
 						</div>
-						<!-- End testimonial item -->
+						<!-- End customer review -->
 
 						<div class="swiper-slide">
 							<div class="testimonial-item">
 								<img src="${pageContext.request.contextPath}/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-								<h3>Sara Wilsson</h3>
-								<h4>Designer</h4>
+								<h3>Michael Smith</h3>
+								<h4>Frequent Shopper</h4>
 								<div class="stars">
 									<i class="bi bi-star-fill"></i>
 									<i class="bi bi-star-fill"></i>
 									<i class="bi bi-star-fill"></i>
 									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-half"></i>
 								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
+								<p>"Great collection of books, and always find something new. Delivery is prompt too!"</p>
 							</div>
 						</div>
-						<!-- End testimonial item -->
+						<!-- End customer review -->
 
 						<div class="swiper-slide">
 							<div class="testimonial-item">
 								<img src="${pageContext.request.contextPath}/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-								<h3>Jena Karlis</h3>
-								<h4>Store Owner</h4>
+								<h3>Emily Brown</h3>
+								<h4>New Customer</h4>
 								<div class="stars">
 									<i class="bi bi-star-fill"></i>
 									<i class="bi bi-star-fill"></i>
@@ -727,216 +613,181 @@
 									<i class="bi bi-star-fill"></i>
 									<i class="bi bi-star-fill"></i>
 								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
+								<p>"Amazing service! The book recommendations are spot on, and I love the user experience."</p>
 							</div>
 						</div>
-						<!-- End testimonial item -->
-
-						<div class="swiper-slide">
-							<div class="testimonial-item">
-								<img src="${pageContext.request.contextPath}/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-								<h3>Matt Brandon</h3>
-								<h4>Freelancer</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
-							</div>
-						</div>
-						<!-- End testimonial item -->
-
-						<div class="swiper-slide">
-							<div class="testimonial-item">
-								<img src="${pageContext.request.contextPath}/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-								<h3>John Larson</h3>
-								<h4>Entrepreneur</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-								</div>
-								<p>
-									<i class="bi bi-quote quote-icon-left"></i>
-									<span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-									<i class="bi bi-quote quote-icon-right"></i>
-								</p>
-							</div>
-						</div>
-						<!-- End testimonial item -->
+						<!-- End customer review -->
 
 					</div>
 					<div class="swiper-pagination"></div>
 				</div>
-
 			</div>
-
 		</section>
-		<!-- /Testimonials Section -->
+		<!-- /Customer Review Section -->
 
-		<!-- Team Section -->
+		<!-- Events Section -->
 		<section id="team" class="team section">
-
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Nhóm</h2>
-				<p>Thành viên nhóm</p>
+				<h2>Upcoming Events</h2>
+				<p>Don't miss out on our exciting events!</p>
 			</div>
 			<!-- End Section Title -->
 
 			<div class="container">
-
 				<div class="row gy-4">
-
-					<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-						<div class="team-member">
-							<div class="member-img">
-								<img src="${pageContext.request.contextPath}/assets/img/team/team-1.jpg" class="img-fluid" alt="">
-								<div class="social">
-									<a href="">
-										<i class="bi bi-twitter-x"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-facebook"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-instagram"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-linkedin"></i>
-									</a>
-								</div>
-							</div>
-							<div class="member-info">
-								<h4>Walter White</h4>
-								<span>Chief Executive Officer</span>
+					<!-- Event Item -->
+					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="100">
+						<div class="event-card">
+							<img src="${pageContext.request.contextPath}/assets/img/team/team-1.jpg" class="img-fluid" alt="Event Image">
+							<div class="event-details">
+								<h4>Book Launch: The Lost World</h4>
+								<p>
+									<strong>Date:</strong>
+									March 25, 2024
+								</p>
+								<p>
+									<strong>Location:</strong>
+									New York City
+								</p>
+								<p>Join us for the exciting launch of the latest book, "The Lost World," by author John Doe.</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
 							</div>
 						</div>
 					</div>
-					<!-- End Team Member -->
+					<!-- End Event Item -->
 
-					<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-						<div class="team-member">
-							<div class="member-img">
-								<img src="${pageContext.request.contextPath}/assets/img/team/team-2.jpg" class="img-fluid" alt="">
-								<div class="social">
-									<a href="">
-										<i class="bi bi-twitter-x"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-facebook"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-instagram"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-linkedin"></i>
-									</a>
-								</div>
-							</div>
-							<div class="member-info">
-								<h4>Sarah Jhonson</h4>
-								<span>Product Manager</span>
+					<!-- Event Item -->
+					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="200">
+						<div class="event-card">
+							<img src="${pageContext.request.contextPath}/assets/img/team/team-2.jpg" class="img-fluid" alt="Event Image">
+							<div class="event-details">
+								<h4>Author Meet-and-Greet</h4>
+								<p>
+									<strong>Date:</strong>
+									April 10, 2024
+								</p>
+								<p>
+									<strong>Location:</strong>
+									Virtual (Zoom)
+								</p>
+								<p>Meet your favorite author, Sarah Johnson, and ask her about her creative process.</p>
+								<a href="#" class="btn btn-primary">Register Now</a>
 							</div>
 						</div>
 					</div>
-					<!-- End Team Member -->
+					<!-- End Event Item -->
 
-					<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-						<div class="team-member">
-							<div class="member-img">
-								<img src="${pageContext.request.contextPath}/assets/img/team/team-3.jpg" class="img-fluid" alt="">
-								<div class="social">
-									<a href="">
-										<i class="bi bi-twitter-x"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-facebook"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-instagram"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-linkedin"></i>
-									</a>
-								</div>
-							</div>
-							<div class="member-info">
-								<h4>William Anderson</h4>
-								<span>CTO</span>
+					<!-- Event Item -->
+					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="300">
+						<div class="event-card">
+							<img src="${pageContext.request.contextPath}/assets/img/team/team-3.jpg" class="img-fluid" alt="Event Image">
+							<div class="event-details">
+								<h4>Book Discussion: The Great Adventure</h4>
+								<p>
+									<strong>Date:</strong>
+									May 5, 2024
+								</p>
+								<p>
+									<strong>Location:</strong>
+									Online Webinar
+								</p>
+								<p>Join us for an engaging discussion on the book, "The Great Adventure," with fellow book lovers.</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
 							</div>
 						</div>
 					</div>
-					<!-- End Team Member -->
-
-					<div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-						<div class="team-member">
-							<div class="member-img">
-								<img src="${pageContext.request.contextPath}/assets/img/team/team-4.jpg" class="img-fluid" alt="">
-								<div class="social">
-									<a href="">
-										<i class="bi bi-twitter-x"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-facebook"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-instagram"></i>
-									</a>
-									<a href="">
-										<i class="bi bi-linkedin"></i>
-									</a>
-								</div>
-							</div>
-							<div class="member-info">
-								<h4>Amanda Jepson</h4>
-								<span>Accountant</span>
-							</div>
-						</div>
-					</div>
-					<!-- End Team Member -->
-
+					<!-- End Event Item -->
 				</div>
-
 			</div>
-
 		</section>
-		<!-- /Team Section -->
+		<!-- /Events Section -->
 
-		<!-- Contact Section -->
-		<section id="contact" class="contact section">
-
+		<!-- Subscription Plans Section -->
+		<section id="subscription-plans" class="subscription-plans section">
 			<!-- Section Title -->
 			<div class="container section-title" data-aos="fade-up">
-				<h2>Liên hệ</h2>
-				<p>Địa chỉ của shop</p>
+				<h2 class="text-start">Subscription</h2>
+				<p class="text-start">Enjoy exclusive benefits now!</p>
 			</div>
 			<!-- End Section Title -->
 
-			<div class="container" data-aos="fade-up" data-aos-delay="100">
+			<div class="container">
+				<div class="row gy-4 justify-content-center">
+					<!-- Plan Item -->
+					<div class="col-lg-4 col-md-6 plan-item" data-aos="fade-up" data-aos-delay="100">
+						<div class="plan-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
+							<h3>Basic Plan</h3>
+							<p class="price">$1.99/month</p>
+							<ul class="text-start">
+								<li>5% discount on all books</li>
+								<li>1 free book every 3 months</li>
+								<li>Exclusive newsletter updates</li>
+							</ul>
+							<div class="d-flex justify-content-center mt-auto">
+								<a href="#" class="btn btn-primary">Join Now</a>
+							</div>
+						</div>
+					</div>
+					<!-- End Plan Item -->
 
+					<!-- Plan Item -->
+					<div class="col-lg-4 col-md-6 plan-item" data-aos="fade-up" data-aos-delay="200">
+						<div class="plan-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
+							<h3>Standard Plan</h3>
+							<p class="price">$4.99/month</p>
+							<ul class="text-start">
+								<li>10% discount on all books</li>
+								<li>2 free books every 3 months</li>
+								<li>Exclusive newsletters with book recommendations</li>
+								<li>Access to limited-time promotions</li>
+							</ul>
+							<div class="d-flex justify-content-center mt-auto">
+								<a href="#" class="btn btn-primary">Join Now</a>
+							</div>
+						</div>
+					</div>
+					<!-- End Plan Item -->
+
+					<!-- Plan Item -->
+					<div class="col-lg-4 col-md-6 plan-item" data-aos="fade-up" data-aos-delay="300">
+						<div class="plan-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
+							<h3>Premium Plan</h3>
+							<p class="price">$9.99/month</p>
+							<ul class="text-start">
+								<li>15% discount on all books</li>
+								<li>1 free book every month</li>
+								<li>Exclusive newsletters with personalized book recommendations</li>
+								<li>Priority access to new releases</li>
+								<li>Free shipping on all orders</li>
+							</ul>
+							<div class="d-flex justify-content-center mt-auto">
+								<a href="#" class="btn btn-primary">Join Now</a>
+							</div>
+						</div>
+					</div>
+					<!-- End Plan Item -->
+				</div>
+			</div>
+		</section>
+		<!-- /Subscription Plans Section -->
+
+		<!-- Contact Section -->
+		<section id="contact" class="contact section">
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>Contact</h2>
+				<p>Contact us if you need help</p>
+			</div>
+			<!-- End Section Title -->
+			<div class="container" data-aos="fade-up" data-aos-delay="100">
 				<div class="mb-4" data-aos="fade-up" data-aos-delay="200">
 					<iframe style="border: 0; width: 100%; height: 270px;"
 						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
 						frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 				<!-- End Google Maps -->
-
 				<div class="row gy-4">
-
 					<div class="col-lg-4">
 						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
 							<i class="bi bi-geo-alt flex-shrink-0"></i>
@@ -946,7 +797,6 @@
 							</div>
 						</div>
 						<!-- End Info Item -->
-
 						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
 							<i class="bi bi-telephone flex-shrink-0"></i>
 							<div>
@@ -955,7 +805,6 @@
 							</div>
 						</div>
 						<!-- End Info Item -->
-
 						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
 							<i class="bi bi-envelope flex-shrink-0"></i>
 							<div>
@@ -964,59 +813,45 @@
 							</div>
 						</div>
 						<!-- End Info Item -->
-
 					</div>
-
 					<div class="col-lg-8">
 						<form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
 							<div class="row gy-4">
-
 								<div class="col-md-6">
 									<input type="text" name="name" class="form-control" placeholder="Your Name" required="">
 								</div>
-
 								<div class="col-md-6 ">
 									<input type="email" class="form-control" name="email" placeholder="Your Email" required="">
 								</div>
-
 								<div class="col-md-12">
 									<input type="text" class="form-control" name="subject" placeholder="Subject" required="">
 								</div>
-
 								<div class="col-md-12">
 									<textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
 								</div>
-
 								<div class="col-md-12 text-center">
 									<div class="loading">Loading</div>
 									<div class="error-message"></div>
 									<div class="sent-message">Your message has been sent. Thank you!</div>
-
 									<button type="submit">Send Message</button>
 								</div>
-
 							</div>
 						</form>
 					</div>
 					<!-- End Contact Form -->
-
 				</div>
-
 			</div>
-
 		</section>
 		<!-- /Contact Section -->
-
 	</main>
 
 	<footer id="footer" class="footer dark-background">
-
 		<div class="footer-top">
 			<div class="container">
 				<div class="row gy-4">
 					<div class="col-lg-4 col-md-6 footer-about">
 						<a href="${pageContext.request.contextPath}/Dashboard/index.jsp" class="logo d-flex align-items-center">
-							<span class="sitename">GP</span>
+							<span class="sitename">G13</span>
 						</a>
 						<div class="footer-contact pt-3">
 							<p>A108 Adam Street</p>
@@ -1051,7 +886,7 @@
 						<ul>
 							<li>
 								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Home</a>
+								<a href="TrangChu.jsp"> Home</a>
 							</li>
 							<li>
 								<i class="bi bi-chevron-right"></i>
@@ -1116,6 +951,7 @@
 			</div>
 		</div>
 
+		<!--
 		<div class="copyright">
 			<div class="container text-center">
 				<p>
@@ -1124,18 +960,13 @@
 					<strong class="px-1 sitename">GP</strong>
 					<span>All Rights Reserved</span>
 				</p>
-
-				<!-- 
 				<div class="credits">
-					 
 					Designed by
-					<a href="https://bootstrapmade.com/">BootstrapMade</a>
-					
+					<a href="https://bootstrapmade.com/">BootstrapMade</a>			
 				</div>
-				-->
-
 			</div>
 		</div>
+		-->
 
 	</footer>
 
@@ -1159,7 +990,5 @@
 
 	<!-- Main JS File -->
 	<script src="${pageContext.request.contextPath}/assets/js/GpMain.js"></script>
-
 </body>
-
 </html>
