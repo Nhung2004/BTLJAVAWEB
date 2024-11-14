@@ -57,6 +57,191 @@
 		</section>
 		<!-- /Blank Section -->
 
+
+
+
+
+
+
+		<section>
+			<div class="container">
+				<div class="row">
+					<!-- Sidebar Left (Sản Phẩm Bán Chạy Nhất và Sản Phẩm Được Yêu Thích Nhất) -->
+					<div class="col-3 p-3 rounded shadow-sm bg-light mb-4">
+						<!-- Sản Phẩm Bán Chạy Nhất -->
+						<div class="list-group mb-4">
+							<a href="#" class="list-group-item list-group-item-action text-center font-weight-bold text-dark mb-2" style="background-color: #ffc107; color: #fff;"> Sản Phẩm Bán Chạy Nhất </a>
+							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+								Sách Ngoại Ngữ
+								<span class="badge badge-pill">12</span>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+								Sách Giáo Khoa
+								<span class="badge badge-pill">8</span>
+							</a>
+							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+								Sách Học Sinh
+								<span class="badge badge-pill">15</span>
+							</a>
+							<a class="list-group-item list-group-item-action text-muted text-center disabled" aria-disabled="true" style="background-color: #e9ecef;"> Áo zin </a>
+						</div>
+
+						<!-- Sản Phẩm Được Yêu Thích Nhất -->
+						<div class="list-group">
+							<h5 class="text-center font-weight-bold mb-3 text-danger">Sản Phẩm Được Yêu Thích Nhất</h5>
+							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
+								<span class="heart-icon">❤️</span>
+								Sách Tiếng Anh
+							</a>
+							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
+								<span class="heart-icon">❤️</span>
+								Sách Kỹ Năng
+							</a>
+							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
+								<span class="heart-icon">❤️</span>
+								Sách Truyện Tranh
+							</a>
+							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
+								<span class="heart-icon">❤️</span>
+								Tiểu Thuyết
+							</a>
+						</div>
+					</div>
+
+					<!-- Carousel (Right Side) -->
+					<div class="col-9">
+						<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
+							<div class="carousel-inner">
+								<div class="carousel-item active">
+									<img src="${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg" class="d-block w-100" alt="Hero">
+								</div>
+								<div class="carousel-item">
+									<img src="${pageContext.request.contextPath}/assets/img/background/FeatureBG.jpg" class="d-block w-100" alt="Hero">
+								</div>
+								<div class="carousel-item">
+									<img src="${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg" class="d-block w-100" alt="Hero">
+								</div>
+							</div>
+							<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Previous</span>
+							</button>
+							<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="visually-hidden">Next</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<style>
+/* Cải tiến mục Sản Phẩm Bán Chạy Nhất */
+.list-group-item {
+	background-color: #f8f9fa;
+	color: #007bff;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.list-group-item:hover {
+	background-color: #0056b3 !important;
+	color: #fff !important;
+}
+
+.badge-pill {
+	background-color: #007bff;
+	color: #fff;
+}
+
+.list-group-item:hover .badge-pill {
+	background-color: #ffc107 !important;
+}
+
+/* Cải tiến mục Sản Phẩm Được Yêu Thích Nhất */
+.favorite-item {
+	background-color: #fff5f5;
+	color: #007bff;
+	border: 1px solid #ffd1dc;
+	transition: all 0.3s ease;
+}
+
+.favorite-item:hover {
+	background-color: #ffebeb;
+	color: #dc3545;
+}
+
+.heart-icon {
+	color: #ff4d4d;
+	font-size: 20px;
+	margin-right: 10px;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.favorite-item:hover .heart-icon {
+	transform: scale(1.2);
+	color: #dc3545;
+	filter: drop-shadow(0 0 5px #ff4d4d); /* Thêm ánh sáng */
+}
+</style>
+
+		<section>
+			<div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
+					<div class="icon-box">
+						<i class="bi bi-journal-bookmark"></i>
+						<h3>
+							<a href="SanPham.jsp">Foreign</a>
+						</h3>
+					</div>
+				</div>
+
+				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
+					<div class="icon-box">
+						<i class="bi bi-motherboard"></i>
+						<h3>
+							<a href="">ITs</a>
+						</h3>
+					</div>
+				</div>
+
+				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
+					<div class="icon-box">
+						<i class="bi bi-vector-pen"></i>
+						<h3>
+							<a href="">Literature</a>
+						</h3>
+					</div>
+				</div>
+
+				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
+					<div class="icon-box">
+						<i class="bi bi-pencil-square"></i>
+						<h3>
+							<a href="">Light Novel</a>
+						</h3>
+					</div>
+				</div>
+
+				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
+					<div class="icon-box">
+						<i class="bi bi-gem"></i>
+						<h3>
+							<a href="">Life Skill</a>
+						</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
 		<!-- About Section -->
 		<section id="about" class="about section">
 
@@ -68,7 +253,7 @@
 			<div class="container" data-aos="fade-up" data-aos-delay="100">
 				<div class="row gy-4">
 					<div class="col-lg-6 order-1 order-lg-2">
-						<img src="${pageContext.request.contextPath}/assets/img/about.jpg" class="img-fluid" alt="About Us">
+						<img src="${pageContext.request.contextPath}/assets/img/about/About.jpg" class="img-fluid" alt="About Us">
 					</div>
 					<div class="col-lg-6 order-2 order-lg-1 content">
 						<h3>Welcome to G13</h3>
@@ -179,7 +364,7 @@
 
 				<div class="row gy-4">
 					<div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
-						<img src="${pageContext.request.contextPath}/assets/img/features-bg.jpg" alt="Features">
+						<img src="${pageContext.request.contextPath}/assets/img/background/FeatureBG.jpg" alt="Features">
 					</div>
 					<div class="col-lg-6">
 
@@ -352,7 +537,7 @@
 					<div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-literature" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
+							<img src="${pageContext.request.contextPath}/assets/img/books/Literature/2024_06_11_10_32_29_1-390x510.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
 							<div class="portfolio-info">
 								<h4>Literature Book 1</h4>
 								<p>A classic tale of ...</p>
@@ -364,7 +549,7 @@
 						<!-- End Portfolio Item -->
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-literature" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
+							<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935212358279.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
 							<div class="portfolio-info">
 								<h4>Literature Book 2</h4>
 								<p>Exploring themes of ...</p>
@@ -376,7 +561,7 @@
 						<!-- End Portfolio Item -->
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-it" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
+							<img src="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
 							<div class="portfolio-info">
 								<h4>IT Book 1</h4>
 								<p>An essential guide to ...</p>
@@ -388,7 +573,7 @@
 						<!-- End Portfolio Item -->
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-it" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
+							<img src="${pageContext.request.contextPath}/assets/img/books/IT/tin-hoc-van-phong-cong-thuc-ham.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
 							<div class="portfolio-info">
 								<h4>IT Book 2</h4>
 								<p>Understanding modern technologies ...</p>
@@ -400,7 +585,7 @@
 						<!-- End Portfolio Item -->
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-novel" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
+							<img src="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
 							<div class="portfolio-info">
 								<h4>Novel Book 1</h4>
 								<p>A gripping story of ...</p>
@@ -412,7 +597,7 @@
 						<!-- End Portfolio Item -->
 
 						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-novel" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
+							<img src="${pageContext.request.contextPath}/assets/img/books/Novel/chu-cho-tu-than-bia_94a9c90f42db.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
 							<div class="portfolio-info">
 								<h4>Novel Book 2</h4>
 								<p>A journey through ...</p>
