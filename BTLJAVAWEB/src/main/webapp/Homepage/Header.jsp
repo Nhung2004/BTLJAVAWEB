@@ -25,7 +25,7 @@
 					</a>
 					<ul>
 						<li class="dropdown">
-							<a href="#">
+							<a href="TrangChu.jsp#bestseller">
 								<span>Best Sellers</span>
 								<i class="bi bi-chevron-down toggle-dropdown"></i>
 							</a>
