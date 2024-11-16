@@ -139,53 +139,119 @@
 
 
 		<style>
-/* Cải tiến mục Sản Phẩm Bán Chạy Nhất */
+/* Cải tiến Sản Phẩm Bán Chạy Nhất */
 .list-group-item {
-	background-color: #f8f9fa;
-	color: #007bff;
-	transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #f8f9fa;
+    color: #007bff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .list-group-item:hover {
-	background-color: #0056b3 !important;
-	color: #fff !important;
+    background-color: #0056b3 !important;
+    color: #fff !important;
 }
 
 .badge-pill {
-	background-color: #007bff;
-	color: #fff;
+    background-color: #007bff;
+    color: #fff;
 }
 
 .list-group-item:hover .badge-pill {
-	background-color: #ffc107 !important;
+    background-color: #ffc107 !important;
 }
 
-/* Cải tiến mục Sản Phẩm Được Yêu Thích Nhất */
+/* Cải tiến Sản Phẩm Được Yêu Thích Nhất */
 .favorite-item {
-	background-color: #fff5f5;
-	color: #007bff;
-	border: 1px solid #ffd1dc;
-	transition: all 0.3s ease;
+    background-color: #fff5f5;
+    color: #007bff;
+    border: 1px solid #ffd1dc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .favorite-item:hover {
-	background-color: #ffebeb;
-	color: #dc3545;
+    background-color: #ffebeb;
+    color: #dc3545;
 }
 
 .heart-icon {
-	color: #ff4d4d;
-	font-size: 20px;
-	margin-right: 10px;
-	transition: transform 0.3s ease, color 0.3s ease;
+    color: #ff4d4d;
+    font-size: 20px;
+    margin-right: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .favorite-item:hover .heart-icon {
-	transform: scale(1.2);
-	color: #dc3545;
-	filter: drop-shadow(0 0 5px #ff4d4d); /* Thêm ánh sáng */
+    transform: scale(1.2);
+    color: #dc3545;
+    filter: drop-shadow(0 0 5px #ff4d4d);
+}
+
+/* Cải tiến cho icon-box */
+.icon-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #e3e6f0;
+}
+
+.icon-box i {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.icon-box h3 a {
+    color: #343a40;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.icon-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.icon-box:hover i {
+    color: #0056b3;
+}
+
+.icon-box:hover h3 a {
+    color: #0056b3;
 }
 </style>
+
+<style>
+/* Cải tiến Carousel */
+.carousel-item img {
+    border-radius: 15px; /* Bo góc ảnh */
+    border: 2px solid #dee2e6; /* Viền xám nhạt */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Bóng đổ cho ảnh */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi hover */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ khi hover */
+}
+</style>
+
+
+
+
+
+
+
+
 
 		<section>
 			<div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
