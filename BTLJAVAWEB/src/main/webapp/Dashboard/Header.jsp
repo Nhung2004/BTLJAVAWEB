@@ -1,10 +1,11 @@
+<!-- Tách riêng Header của trang Dashboard ra để tiện quản lý và sửa đổi -->
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
 
 	<div class="d-flex align-items-center justify-content-between">
-		<a href="index.jsp" class="logo d-flex align-items-center">
+		<a href="Index.jsp" class="logo d-flex align-items-center">
 			<img src="../assets/img/logo.png" alt="">
 			<span class="d-none d-lg-block">NiceAdmin</span>
 		</a>
@@ -201,7 +202,7 @@
 					</li>
 
 					<li>
-						<a class="dropdown-item d-flex align-items-center" href="users-profile.jsp">
+						<a class="dropdown-item d-flex align-items-center" href="Profile.jsp">
 							<i class="bi bi-person"></i>
 							<span>My Profile</span>
 						</a>
@@ -211,19 +212,9 @@
 					</li>
 
 					<li>
-						<a class="dropdown-item d-flex align-items-center" href="users-profile.jsp">
+						<a class="dropdown-item d-flex align-items-center" href="Profile.jsp">
 							<i class="bi bi-gear"></i>
 							<span>Account Settings</span>
-						</a>
-					</li>
-					<li>
-						<hr class="dropdown-divider">
-					</li>
-
-					<li>
-						<a class="dropdown-item d-flex align-items-center" href="pages-faq.jsp">
-							<i class="bi bi-question-circle"></i>
-							<span>Need Help?</span>
 						</a>
 					</li>
 					<li>

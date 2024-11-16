@@ -313,19 +313,19 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		try
 		{
-			// Step 1: Get a connection from the pool
+			// Bước 1: Lấy kết nối từ ConnectionPool
 			con = connectionPool.getConnection("kiemTraTenDangNhap");
 
-			// Step 2: Create a statement
+			// Bước 2: Tạo đối tượng Statement
 			String            sql = "SELECT * FROM KhachHang WHERE tendangnhap = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, tenDangNhap);
 
-			// Step 3: Execute the SQL query
-			System.out.println(sql);
+			// Bước 3: Thực thi câu lệnh SQL
+			System.out.println(sql); // In câu lệnh ra console để tiện check lỗi
 			ResultSet rs = st.executeQuery();
 
-			// Step 4: Check if the result set has any data
+			// Bước 4: Duyệt kết quả trả về
 			if(rs.next())
 			{
 				ketQua = true;
@@ -337,7 +337,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			e.printStackTrace();
 		} finally
 		{
-			// Step 5: Return the connection to the pool
+			// Bước 5: Trả lại kết nối về ConnectionPool
 			if(con != null)
 			{
 				try

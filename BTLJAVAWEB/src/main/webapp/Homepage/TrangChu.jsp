@@ -19,7 +19,7 @@
 <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
 <link
 	href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-	rel="stylesheet">     
+	rel="stylesheet">
 
 <!-- Vendor CSS Files -->
 <link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -141,107 +141,108 @@
 		<style>
 /* Cải tiến Sản Phẩm Bán Chạy Nhất */
 .list-group-item {
-    background-color: #f8f9fa;
-    color: #007bff;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	background-color: #f8f9fa;
+	color: #007bff;
+	border: 1px solid #dee2e6;
+	border-radius: 5px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .list-group-item:hover {
-    background-color: #0056b3 !important;
-    color: #fff !important;
+	background-color: #0056b3 !important;
+	color: #fff !important;
 }
 
 .badge-pill {
-    background-color: #007bff;
-    color: #fff;
+	background-color: #007bff;
+	color: #fff;
 }
 
 .list-group-item:hover .badge-pill {
-    background-color: #ffc107 !important;
+	background-color: #ffc107 !important;
 }
 
 /* Cải tiến Sản Phẩm Được Yêu Thích Nhất */
 .favorite-item {
-    background-color: #fff5f5;
-    color: #007bff;
-    border: 1px solid #ffd1dc;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+	background-color: #fff5f5;
+	color: #007bff;
+	border: 1px solid #ffd1dc;
+	border-radius: 5px;
+	transition: all 0.3s ease;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .favorite-item:hover {
-    background-color: #ffebeb;
-    color: #dc3545;
+	background-color: #ffebeb;
+	color: #dc3545;
 }
 
 .heart-icon {
-    color: #ff4d4d;
-    font-size: 20px;
-    margin-right: 10px;
-    transition: transform 0.3s ease, color 0.3s ease;
+	color: #ff4d4d;
+	font-size: 20px;
+	margin-right: 10px;
+	transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .favorite-item:hover .heart-icon {
-    transform: scale(1.2);
-    color: #dc3545;
-    filter: drop-shadow(0 0 5px #ff4d4d);
+	transform: scale(1.2);
+	color: #dc3545;
+	filter: drop-shadow(0 0 5px #ff4d4d);
 }
 
 /* Cải tiến cho icon-box */
 .icon-box {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 2px solid #e3e6f0;
+	background-color: #f8f9fa;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	border: 2px solid #e3e6f0;
 }
 
 .icon-box i {
-    font-size: 40px;
-    color: #007bff;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
+	font-size: 40px;
+	color: #007bff;
+	margin-bottom: 10px;
+	transition: color 0.3s ease;
 }
 
 .icon-box h3 a {
-    color: #343a40;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
+	color: #343a40;
+	font-weight: bold;
+	text-decoration: none;
+	transition: color 0.3s ease;
 }
 
 .icon-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+	transform: scale(1.05);
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .icon-box:hover i {
-    color: #0056b3;
+	color: #0056b3;
 }
 
 .icon-box:hover h3 a {
-    color: #0056b3;
+	color: #0056b3;
 }
 </style>
 
-<style>
+		<style>
 /* Cải tiến Carousel */
 .carousel-item img {
-    border-radius: 15px; /* Bo góc ảnh */
-    border: 2px solid #dee2e6; /* Viền xám nhạt */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Bóng đổ cho ảnh */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+	border-radius: 15px; /* Bo góc ảnh */
+	border: 2px solid #dee2e6; /* Viền xám nhạt */
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Bóng đổ cho ảnh */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .carousel-item img:hover {
-    transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi hover */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ khi hover */
+	transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi hover */
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+	/* Tăng bóng đổ khi hover */
 }
 </style>
 
@@ -680,155 +681,7 @@
 			</div>
 		</section>
 		<!-- /Preview Section -->
-				<!-- Bestseller section -->
-		<section id="bestseller" class="bestseller section">
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-        <h2>Bestsellers</h2>
-        <p>Discover our top-selling books and don't miss out!</p>
-    </div>
-    <!-- End Section Title -->
 
-    <div class="container">
-        <div class="row gy-4">
-            <!-- Bestseller Item -->
-            <div class="col-lg-4 col-md-6 bestseller-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="bestseller-card text-left border p-4 d-flex flex-column" style="height: 100%; min-height: 500px; border-radius: 20px;">
-                    <div class="img-container" style="height: 300px; overflow: hidden; border-radius: 15px;">
-                        <img src="${pageContext.request.contextPath}/assets/img/books/Literature/2024_06_11_10_32_29_1-390x510.jpg" alt="The Lost World" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                    </div>
-                    <h3 class="mt-3" style="font-weight: 600; font-size: 1.2em; color: #333;">The Lost World</h3>
-                    <div class="price-section mt-3">
-                        <p class="price fw-bold text-danger" style="font-size: 1.5em;">$15.99</p>
-                        <p class="discount-badge text-white d-inline-block" style="background-color: red; padding: 6px 12px; border-radius: 5px; font-size: 0.9em;">20% OFF</p>
-                        <p class="text-muted mt-2" style="text-decoration: line-through; font-size: 1em;">$19.99</p>
-                        <p class="sold text-muted mt-2" style="font-size: 0.9em;">Sold: 500</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End Bestseller Item -->
-
-            <!-- Bestseller Item -->
-            <div class="col-lg-4 col-md-6 bestseller-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="bestseller-card text-left border p-4 d-flex flex-column" style="height: 100%; min-height: 500px; border-radius: 20px;">
-                    <div class="img-container" style="height: 300px; overflow: hidden; border-radius: 15px;">
-                        <img src="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" alt="The Lost River" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                    </div>
-                    <h3 class="mt-3" style="font-weight: 600; font-size: 1.2em; color: #333;">The Lost River</h3>
-                    <div class="price-section mt-3">
-                        <p class="price fw-bold text-danger" style="font-size: 1.5em;">$11.99</p>
-                        <p class="discount-badge text-white d-inline-block" style="background-color: red; padding: 6px 12px; border-radius: 5px; font-size: 0.9em;">40% OFF</p>
-                        <p class="text-muted mt-2" style="text-decoration: line-through; font-size: 1em;">$19.99</p>
-                        <p class="sold text-muted mt-2" style="font-size: 0.9em;">Sold: 350</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End Bestseller Item -->
-
-            <!-- Bestseller Item -->
-            <div class="col-lg-4 col-md-6 bestseller-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="bestseller-card text-left border p-4 d-flex flex-column" style="height: 100%; min-height: 500px; border-radius: 20px;">
-                    <div class="img-container" style="height: 300px; overflow: hidden; border-radius: 15px;">
-                        <img src="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" alt="The Great Adventure" class="img-fluid w-100 h-100" style="object-fit: cover;">
-                    </div>
-                    <h3 class="mt-3" style="font-weight: 600; font-size: 1.2em; color: #333;">The Great Adventure</h3>
-                    <div class="price-section mt-3">
-                        <p class="price fw-bold text-danger" style="font-size: 1.5em;">$21.99</p>
-                        <p class="discount-badge text-white d-inline-block" style="background-color: red; padding: 6px 12px; border-radius: 5px; font-size: 0.9em;">12% OFF</p>
-                        <p class="text-muted mt-2" style="text-decoration: line-through; font-size: 1em;">$24.99</p>
-                        <p class="sold text-muted mt-2" style="font-size: 0.9em;">Sold: 200</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End Bestseller Item -->
-        </div>
-
-        <!-- View More Button -->
-        <div class="d-flex justify-content-end mt-4">
-            <a href="#" class="btn view-more-btn">View More Bestsellers</a>
-        </div>
-    </div>
-</section>
-<style>
-/* General Button Styling */
-.view-more-btn {
-    background: linear-gradient(90deg, #f56e6a, #f1b8b4);
-    color: white;
-    font-weight: bold;
-    font-size: 1.2em;
-    border: none;
-    border-radius: 50px;
-    padding: 12px 30px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-transform: uppercase;
-}
-
-/* Hover Effects */
-.view-more-btn:hover {
-    background: linear-gradient(90deg, #f1b8b4, #f56e6a);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
-}
-
-/* Bestseller Card Improvements */
-.bestseller-card {
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #fff;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.bestseller-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Discount Badge */
-.discount-badge {
-    display: inline-block;
-    font-size: 0.9em;
-    font-weight: bold;
-}
-
-/* Price Section */
-.price-section p {
-    margin: 0;
-}
-
-.price-section .price {
-    margin-bottom: 5px;
-}
-
-/* Product Info Styling */
-.bestseller-card h3 {
-    font-size: 1.3em;
-    color: #333;
-}
-
-.bestseller-card .sold {
-    color: #999;
-    font-size: 0.9em;
-}
-
-/* Image Container Styling */
-.img-container {
-    position: relative;
-    height: 250px;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-.img-container img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-}
-
-
-</style>
-		<!-- End Bestseller  -->
 		<!-- Stats Section -->
 		<section id="stats" class="stats section">
 			<div class="container" data-aos="fade-up" data-aos-delay="100">

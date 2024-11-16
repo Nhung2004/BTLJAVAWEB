@@ -57,7 +57,7 @@ public class DangNhap extends HttpServlet {
 	        url = "/Homepage/TrangChu.jsp";  // Chuyển đến trang chủ khi đăng nhập thành công
 	    } else {
 	        request.setAttribute("baoloi", "Tên đăng nhập hoặc mật khẩu không đúng");
-	        url = "/Homepage/DangNhapp.jsp";  // Quay lại trang đăng nhập nếu sai thông tin
+	        url = "/Homepage/DangNhap.jsp";  // Quay lại trang đăng nhập nếu sai thông tin
 	    }
 
 	    RequestDispatcher rd = getServletContext().getRequestDispatcher(url);

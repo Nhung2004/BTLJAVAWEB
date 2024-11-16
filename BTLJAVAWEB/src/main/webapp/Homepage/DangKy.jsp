@@ -53,125 +53,125 @@
 	%>
 
 	<section class="vh-100" style="background-color: #eee;">
-  <div class="container h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-lg-12 col-xl-11">
-        <div class="card text-black" style="border-radius: 25px;">
-          <div class="card-body p-md-5">
-            <div class="row justify-content-center">
-              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                <h1 class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4">Đăng Ký Tài Khoản</h1>
+		<div class="container h-100">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-lg-12 col-xl-11">
+					<div class="card text-black" style="border-radius: 25px;">
+						<div class="card-body p-md-5">
+							<div class="row justify-content-center">
+								<div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+									<h1 class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4">Đăng Ký Tài Khoản</h1>
 
-                <form class="mx-1 mx-md-4" action="${pageContext.request.contextPath}/dang-ky" method="get">
+									<form class="mx-1 mx-md-4" action="${pageContext.request.contextPath}/dang-ky" method="get">
 
-                  <!-- Tên đăng nhập -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="tendangnhap">Tên Đăng Nhập</label>
-                    <input class="form-control" type="text" id="tendangnhap" name="tendangnhap" required value="<%=tendangnhap%>">
-                  </div>
+										<!-- Tên đăng nhập -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="tendangnhap">Tên Đăng Nhập</label>
+											<input class="form-control" type="text" id="tendangnhap" name="tendangnhap" required value="<%=tendangnhap%>">
+										</div>
 
-                  <!-- Mật khẩu -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="matkhau">Mật Khẩu</label>
-                    <input class="form-control" type="password" id="matkhau" name="matkhau" required onkeyup="kiemtramatkhau()">
-                  </div>
+										<!-- Mật khẩu -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="matkhau">Mật Khẩu</label>
+											<input class="form-control" type="password" id="matkhau" name="matkhau" required onkeyup="kiemtramatkhau()">
+										</div>
 
-                  <!-- Nhập lại mật khẩu -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="nhaplaimatkhau">Nhập Lại Mật Khẩu</label>
-                    <input class="form-control" type="password" id="nhaplaimatkhau" name="nhaplaimatkhau" required onkeyup="kiemtramatkhau()">
-                    <span id="msg"></span>
-                  </div>
+										<!-- Nhập lại mật khẩu -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="nhaplaimatkhau">Nhập Lại Mật Khẩu</label>
+											<input class="form-control" type="password" id="nhaplaimatkhau" name="nhaplaimatkhau" required onkeyup="kiemtramatkhau()">
+											<span id="msg"></span>
+										</div>
 
-                  <h4 class="mt-3">Thông Tin Khách Hàng</h4>
+										<h4 class="mt-3">Thông Tin Khách Hàng</h4>
 
-                  <!-- Họ và tên -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="hovaten">Họ Và Tên</label>
-                    <input class="form-control" type="text" id="hovaten" name="hovaten" value="<%=hovaten%>">
-                  </div>
+										<!-- Họ và tên -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="hovaten">Họ Và Tên</label>
+											<input class="form-control" type="text" id="hovaten" name="hovaten" value="<%=hovaten%>">
+										</div>
 
-                  <!-- Giới tính -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="gioitinh">Giới tính</label>
-                    <select class="form-select" name="gioitinh">
-                      <option value="1">Nam</option>
-                      <option value="2">Nữ</option>
-                      <option value="3">Khác</option>
-                    </select>
-                  </div>
+										<!-- Giới tính -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="gioitinh">Giới tính</label>
+											<select class="form-select" name="gioitinh">
+												<option value="1">Nam</option>
+												<option value="2">Nữ</option>
+												<option value="3">Khác</option>
+											</select>
+										</div>
 
-                  <!-- Ngày sinh -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="ngaysinh">Ngày Sinh</label>
-                    <input class="form-control" type="date" id="ngaysinh" name="ngaysinh" value="<%=ngaysinh%>">
-                  </div>
+										<!-- Ngày sinh -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="ngaysinh">Ngày Sinh</label>
+											<input class="form-control" type="date" id="ngaysinh" name="ngaysinh" value="<%=ngaysinh%>">
+										</div>
 
-                  <h4 class="mt-3">Địa Chỉ</h4>
+										<h4 class="mt-3">Địa Chỉ</h4>
 
-                  <!-- Địa chỉ khách hàng -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="diachikhachhang">Địa Chỉ Khách Hàng</label>
-                    <input class="form-control" type="text" id="diachikhachhang" name="diachikhachhang" value="<%=diachikhachhang%>">
-                  </div>
+										<!-- Địa chỉ khách hàng -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="diachikhachhang">Địa Chỉ Khách Hàng</label>
+											<input class="form-control" type="text" id="diachikhachhang" name="diachikhachhang" value="<%=diachikhachhang%>">
+										</div>
 
-                  <!-- Địa chỉ mua hàng -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="diachimuahang">Địa Chỉ Mua Hàng</label>
-                    <input class="form-control" type="text" id="diachimuahang" name="diachimuahang" value="<%=diachimuahang%>">
-                  </div>
+										<!-- Địa chỉ mua hàng -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="diachimuahang">Địa Chỉ Mua Hàng</label>
+											<input class="form-control" type="text" id="diachimuahang" name="diachimuahang" value="<%=diachimuahang%>">
+										</div>
 
-                  <!-- Địa chỉ nhận hàng -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="diachinhanhang">Địa Chỉ Nhận Hàng</label>
-                    <input class="form-control" type="text" id="diachinhanhang" name="diachinhanhang" value="<%=diachinhanhang%>">
-                  </div>
+										<!-- Địa chỉ nhận hàng -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="diachinhanhang">Địa Chỉ Nhận Hàng</label>
+											<input class="form-control" type="text" id="diachinhanhang" name="diachinhanhang" value="<%=diachinhanhang%>">
+										</div>
 
-                  <!-- Số điện thoại -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="dienthoai">Điện Thoại</label>
-                    <input class="form-control" type="number" id="dienthoai" name="dienthoai" value="<%=dienthoai%>">
-                  </div>
+										<!-- Số điện thoại -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="dienthoai">Điện Thoại</label>
+											<input class="form-control" type="number" id="dienthoai" name="dienthoai" value="<%=dienthoai%>">
+										</div>
 
-                  <!-- Email -->
-                  <div class="d-flex flex-column align-items-start mb-4">
-                    <label class="form-label" for="email">Email</label>
-                    <input class="form-control" type="email" id="email" name="email" value="<%=email%>">
-                  </div>
+										<!-- Email -->
+										<div class="d-flex flex-column align-items-start mb-4">
+											<label class="form-label" for="email">Email</label>
+											<input class="form-control" type="email" id="email" name="email" value="<%=email%>">
+										</div>
 
-                  <!-- Đồng ý điều khoản -->
-                  <div class="mt-3">
-                    <input type="checkbox" class="form-check-input" id="dongy">
-                    <label for="dongy" class="form-check-label">
-                      <b>Đồng ý với điều khoản của cửa hàng</b>
-                    </label>
-                  </div>
+										<!-- Đồng ý điều khoản -->
+										<div class="mt-3">
+											<input type="checkbox" class="form-check-input" id="dongy">
+											<label for="dongy" class="form-check-label">
+												<b>Đồng ý với điều khoản của cửa hàng</b>
+											</label>
+										</div>
 
-                  <!-- Đồng ý nhận email -->
-                  <div class="mt-3">
-                    <input type="checkbox" class="form-check-input" id="dongynhanemail">
-                    <label for="dongynhanemail" class="form-check-label">
-                      <b>Đồng ý nhận email</b>
-                    </label>
-                  </div>
+										<!-- Đồng ý nhận email -->
+										<div class="mt-3">
+											<input type="checkbox" class="form-check-input" id="dongynhanemail">
+											<label for="dongynhanemail" class="form-check-label">
+												<b>Đồng ý nhận email</b>
+											</label>
+										</div>
 
-                  <!-- Nút đăng ký -->
-                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="submit" class="btn btn-primary btn-lg">Đăng Ký</button>
-                  </div>
-                </form>
+										<!-- Nút đăng ký -->
+										<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+											<button type="submit" class="btn btn-primary btn-lg">Đăng Ký</button>
+										</div>
+									</form>
 
-              </div>
-              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+								</div>
+								<div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+									<img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid" alt="Sample image">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 	<!-- Vendor JS Files -->

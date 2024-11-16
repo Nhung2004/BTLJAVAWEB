@@ -36,7 +36,7 @@
 	<jsp:include page="Header.jsp" />
 
 	<main class="main">
-	
+
 		<!-- Hero Section -->
 		<section id="hero" class="hero section dark-background">
 			<img src="${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg" alt="" data-aos="fade-in">
@@ -97,6 +97,9 @@
 			</div>
 		</section>
 		<!-- /Hero Section -->
+
+		<!-- Custom Section -->
+		<!-- /Custom Section -->
 	</main>
 
 	<!-- Scroll Top -->

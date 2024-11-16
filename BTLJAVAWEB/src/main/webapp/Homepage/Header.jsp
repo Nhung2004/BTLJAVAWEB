@@ -4,7 +4,7 @@
 	<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
 		<!-- ======= Logo ======= -->
-		<a href="${pageContext.request.contextPath}/Dashboard/index.jsp" class="logo d-flex align-items-center me-auto me-lg-0">
+		<a href="${pageContext.request.contextPath}/Dashboard/Index.jsp" class="logo d-flex align-items-center me-auto me-lg-0">
 			<h1 class="sitename">G13</h1>
 			<span></span>
 		</a>
@@ -25,13 +25,13 @@
 					</a>
 					<ul>
 						<li class="dropdown">
-							<a href="TrangChu.jsp#bestseller">
+							<a href="#">
 								<span>Best Sellers</span>
 								<i class="bi bi-chevron-down toggle-dropdown"></i>
 							</a>
 							<ul>
 								<li>
-									<a href="#">2024 Best Sellers</a>
+									<a href="BestSeller.jsp">2024 Best Sellers</a>
 								</li>
 
 								<li>
@@ -166,7 +166,7 @@
 		</nav>
 
 		<a href="DangKy.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Register</a>
-		<a href="DangNhapp.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Login</a>
+		<a href="DangNhap.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Login</a>
 
 		<a href="GioHang.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">
 			<i class="bi bi-cart-fill" style="font-size: 1.3rem;"></i>

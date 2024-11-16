@@ -151,7 +151,7 @@ public class JDBCUtil implements ConnectionPool
 			// Nếu Connection Pool không còn chỗ để chứa kết nối
 			else
 			{
-				// Trực tiếp đóng kết nối & giảm bộ đếm
+				// Trực tiếp đóng kết nối thay vì trả về Pool & giảm bộ đếm
 				con.close();
 				currentConnectionCount--;
 			}

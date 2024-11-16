@@ -17,8 +17,11 @@ public class KhachHang
 	private String  email;
 	private boolean dangkinhanbantin;
 
-	public KhachHang(String makhachhang, String tendangnhap, String matkhau, String hovaten, String gioitinh, String diachi, String diachinhanhang,
-	    String diachimuahang, Date ngaysinh, String sodienthoai, String email, boolean dangkinhanbantin)
+	public KhachHang(
+	        String makhachhang, String tendangnhap, String matkhau, String hovaten, String gioitinh, String diachi,
+	        String diachinhanhang, String diachimuahang, Date ngaysinh, String sodienthoai, String email,
+	        boolean dangkinhanbantin
+	)
 	{
 		super();
 		this.makhachhang      = makhachhang;
@@ -163,9 +166,10 @@ public class KhachHang
 	@Override
 	public String toString()
 	{
-		return "KhachHang [makhachhang=" + makhachhang + ", tendangnhap=" + tendangnhap + ", matkhau=" + matkhau + ", hovaten=" + hovaten + ", gioitinh="
-		    + gioitinh + ", diachi=" + diachi + ", diachinhanhang=" + diachinhanhang + ", diachimuahang=" + diachimuahang + ", ngaysinh=" + ngaysinh
-		    + ", sodienthoai=" + sodienthoai + ", email=" + email + ", dangkinhanbantin=" + dangkinhanbantin + "]";
+		return "KhachHang [makhachhang=" + makhachhang + ", tendangnhap=" + tendangnhap + ", matkhau=" + matkhau
+		        + ", hovaten=" + hovaten + ", gioitinh=" + gioitinh + ", diachi=" + diachi + ", diachinhanhang="
+		        + diachinhanhang + ", diachimuahang=" + diachimuahang + ", ngaysinh=" + ngaysinh + ", sodienthoai="
+		        + sodienthoai + ", email=" + email + ", dangkinhanbantin=" + dangkinhanbantin + "]";
 	}
 
 	public boolean isDangKyNhanBangTin()

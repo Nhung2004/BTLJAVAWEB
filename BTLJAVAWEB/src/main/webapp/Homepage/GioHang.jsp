@@ -158,7 +158,7 @@
 						</div>
 					</div>
 					<!-- End Product Item -->
-					
+
 					<!-- Product Item -->
 					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
 						<div class="service-item position-relative border p-3 rounded">
@@ -181,7 +181,7 @@
 						</div>
 					</div>
 					<!-- End Product Item -->
-					
+
 					<!-- Product Item -->
 					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
 						<div class="service-item position-relative border p-3 rounded">
@@ -204,7 +204,7 @@
 						</div>
 					</div>
 					<!-- End Product Item -->
-					
+
 					<!-- Product Item -->
 					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
 						<div class="service-item position-relative border p-3 rounded">
@@ -227,7 +227,7 @@
 						</div>
 					</div>
 					<!-- End Product Item -->
-					
+
 					<!-- Product Item -->
 					<div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
 						<div class="service-item position-relative border p-3 rounded">

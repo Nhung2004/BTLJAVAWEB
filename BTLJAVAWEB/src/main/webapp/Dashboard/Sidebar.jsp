@@ -1,3 +1,4 @@
+<!-- Tách riêng Sidebar của trang Dashboard ra để tiện quản lý và sửa đổi -->
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!-- ======= Sidebar ======= -->
@@ -6,7 +7,7 @@
 	<ul class="sidebar-nav" id="sidebar-nav">
 
 		<li class="nav-item">
-			<a class="nav-link " href="index.jsp">
+			<a class="nav-link " href="Index.jsp">
 				<i class="bi bi-grid"></i>
 				<span>Dashboard</span>
 			</a>
@@ -18,7 +19,7 @@
 		-->
 
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="users-profile.jsp">
+			<a class="nav-link collapsed" href="Profile.jsp">
 				<i class="bi bi-person"></i>
 				<span>Profile</span>
 			</a>
@@ -26,7 +27,7 @@
 		<!-- End Profile Page Nav -->
 
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="pages-contact.jsp">
+			<a class="nav-link collapsed" href="Contact.jsp">
 				<i class="bi bi-envelope"></i>
 				<span>Contact</span>
 			</a>
@@ -34,7 +35,7 @@
 		<!-- End Contact Page Nav -->
 
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="pages-register.jsp">
+			<a class="nav-link collapsed" href="Register.jsp">
 				<i class="bi bi-card-list"></i>
 				<span>Register</span>
 			</a>
@@ -42,7 +43,7 @@
 		<!-- End Register Page Nav -->
 
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="pages-login.jsp">
+			<a class="nav-link collapsed" href="Login.jsp">
 				<i class="bi bi-box-arrow-in-right"></i>
 				<span>Login</span>
 			</a>
@@ -50,12 +51,12 @@
 		<!-- End Login Page Nav -->
 
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="pages-blank.jsp">
+			<a class="nav-link collapsed" href="Products.jsp">
 				<i class="bi bi-file-earmark"></i>
 				<span>Products</span>
 			</a>
 		</li>
-		<!-- End Blank Page Nav -->
+		<!-- End Products Page Nav -->
 
 	</ul>
 </aside>
