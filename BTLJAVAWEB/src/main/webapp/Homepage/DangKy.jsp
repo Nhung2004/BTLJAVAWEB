@@ -60,50 +60,50 @@
 						<div class="card-body p-md-5">
 							<div class="row justify-content-center">
 								<div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-									<h1 class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4">Đăng Ký Tài Khoản</h1>
+									<h1 class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4">Account Register</h1>
 
 									<form class="mx-1 mx-md-4" action="${pageContext.request.contextPath}/dang-ky" method="get">
 
 										<!-- Tên đăng nhập -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="tendangnhap">Tên Đăng Nhập</label>
+											<label class="form-label" for="tendangnhap">Username</label>
 											<input class="form-control" type="text" id="tendangnhap" name="tendangnhap" required value="<%=tendangnhap%>">
 										</div>
 
 										<!-- Mật khẩu -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="matkhau">Mật Khẩu</label>
+											<label class="form-label" for="matkhau">Password</label>
 											<input class="form-control" type="password" id="matkhau" name="matkhau" required onkeyup="kiemtramatkhau()">
 										</div>
 
 										<!-- Nhập lại mật khẩu -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="nhaplaimatkhau">Nhập Lại Mật Khẩu</label>
+											<label class="form-label" for="nhaplaimatkhau">Confirm password</label>
 											<input class="form-control" type="password" id="nhaplaimatkhau" name="nhaplaimatkhau" required onkeyup="kiemtramatkhau()">
 											<span id="msg"></span>
 										</div>
 
-										<h4 class="mt-3">Thông Tin Khách Hàng</h4>
+										<h4 class="mt-3">Personal information</h4>
 
 										<!-- Họ và tên -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="hovaten">Họ Và Tên</label>
+											<label class="form-label" for="hovaten">Fullname</label>
 											<input class="form-control" type="text" id="hovaten" name="hovaten" value="<%=hovaten%>">
 										</div>
 
 										<!-- Giới tính -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="gioitinh">Giới tính</label>
+											<label class="form-label" for="gioitinh">Gender</label>
 											<select class="form-select" name="gioitinh">
-												<option value="1">Nam</option>
-												<option value="2">Nữ</option>
-												<option value="3">Khác</option>
+												<option value="1">Male</option>
+												<option value="2">Female</option>
+												<option value="3">Others</option>
 											</select>
 										</div>
 
 										<!-- Ngày sinh -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="ngaysinh">Ngày Sinh</label>
+											<label class="form-label" for="ngaysinh">Birthday</label>
 											<input class="form-control" type="date" id="ngaysinh" name="ngaysinh" value="<%=ngaysinh%>">
 										</div>
 
@@ -111,25 +111,25 @@
 
 										<!-- Địa chỉ khách hàng -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="diachikhachhang">Địa Chỉ Khách Hàng</label>
+											<label class="form-label" for="diachikhachhang">Address</label>
 											<input class="form-control" type="text" id="diachikhachhang" name="diachikhachhang" value="<%=diachikhachhang%>">
 										</div>
 
 										<!-- Địa chỉ mua hàng -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="diachimuahang">Địa Chỉ Mua Hàng</label>
+											<label class="form-label" for="diachimuahang">Shopping address</label>
 											<input class="form-control" type="text" id="diachimuahang" name="diachimuahang" value="<%=diachimuahang%>">
 										</div>
 
 										<!-- Địa chỉ nhận hàng -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="diachinhanhang">Địa Chỉ Nhận Hàng</label>
+											<label class="form-label" for="diachinhanhang">Delivery address</label>
 											<input class="form-control" type="text" id="diachinhanhang" name="diachinhanhang" value="<%=diachinhanhang%>">
 										</div>
 
 										<!-- Số điện thoại -->
 										<div class="d-flex flex-column align-items-start mb-4">
-											<label class="form-label" for="dienthoai">Điện Thoại</label>
+											<label class="form-label" for="dienthoai">Phone number</label>
 											<input class="form-control" type="number" id="dienthoai" name="dienthoai" value="<%=dienthoai%>">
 										</div>
 
@@ -143,7 +143,7 @@
 										<div class="mt-3">
 											<input type="checkbox" class="form-check-input" id="dongy">
 											<label for="dongy" class="form-check-label">
-												<b>Đồng ý với điều khoản của cửa hàng</b>
+												<b>Agree to our term of service?</b>
 											</label>
 										</div>
 
@@ -151,13 +151,13 @@
 										<div class="mt-3">
 											<input type="checkbox" class="form-check-input" id="dongynhanemail">
 											<label for="dongynhanemail" class="form-check-label">
-												<b>Đồng ý nhận email</b>
+												<b>Receive our email?</b>
 											</label>
 										</div>
 
 										<!-- Nút đăng ký -->
 										<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-											<button type="submit" class="btn btn-primary btn-lg">Đăng Ký</button>
+											<button type="submit" class="btn btn-primary btn-lg">Register</button>
 										</div>
 									</form>
 

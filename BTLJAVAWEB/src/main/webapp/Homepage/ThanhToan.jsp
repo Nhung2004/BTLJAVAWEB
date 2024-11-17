@@ -47,25 +47,25 @@
 					<!-- Thành viên -->
 					<div class="card p-4 mb-4 shadow-sm">
 						<h4>
-							Bạn đã là thành viên?
-							<a href="#">Đăng nhập ngay</a>
+							Already a member?
+							<a href="#">Login now</a>
 						</h4>
 					</div>
 
 					<!-- Địa chỉ giao hàng -->
 					<div class="card p-4 mb-4 shadow-sm">
-						<h4>Địa chỉ giao hàng</h4>
+						<h4>Address</h4>
 						<hr>
 						<div class="row mb-3">
 							<div class="col-md-6 mb-2">
 								<div class="form-outline">
-									<input type="text" class="form-control" id="receiverName" placeholder="Nhập tên người nhận" />
-									<label class="form-label" for="receiverName">Tên người nhận</label>
+									<input type="text" class="form-control" id="receiverName" placeholder="Enter receiver name" />
+									<label class="form-label" for="receiverName">Receiver name</label>
 								</div>
 							</div>
 							<div class="col-md-6 mb-2">
 								<div class="form-outline">
-									<input type="email" class="form-control" id="email" placeholder="Nhập email của bạn" />
+									<input type="email" class="form-control" id="email" placeholder="Enter your email" />
 									<label class="form-label" for="email">Email</label>
 								</div>
 							</div>
@@ -74,14 +74,14 @@
 						<div class="row mb-3">
 							<div class="col-md-6 mb-2">
 								<div class="form-outline">
-									<input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" />
-									<label class="form-label" for="phone">Số điện thoại</label>
+									<input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" />
+									<label class="form-label" for="phone">Phone number</label>
 								</div>
 							</div>
 							<div class="col-md-6 mb-2">
 								<div class="form-outline">
-									<input type="text" class="form-control" id="country" placeholder="Nhập quốc gia" />
-									<label class="form-label" for="country">Quốc gia</label>
+									<input type="text" class="form-control" id="country" placeholder="Enter your nationality" />
+									<label class="form-label" for="country">Nationality</label>
 								</div>
 							</div>
 						</div>
@@ -89,8 +89,8 @@
 						<div class="row mb-3">
 							<div class="col-md-6 mb-2">
 								<div class="form-outline">
-									<input type="text" class="form-control" id="state" placeholder="Nhập tỉnh/thành phố" />
-									<label class="form-label" for="state">Tỉnh/Thành phố</label>
+									<input type="text" class="form-control" id="state" placeholder="Enter your Province/City" />
+									<label class="form-label" for="state">Province/City</label>
 								</div>
 							</div>
 							<div class="col-md-6 mb-2">
@@ -119,27 +119,27 @@
 
 					<!-- Phương thức vận chuyển -->
 					<div class="card p-4 mb-4 shadow-sm">
-						<h4>Phương thức vận chuyển</h4>
+						<h4>Shipping method</h4>
 						<hr>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="shippingMethod" id="standardShipping" />
-							<label class="form-check-label" for="standardShipping">Vận chuyển tiêu chuẩn</label>
+							<label class="form-check-label" for="standardShipping">Standard</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="shippingMethod" id="expressShipping" />
-							<label class="form-check-label" for="expressShipping">Vận chuyển nhanh</label>
+							<label class="form-check-label" for="expressShipping">Fast</label>
 						</div>
 					</div>
 
 					<!-- Phương thức thanh toán -->
 					<div class="card p-4 mb-4 shadow-sm">
-						<h4>Phương thức thanh toán</h4>
+						<h4>Payment method</h4>
 						<hr>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="vnpWallet" />
 							<label class="form-check-label" for="vnpWallet">
 								<img src="vnp_logo.png" alt="VNP" class="payment-logo" />
-								Ví VNP
+								VNP Wallet
 							</label>
 						</div>
 						<div class="form-check">
@@ -153,7 +153,7 @@
 							<input class="form-check-input" type="radio" name="paymentMethod" id="momoWallet" />
 							<label class="form-check-label" for="momoWallet">
 								<img src="momo_logo.png" alt="Momo" class="payment-logo" />
-								Ví Momo
+								Momo wallet
 							</label>
 						</div>
 						<div class="form-check">
@@ -179,7 +179,7 @@
 					<!-- Xác nhận thanh toán Button -->
 					<hr />
 					<form action="#" method="POST">
-						<button class="btn btn-primary w-100" type="submit">Xác nhận thanh toán</button>
+						<button class="btn btn-primary w-100" type="submit">Confirm</button>
 					</form>
 				</div>
 
@@ -188,41 +188,41 @@
 					<!-- Cart Summary -->
 					<div class="card p-4 shadow-sm">
 						<h4 class="d-flex justify-content-between align-items-center mb-3">
-							<span class="text-muted">Giỏ hàng của bạn</span>
+							<span class="text-muted">Your cart</span>
 							<span class="badge rounded-pill badge-primary">3</span>
 						</h4>
 
 						<ul class="list-group mb-3">
 							<li class="list-group-item d-flex justify-content-between">
 								<div>
-									<h6 class="my-0">Tên sản phẩm</h6>
-									<small class="text-muted">Mô tả ngắn</small>
+									<h6 class="my-0">Product name</h6>
+									<small class="text-muted">Short description</small>
 								</div>
 								<span class="text-muted">$12</span>
 							</li>
 							<li class="list-group-item d-flex justify-content-between">
 								<div>
 									<h6 class="my-0">Sản phẩm thứ hai</h6>
-									<small class="text-muted">Mô tả ngắn</small>
+									<small class="text-muted">Short description</small>
 								</div>
 								<span class="text-muted">$8</span>
 							</li>
 							<li class="list-group-item d-flex justify-content-between">
 								<div>
 									<h6 class="my-0">Mặt hàng thứ ba</h6>
-									<small class="text-muted">Mô tả ngắn</small>
+									<small class="text-muted">Short description</small>
 								</div>
 								<span class="text-muted">$5</span>
 							</li>
 							<li class="list-group-item d-flex justify-content-between bg-light">
 								<div class="text-success">
-									<h6 class="my-0">Mã khuyến mãi</h6>
+									<h6 class="my-0">Coupons</h6>
 									<small>EXAMPLECODE</small>
 								</div>
 								<span class="text-success">-$5</span>
 							</li>
 							<li class="list-group-item d-flex justify-content-between">
-								<span>Tổng cộng (VND)</span>
+								<span>Total price (VND)</span>
 								<strong>$20</strong>
 							</li>
 						</ul>

@@ -32,8 +32,8 @@
 							<div class="card mb-3">
 								<div class="card-body">
 									<div class="pt-4 pb-2">
-										<h5 class="card-title text-center pb-0 fs-4">Đăng nhập vào trang web</h5>
-										<p class="text-center small">Nhập tên đăng nhập và mật khẩu để tiếp tục</p>
+										<h5 class="card-title text-center pb-0 fs-4">Login into our shop</h5>
+										<p class="text-center small">Enter your username and password to continue</p>
 									</div>
 
 									<form action="${pageContext.request.contextPath}/dang-nhap" method="post" class="row g-3 needs-validation" novalidate>
@@ -41,33 +41,33 @@
 											<div id="baoloi" class="msg text-danger text-center mb-3">
 												<%=baoloi%>
 											</div>
-											<label for="tendangnhap" class="form-label">Tên đăng nhập</label>
+											<label for="tendangnhap" class="form-label">Username</label>
 											<div class="input-group has-validation">
 												<input type="text" name="tendangnhap" class="form-control" id="tendangnhap" required>
-												<div class="invalid-feedback">Vui lòng nhập tên đăng nhập.</div>
+												<div class="invalid-feedback">Please enter your username</div>
 											</div>
 										</div>
 
 										<div class="col-12">
-											<label for="matkhau" class="form-label">Mật khẩu</label>
+											<label for="matkhau" class="form-label">Password</label>
 											<input type="password" name="matkhau" class="form-control" id="matkhau" required>
-											<div class="invalid-feedback">Vui lòng nhập mật khẩu!</div>
+											<div class="invalid-feedback">Please enter your password</div>
 										</div>
 
 										<div class="col-12">
 											<div class="form-check">
 												<input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-												<label class="form-check-label" for="rememberMe">Duy trì đăng nhập</label>
+												<label class="form-check-label" for="rememberMe">Keep me sign in</label>
 											</div>
 										</div>
 
 										<div class="col-12">
-											<button class="btn btn-primary w-100" type="submit">Đăng nhập</button>
+											<button class="btn btn-primary w-100" type="submit">Login</button>
 										</div>
 										<div class="col-12">
 											<p class="small mb-0">
-												Bạn chưa có tài khoản ư?
-												<a href="${pageContext.request.contextPath}/Homepage/DangKy.jsp">Tạo tài khoản mới</a>
+												You don't have any account?
+												<a href="${pageContext.request.contextPath}/Homepage/DangKy.jsp">Create a new one now!</a>
 											</p>
 										</div>
 									</form>

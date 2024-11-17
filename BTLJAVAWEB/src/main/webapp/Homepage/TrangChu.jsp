@@ -57,12 +57,6 @@
 		</section>
 		<!-- /Blank Section -->
 
-
-
-
-
-
-
 		<section>
 			<div class="container">
 				<div class="row">
@@ -70,17 +64,17 @@
 					<div class="col-3 p-3 rounded shadow-sm bg-light mb-4">
 						<!-- Sản Phẩm Bán Chạy Nhất -->
 						<div class="list-group mb-4">
-							<a href="#" class="list-group-item list-group-item-action text-center font-weight-bold text-dark mb-2" style="background-color: #ffc107; color: #fff;"> Sản Phẩm Bán Chạy Nhất </a>
+							<a href="#" class="list-group-item list-group-item-action text-center font-weight-bold text-dark mb-2" style="background-color: #ffc107; color: #fff;">Best selling products</a>
 							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-								Sách Ngoại Ngữ
+								Foreign language book
 								<span class="badge badge-pill">12</span>
 							</a>
 							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-								Sách Giáo Khoa
+								Textbook
 								<span class="badge badge-pill">8</span>
 							</a>
 							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-								Sách Học Sinh
+								Student book
 								<span class="badge badge-pill">15</span>
 							</a>
 							<a class="list-group-item list-group-item-action text-muted text-center disabled" aria-disabled="true" style="background-color: #e9ecef;"> Áo zin </a>
@@ -88,22 +82,22 @@
 
 						<!-- Sản Phẩm Được Yêu Thích Nhất -->
 						<div class="list-group">
-							<h5 class="text-center font-weight-bold mb-3 text-danger">Sản Phẩm Được Yêu Thích Nhất</h5>
+							<h5 class="text-center font-weight-bold mb-3 text-danger">Most popular product</h5>
 							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
 								<span class="heart-icon">❤️</span>
-								Sách Tiếng Anh
+								English book
 							</a>
 							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
 								<span class="heart-icon">❤️</span>
-								Sách Kỹ Năng
+								Life skill book
 							</a>
 							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
 								<span class="heart-icon">❤️</span>
-								Sách Truyện Tranh
+								Comic book
 							</a>
 							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
 								<span class="heart-icon">❤️</span>
-								Tiểu Thuyết
+								Light novel
 							</a>
 						</div>
 					</div>
@@ -135,8 +129,6 @@
 				</div>
 			</div>
 		</section>
-
-
 
 		<style>
 /* Cải tiến Sản Phẩm Bán Chạy Nhất */
@@ -231,6 +223,7 @@
 </style>
 
 		<style>
+
 /* Cải tiến Carousel */
 .carousel-item img {
 	border-radius: 15px; /* Bo góc ảnh */
@@ -246,14 +239,7 @@
 }
 </style>
 
-
-
-
-
-
-
-
-
+		<!-- Hero Section -->
 		<section>
 			<div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
 				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
@@ -302,12 +288,7 @@
 				</div>
 			</div>
 		</section>
-
-
-
-
-
-
+		<!-- /Hero Section -->
 
 		<!-- About Section -->
 		<section id="about" class="about section">
