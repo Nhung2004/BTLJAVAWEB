@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-<title>Trang chủ</title>
+<title>Payment</title>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <meta name="description" content="">
@@ -38,7 +38,7 @@
 	<main class="mt-5 pt-4">
 		<div class="container">
 			<!-- Heading -->
-			<h2 class="my-5 text-center">Thanh Toán</h2>
+			<h2 class="my-5 text-center">Payment</h2>
 
 			<!-- Grid row -->
 			<div class="row">
@@ -95,8 +95,8 @@
 							</div>
 							<div class="col-md-6 mb-2">
 								<div class="form-outline">
-									<input type="text" class="form-control" id="district" placeholder="Nhập quận/huyện" />
-									<label class="form-label" for="district">Quận/Huyện</label>
+									<input type="text" class="form-control" id="district" placeholder="Enter your district" />
+									<label class="form-label" for="district">District</label>
 								</div>
 							</div>
 						</div>
@@ -104,14 +104,14 @@
 						<div class="row mb-3">
 							<div class="col-md-6 mb-2">
 								<div class="form-outline">
-									<input type="text" class="form-control" id="ward" placeholder="Nhập phường/xã" />
-									<label class="form-label" for="ward">Phường/Xã</label>
+									<input type="text" class="form-control" id="ward" placeholder="Enter your Ward/Commune" />
+									<label class="form-label" for="ward">Ward/Commune</label>
 								</div>
 							</div>
 							<div class="col-md-6 mb-2">
 								<div class="form-outline">
-									<input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ nhận hàng" />
-									<label class="form-label" for="address">Địa chỉ nhận hàng</label>
+									<input type="text" class="form-control" id="address" placeholder="Enter your delivery address" />
+									<label class="form-label" for="address">Delivery address</label>
 								</div>
 							</div>
 						</div>
@@ -158,7 +158,7 @@
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" />
-							<label class="form-check-label" for="cashOnDelivery">Thanh toán khi nhận hàng</label>
+							<label class="form-check-label" for="cashOnDelivery">Cash-on Delivery</label>
 						</div>
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="atmBanking" />
@@ -202,14 +202,14 @@
 							</li>
 							<li class="list-group-item d-flex justify-content-between">
 								<div>
-									<h6 class="my-0">Sản phẩm thứ hai</h6>
+									<h6 class="my-0">Product name</h6>
 									<small class="text-muted">Short description</small>
 								</div>
 								<span class="text-muted">$8</span>
 							</li>
 							<li class="list-group-item d-flex justify-content-between">
 								<div>
-									<h6 class="my-0">Mặt hàng thứ ba</h6>
+									<h6 class="my-0">Product name</h6>
 									<small class="text-muted">Short description</small>
 								</div>
 								<span class="text-muted">$5</span>
@@ -222,7 +222,7 @@
 								<span class="text-success">-$5</span>
 							</li>
 							<li class="list-group-item d-flex justify-content-between">
-								<span>Total price (VND)</span>
+								<span>Total price (USD)</span>
 								<strong>$20</strong>
 							</li>
 						</ul>
@@ -230,8 +230,8 @@
 						<!-- Promo code -->
 						<form class="card p-2 shadow-sm">
 							<div class="input-group mb-3">
-								<input type="text" class="form-control" placeholder="Mã khuyến mãi" aria-label="Promo code" />
-								<button class="btn btn-secondary" type="button">Áp dụng</button>
+								<input type="text" class="form-control" placeholder="Your coupon goes here" aria-label="Promo code" />
+								<button class="btn btn-secondary" type="button">Apply</button>
 							</div>
 						</form>
 					</div>

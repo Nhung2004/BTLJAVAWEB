@@ -370,4 +370,51 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		return result;
 	}
+
+	public boolean kiemTraTenDangNhap(String tenDangNhap)
+	{
+		boolean    ketQua = false;
+		Connection con    = null;
+
+		try
+		{
+			// Step 1: Get a connection from the pool
+			con = connectionPool.getConnection("kiemTraTenDangNhap");
+
+			// Step 2: Create a statement
+			String            sql = "SELECT * FROM KhachHang WHERE tendangnhap = ?";
+			PreparedStatement st  = con.prepareStatement(sql);
+			st.setString(1, tenDangNhap);
+
+			// Step 3: Execute the SQL query
+			System.out.println(sql);
+			ResultSet rs = st.executeQuery();
+
+			// Step 4: Check if the result set has any data
+			if(rs.next())
+			{
+				ketQua = true;
+			}
+
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		} finally
+		{
+			// Step 5: Return the connection to the pool
+			if(con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "kiemTraTenDangNhap");
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+		return ketQua;
+	}
 }

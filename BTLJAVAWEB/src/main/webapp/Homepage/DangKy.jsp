@@ -107,7 +107,7 @@
 											<input class="form-control" type="date" id="ngaysinh" name="ngaysinh" value="<%=ngaysinh%>">
 										</div>
 
-										<h4 class="mt-3">Địa Chỉ</h4>
+										<h4 class="mt-3">Address</h4>
 
 										<!-- Địa chỉ khách hàng -->
 										<div class="d-flex flex-column align-items-start mb-4">
