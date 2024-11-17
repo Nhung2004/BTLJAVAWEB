@@ -6,7 +6,7 @@ import java.sql.Connection;
 
 public class ConnectionPoolTest
 {
-	public static int THREADS = 12;
+	public static int THREADS = 7;
 
 	public static void main(String[] args)
 	{
@@ -18,7 +18,7 @@ public class ConnectionPoolTest
 				Connection conn = pool.getConnection("TaskThread");
 
 				// Thiết lập thời gian mỗi luồng sử dụng Connection
-				Thread.sleep(5000);
+				Thread.sleep(2500);
 
 				pool.closeConnection(conn, "TaskThread");
 			}

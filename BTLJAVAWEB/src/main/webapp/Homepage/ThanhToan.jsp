@@ -48,7 +48,7 @@
 					<div class="card p-4 mb-4 shadow-sm">
 						<h4>
 							Already a member?
-							<a href="#">Login now</a>
+							<a href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp">Login now</a>
 						</h4>
 					</div>
 
@@ -138,39 +138,47 @@
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="vnpWallet" />
 							<label class="form-check-label" for="vnpWallet">
-								<img src="vnp_logo.png" alt="VNP" class="payment-logo" />
+								<img src="${pageContext.request.contextPath}/assets/img/thanhtoan/vivnpay.jpg" alt="VNP" class="payment-logo" style="width: 32px; height: 32px;" />
 								VNP Wallet
 							</label>
 						</div>
+
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="shopeePay" />
 							<label class="form-check-label" for="shopeePay">
-								<img src="shopee_pay_logo.png" alt="ShopeePay" class="payment-logo" />
+								<img src="${pageContext.request.contextPath}/assets/img/thanhtoan/vishopeepay.jpg" alt="ShopeePay" class="payment-logo" style="width: 32px; height: 32px;" />
 								ShopeePay
 							</label>
 						</div>
+
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="momoWallet" />
 							<label class="form-check-label" for="momoWallet">
-								<img src="momo_logo.png" alt="Momo" class="payment-logo" />
+								<img src="${pageContext.request.contextPath}/assets/img/thanhtoan/vimomo.jpg" alt="Momo" class="payment-logo" style="width: 32px; height: 32px;" />
 								Momo wallet
 							</label>
 						</div>
+
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" />
-							<label class="form-check-label" for="cashOnDelivery">Cash-on Delivery</label>
+							<label class="form-check-label" for="cashOnDelivery">
+								<img src="${pageContext.request.contextPath}/assets/img/thanhtoan/ttkndh.jpg" alt="COD" class="payment-logo" style="width: 32px; height: 32px;" />
+								Cash-on Delivery
+							</label>
 						</div>
+
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="atmBanking" />
 							<label class="form-check-label" for="atmBanking">
-								<img src="atm_logo.png" alt="ATM" class="payment-logo" />
+								<img src="${pageContext.request.contextPath}/assets/img/thanhtoan/atm.jpg" alt="ATM" class="payment-logo" style="width: 32px; height: 32px;" />
 								ATM/Internet Banking
 							</label>
 						</div>
+
 						<div class="form-check">
 							<input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" />
 							<label class="form-check-label" for="creditCard">
-								<img src="visa_logo.png" alt="Visa" class="payment-logo" />
+								<img src="${pageContext.request.contextPath}/assets/img/thanhtoan/visa.jpg" alt="Visa" class="payment-logo" style="width: 32px; height: 32px;" />
 								Visa/Master/JCB
 							</label>
 						</div>

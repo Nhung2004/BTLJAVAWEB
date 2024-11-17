@@ -12,7 +12,7 @@
 		<nav id="navmenu" class="navmenu">
 			<ul>
 				<li>
-					<a href="TrangChu.jsp" class="active">
+					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp" class="active">
 						Home
 						<br>
 					</a>
@@ -31,7 +31,7 @@
 							</a>
 							<ul>
 								<li>
-									<a href="BestSeller.jsp">2024 Best Sellers</a>
+									<a href="${pageContext.request.contextPath}/Homepage/BestSeller.jsp">2024 Best Sellers</a>
 								</li>
 
 								<li>
@@ -139,36 +139,36 @@
 				</li>
 
 				<li>
-					<a href="TrangChu.jsp#about">About us</a>
+					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#about">About us</a>
 				</li>
 
 				<li>
-					<a href="TrangChu.jsp#services">Top gernes</a>
+					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#services">Top gernes</a>
 				</li>
 
 				<li>
-					<a href="TrangChu.jsp#portfolio">Preview</a>
+					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#portfolio">Preview</a>
 				</li>
 
 				<li>
-					<a href="TrangChu.jsp#team">Events</a>
+					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#team">Events</a>
 				</li>
 
 				<li>
-					<a href="#subscription-plans">Subscription</a>
+					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#subscription-plans">Subscription</a>
 				</li>
 
 				<li>
-					<a href="#contact">Contact</a>
+					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#contact">Contact</a>
 				</li>
 			</ul>
 			<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 		</nav>
 
-		<a href="DangKy.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Register</a>
-		<a href="DangNhap.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Login</a>
+		<a href="${pageContext.request.contextPath}/Homepage/DangKy.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Register</a>
+		<a href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Login</a>
 
-		<a href="GioHang.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">
+		<a href="${pageContext.request.contextPath}/Homepage/GioHang.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">
 			<i class="bi bi-cart-fill" style="font-size: 1.3rem;"></i>
 		</a>
 	</div>
