@@ -35,6 +35,23 @@
 		<!-- End Contact Page Nav -->
 
 		<li class="nav-item">
+			<a class="nav-link collapsed" href="Products.jsp">
+				<i class="bi bi-file-earmark"></i>
+				<span>Products</span>
+			</a>
+		</li>
+		<!-- End Products Page Nav -->
+
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="AccountManagement.jsp">
+				<i class="bi bi-people"></i>
+				<span>Account Management</span>
+			</a>
+		</li>
+		<!-- End Account Management Nav -->
+
+
+		<li class="nav-item">
 			<a class="nav-link collapsed" href="Register.jsp">
 				<i class="bi bi-card-list"></i>
 				<span>Register</span>
@@ -49,14 +66,6 @@
 			</a>
 		</li>
 		<!-- End Login Page Nav -->
-
-		<li class="nav-item">
-			<a class="nav-link collapsed" href="Products.jsp">
-				<i class="bi bi-file-earmark"></i>
-				<span>Products</span>
-			</a>
-		</li>
-		<!-- End Products Page Nav -->
 
 	</ul>
 </aside>
