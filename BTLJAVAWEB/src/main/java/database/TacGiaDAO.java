@@ -19,7 +19,7 @@ public class TacGiaDAO implements DAOInterface<TacGia>
 		int KetQua = 0;
 		try
 		{
-			Connection con = connectionPool.getConnection("insert");
+			Connection        con = connectionPool.getConnection("insert");
 			String            sql = "INSERT INTO TacGia (matacgia, tentacgia, ngaysinh, tieusu) VALUES (?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getMatacgia());
@@ -42,7 +42,7 @@ public class TacGiaDAO implements DAOInterface<TacGia>
 		int count = 0;
 		try
 		{
-			Connection con = connectionPool.getConnection("insertAll");
+			Connection        con = connectionPool.getConnection("insertAll");
 			String            sql = "INSERT INTO TacGia (matacgia, tentacgia, ngaysinh, tieusu) VALUES (?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 			for (TacGia t : arr)
@@ -68,7 +68,7 @@ public class TacGiaDAO implements DAOInterface<TacGia>
 		int KetQua = 0;
 		try
 		{
-			Connection con = connectionPool.getConnection("delete");
+			Connection        con = connectionPool.getConnection("delete");
 			String            sql = "DELETE FROM TacGia WHERE matacgia = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getMatacgia());
@@ -88,7 +88,7 @@ public class TacGiaDAO implements DAOInterface<TacGia>
 		int count = 0;
 		try
 		{
-			Connection con = connectionPool.getConnection("deleteAll");
+			Connection        con = connectionPool.getConnection("deleteAll");
 			String            sql = "DELETE FROM TacGia WHERE matacgia = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			for (TacGia t : arr)
@@ -204,7 +204,7 @@ public class TacGiaDAO implements DAOInterface<TacGia>
 
 		return KetQua;
 	}
-	
+
 	// test
 
 	public static void main(String[] args)
@@ -212,7 +212,7 @@ public class TacGiaDAO implements DAOInterface<TacGia>
 		TacGiaDAO tacGiaDAO = new TacGiaDAO();
 
 		TacGia newTacGia = new TacGia("TG07", "Nguyễn Ngọc Hưng", Date.valueOf("2004-1-1"),
-		    "Tác giả nổi tiếng trong lĩnh vực văn học.");
+		        "Tác giả nổi tiếng trong lĩnh vực văn học.");
 
 		@SuppressWarnings("unused")
 		int result = tacGiaDAO.insert(newTacGia);
