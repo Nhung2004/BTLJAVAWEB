@@ -38,29 +38,54 @@
 			</div>
 		</div>
 
-		<!-- Banner -->
-
+		<!-- Book categories -->
 		<div class="banner">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
 						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_1.jpg)">
 							<div class="banner_category">
-								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">women's</a>
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">Foreigns</a>
 							</div>
 						</div>
 					</div>
+
 					<div class="col-md-4">
 						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_2.jpg)">
 							<div class="banner_category">
-								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">accessories's</a>
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">ITs</a>
 							</div>
 						</div>
 					</div>
+
+					<div class="col-md-4">
+						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_2.jpg)">
+							<div class="banner_category">
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">Life Skills</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_2.jpg)">
+							<div class="banner_category">
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">Light Novels</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_2.jpg)">
+							<div class="banner_category">
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">Literatures</a>
+							</div>
+						</div>
+					</div>
+
 					<div class="col-md-4">
 						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_3.jpg)">
 							<div class="banner_category">
-								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">men's</a>
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">Novels</a>
 							</div>
 						</div>
 					</div>
@@ -69,7 +94,6 @@
 		</div>
 
 		<!-- New Arrivals -->
-
 		<div class="new_arrivals">
 			<div class="container">
 				<div class="row">
@@ -84,23 +108,25 @@
 						<div class="new_arrivals_sorting">
 							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
 								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".foreign">Foreign</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".it">IT</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".lifeskill">Life Skill</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".lightnovel">Light Novel</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".literature">Literature</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".novel">Novel</li>
 							</ul>
 						</div>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
-							<!-- Product 1 -->
-
-							<div class="product-item men">
+							<div class="product-item literature">
 								<div class="product discount product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_1.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="favorite favorite_left"></div>
 									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
@@ -121,12 +147,10 @@
 								</div>
 							</div>
 
-							<!-- Product 2 -->
-
-							<div class="product-item women">
+							<div class="product-item literature">
 								<div class="product product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_2.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="favorite"></div>
 									<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center">
@@ -144,12 +168,10 @@
 								</div>
 							</div>
 
-							<!-- Product 3 -->
-
-							<div class="product-item women">
+							<div class="product-item lightnovel">
 								<div class="product product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_3.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Light Novel/bia_ngoai_ari1_1994aeafbbd9452fa.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="favorite"></div>
 									<div class="product_info">
@@ -164,12 +186,10 @@
 								</div>
 							</div>
 
-							<!-- Product 4 -->
-
-							<div class="product-item accessories">
+							<div class="product-item novel">
 								<div class="product product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_4.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
 										<span>sale</span>
@@ -187,12 +207,10 @@
 								</div>
 							</div>
 
-							<!-- Product 5 -->
-
-							<div class="product-item women men">
+							<div class="product-item it">
 								<div class="product product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_5.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="favorite"></div>
 									<div class="product_info">
@@ -207,12 +225,10 @@
 								</div>
 							</div>
 
-							<!-- Product 6 -->
-
-							<div class="product-item accessories">
+							<div class="product-item foreign">
 								<div class="product discount product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_6.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Foreign/-25-chuyen-de-ngu-phap-tieng-anh.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="favorite favorite_left"></div>
 									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
@@ -233,12 +249,10 @@
 								</div>
 							</div>
 
-							<!-- Product 7 -->
-
-							<div class="product-item women">
+							<div class="product-item it">
 								<div class="product product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_7.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="favorite"></div>
 									<div class="product_info">
@@ -253,12 +267,10 @@
 								</div>
 							</div>
 
-							<!-- Product 8 -->
-
-							<div class="product-item accessories">
+							<div class="product-item it">
 								<div class="product product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_8.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/IT/tụ-học-c-bàng-hình-ảnh-_224.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="favorite"></div>
 									<div class="product_info">
@@ -273,12 +285,10 @@
 								</div>
 							</div>
 
-							<!-- Product 9 -->
-
-							<div class="product-item men">
+							<div class="product-item lifeskill">
 								<div class="product product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_9.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Life Skill/bia_hoc_cach_yeu_duong_voi_cong.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
 										<span>sale</span>
@@ -296,17 +306,15 @@
 								</div>
 							</div>
 
-							<!-- Product 10 -->
-
-							<div class="product-item men">
+							<div class="product-item lifeskill">
 								<div class="product product_filter">
-									<div class="product_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_10.png" alt="">
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Life Skill/tu-duy-phan-bien-trong-the-gioi.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 									</div>
 									<div class="favorite"></div>
 									<div class="product_info">
 										<h6 class="product_name">
-											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold & Grey</a>
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold and Grey</a>
 										</h6>
 										<div class="product_price">$180.00</div>
 									</div>
@@ -315,13 +323,12 @@
 									<a href="#">add to cart</a>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-		<!-- Deal of the week -->
 
 		<div class="deal_ofthe_week">
 			<div class="container">
@@ -363,8 +370,6 @@
 			</div>
 		</div>
 
-		<!-- Best Sellers -->
-
 		<div class="best_sellers">
 			<div class="container">
 				<div class="row">
@@ -379,106 +384,16 @@
 						<div class="product_slider_container">
 							<div class="owl-carousel owl-theme product_slider">
 
-								<!-- Slide 1 -->
-
 								<div class="owl-item product_slider_item">
 									<div class="product-item">
-										<div class="product discount">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_1.png" alt="">
-											</div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-												<span>-$20</span>
-											</div>
-											<div class="product_info">
-												<h6 class="product_name">
-													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
-												</h6>
-												<div class="product_price">
-													$520.00
-													<span>$590.00</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Slide 2 -->
-
-								<div class="owl-item product_slider_item">
-									<div class="product-item women">
 										<div class="product">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_2.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center">
-												<span>new</span>
-											</div>
-											<div class="product_info">
-												<h6 class="product_name">
-													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
-												</h6>
-												<div class="product_price">$610.00</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Slide 3 -->
-
-								<div class="owl-item product_slider_item">
-									<div class="product-item women">
-										<div class="product">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_3.png" alt="">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/Life Skill/tu-duy-phan-bien-trong-the-gioi.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 											</div>
 											<div class="favorite"></div>
 											<div class="product_info">
 												<h6 class="product_name">
-													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
-												</h6>
-												<div class="product_price">$120.00</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Slide 4 -->
-
-								<div class="owl-item product_slider_item">
-									<div class="product-item accessories">
-										<div class="product">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_4.png" alt="">
-											</div>
-											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-												<span>sale</span>
-											</div>
-											<div class="favorite favorite_left"></div>
-											<div class="product_info">
-												<h6 class="product_name">
-													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a>
-												</h6>
-												<div class="product_price">$410.00</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Slide 5 -->
-
-								<div class="owl-item product_slider_item">
-									<div class="product-item women men">
-										<div class="product">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_5.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name">
-													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold & Grey</a>
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold and Grey</a>
 												</h6>
 												<div class="product_price">$180.00</div>
 											</div>
@@ -486,13 +401,65 @@
 									</div>
 								</div>
 
-								<!-- Slide 6 -->
+								<div class="owl-item product_slider_item">
+									<div class="product-item">
+										<div class="product">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/Life Skill/bia_hoc_cach_yeu_duong_voi_cong.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+											</div>
+											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+												<span>sale</span>
+											</div>
+											<div class="favorite favorite_left"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a>
+												</h6>
+												<div class="product_price">$410.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
 
 								<div class="owl-item product_slider_item">
-									<div class="product-item accessories">
+									<div class="product-item">
+										<div class="product">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/IT/tụ-học-c-bàng-hình-ảnh-_224.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
+												</h6>
+												<div class="product_price">$120.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item">
+										<div class="product">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
+												</h6>
+												<div class="product_price">$610.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item">
 										<div class="product discount">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_6.png" alt="">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/Foreign/-25-chuyen-de-ngu-phap-tieng-anh.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 											</div>
 											<div class="favorite favorite_left"></div>
 											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
@@ -511,51 +478,28 @@
 									</div>
 								</div>
 
-								<!-- Slide 7 -->
-
 								<div class="owl-item product_slider_item">
-									<div class="product-item women">
+									<div class="product-item">
 										<div class="product">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_7.png" alt="">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 											</div>
 											<div class="favorite"></div>
 											<div class="product_info">
 												<h6 class="product_name">
-													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold and Grey</a>
 												</h6>
-												<div class="product_price">$610.00</div>
+												<div class="product_price">$180.00</div>
 											</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- Slide 8 -->
-
 								<div class="owl-item product_slider_item">
-									<div class="product-item accessories">
+									<div class="product-item">
 										<div class="product">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_8.png" alt="">
-											</div>
-											<div class="favorite"></div>
-											<div class="product_info">
-												<h6 class="product_name">
-													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
-												</h6>
-												<div class="product_price">$120.00</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- Slide 9 -->
-
-								<div class="owl-item product_slider_item">
-									<div class="product-item men">
-										<div class="product">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_9.png" alt="">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 											</div>
 											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
 												<span>sale</span>
@@ -571,13 +515,51 @@
 									</div>
 								</div>
 
-								<!-- Slide 10 -->
+								<div class="owl-item product_slider_item">
+									<div class="product-item">
+										<div class="product discount">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+											</div>
+											<div class="favorite favorite_left"></div>
+											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+												<span>-$20</span>
+											</div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
+												</h6>
+												<div class="product_price">
+													$520.00
+													<span>$590.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item">
+										<div class="product">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/Light Novel/bia_ngoai_ari1_1994aeafbbd9452fa.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
+												</h6>
+												<div class="product_price">$120.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
 
 								<div class="owl-item product_slider_item">
 									<div class="product-item men">
 										<div class="product">
-											<div class="product_image">
-												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_10.png" alt="">
+											<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+												<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 											</div>
 											<div class="favorite"></div>
 											<div class="product_info">

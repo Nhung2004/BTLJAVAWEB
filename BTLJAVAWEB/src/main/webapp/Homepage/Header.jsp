@@ -109,7 +109,7 @@
 								<a href="#">pages</a>
 							</li>
 							<li>
-								<a href="#">blog</a>
+								<a href="#">blogs</a>
 							</li>
 							<li>
 								<a href="LienHe.jsp">contact</a>
