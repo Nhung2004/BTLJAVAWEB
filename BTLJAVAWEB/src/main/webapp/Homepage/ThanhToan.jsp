@@ -32,9 +32,6 @@
 <link href="${pageContext.request.contextPath}/assets/css/GpMain.css" rel="stylesheet">
 </head>
 <body class="index-page">
-	<!-- Tách riêng header ra file Header.jsp -->
-	<jsp:include page="Header.jsp" />
-
 	<main class="mt-5 pt-4">
 		<div class="container">
 			<!-- Heading -->

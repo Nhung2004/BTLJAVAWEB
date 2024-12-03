@@ -1,175 +1,233 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<header id="header" class="header d-flex align-items-center fixed-top">
-	<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<header class="header trans_300">
+	<!-- Top Navigation -->
+	<div class="top_nav">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="top_nav_left">free shipping on all u.s orders over $50</div>
+				</div>
+				<div class="col-md-6 text-right">
+					<div class="top_nav_right">
+						<ul class="top_nav_menu">
+							<!--  
+							<li class="currency">
+								<a href="#">
+									usd
+									<i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="currency_selection">
+									<li>
+										<a href="#">cad</a>
+									</li>
+									<li>
+										<a href="#">aud</a>
+									</li>
+									<li>
+										<a href="#">eur</a>
+									</li>
+									<li>
+										<a href="#">gbp</a>
+									</li>
+								</ul>
+							</li>
+							
+							<li class="language">
+								<a href="#">
+									English
+									<i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="language_selection">
+									<li>
+										<a href="#">French</a>
+									</li>
+									<li>
+										<a href="#">Italian</a>
+									</li>
+									<li>
+										<a href="#">German</a>
+									</li>
+									<li>
+										<a href="#">Spanish</a>
+									</li>
+								</ul>
+							</li>
+							-->
 
-		<!-- ======= Logo ======= -->
-		<a href="${pageContext.request.contextPath}/Dashboard/Index.jsp" class="logo d-flex align-items-center me-auto me-lg-0">
-			<h1 class="sitename">G13</h1>
-			<span></span>
-		</a>
+							<li class="account">
+								<a href="#">
+									My Account
+									<i class="fa fa-angle-down"></i>
+								</a>
+								<ul class="account_selection">
+									<li>
+										<a href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp">
+											<i class="fa fa-sign-in" aria-hidden="true"></i>
+											Sign In
+										</a>
+									</li>
+									<li>
+										<a href="${pageContext.request.contextPath}/Homepage/DangKy.jsp">
+											<i class="fa fa-user-plus" aria-hidden="true"></i>
+											Register
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<nav id="navmenu" class="navmenu">
-			<ul>
-				<li>
-					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp" class="active">
-						Home
-						<br>
-					</a>
-				</li>
+	<!-- Main Navigation -->
 
-				<li class="dropdown">
-					<a href="#">
-						<span>Book Categories</span>
-						<i class="bi bi-chevron-down toggle-dropdown"></i>
-					</a>
-					<ul>
-						<li class="dropdown">
-							<a href="#">
-								<span>Best Sellers</span>
-								<i class="bi bi-chevron-down toggle-dropdown"></i>
-							</a>
-							<ul>
-								<li>
-									<a href="${pageContext.request.contextPath}/Homepage/BestSeller.jsp">2024 Best Sellers</a>
-								</li>
-
-								<li>
-									<a href="#">Best Offers</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="dropdown">
-							<a href="#">
-								<span>Recommend</span>
-								<i class="bi bi-chevron-down toggle-dropdown"></i>
-							</a>
-							<ul>
-								<li>
-									<a href="#">Best Books for 2024</a>
-								</li>
-
-								<li>
-									<a href="#">G13 Monthly Picks</a>
-								</li>
-
-								<li>
-									<a href="#">G13 Exclusive</a>
-								</li>
-
-								<li>
-									<a href="#">G13 Books of the Years</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="dropdown">
-							<a href="#">
-								<span>Customer Favourites</span>
-								<i class="bi bi-chevron-down toggle-dropdown"></i>
-							</a>
-							<ul>
-								<li>
-									<a href="#">New Release</a>
-								</li>
-
-								<li>
-									<a href="#">Comming Soon</a>
-								</li>
-
-								<li>
-									<a href="#">Pre-order</a>
-								</li>
-
-								<li>
-									<a href="#">Special Editions</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="dropdown">
-							<a href="#">
-								<span>Top Gernes</span>
-								<i class="bi bi-chevron-down toggle-dropdown"></i>
-							</a>
-							<ul>
-								<li>
-									<a href="#">Foreign</a>
-								</li>
-
-								<li>
-									<a href="#">Information and Technology</a>
-								</li>
-
-								<li>
-									<a href="#">Life Skills</a>
-								</li>
-
-								<li>
-									<a href="#">Light Novels</a>
-								</li>
-
-								<li>
-									<a href="#">Literatures</a>
-								</li>
-
-								<li>
-									<a href="#">Novels</a>
-								</li>
-							</ul>
-						</li>
-
-						<li class="dropdown">
-							<a href="#">
-								<span>Browse</span>
-								<i class="bi bi-chevron-down toggle-dropdown"></i>
-							</a>
-							<ul>
-								<li>
-									<a href="#">Books List by Gernes</a>
-								</li>
-
-								<li>
-									<a href="#">Books List by Authors</a>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-
-				<li>
-					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#about">About us</a>
-				</li>
-
-				<li>
-					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#services">Top gernes</a>
-				</li>
-
-				<li>
-					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#portfolio">Preview</a>
-				</li>
-
-				<li>
-					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#team">Events</a>
-				</li>
-
-				<li>
-					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#subscription-plans">Subscription</a>
-				</li>
-
-				<li>
-					<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp#contact">Contact</a>
-				</li>
-			</ul>
-			<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-		</nav>
-
-		<a href="${pageContext.request.contextPath}/Homepage/DangKy.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Register</a>
-		<a href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">Login</a>
-
-		<a href="${pageContext.request.contextPath}/Homepage/GioHang.jsp" class="btn-getstarted" style="padding: 6px 12px; font-size: 0.9rem;">
-			<i class="bi bi-cart-fill" style="font-size: 1.3rem;"></i>
-		</a>
+	<div class="main_nav_container">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-right">
+					<div class="logo_container">
+						<a href="#">
+							colo
+							<span>shop</span>
+						</a>
+					</div>
+					<nav class="navbar">
+						<ul class="navbar_menu">
+							<li>
+								<a href="#">home</a>
+							</li>
+							<li>
+								<a href="#">shop</a>
+							</li>
+							<li>
+								<a href="#">promotion</a>
+							</li>
+							<li>
+								<a href="#">pages</a>
+							</li>
+							<li>
+								<a href="#">blog</a>
+							</li>
+							<li>
+								<a href="LienHe.jsp">contact</a>
+							</li>
+						</ul>
+						<ul class="navbar_user">
+							<li>
+								<a href="#">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="checkout">
+								<a href="${pageContext.request.contextPath}/Homepage/GioHang.jsp">
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+									<span id="checkout_items" class="checkout_items">2</span>
+								</a>
+							</li>
+						</ul>
+						<div class="hamburger_container">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
 	</div>
 </header>
+
+<div class="fs_menu_overlay"></div>
+<div class="hamburger_menu">
+	<div class="hamburger_close">
+		<i class="fa fa-times" aria-hidden="true"></i>
+	</div>
+	<div class="hamburger_menu_content text-right">
+		<ul class="menu_top_nav">
+			<li class="menu_item has-children">
+				<a href="#">
+					usd
+					<i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="menu_selection">
+					<li>
+						<a href="#">cad</a>
+					</li>
+					<li>
+						<a href="#">aud</a>
+					</li>
+					<li>
+						<a href="#">eur</a>
+					</li>
+					<li>
+						<a href="#">gbp</a>
+					</li>
+				</ul>
+			</li>
+			<li class="menu_item has-children">
+				<a href="#">
+					English
+					<i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="menu_selection">
+					<li>
+						<a href="#">French</a>
+					</li>
+					<li>
+						<a href="#">Italian</a>
+					</li>
+					<li>
+						<a href="#">German</a>
+					</li>
+					<li>
+						<a href="#">Spanish</a>
+					</li>
+				</ul>
+			</li>
+			<li class="menu_item has-children">
+				<a href="#">
+					My Account
+					<i class="fa fa-angle-down"></i>
+				</a>
+				<ul class="menu_selection">
+					<li>
+						<a href="#">
+							<i class="fa fa-sign-in" aria-hidden="true"></i>
+							Sign In
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="fa fa-user-plus" aria-hidden="true"></i>
+							Register
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="menu_item">
+				<a href="#">home</a>
+			</li>
+			<li class="menu_item">
+				<a href="#">shop</a>
+			</li>
+			<li class="menu_item">
+				<a href="#">promotion</a>
+			</li>
+			<li class="menu_item">
+				<a href="#">pages</a>
+			</li>
+			<li class="menu_item">
+				<a href="#">blog</a>
+			</li>
+			<li class="menu_item">
+				<a href="#">contact</a>
+			</li>
+		</ul>
+	</div>
+</div>

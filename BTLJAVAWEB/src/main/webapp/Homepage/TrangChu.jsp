@@ -1,1174 +1,810 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<title>Trang chủ</title>
+<title>Colo Shop</title>
 <meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<meta name="description" content="">
-<meta name="keywords" content="">
-
-<!-- Favicons -->
-<link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
-<link href="${pageContext.request.contextPath}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-	rel="stylesheet">
-
-<!-- Vendor CSS Files -->
-<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/aos/aos.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-<!-- Main CSS File -->
-<link href="${pageContext.request.contextPath}/assets/css/GpMain.css" rel="stylesheet">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Colo Shop Template">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/bootstrap4/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/main_styles.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/responsive.css">
 </head>
 
-<body class="index-page">
-	<!-- Tách riêng header ra file Header.jsp -->
-	<jsp:include page="Header.jsp" />
+<body>
+	<div class="super_container">
+		<!-- Tách riêng header ra file Header.jsp -->
+		<jsp:include page="Header.jsp" />
 
-	<main class="main">
-		<!-- Blank Section -->
-		<section id="about" class="about section">
-			<!-- Section Title -->
-			<div class="container section-title" data-aos="fade-up">
-				<!-- Title here -->
-			</div>
-
-			<div class="container" data-aos="fade-up" data-aos-delay="100">
-				<div class="row gy-4">
-					<div class="col-lg-6 order-1 order-lg-2">
-						<!-- Picture here -->
-					</div>
-					<div class="col-lg-6 order-2 order-lg-1 content">
-						<!-- Content here -->
+		<!-- Slider -->
+		<div class="main_slider" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/slider_1.jpg)">
+			<div class="container fill_height">
+				<div class="row align-items-center fill_height">
+					<div class="col">
+						<div class="main_slider_content">
+							<h6>Spring / Summer Collection 2017</h6>
+							<h1>Get up to 30% Off New Arrivals</h1>
+							<div class="red_button shop_now_button">
+								<a href="#">shop now</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</section>
-		<!-- /Blank Section -->
+		</div>
 
-		<section>
+		<!-- Banner -->
+
+		<div class="banner">
 			<div class="container">
 				<div class="row">
-					<!-- Sidebar Left (Sản Phẩm Bán Chạy Nhất và Sản Phẩm Được Yêu Thích Nhất) -->
-					<div class="col-3 p-3 rounded shadow-sm bg-light mb-4">
-						<!-- Sản Phẩm Bán Chạy Nhất -->
-						<div class="list-group mb-4">
-							<a href="#" class="list-group-item list-group-item-action text-center font-weight-bold text-dark mb-2" style="background-color: #ffc107; color: #fff;">Best selling products</a>
-							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-								Foreign language book
-								<span class="badge badge-pill">12</span>
-							</a>
-							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-								Textbook
-								<span class="badge badge-pill">8</span>
-							</a>
-							<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-								Student book
-								<span class="badge badge-pill">15</span>
-							</a>
-							<a class="list-group-item list-group-item-action text-muted text-center disabled" aria-disabled="true" style="background-color: #e9ecef;"> Áo zin </a>
-						</div>
-
-						<!-- Sản Phẩm Được Yêu Thích Nhất -->
-						<div class="list-group">
-							<h5 class="text-center font-weight-bold mb-3 text-danger">Most popular product</h5>
-							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
-								<span class="heart-icon">❤️</span>
-								English book
-							</a>
-							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
-								<span class="heart-icon">❤️</span>
-								Life skill book
-							</a>
-							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
-								<span class="heart-icon">❤️</span>
-								Comic book
-							</a>
-							<a href="#" class="list-group-item list-group-item-action d-flex align-items-center favorite-item">
-								<span class="heart-icon">❤️</span>
-								Light novel
-							</a>
-						</div>
-					</div>
-
-					<!-- Carousel (Right Side) -->
-<div class="col-9">
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="1000">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg" class="d-block w-100" alt="Hero" style="height: 510px; object-fit: fill;">
-            </div>
-            <div class="carousel-item">
-                <img src="${pageContext.request.contextPath}/assets/img/background/FeatureBG.jpg" class="d-block w-100" alt="Hero" style="height: 510px; object-fit: fill;">
-            </div>
-            <div class="carousel-item">
-                <img src="${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg" class="d-block w-100" alt="Hero" style="height: 510px; object-fit: fill;">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div>
-
-					
-				</div>
-			</div>
-		</section>
-
-		<style>
-/* Cải tiến Sản Phẩm Bán Chạy Nhất */
-.list-group-item {
-	background-color: #f8f9fa;
-	color: #007bff;
-	border: 1px solid #dee2e6;
-	border-radius: 5px;
-	transition: background-color 0.3s ease, color 0.3s ease;
-	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.list-group-item:hover {
-	background-color: #0056b3 !important;
-	color: #fff !important;
-}
-
-.badge-pill {
-	background-color: #007bff;
-	color: #fff;
-}
-
-.list-group-item:hover .badge-pill {
-	background-color: #ffc107 !important;
-}
-
-/* Cải tiến Sản Phẩm Được Yêu Thích Nhất */
-.favorite-item {
-	background-color: #fff5f5;
-	color: #007bff;
-	border: 1px solid #ffd1dc;
-	border-radius: 5px;
-	transition: all 0.3s ease;
-	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.favorite-item:hover {
-	background-color: #ffebeb;
-	color: #dc3545;
-}
-
-.heart-icon {
-	color: #ff4d4d;
-	font-size: 20px;
-	margin-right: 10px;
-	transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.favorite-item:hover .heart-icon {
-	transform: scale(1.2);
-	color: #dc3545;
-	filter: drop-shadow(0 0 5px #ff4d4d);
-}
-
-/* Cải tiến cho icon-box */
-.icon-box {
-	background-color: #f8f9fa;
-	padding: 20px;
-	border-radius: 10px;
-	text-align: center;
-	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-	border: 2px solid #e3e6f0;
-}
-
-.icon-box i {
-	font-size: 40px;
-	color: #007bff;
-	margin-bottom: 10px;
-	transition: color 0.3s ease;
-}
-
-.icon-box h3 a {
-	color: #343a40;
-	font-weight: bold;
-	text-decoration: none;
-	transition: color 0.3s ease;
-}
-
-.icon-box:hover {
-	transform: scale(1.05);
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.icon-box:hover i {
-	color: #0056b3;
-}
-
-.icon-box:hover h3 a {
-	color: #0056b3;
-}
-</style>
-
-		<style>
-
-/* Cải tiến Carousel */
-.carousel-item img {
-	border-radius: 15px; /* Bo góc ảnh */
-	border: 2px solid #dee2e6; /* Viền xám nhạt */
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Bóng đổ cho ảnh */
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.carousel-item img:hover {
-	transform: scale(1.02); /* Hiệu ứng phóng to nhẹ khi hover */
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-	/* Tăng bóng đổ khi hover */
-}
-</style>
-
-		<!-- Hero Section -->
-		<section>
-			<div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
-				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
-					<div class="icon-box">
-						<i class="bi bi-journal-bookmark"></i>
-						<h3>
-							<a href="SanPham.jsp">Foreign</a>
-						</h3>
-					</div>
-				</div>
-
-				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
-					<div class="icon-box">
-						<i class="bi bi-motherboard"></i>
-						<h3>
-							<a href="">ITs</a>
-						</h3>
-					</div>
-				</div>
-
-				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
-					<div class="icon-box">
-						<i class="bi bi-vector-pen"></i>
-						<h3>
-							<a href="">Literature</a>
-						</h3>
-					</div>
-				</div>
-
-				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
-					<div class="icon-box">
-						<i class="bi bi-pencil-square"></i>
-						<h3>
-							<a href="">Light Novel</a>
-						</h3>
-					</div>
-				</div>
-
-				<div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
-					<div class="icon-box">
-						<i class="bi bi-gem"></i>
-						<h3>
-							<a href="">Life Skill</a>
-						</h3>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /Hero Section -->
-
-		<!-- About Section -->
-		<section id="about" class="about section">
-
-			<!-- Section Title -->
-			<div class="container section-title" data-aos="fade-up">
-				<h2>About us</h2>
-			</div>
-
-			<div class="container" data-aos="fade-up" data-aos-delay="100">
-				<div class="row gy-4">
-					<div class="col-lg-6 order-1 order-lg-2">
-						<img src="${pageContext.request.contextPath}/assets/img/about/About.jpg" class="img-fluid" alt="About Us">
-					</div>
-					<div class="col-lg-6 order-2 order-lg-1 content">
-						<h3>Welcome to G13</h3>
-						<p class="fst-italic">Your one-stop destination for books across all genres! Whether you’re looking for the latest bestsellers, timeless classics, or hidden gems, we’re here to help you find the perfect read.</p>
-						<ul>
-							<li>
-								<i class="bi bi-check2-all"></i>
-								<span>Discover a curated selection of books that caters to every interest and age.</span>
-							</li>
-							<li>
-								<i class="bi bi-check2-all"></i>
-								<span>Connect with fellow book enthusiasts through our platform.</span>
-							</li>
-							<li>
-								<i class="bi bi-check2-all"></i>
-								<span>Explore categories, manage your favorites, and inspire a love for reading.</span>
-							</li>
-						</ul>
-						<p>At G13, every book is a gateway to new worlds, and we’re thrilled to be part of your reading journey.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /About Section -->
-
-		<!-- Client Section -->
-		<section id="clients" class="clients section">
-			<div class="container" data-aos="fade-up" data-aos-delay="100">
-				<div class="swiper init-swiper">
-
-					<!-- Client Script -->
-					<script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 500,
-              "autoplay": {
-                "delay": 2500
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-					<div class="swiper-wrapper align-items-center">
-						<div class="swiper-slide">
-							<img src="${pageContext.request.contextPath}/assets/img/clients/client-1.png" class="img-fluid" alt="">
-						</div>
-
-						<div class="swiper-slide">
-							<img src="${pageContext.request.contextPath}/assets/img/clients/client-2.png" class="img-fluid" alt="">
-						</div>
-
-						<div class="swiper-slide">
-							<img src="${pageContext.request.contextPath}/assets/img/clients/client-3.png" class="img-fluid" alt="">
-						</div>
-
-						<div class="swiper-slide">
-							<img src="${pageContext.request.contextPath}/assets/img/clients/client-4.png" class="img-fluid" alt="">
-						</div>
-
-						<div class="swiper-slide">
-							<img src="${pageContext.request.contextPath}/assets/img/clients/client-5.png" class="img-fluid" alt="">
-						</div>
-
-						<div class="swiper-slide">
-							<img src="${pageContext.request.contextPath}/assets/img/clients/client-6.png" class="img-fluid" alt="">
-						</div>
-
-						<div class="swiper-slide">
-							<img src="${pageContext.request.contextPath}/assets/img/clients/client-7.png" class="img-fluid" alt="">
-						</div>
-
-						<div class="swiper-slide">
-							<img src="${pageContext.request.contextPath}/assets/img/clients/client-8.png" class="img-fluid" alt="">
-						</div>
-					</div>
-					<div class="swiper-pagination"></div>
-				</div>
-			</div>
-		</section>
-		<!-- /Clients Section -->
-
-		<!-- Features Section -->
-		<section id="features" class="features section">
-
-			<div class="container">
-
-				<div class="row gy-4">
-					<div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100">
-						<img src="${pageContext.request.contextPath}/assets/img/background/FeatureBG.jpg" alt="Features">
-					</div>
-					<div class="col-lg-6">
-
-						<div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up" data-aos-delay="200">
-							<i class="bi bi-bookmark-heart flex-shrink-0"></i>
-							<div>
-								<h4>Personalized Recommendations</h4>
-								<p>Discover books that match your interests based on your reading history and favorite genres.</p>
-							</div>
-						</div>
-						<!-- End Features Item-->
-
-						<div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
-							<i class="bi bi-collection flex-shrink-0"></i>
-							<div>
-								<h4>Extensive Book Collections</h4>
-								<p>Browse an extensive library of bestsellers, new releases, and timeless classics, all in one place.</p>
-							</div>
-						</div>
-						<!-- End Features Item-->
-
-						<div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
-							<i class="bi bi-cash-stack flex-shrink-0"></i>
-							<div>
-								<h4>Exclusive Discounts & Deals</h4>
-								<p>Enjoy special discounts and deals on select titles, with new offers added regularly.</p>
-							</div>
-						</div>
-						<!-- End Features Item-->
-
-						<div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
-							<i class="bi bi-star flex-shrink-0"></i>
-							<div>
-								<h4>Verified Customer Reviews</h4>
-								<p>Read honest reviews from our community to help you make the best choice for your next read.</p>
-							</div>
-						</div>
-						<!-- End Features Item-->
-
-						<div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="600">
-							<i class="bi bi-truck flex-shrink-0"></i>
-							<div>
-								<h4>Fast and Reliable Shipping</h4>
-								<p>Get your books delivered quickly and securely, with real-time order tracking available.</p>
-							</div>
-						</div>
-						<!-- End Features Item-->
-
-					</div>
-				</div>
-
-			</div>
-
-		</section>
-		<!-- /Features Section -->
-
-		<!-- Top Gernes Section -->
-		<section id="services" class="services section">
-
-			<!-- Section Title -->
-			<div class="container section-title" data-aos="fade-up">
-				<h2>Top Genres</h2>
-				<p>Discover the most popular genres at our bookstore</p>
-			</div>
-			<!-- End Section Title -->
-			<div class="container">
-				<div class="row gy-4">
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-						<div class="service-item position-relative">
-							<div class="icon">
-								<i class="bi bi-book-half"></i>
-							</div>
-							<a href="genre-details.html" class="stretched-link">
-								<h3>Foreign</h3>
-							</a>
-							<p>Explore a world of knowledge with foreign books from various cultures and authors around the globe.</p>
-						</div>
-					</div>
-					<!-- End Top Gernes Item -->
-
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-						<div class="service-item position-relative">
-							<div class="icon">
-								<i class="bi bi-code-slash"></i>
-							</div>
-							<a href="genre-details.html" class="stretched-link">
-								<h3>IT</h3>
-							</a>
-							<p>Stay updated with the latest advancements in technology, coding, and software development.</p>
-						</div>
-					</div>
-					<!-- End Top Gernes Item -->
-
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-						<div class="service-item position-relative">
-							<div class="icon">
-								<i class="bi bi-lightbulb"></i>
-							</div>
-							<a href="genre-details.html" class="stretched-link">
-								<h3>Life Skills</h3>
-							</a>
-							<p>Enhance your personal and professional life with books on self-improvement, leadership, and communication.</p>
-						</div>
-					</div>
-					<!-- End Top Gernes Item -->
-
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-						<div class="service-item position-relative">
-							<div class="icon">
-								<i class="bi bi-book"></i>
-							</div>
-							<a href="genre-details.html" class="stretched-link">
-								<h3>Novel</h3>
-							</a>
-							<p>Dive into captivating stories and complex characters in our collection of contemporary and classic novels.</p>
-						</div>
-					</div>
-					<!-- End Top Gernes Item -->
-
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-						<div class="service-item position-relative">
-							<div class="icon">
-								<i class="bi bi-bookmark-star"></i>
-							</div>
-							<a href="genre-details.html" class="stretched-link">
-								<h3>Light Novel</h3>
-							</a>
-							<p>Enjoy engaging, easy-to-read light novels that transport you to fantastical worlds with every page.</p>
-						</div>
-					</div>
-					<!-- End Top Gernes Item -->
-
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-						<div class="service-item position-relative">
-							<div class="icon">
-								<i class="bi bi-pen"></i>
-							</div>
-							<a href="genre-details.html" class="stretched-link">
-								<h3>Literature</h3>
-							</a>
-							<p>Experience the beauty of language and timeless themes in our curated literature collection.</p>
-						</div>
-					</div>
-					<!-- End Top Gernes Item -->
-				</div>
-			</div>
-		</section>
-		<!-- /Top Gernes Section -->
-
-		<!-- Preview Section -->
-		<section id="portfolio" class="portfolio section">
-
-			<!-- Section Title -->
-			<div class="container section-title" data-aos="fade-up">
-				<h2>Preview</h2>
-				<p>Check out some of our favorite books</p>
-			</div>
-			<!-- End Section Title -->
-
-			<div class="container">
-				<div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-					<ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-						<li data-filter="*" class="filter-active">All</li>
-						<li data-filter=".filter-literature">Literature</li>
-						<li data-filter=".filter-it">IT</li>
-						<li data-filter=".filter-novel">Novel</li>
-					</ul>
-					<!-- End Portfolio Filters -->
-
-					<div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-literature" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/books/Literature/2024_06_11_10_32_29_1-390x510.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
-							<div class="portfolio-info">
-								<h4>Literature Book 1</h4>
-								<p>A classic tale of ...</p>
-								<a href="link-to-literature-book-1" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-literature" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935212358279.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
-							<div class="portfolio-info">
-								<h4>Literature Book 2</h4>
-								<p>Exploring themes of ...</p>
-								<a href="link-to-literature-book-2" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-it" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
-							<div class="portfolio-info">
-								<h4>IT Book 1</h4>
-								<p>An essential guide to ...</p>
-								<a href="link-to-it-book-1" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-it" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/books/IT/tin-hoc-van-phong-cong-thuc-ham.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
-							<div class="portfolio-info">
-								<h4>IT Book 2</h4>
-								<p>Understanding modern technologies ...</p>
-								<a href="link-to-it-book-2" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-novel" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
-							<div class="portfolio-info">
-								<h4>Novel Book 1</h4>
-								<p>A gripping story of ...</p>
-								<a href="link-to-novel-book-1" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-						<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-novel" style="border: 1px solid #ddd; border-radius: 5px; padding: 10px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
-							<img src="${pageContext.request.contextPath}/assets/img/books/Novel/chu-cho-tu-than-bia_94a9c90f42db.jpg" class="img-fluid" alt="" style="width: 100%; height: 500px; object-fit: contain;">
-							<div class="portfolio-info">
-								<h4>Novel Book 2</h4>
-								<p>A journey through ...</p>
-								<a href="link-to-novel-book-2" title="More Details" class="details-link">
-									<i class="bi bi-link-45deg"></i>
-								</a>
-							</div>
-						</div>
-						<!-- End Portfolio Item -->
-
-					</div>
-					<!-- End Portfolio Container -->
-				</div>
-			</div>
-		</section>
-		<!-- /Preview Section -->
-
-		<!-- Stats Section -->
-		<section id="stats" class="stats section">
-			<div class="container" data-aos="fade-up" data-aos-delay="100">
-				<div class="row gy-4 align-items-center justify-content-between">
-					<div class="col-lg-5">
-						<img src="${pageContext.request.contextPath}/assets/img/stats-img.jpg" alt="" class="img-fluid">
-					</div>
-					<div class="col-lg-6">
-						<h3 class="fw-bold fs-2 mb-3">Our Bookstore at a Glance</h3>
-						<p>Explore our monthly performance and customer satisfaction data.</p>
-						<div class="row gy-4">
-							<div class="col-lg-6">
-								<div class="stats-item d-flex">
-									<i class="bi bi-book-half flex-shrink-0"></i>
-									<div>
-										<span data-purecounter-start="0" data-purecounter-end="5000" data-purecounter-duration="3" class="purecounter"></span>
-										<p>
-											<strong>Books Sold</strong>
-											<span> per month</span>
-										</p>
-									</div>
-								</div>
-							</div>
-							<!-- End Stats Item -->
-							<div class="col-lg-6">
-								<div class="stats-item d-flex">
-									<i class="bi bi-currency-dollar flex-shrink-0"></i>
-									<div>
-										<span data-purecounter-start="0" data-purecounter-end="75000" data-purecounter-duration="3" class="purecounter"></span>
-										<p>
-											<strong>Monthly Income</strong>
-											<span> in USD</span>
-										</p>
-									</div>
-								</div>
-							</div>
-							<!-- End Stats Item -->
-							<div class="col-lg-6">
-								<div class="stats-item d-flex">
-									<i class="bi bi-star-fill flex-shrink-0"></i>
-									<div>
-										<span data-purecounter-start="0" data-purecounter-end="4.8" data-purecounter-duration="3" class="purecounter"></span>
-										<p>
-											<strong>Customer Rating</strong>
-											<span> out of 5</span>
-										</p>
-									</div>
-								</div>
-							</div>
-							<!-- End Stats Item -->
-							<div class="col-lg-6">
-								<div class="stats-item d-flex">
-									<i class="bi bi-arrow-repeat flex-shrink-0"></i>
-									<div>
-										<span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="3" class="purecounter"></span>
-										<p>
-											<strong>Returning Customers</strong>
-											<span> percentage</span>
-										</p>
-									</div>
-								</div>
-							</div>
-							<!-- End Stats Item -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- /Stats Section -->
-
-		<!-- Customer Review Section -->
-		<section id="testimonials" class="testimonials section dark-background">
-			<img src="${pageContext.request.contextPath}/assets/img/background/ReviewBG.jpg" class="testimonials-bg" alt="">
-
-			<div class="container" data-aos="fade-up" data-aos-delay="100">
-				<div class="swiper init-swiper">
-					<script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-            </script>
-					<div class="swiper-wrapper">
-
-						<div class="swiper-slide">
-							<div class="testimonial-item">
-								<img src="${pageContext.request.contextPath}/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-								<h3>Anna Roberts</h3>
-								<h4>Verified Buyer</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-								</div>
-								<p>"Incredible variety and top-notch customer service! My go-to bookstore every time!"</p>
-							</div>
-						</div>
-						<!-- End customer review -->
-
-						<div class="swiper-slide">
-							<div class="testimonial-item">
-								<img src="${pageContext.request.contextPath}/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-								<h3>Michael Smith</h3>
-								<h4>Frequent Shopper</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-half"></i>
-								</div>
-								<p>"Great collection of books, and always find something new. Delivery is prompt too!"</p>
-							</div>
-						</div>
-						<!-- End customer review -->
-
-						<div class="swiper-slide">
-							<div class="testimonial-item">
-								<img src="${pageContext.request.contextPath}/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-								<h3>Emily Brown</h3>
-								<h4>New Customer</h4>
-								<div class="stars">
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-									<i class="bi bi-star-fill"></i>
-								</div>
-								<p>"Amazing service! The book recommendations are spot on, and I love the user experience."</p>
-							</div>
-						</div>
-						<!-- End customer review -->
-
-					</div>
-					<div class="swiper-pagination"></div>
-				</div>
-			</div>
-		</section>
-		<!-- /Customer Review Section -->
-
-		<!-- Events Section -->
-		<section id="team" class="team section">
-			<!-- Section Title -->
-			<div class="container section-title" data-aos="fade-up">
-				<h2>Upcoming Events</h2>
-				<p>Don't miss out on our exciting events!</p>
-			</div>
-			<!-- End Section Title -->
-
-			<div class="container">
-				<div class="row gy-4">
-					<!-- Event Item -->
-					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="100">
-						<div class="event-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
-							<h3>Book Launch: The Lost World</h3>
-							<p class="price">March 25, 2024</p>
-							<ul class="text-start">
-								<li>Location: New York City</li>
-								<li>Launch of "The Lost World" by John Doe</li>
-								<li>Special guest appearances and book signing</li>
-							</ul>
-							<div class="d-flex justify-content-center mt-auto">
-								<a href="#" class="btn btn-primary">Learn More</a>
+					<div class="col-md-4">
+						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_1.jpg)">
+							<div class="banner_category">
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">women's</a>
 							</div>
 						</div>
 					</div>
-					<!-- End Event Item -->
-
-					<!-- Event Item -->
-					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="200">
-						<div class="event-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
-							<h3>Author Meet-and-Greet</h3>
-							<p class="price">April 10, 2024</p>
-							<ul class="text-start">
-								<li>Location: Virtual (Zoom)</li>
-								<li>Meet Sarah Johnson, author of "The Lost River"</li>
-								<li>Q&A session with fans</li>
-							</ul>
-							<div class="d-flex justify-content-center mt-auto">
-								<a href="#" class="btn btn-primary">Register Now</a>
+					<div class="col-md-4">
+						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_2.jpg)">
+							<div class="banner_category">
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">accessories's</a>
 							</div>
 						</div>
 					</div>
-					<!-- End Event Item -->
-
-					<!-- Event Item -->
-					<div class="col-lg-4 col-md-6 event-item" data-aos="fade-up" data-aos-delay="300">
-						<div class="event-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
-							<h3>Book Discussion: The Great Adventure</h3>
-							<p class="price">May 5, 2024</p>
-							<ul class="text-start">
-								<li>Location: Online Webinar</li>
-								<li>Discuss "The Great Adventure" with book enthusiasts</li>
-								<li>Open forum and live chat</li>
-							</ul>
-							<div class="d-flex justify-content-center mt-auto">
-								<a href="#" class="btn btn-primary">Learn More</a>
+					<div class="col-md-4">
+						<div class="banner_item align-items-center" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/banner_3.jpg)">
+							<div class="banner_category">
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">men's</a>
 							</div>
 						</div>
 					</div>
-					<!-- End Event Item -->
-
-				</div>
-			</div>
-		</section>
-		<!-- /Events Section -->
-
-		<!-- Subscription Plans Section -->
-		<section id="subscription-plans" class="subscription-plans section">
-			<!-- Section Title -->
-			<div class="container section-title" data-aos="fade-up">
-				<h2 class="text-start">Subscription</h2>
-				<p class="text-start">Enjoy exclusive benefits now!</p>
-			</div>
-			<!-- End Section Title -->
-
-			<div class="container">
-				<div class="row gy-4 justify-content-center">
-					<!-- Plan Item -->
-					<div class="col-lg-4 col-md-6 plan-item" data-aos="fade-up" data-aos-delay="100">
-						<div class="plan-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
-							<h3>Basic Plan</h3>
-							<p class="price">$1.99/month</p>
-							<ul class="text-start">
-								<li>5% discount on all books</li>
-								<li>1 free book every 3 months</li>
-								<li>Exclusive newsletter updates</li>
-							</ul>
-							<div class="d-flex justify-content-center mt-auto">
-								<a href="#" class="btn btn-primary">Join Now</a>
-							</div>
-						</div>
-					</div>
-					<!-- End Plan Item -->
-
-					<!-- Plan Item -->
-					<div class="col-lg-4 col-md-6 plan-item" data-aos="fade-up" data-aos-delay="200">
-						<div class="plan-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
-							<h3>Standard Plan</h3>
-							<p class="price">$4.99/month</p>
-							<ul class="text-start">
-								<li>10% discount on all books</li>
-								<li>2 free books every 3 months</li>
-								<li>Exclusive newsletters with book recommendations</li>
-								<li>Access to limited-time promotions</li>
-							</ul>
-							<div class="d-flex justify-content-center mt-auto">
-								<a href="#" class="btn btn-primary">Join Now</a>
-							</div>
-						</div>
-					</div>
-					<!-- End Plan Item -->
-
-					<!-- Plan Item -->
-					<div class="col-lg-4 col-md-6 plan-item" data-aos="fade-up" data-aos-delay="300">
-						<div class="plan-card text-center border p-4 d-flex flex-column" style="height: 100%; min-height: 450px;">
-							<h3>Premium Plan</h3>
-							<p class="price">$9.99/month</p>
-							<ul class="text-start">
-								<li>15% discount on all books</li>
-								<li>1 free book every month</li>
-								<li>Exclusive newsletters with personalized book recommendations</li>
-								<li>Priority access to new releases</li>
-								<li>Free shipping on all orders</li>
-							</ul>
-							<div class="d-flex justify-content-center mt-auto">
-								<a href="#" class="btn btn-primary">Join Now</a>
-							</div>
-						</div>
-					</div>
-					<!-- End Plan Item -->
-				</div>
-			</div>
-		</section>
-		<!-- /Subscription Plans Section -->
-
-		<!-- Contact Section -->
-		<section id="contact" class="contact section">
-			<!-- Section Title -->
-			<div class="container section-title" data-aos="fade-up">
-				<h2>Contact</h2>
-				<p>Contact us if you need help</p>
-			</div>
-			<!-- End Section Title -->
-			<div class="container" data-aos="fade-up" data-aos-delay="100">
-				<div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-					<iframe style="border: 0; width: 100%; height: 270px;"
-						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-						frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-				<!-- End Google Maps -->
-				<div class="row gy-4">
-					<div class="col-lg-4">
-						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-							<i class="bi bi-geo-alt flex-shrink-0"></i>
-							<div>
-								<h3>Address</h3>
-								<p>A108 Adam Street, New York, NY 535022</p>
-							</div>
-						</div>
-						<!-- End Info Item -->
-						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-							<i class="bi bi-telephone flex-shrink-0"></i>
-							<div>
-								<h3>Call Us</h3>
-								<p>+1 5589 55488 55</p>
-							</div>
-						</div>
-						<!-- End Info Item -->
-						<div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-							<i class="bi bi-envelope flex-shrink-0"></i>
-							<div>
-								<h3>Email Us</h3>
-								<p>info@example.com</p>
-							</div>
-						</div>
-						<!-- End Info Item -->
-					</div>
-					<div class="col-lg-8">
-						<form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-							<div class="row gy-4">
-								<div class="col-md-6">
-									<input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-								</div>
-								<div class="col-md-6 ">
-									<input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-								</div>
-								<div class="col-md-12">
-									<input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-								</div>
-								<div class="col-md-12">
-									<textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-								</div>
-								<div class="col-md-12 text-center">
-									<div class="loading">Loading</div>
-									<div class="error-message"></div>
-									<div class="sent-message">Your message has been sent. Thank you!</div>
-									<button type="submit">Send Message</button>
-								</div>
-							</div>
-						</form>
-					</div>
-					<!-- End Contact Form -->
-				</div>
-			</div>
-		</section>
-		<!-- /Contact Section -->
-	</main>
-
-	<footer id="footer" class="footer dark-background">
-		<div class="footer-top">
-			<div class="container">
-				<div class="row gy-4">
-					<div class="col-lg-4 col-md-6 footer-about">
-						<a href="${pageContext.request.contextPath}/Dashboard/index.jsp" class="logo d-flex align-items-center">
-							<span class="sitename">G13</span>
-						</a>
-						<div class="footer-contact pt-3">
-							<p>A108 Adam Street</p>
-							<p>New York, NY 535022</p>
-							<p class="mt-3">
-								<strong>Phone:</strong>
-								<span>+1 5589 55488 55</span>
-							</p>
-							<p>
-								<strong>Email:</strong>
-								<span>info@example.com</span>
-							</p>
-						</div>
-						<div class="social-links d-flex mt-4">
-							<a href="">
-								<i class="bi bi-twitter-x"></i>
-							</a>
-							<a href="">
-								<i class="bi bi-facebook"></i>
-							</a>
-							<a href="">
-								<i class="bi bi-instagram"></i>
-							</a>
-							<a href="">
-								<i class="bi bi-linkedin"></i>
-							</a>
-						</div>
-					</div>
-
-					<div class="col-lg-2 col-md-3 footer-links">
-						<h4>Useful Links</h4>
-						<ul>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="TrangChu.jsp"> Home</a>
-							</li>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> About us</a>
-							</li>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Services</a>
-							</li>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Terms of service</a>
-							</li>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Privacy policy</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="col-lg-2 col-md-3 footer-links">
-						<h4>Our Services</h4>
-						<ul>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Web Design</a>
-							</li>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Web Development</a>
-							</li>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Product Management</a>
-							</li>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Marketing</a>
-							</li>
-							<li>
-								<i class="bi bi-chevron-right"></i>
-								<a href="#"> Graphic Design</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="col-lg-4 col-md-12 footer-newsletter">
-						<h4>Our Newsletter</h4>
-						<p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-						<form action="forms/newsletter.php" method="post" class="php-email-form">
-							<div class="newsletter-form">
-								<input type="email" name="email">
-								<input type="submit" value="Subscribe">
-							</div>
-							<div class="loading">Loading</div>
-							<div class="error-message"></div>
-							<div class="sent-message">Your subscription request has been sent. Thank you!</div>
-						</form>
-					</div>
-
 				</div>
 			</div>
 		</div>
 
-		<!--
-		<div class="copyright">
-			<div class="container text-center">
-				<p>
-					©
-					<span>Copyright</span>
-					<strong class="px-1 sitename">GP</strong>
-					<span>All Rights Reserved</span>
-				</p>
-				<div class="credits">
-					Designed by
-					<a href="https://bootstrapmade.com/">BootstrapMade</a>			
+		<!-- New Arrivals -->
+
+		<div class="new_arrivals">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_title new_arrivals_title">
+							<h2>New Arrivals</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row align-items-center">
+					<div class="col text-center">
+						<div class="new_arrivals_sorting">
+							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">women's</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">accessories</li>
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">men's</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+
+							<!-- Product 1 -->
+
+							<div class="product-item men">
+								<div class="product discount product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_1.png" alt="">
+									</div>
+									<div class="favorite favorite_left"></div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+										<span>-$20</span>
+									</div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
+										</h6>
+										<div class="product_price">
+											$520.00
+											<span>$590.00</span>
+										</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 2 -->
+
+							<div class="product-item women">
+								<div class="product product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_2.png" alt="">
+									</div>
+									<div class="favorite"></div>
+									<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center">
+										<span>new</span>
+									</div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
+										</h6>
+										<div class="product_price">$610.00</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 3 -->
+
+							<div class="product-item women">
+								<div class="product product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_3.png" alt="">
+									</div>
+									<div class="favorite"></div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
+										</h6>
+										<div class="product_price">$120.00</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 4 -->
+
+							<div class="product-item accessories">
+								<div class="product product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_4.png" alt="">
+									</div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+										<span>sale</span>
+									</div>
+									<div class="favorite favorite_left"></div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a>
+										</h6>
+										<div class="product_price">$410.00</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 5 -->
+
+							<div class="product-item women men">
+								<div class="product product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_5.png" alt="">
+									</div>
+									<div class="favorite"></div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold & Grey</a>
+										</h6>
+										<div class="product_price">$180.00</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 6 -->
+
+							<div class="product-item accessories">
+								<div class="product discount product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_6.png" alt="">
+									</div>
+									<div class="favorite favorite_left"></div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+										<span>-$20</span>
+									</div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
+										</h6>
+										<div class="product_price">
+											$520.00
+											<span>$590.00</span>
+										</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 7 -->
+
+							<div class="product-item women">
+								<div class="product product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_7.png" alt="">
+									</div>
+									<div class="favorite"></div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
+										</h6>
+										<div class="product_price">$610.00</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 8 -->
+
+							<div class="product-item accessories">
+								<div class="product product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_8.png" alt="">
+									</div>
+									<div class="favorite"></div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
+										</h6>
+										<div class="product_price">$120.00</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 9 -->
+
+							<div class="product-item men">
+								<div class="product product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_9.png" alt="">
+									</div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+										<span>sale</span>
+									</div>
+									<div class="favorite favorite_left"></div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a>
+										</h6>
+										<div class="product_price">$410.00</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+
+							<!-- Product 10 -->
+
+							<div class="product-item men">
+								<div class="product product_filter">
+									<div class="product_image">
+										<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_10.png" alt="">
+									</div>
+									<div class="favorite"></div>
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold & Grey</a>
+										</h6>
+										<div class="product_price">$180.00</div>
+									</div>
+								</div>
+								<div class="red_button add_to_cart_button">
+									<a href="#">add to cart</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-		-->
 
-	</footer>
+		<!-- Deal of the week -->
 
-	<!-- Scroll Top -->
-	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-		<i class="bi bi-arrow-up-short"></i>
-	</a>
+		<div class="deal_ofthe_week">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6">
+						<div class="deal_ofthe_week_img">
+							<img src="${pageContext.request.contextPath}/assets/img/coloshop/deal_ofthe_week.png" alt="">
+						</div>
+					</div>
+					<div class="col-lg-6 text-right deal_ofthe_week_col">
+						<div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
+							<div class="section_title">
+								<h2>Deal Of The Week</h2>
+							</div>
+							<ul class="timer">
+								<li class="d-inline-flex flex-column justify-content-center align-items-center">
+									<div id="day" class="timer_num">03</div>
+									<div class="timer_unit">Day</div>
+								</li>
+								<li class="d-inline-flex flex-column justify-content-center align-items-center">
+									<div id="hour" class="timer_num">15</div>
+									<div class="timer_unit">Hours</div>
+								</li>
+								<li class="d-inline-flex flex-column justify-content-center align-items-center">
+									<div id="minute" class="timer_num">45</div>
+									<div class="timer_unit">Mins</div>
+								</li>
+								<li class="d-inline-flex flex-column justify-content-center align-items-center">
+									<div id="second" class="timer_num">23</div>
+									<div class="timer_unit">Sec</div>
+								</li>
+							</ul>
+							<div class="red_button deal_ofthe_week_button">
+								<a href="#">shop now</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	<!-- Preloader -->
-	<div id="preloader"></div>
+		<!-- Best Sellers -->
 
-	<!-- Vendor JS Files -->
-	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/vendor/php-email-form/validate.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/vendor/aos/aos.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/vendor/swiper/swiper-bundle.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/vendor/glightbox/js/glightbox.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-	<script src="${pageContext.request.contextPath}/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+		<div class="best_sellers">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_title new_arrivals_title">
+							<h2>Best Sellers</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="product_slider_container">
+							<div class="owl-carousel owl-theme product_slider">
 
-	<!-- Main JS File -->
-	<script src="${pageContext.request.contextPath}/assets/js/GpMain.js"></script>
+								<!-- Slide 1 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item">
+										<div class="product discount">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_1.png" alt="">
+											</div>
+											<div class="favorite favorite_left"></div>
+											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+												<span>-$20</span>
+											</div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
+												</h6>
+												<div class="product_price">
+													$520.00
+													<span>$590.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 2 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item women">
+										<div class="product">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_2.png" alt="">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center">
+												<span>new</span>
+											</div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
+												</h6>
+												<div class="product_price">$610.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 3 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item women">
+										<div class="product">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_3.png" alt="">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
+												</h6>
+												<div class="product_price">$120.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 4 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item accessories">
+										<div class="product">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_4.png" alt="">
+											</div>
+											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+												<span>sale</span>
+											</div>
+											<div class="favorite favorite_left"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a>
+												</h6>
+												<div class="product_price">$410.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 5 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item women men">
+										<div class="product">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_5.png" alt="">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold & Grey</a>
+												</h6>
+												<div class="product_price">$180.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 6 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item accessories">
+										<div class="product discount">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_6.png" alt="">
+											</div>
+											<div class="favorite favorite_left"></div>
+											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+												<span>-$20</span>
+											</div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
+												</h6>
+												<div class="product_price">
+													$520.00
+													<span>$590.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 7 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item women">
+										<div class="product">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_7.png" alt="">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
+												</h6>
+												<div class="product_price">$610.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 8 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item accessories">
+										<div class="product">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_8.png" alt="">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
+												</h6>
+												<div class="product_price">$120.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 9 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item men">
+										<div class="product">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_9.png" alt="">
+											</div>
+											<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+												<span>sale</span>
+											</div>
+											<div class="favorite favorite_left"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a>
+												</h6>
+												<div class="product_price">$410.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Slide 10 -->
+
+								<div class="owl-item product_slider_item">
+									<div class="product-item men">
+										<div class="product">
+											<div class="product_image">
+												<img src="${pageContext.request.contextPath}/assets/img/coloshop/product_10.png" alt="">
+											</div>
+											<div class="favorite"></div>
+											<div class="product_info">
+												<h6 class="product_name">
+													<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold & Grey</a>
+												</h6>
+												<div class="product_price">$180.00</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Slider Navigation -->
+
+							<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+								<i class="fa fa-chevron-left" aria-hidden="true"></i>
+							</div>
+							<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+								<i class="fa fa-chevron-right" aria-hidden="true"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Benefit -->
+
+		<div class="benefit">
+			<div class="container">
+				<div class="row benefit_row">
+					<div class="col-lg-3 benefit_col">
+						<div class="benefit_item d-flex flex-row align-items-center">
+							<div class="benefit_icon">
+								<i class="fa fa-truck" aria-hidden="true"></i>
+							</div>
+							<div class="benefit_content">
+								<h6>free shipping</h6>
+								<p>Suffered Alteration in Some Form</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 benefit_col">
+						<div class="benefit_item d-flex flex-row align-items-center">
+							<div class="benefit_icon">
+								<i class="fa fa-money" aria-hidden="true"></i>
+							</div>
+							<div class="benefit_content">
+								<h6>cach on delivery</h6>
+								<p>The Internet Tend To Repeat</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 benefit_col">
+						<div class="benefit_item d-flex flex-row align-items-center">
+							<div class="benefit_icon">
+								<i class="fa fa-undo" aria-hidden="true"></i>
+							</div>
+							<div class="benefit_content">
+								<h6>45 days return</h6>
+								<p>Making it Look Like Readable</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 benefit_col">
+						<div class="benefit_item d-flex flex-row align-items-center">
+							<div class="benefit_icon">
+								<i class="fa fa-clock-o" aria-hidden="true"></i>
+							</div>
+							<div class="benefit_content">
+								<h6>opening all week</h6>
+								<p>8AM - 09PM</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Blogs -->
+
+		<div class="blogs">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="section_title">
+							<h2>Latest Blogs</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row blogs_container">
+					<div class="col-lg-4 blog_item_col">
+						<div class="blog_item">
+							<div class="blog_background" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/blog_1.jpg)"></div>
+							<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+								<h4 class="blog_title">Here are the trends I see coming this fall</h4>
+								<span class="blog_meta">by admin | dec 01, 2017</span>
+								<a class="blog_more" href="#">Read more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 blog_item_col">
+						<div class="blog_item">
+							<div class="blog_background" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/blog_2.jpg)"></div>
+							<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+								<h4 class="blog_title">Here are the trends I see coming this fall</h4>
+								<span class="blog_meta">by admin | dec 01, 2017</span>
+								<a class="blog_more" href="#">Read more</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 blog_item_col">
+						<div class="blog_item">
+							<div class="blog_background" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/blog_3.jpg)"></div>
+							<div class="blog_content d-flex flex-column align-items-center justify-content-center text-center">
+								<h4 class="blog_title">Here are the trends I see coming this fall</h4>
+								<span class="blog_meta">by admin | dec 01, 2017</span>
+								<a class="blog_more" href="#">Read more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Newsletter -->
+
+		<div class="newsletter">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="newsletter_text d-flex flex-column justify-content-center align-items-lg-start align-items-md-center text-center">
+							<h4>Newsletter</h4>
+							<p>Subscribe to our newsletter and get 20% off your first purchase</p>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<form action="post">
+							<div class="newsletter_form d-flex flex-md-row flex-column flex-xs-column align-items-center justify-content-lg-end justify-content-center">
+								<input id="newsletter_email" type="email" placeholder="Your email" required="required" data-error="Valid email is required.">
+								<button id="newsletter_submit" type="submit" class="newsletter_submit_btn trans_300" value="Submit">subscribe</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Footer -->
+
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="footer_nav_container d-flex flex-sm-row flex-column align-items-center justify-content-lg-start justify-content-center text-center">
+							<ul class="footer_nav">
+								<li>
+									<a href="#">Blog</a>
+								</li>
+								<li>
+									<a href="#">FAQs</a>
+								</li>
+								<li>
+									<a href="${pageContext.request.contextPath}/Homepage/LienHe.jsp">Contact us</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="footer_social d-flex flex-row align-items-center justify-content-lg-end justify-content-center">
+							<ul>
+								<li>
+									<a href="#">
+										<i class="fa fa-facebook" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa fa-twitter" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa fa-instagram" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa fa-skype" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa fa-pinterest" aria-hidden="true"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="footer_nav_container">
+							<div class="cr">
+								©2018 All Rights Reserverd. Made with
+								<i class="fa fa-heart-o" aria-hidden="true"></i>
+								by
+								<a href="#">Colorlib</a>
+								&amp; distributed by
+								<a href="https://themewagon.com">ThemeWagon</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-3.2.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/popper.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/Isotope/isotope.pkgd.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/easing/easing.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/custom.js"></script>
 </body>
+
 </html>

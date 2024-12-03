@@ -32,12 +32,9 @@
 <link href="${pageContext.request.contextPath}/assets/css/GpMain.css" rel="stylesheet">
 </head>
 <body class="index-page">
-	<!-- Tách riêng header ra file Header.jsp -->
-	<jsp:include page="Header.jsp" />
-
 	<main class="main">
 
-		<!-- Hero Section -->
+		<!-- Hero Section
 		<section id="hero" class="hero section dark-background">
 
 			<img src="${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg" alt="" data-aos="fade-in">
@@ -98,7 +95,7 @@
 				</div>
 			</div>
 		</section>
-		<!-- /Hero Section -->
+		Hero Section -->
 
 		<!-- Cart Section -->
 		<section id="cart" class="cart section">
