@@ -31,9 +31,11 @@
 <!-- Main CSS File -->
 <link href="${pageContext.request.contextPath}/assets/css/GpMain.css" rel="stylesheet">
 </head>
+
 <body class="index-page">
 	<main class="mt-5 pt-4">
 		<div class="container">
+		
 			<!-- Heading -->
 			<h2 class="my-5 text-center">Payment</h2>
 
@@ -114,7 +116,7 @@
 						</div>
 					</div>
 
-					<!-- Phương thức vận chuyển -->
+					<!-- Phương thức vận chuyển 
 					<div class="card p-4 mb-4 shadow-sm">
 						<h4>Shipping method</h4>
 						<hr>
@@ -127,6 +129,7 @@
 							<label class="form-check-label" for="expressShipping">Fast</label>
 						</div>
 					</div>
+					-->
 
 					<!-- Phương thức thanh toán -->
 					<div class="card p-4 mb-4 shadow-sm">
@@ -189,57 +192,9 @@
 				</div>
 
 				<!-- Right Column -->
-				<div class="col-md-4 mb-4">
-					<!-- Cart Summary -->
-					<div class="card p-4 shadow-sm">
-						<h4 class="d-flex justify-content-between align-items-center mb-3">
-							<span class="text-muted">Your cart</span>
-							<span class="badge rounded-pill badge-primary">3</span>
-						</h4>
-
-						<ul class="list-group mb-3">
-							<li class="list-group-item d-flex justify-content-between">
-								<div>
-									<h6 class="my-0">Product name</h6>
-									<small class="text-muted">Short description</small>
-								</div>
-								<span class="text-muted">$12</span>
-							</li>
-							<li class="list-group-item d-flex justify-content-between">
-								<div>
-									<h6 class="my-0">Product name</h6>
-									<small class="text-muted">Short description</small>
-								</div>
-								<span class="text-muted">$8</span>
-							</li>
-							<li class="list-group-item d-flex justify-content-between">
-								<div>
-									<h6 class="my-0">Product name</h6>
-									<small class="text-muted">Short description</small>
-								</div>
-								<span class="text-muted">$5</span>
-							</li>
-							<li class="list-group-item d-flex justify-content-between bg-light">
-								<div class="text-success">
-									<h6 class="my-0">Coupons</h6>
-									<small>EXAMPLECODE</small>
-								</div>
-								<span class="text-success">-$5</span>
-							</li>
-							<li class="list-group-item d-flex justify-content-between">
-								<span>Total price (USD)</span>
-								<strong>$20</strong>
-							</li>
-						</ul>
-
-						<!-- Promo code -->
-						<form class="card p-2 shadow-sm">
-							<div class="input-group mb-3">
-								<input type="text" class="form-control" placeholder="Your coupon goes here" aria-label="Promo code" />
-								<button class="btn btn-secondary" type="button">Apply</button>
-							</div>
-						</form>
-					</div>
+				  
+				
+					
 				</div>
 			</div>
 		</div>
