@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/main_styles.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/responsive.css">
 
-    <script src="${pageContext.request.contextPath}/assets/js/cart.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/cart.js"></script>
 
 </head>
 
@@ -126,51 +126,43 @@
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 
-						<div class="product-item literature">
-    <div class="product discount product_filter">
-        <!-- Hình ảnh sản phẩm -->
-        <div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-            <img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" 
-                 alt="Fujifilm X100T" 
-                 style="max-width: 100%; max-height: 100%; object-fit: contain;">
-        </div>
+							<div class="product-item literature">
+								<div class="product discount product_filter">
+									<!-- Hình ảnh sản phẩm -->
+									<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="Fujifilm X100T" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+									</div>
 
-        <!-- Thông tin giảm giá -->
-        <div class="favorite favorite_left"></div>
-        <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-            <span>-$20</span>
-        </div>
+									<!-- Thông tin giảm giá -->
+									<div class="favorite favorite_left"></div>
+									<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
+										<span>-$20</span>
+									</div>
 
-        <!-- Thông tin sản phẩm -->
-        <div class="product_info">
-            <h6 class="product_name">
-                <a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
-            </h6>
-            <div class="product_price">
-                $520.00
-                <span>$590.00</span>
-            </div>
-        </div>
-    </div>
+									<!-- Thông tin sản phẩm -->
+									<div class="product_info">
+										<h6 class="product_name">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
+										</h6>
+										<div class="product_price">
+											$520.00
+											<span>$590.00</span>
+										</div>
+									</div>
+								</div>
 
-    <!-- Form thêm vào giỏ hàng -->
- 		<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="122">
-    <input type="hidden" name="productName" value="Fujifilm X100T 16 MP Digital Camera (Silver)">
-    <input type="hidden" name="price" value="520.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
-
-
-</div>
-
-
-
-
-
-
+								<!-- Form thêm vào giỏ hàng -->
+								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
+									<input type="hidden" name="productId" value="122">
+									<input type="hidden" name="productName" value="Fujifilm X100T 16 MP Digital Camera (Silver)">
+									<input type="hidden" name="price" value="520.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
+							</div>
 
 							<div class="product-item literature">
 								<div class="product product_filter">
@@ -189,26 +181,17 @@
 									</div>
 								</div>
 								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="121">
-    <input type="hidden" name="productName" value="Những Chuyện Lạ owr Tokyo">
-    <input type="hidden" name="price" value="610.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+									<input type="hidden" name="productId" value="121">
+									<input type="hidden" name="productName" value="Những Chuyện Lạ owr Tokyo">
+									<input type="hidden" name="price" value="610.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 
 							</div>
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
 
 							<div class="product-item lightnovel">
 								<div class="product product_filter">
@@ -223,14 +206,16 @@
 										<div class="product_price">$120.00</div>
 									</div>
 								</div>
-						<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="123">
-    <input type="hidden" name="productName" value="Blue Yeti USB Microphone Blackout Edition">
-    <input type="hidden" name="price" value="120.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Light Novel/bia_ngoai_ari1_1994aeafbbd9452fa.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
+									<input type="hidden" name="productId" value="123">
+									<input type="hidden" name="productName" value="Blue Yeti USB Microphone Blackout Edition">
+									<input type="hidden" name="price" value="120.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Light Novel/bia_ngoai_ari1_1994aeafbbd9452fa.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 
 
 							</div>
@@ -252,13 +237,15 @@
 									</div>
 								</div>
 								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="124">
-    <input type="hidden" name="productName" value="Sach">
-    <input type="hidden" name="price" value="120.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+									<input type="hidden" name="productId" value="124">
+									<input type="hidden" name="productName" value="Sach">
+									<input type="hidden" name="price" value="120.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 							</div>
 
 							<div class="product-item it">
@@ -274,14 +261,16 @@
 										<div class="product_price">$180.00</div>
 									</div>
 								</div>
-									<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="125">
-    <input type="hidden" name="productName" value="Sach Lap Trinh">
-    <input type="hidden" name="price" value="180.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
+									<input type="hidden" name="productId" value="125">
+									<input type="hidden" name="productName" value="Sach Lap Trinh">
+									<input type="hidden" name="price" value="180.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 							</div>
 
 							<div class="product-item foreign">
@@ -303,14 +292,16 @@
 										</div>
 									</div>
 								</div>
-									<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="126">
-    <input type="hidden" name="productName" value="Sach">
-    <input type="hidden" name="price" value="520.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Foreign/-25-chuyen-de-ngu-phap-tieng-anh.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
+									<input type="hidden" name="productId" value="126">
+									<input type="hidden" name="productName" value="Sach">
+									<input type="hidden" name="price" value="520.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Foreign/-25-chuyen-de-ngu-phap-tieng-anh.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 							</div>
 
 							<div class="product-item it">
@@ -326,14 +317,16 @@
 										<div class="product_price">$610.00</div>
 									</div>
 								</div>
-									<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="127">
-    <input type="hidden" name="productName" value="Sach">
-    <input type="hidden" name="price" value="610.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
+									<input type="hidden" name="productId" value="127">
+									<input type="hidden" name="productName" value="Sach">
+									<input type="hidden" name="price" value="610.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 							</div>
 
 							<div class="product-item it">
@@ -349,14 +342,16 @@
 										<div class="product_price">$120.00</div>
 									</div>
 								</div>
-									<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="128">
-    <input type="hidden" name="productName" value="Sach">
-    <input type="hidden" name="price" value="120.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/tụ-học-c-bàng-hình-ảnh-_224.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
+									<input type="hidden" name="productId" value="128">
+									<input type="hidden" name="productName" value="Sach">
+									<input type="hidden" name="price" value="120.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/tụ-học-c-bàng-hình-ảnh-_224.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 							</div>
 
 							<div class="product-item lifeskill">
@@ -376,13 +371,15 @@
 									</div>
 								</div>
 								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="129">
-    <input type="hidden" name="productName" value="Sach">
-    <input type="hidden" name="price" value="410.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/bia_hoc_cach_yeu_duong_voi_cong.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+									<input type="hidden" name="productId" value="129">
+									<input type="hidden" name="productName" value="Sach">
+									<input type="hidden" name="price" value="410.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/bia_hoc_cach_yeu_duong_voi_cong.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 							</div>
 
 							<div class="product-item lifeskill">
@@ -399,22 +396,24 @@
 									</div>
 								</div>
 								<form action="${pageContext.request.contextPath}/addGioHang" method="post">
-    <input type="hidden" name="productId" value="130">
-    <input type="hidden" name="productName" value="Sach">
-    <input type="hidden" name="price" value="180.00">
-    <input type="hidden" name="quantity" value="1"> <!-- Số lượng mặc định -->
-    <input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/tu-duy-phan-bien-trong-the-gioi.jpg"> <!-- URL hình ảnh -->
-    <button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
-</form>
+									<input type="hidden" name="productId" value="130">
+									<input type="hidden" name="productName" value="Sach">
+									<input type="hidden" name="price" value="180.00">
+									<input type="hidden" name="quantity" value="1">
+									<!-- Số lượng mặc định -->
+									<input type="hidden" name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/tu-duy-phan-bien-trong-the-gioi.jpg">
+									<!-- URL hình ảnh -->
+									<button type="submit" class="red_button add_to_cart_button">Add to Cart</button>
+								</form>
 							</div>
 
 						</div>
 					</div>
-					
-					
-					
-					
-					
+
+
+
+
+
 				</div>
 			</div>
 		</div>

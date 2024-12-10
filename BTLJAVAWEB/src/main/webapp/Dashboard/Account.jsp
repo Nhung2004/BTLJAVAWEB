@@ -40,22 +40,21 @@
 
 <body>
 	<!-- Tách riêng header ra file Header.jsp -->
-	<jsp:include page="Header.jsp" />
+	<jsp:include page="Parts/Header.jsp" />
 
 	<!-- Tách riêng sidebar ra file Sidebar.jsp -->
-	<jsp:include page="Sidebar.jsp" />
+	<jsp:include page="Parts/Sidebar.jsp" />
 
 	<main id="main" class="main">
 		<!-- Page Title -->
 		<div class="pagetitle">
-			<h1>Users management</h1>
+			<h1>Account management</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">
 						<a href="Index.jsp">Home</a>
 					</li>
-					<li class="breadcrumb-item">Users management</li>
-
+					<li class="breadcrumb-item">Account Management</li>
 				</ol>
 			</nav>
 		</div>
