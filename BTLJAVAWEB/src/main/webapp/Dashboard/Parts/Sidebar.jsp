@@ -22,14 +22,14 @@
 		</li>
 		<!-- End Account Management Nav -->
 
-		<!-- Product Management Page Nav -->
+		<!-- Products Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="../Dashboard/Products.jsp">
+			<a class="nav-link collapsed" href="../Dashboard/Product.jsp">
 				<i class="bi bi-box"></i>
-				<span>Product Management</span>
+				<span>Products Management</span>
 			</a>
 		</li>
-		<!-- End Product Management Page Nav -->
+		<!-- End Products Management Page Nav -->
 		
 		<!-- Orders Management Page Nav -->
 		<li class="nav-item">

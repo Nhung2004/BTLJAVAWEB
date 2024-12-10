@@ -63,7 +63,7 @@
 								<jsp:param name="cardType" value="sales-card" />
 								<jsp:param name="title" value="Sales" />
 								<jsp:param name="subtitle" value="Today" />
-								<jsp:param name="icon" value="bi-cart" />
+								<jsp:param name="icon" value="bi-cart-check" />
 								<jsp:param name="value" value="145" />
 								<jsp:param name="growthClass" value="text-success" />
 								<jsp:param name="growthPercentage" value="12%" />
@@ -77,7 +77,7 @@
 								<jsp:param name="cardType" value="revenue-card" />
 								<jsp:param name="title" value="Revenue" />
 								<jsp:param name="subtitle" value="This Month" />
-								<jsp:param name="icon" value="bi-currency-dollar" />
+								<jsp:param name="icon" value="bi-cash-stack" />
 								<jsp:param name="value" value="$3,264" />
 								<jsp:param name="growthClass" value="text-success" />
 								<jsp:param name="growthPercentage" value="8%" />
@@ -97,8 +97,8 @@
 								<jsp:param name="cardType" value="order-card" />
 								<jsp:param name="title" value="Total Orders" />
 								<jsp:param name="subtitle" value="Today" />
-								<jsp:param name="icon" value="bi-file-earmark-text" />
-								<jsp:param name="value" value="${totalOrders}" />
+								<jsp:param name="icon" value="bi-box-arrow-in-right" />
+								<jsp:param name="value" value="52" />
 								<jsp:param name="growthClass" value="text-success" />
 								<jsp:param name="growthPercentage" value="5%" />
 								<jsp:param name="growthText" value="increase" />
@@ -110,8 +110,8 @@
 								<jsp:param name="cardType" value="product-card" />
 								<jsp:param name="title" value="Total Products Sold" />
 								<jsp:param name="subtitle" value="Today" />
-								<jsp:param name="icon" value="bi-box" />
-								<jsp:param name="value" value="${totalProductsSold}" />
+								<jsp:param name="icon" value="bi-book" />
+								<jsp:param name="value" value="43" />
 								<jsp:param name="growthClass" value="text-success" />
 								<jsp:param name="growthPercentage" value="8%" />
 								<jsp:param name="growthText" value="increase" />
@@ -130,7 +130,7 @@
 								<jsp:param name="cardType" value="customers-card" />
 								<jsp:param name="title" value="Customers" />
 								<jsp:param name="subtitle" value="This Year" />
-								<jsp:param name="icon" value="bi-people" />
+								<jsp:param name="icon" value="bi-person-add" />
 								<jsp:param name="value" value="1244" />
 								<jsp:param name="growthClass" value="text-danger" />
 								<jsp:param name="growthPercentage" value="12%" />
@@ -143,7 +143,7 @@
 								<jsp:param name="cardType" value="new-customers-card" />
 								<jsp:param name="title" value="New Customers" />
 								<jsp:param name="subtitle" value="This Year" />
-								<jsp:param name="icon" value="bi-people" />
+								<jsp:param name="icon" value="bi-person-plus" />
 								<jsp:param name="value" value="136" />
 								<jsp:param name="growthClass" value="text-success" />
 								<jsp:param name="growthPercentage" value="5%" />
@@ -161,9 +161,9 @@
 						<div class="col-xxl-4 col-md-4">
 							<jsp:include page="Parts/Card.jsp">
 								<jsp:param name="cardType" value="new-arrivals-card" />
-								<jsp:param name="yitle" value="New Arrivals" />
+								<jsp:param name="title" value="New Arrivals" />
 								<jsp:param name="subtitle" value="This Week" />
-								<jsp:param name="icon" value="bi-newspaper" />
+								<jsp:param name="icon" value="bi-card-heading" />
 								<jsp:param name="value" value="20" />
 								<jsp:param name="growthClass" value="text-primary" />
 								<jsp:param name="growthPercentage" value="5%" />
@@ -176,7 +176,7 @@
 								<jsp:param name="cardType" value="bestsellers-card" />
 								<jsp:param name="title" value="Bestsellers" />
 								<jsp:param name="subtitle" value="This Month" />
-								<jsp:param name="icon" value="bi-star" />
+								<jsp:param name="icon" value="bi-star-fill" />
 								<jsp:param name="value" value="10" />
 								<jsp:param name="growthClass" value="text-success" />
 								<jsp:param name="growthPercentage" value="15%" />
@@ -189,7 +189,7 @@
 								<jsp:param name="cardType" value="top-selling-books-card" />
 								<jsp:param name="title" value="Top Selling Books" />
 								<jsp:param name="subtitle" value="This Month" />
-								<jsp:param name="icon" value="bi-bookmark" />
+								<jsp:param name="icon" value="bi-book" />
 								<jsp:param name="value" value="5" />
 								<jsp:param name="growthClass" value="text-danger" />
 								<jsp:param name="growthPercentage" value="5%" />
@@ -202,15 +202,11 @@
 
 			<div class="row">
 				<div class="col-12">
-					<h4>Order Management</h4>
-					<div class="mb-3">
-						<a href="add_order.jsp" class="btn btn-primary">Add New Order</a>
-					</div>
 					<div class="table-responsive">
 						<div class="card card-block card-stretch card-height">
 							<div class="card-header d-flex justify-content-between align-items-center mb-0">
 								<div class="header-title">
-									<h5 class="card-title">Orders List</h5>
+									<h5 class="card-title">Latest Orders</h5>
 								</div>
 								<div class="card-header-toolbar d-flex align-items-center">
 									<div class="dropdown">
@@ -303,7 +299,6 @@
         }
     }
 </script>
-
 
 			<!-- Reports -->
 			<div class="col-12">

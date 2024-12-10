@@ -28,16 +28,7 @@
 
 <!-- Template Main CSS File -->
 <link href="../assets/css/NiceAdminMain.css" rel="stylesheet">
-
-<!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
-
 <body>
 	<!-- Tách riêng header ra file Header.jsp -->
 	<jsp:include page="Parts/Header.jsp" />
@@ -61,62 +52,64 @@
 		<!-- End Page Title -->
 
 		<section class="account-management">
-			<div class="container py-4">
-				<h2 class="text-center mb-4">Account Management</h2>
-				<!-- Add Account Button -->
-				<div class="text-end mb-3">
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAccountModal">
-						<i class="fas fa-plus-circle me-2"></i>
-						Add Account
-					</button>
+			<!-- Account Management Table -->
+			<div class="row">
+				<div class="col-12">
+					<div class="table-responsive">
+						<div class="card card-block card-stretch card-height">
+							<div class="card-header d-flex justify-content-between align-items-center mb-0">
+								<div class="header-title">
+									<h5 class="card-title">Accounts Management</h5>
+								</div>
+								<div class="card-header-toolbar d-flex justify-content-between align-items-center">
+									<!-- Search Bar on the Left -->
+									<div class="d-flex align-items-center me-3">
+										<label class="me-2 mb-0">Search:</label>
+										<input type="search" class="form-control form-control-sm" placeholder="Search Accounts..." aria-controls="datatable">
+									</div>
+									<!-- "Add Account" Button on the Right -->
+									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAccountModal">
+										<i class="fas fa-plus-circle me-2"></i>
+										Add Account
+									</button>
+								</div>
+							</div>
+							<div class="card-body">
+								<!-- Account Table -->
+								<div class="table-responsive">
+									<table class="table mb-0 table-borderless table-striped">
+										<thead>
+											<tr>
+												<!-- Center-align column titles -->
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Username</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Password</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Role</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Action</th>
+											</tr>
+										</thead>
+										<tbody>
+											<!-- Account 001 -->
+											<jsp:include page="Parts/AccountRow.jsp">
+												<jsp:param name="username" value="john.doe@gmail.com" />
+												<jsp:param name="password" value="********" />
+												<jsp:param name="role" value="Admin" />
+												<jsp:param name="roleClass" value="bg-success" />
+											</jsp:include>
+
+											<!-- Account 002 -->
+											<jsp:include page="Parts/AccountRow.jsp">
+												<jsp:param name="username" value="alex.ray@gmail.com" />
+												<jsp:param name="password" value="********" />
+												<jsp:param name="role" value="User" />
+												<jsp:param name="roleClass" value="bg-primary" />
+											</jsp:include>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-				<!-- Account Table -->
-				<table class="table table-hover align-middle bg-white shadow-sm rounded">
-					<thead class="bg-primary text-white">
-						<tr>
-							<th>Username</th>
-							<th>Password</th>
-							<th>Role</th>
-							<th class="text-center">Actions</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>john.doe@gmail.com</td>
-							<td>********</td>
-							<td>
-								<span class="badge bg-success text-uppercase">Admin</span>
-							</td>
-							<td class="text-center">
-								<button class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#editAccountModal">
-									<i class="fas fa-edit"></i>
-									Edit
-								</button>
-								<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
-									<i class="fas fa-trash-alt"></i>
-									Delete
-								</button>
-							</td>
-						</tr>
-						<tr>
-							<td>alex.ray@gmail.com</td>
-							<td>********</td>
-							<td>
-								<span class="badge bg-primary text-uppercase">User</span>
-							</td>
-							<td class="text-center">
-								<button class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#editAccountModal">
-									<i class="fas fa-edit"></i>
-									Edit
-								</button>
-								<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
-									<i class="fas fa-trash-alt"></i>
-									Delete
-								</button>
-							</td>
-						</tr>
-					</tbody>
-				</table>
 			</div>
 
 			<!-- Add Account Modal -->
@@ -189,7 +182,7 @@
 				</div>
 			</div>
 
-			<!-- Delete Account Modal -->
+			<!-- Delete Account Model -->
 			<div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -211,30 +204,8 @@
 				</div>
 			</div>
 		</section>
-
-
 	</main>
 	<!-- End #main -->
-
-	<!-- ======= Footer ======= -->
-	<footer id="footer" class="footer">
-		<div class="copyright">
-			&copy; Copyright
-			<strong>
-				<span>NiceAdmin</span>
-			</strong>
-			. All Rights Reserved
-		</div>
-		<div class="credits">
-			<!-- All the links in the footer should remain intact. -->
-			<!-- You can delete the links only if you purchased the pro version. -->
-			<!-- Licensing information: https://bootstrapmade.com/license/ -->
-			<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-			Designed by
-			<a href="https://bootstrapmade.com/">BootstrapMade</a>
-		</div>
-	</footer>
-	<!-- End Footer -->
 
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
 		<i class="bi bi-arrow-up-short"></i>
