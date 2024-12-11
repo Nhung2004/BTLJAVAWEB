@@ -42,7 +42,7 @@
 		
 		<!-- Promotions Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="../Dashboard/Promotions.jsp">
+			<a class="nav-link collapsed" href="../Dashboard/Promotion.jsp">
 				<i class="bi bi-gift"></i>
 				<span>Promotions</span>
 			</a>

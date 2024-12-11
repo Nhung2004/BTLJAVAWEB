@@ -11,10 +11,18 @@
 	</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">${param.orderDate}</td>
 	<td class="text-center">
-		<div class="d-flex justify-content-center">
-			<a href="view_order.jsp?id=${param.orderId}" class="btn btn-info btn-sm mx-1">View</a>
-			<a href="edit_order.jsp?id=${param.orderId}" class="btn btn-warning btn-sm mx-1">Edit</a>
-			<button class="btn btn-danger btn-sm mx-1" onclick="deleteOrder('${param.orderId}')">Delete</button>
-		</div>
+		<button class="btn btn-sm btn-outline-info me-2" data-bs-toggle="modal" data-bs-target="#viewOrderModal">
+			<i class="fas fa-eye"></i>
+			View
+		</button>
+		<button class="btn btn-sm btn-outline-warning me-2" data-bs-toggle="modal" data-bs-target="#editOrderModal">
+			<i class="fas fa-edit"></i>
+			Edit
+		</button>
+		<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteOrderModal">
+			<i class="fas fa-trash-alt"></i>
+			Delete
+		</button>
 	</td>
+
 </tr>

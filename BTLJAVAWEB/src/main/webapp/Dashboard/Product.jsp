@@ -12,7 +12,6 @@
 <!-- fontsomeaws -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-
 <!-- Favicons -->
 <link href="../assets/img/favicon.png" rel="icon">
 <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -42,7 +41,6 @@
 	<jsp:include page="Parts/Sidebar.jsp" />
 
 	<main id="main" class="main">
-
 		<!-- Page Title -->
 		<div class="pagetitle">
 			<h1>Products management</h1>
@@ -56,56 +54,6 @@
 			</nav>
 		</div>
 		<!-- End Page Title -->
-
-		<!--  
-		<div class="pagetitle">
-			<h1>Thêm Sản Phẩm</h1>
-		</div>
-		<form action="product?action=add" method="post" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="mb-3">
-						<label for="tensanpham" class="form-label">Tên Sản Phẩm</label>
-						<input type="text" class="form-control" id="tensanpham" name="tensanpham" required>
-					</div>
-					<div class="mb-3">
-						<label for="giaban" class="form-label">Giá Bán</label>
-						<input type="number" class="form-control" id="giaban" name="giaban" required>
-					</div>
-					<div class="mb-3">
-						<label for="soluong" class="form-label">Số Lượng</label>
-						<input type="number" class="form-control" id="soluong" name="soluong" required>
-					</div>
-					<div class="mb-3">
-						<label for="hinhanh" class="form-label">Ảnh Sản Phẩm</label>
-						<input type="file" class="form-control" id="hinhanh" name="hinhanh" accept="image/*" required onchange="previewImage(event)">
-					</div>
-					<div class="mb-3">
-						<img id="preview" src="#" alt="Xem trước ảnh" style="display: none; width: 100%; max-height: 300px; margin-top: 10px;">
-					</div>
-					<div class="mt-3">
-						<button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
-						<button type="reset" class="btn btn-secondary">Đặt lại</button>
-					</div>
-				</div>
-			</div>
-		</form>
-
-		<script>
-			function previewImage(event) {
-				const preview = document.getElementById('preview');
-				const file = event.target.files[0];
-
-				if (file) {
-					preview.src = URL.createObjectURL(file);
-					preview.style.display = 'block';
-				} else {
-					preview.src = '#';
-					preview.style.display = 'none';
-				}
-			}
-		</script>
-		-->
 
 		<section class="product-management">
 			<!-- Products List Table -->
@@ -169,7 +117,7 @@
 												<jsp:param name="productName" value="Product C" />
 												<jsp:param name="price" value="150,000 VND" />
 												<jsp:param name="stock" value="10" />
-												<jsp:param name="imagePath" value="/assets/img/products/product-c.jpg" />
+												<jsp:param name="imagePath" value="../assets/img/books" />
 											</jsp:include>
 										</tbody>
 									</table>
@@ -273,6 +221,24 @@
 					</div>
 				</div>
 			</div>
+
+			<!--
+		<script>
+			function previewImage(event) {
+				const preview = document.getElementById('preview');
+				const file = event.target.files[0];
+
+				if (file) {
+					preview.src = URL.createObjectURL(file);
+					preview.style.display = 'block';
+				} else {
+					preview.src = '#';
+					preview.style.display = 'none';
+				}
+			}
+		</script>
+		-->
+		
 		</section>
 	</main>
 	<!-- End #main -->
