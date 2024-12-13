@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+<title>Promotion and Discount</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -43,7 +43,7 @@
 	<main id="main" class="main">
 		<!-- Page Title -->
 		<div class="pagetitle">
-			<h1>Promotions Management</h1>
+			<h1>Promotions and Discounts</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">

@@ -8,6 +8,7 @@
 <meta name="description" content="Colo Shop Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/bootstrap4/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.theme.default.css">
@@ -18,17 +19,15 @@
 </head>
 
 <body>
-
 	<div class="super_container">
 		<!-- Tách riêng header ra file Header.jsp -->
-		<jsp:include page="Header.jsp" />
+		<jsp:include page="Parts/Header.jsp" />
 
 		<div class="container product_section_container">
 			<div class="row">
 				<div class="col product_section clearfix">
 
 					<!-- Breadcrumbs -->
-
 					<div class="breadcrumbs d-flex flex-row align-items-center">
 						<ul>
 							<li>
@@ -44,7 +43,6 @@
 					</div>
 
 					<!-- Sidebar -->
-
 					<div class="sidebar">
 						<div class="sidebar_section">
 							<div class="sidebar_title">
@@ -52,27 +50,27 @@
 							</div>
 							<ul class="sidebar_categories">
 								<li>
-									<a href="#">Men</a>
+									<a href="#">Foreign</a>
 								</li>
 								<li class="active">
 									<a href="#">
 										<span>
 											<i class="fa fa-angle-double-right" aria-hidden="true"></i>
 										</span>
-										Women
+										IT
 									</a>
 								</li>
 								<li>
-									<a href="#">Accessories</a>
+									<a href="#">Life Skill</a>
 								</li>
 								<li>
-									<a href="#">New Arrivals</a>
+									<a href="#">Light Novel</a>
 								</li>
 								<li>
-									<a href="#">Collection</a>
+									<a href="#">Literature</a>
 								</li>
 								<li>
-									<a href="#">Shop</a>
+									<a href="#">Novel</a>
 								</li>
 							</ul>
 						</div>
@@ -94,28 +92,32 @@
 						<!-- Sizes -->
 						<div class="sidebar_section">
 							<div class="sidebar_title">
-								<h5>Sizes</h5>
+								<h5>
+									Rating (
+									<i class="bi bi-star-fill"></i>
+									)
+								</h5>
 							</div>
 							<ul class="checkboxes">
 								<li>
 									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>S</span>
+									<span> 0-1 </span>
 								</li>
 								<li class="active">
+									<i class="fa fa-square-0" aria-hidden="true"></i>
+									<span> 1-2 </span>
+								</li>
+								<li>
+									<i class="fa fa-square-o" aria-hidden="true"></i>
+									<span> 2-3 </span>
+								</li>
+								<li>
+									<i class="fa fa-square-o" aria-hidden="true"></i>
+									<span> 3-4 </span>
+								</li>
+								<li>
 									<i class="fa fa-square" aria-hidden="true"></i>
-									<span>M</span>
-								</li>
-								<li>
-									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>L</span>
-								</li>
-								<li>
-									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>XL</span>
-								</li>
-								<li>
-									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>XXL</span>
+									<span> 4-5 </span>
 								</li>
 							</ul>
 						</div>
@@ -178,7 +180,6 @@
 								</span>
 							</div>
 						</div>
-
 					</div>
 
 					<!-- Main Content -->
@@ -186,7 +187,6 @@
 					<div class="main_content">
 
 						<!-- Products -->
-
 						<div class="products_iso">
 							<div class="row">
 								<div class="col">
@@ -256,208 +256,210 @@
 									</div>
 
 									<!-- Product Grid -->
-
 									<div class="product-grid">
-										<div class="product-item literature">
-											<div class="product discount product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="favorite favorite_left"></div>
-												<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-													<span>-$20</span>
-												</div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
-													</h6>
-													<div class="product_price">
-														$520.00
-														<span>$590.00</span>
-													</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="literature" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" />
+											<jsp:param name="productName" value="Phố xưa người cũ" />
+											<jsp:param name="price" value="10.00" />
+											<jsp:param name="newPrice" value="8.00" />
+											<jsp:param name="productId" value="121" />
+											<jsp:param name="bubbleText" value="-20%" />
+											<jsp:param name="bubbleType" value="red" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item literature">
-											<div class="product product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="favorite"></div>
-												<div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center">
-													<span>new</span>
-												</div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
-													</h6>
-													<div class="product_price">$610.00</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="literature" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg" />
+											<jsp:param name="productName" value="Những chuyện lạ ở Tokyo" />
+											<jsp:param name="price" value="12.00" />
+											<jsp:param name="productId" value="122" />
+											<jsp:param name="bubbleText" value="new" />
+											<jsp:param name="bubbleType" value="green" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item lightnovel">
-											<div class="product product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/Light Novel/bia_ngoai_ari1_1994aeafbbd9452fa.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="favorite"></div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
-													</h6>
-													<div class="product_price">$120.00</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="lightnovel" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Light Novel/bia_ngoai_ari1_1994aeafbbd9452fa.jpg" />
+											<jsp:param name="productName" value="Arifureta – Từ tầm thường đến bất khả chiến bại" />
+											<jsp:param name="price" value="12.00" />
+											<jsp:param name="productId" value="123" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item novel">
-											<div class="product product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-													<span>sale</span>
-												</div>
-												<div class="favorite favorite_left"></div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a>
-													</h6>
-													<div class="product_price">$410.00</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="novel" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" />
+											<jsp:param name="productName" value="Toàn cầu tiến hoá" />
+											<jsp:param name="price" value="10.00" />
+											<jsp:param name="productId" value="124" />
+											<jsp:param name="bubbleText" value="sale" />
+											<jsp:param name="bubbleType" value="red" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item it">
-											<div class="product product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="favorite"></div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold & Grey</a>
-													</h6>
-													<div class="product_price">$180.00</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="it" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg" />
+											<jsp:param name="productName" value="Hành trang lập trình" />
+											<jsp:param name="price" value="18.00" />
+											<jsp:param name="productId" value="125" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item foreign">
-											<div class="product discount product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/Foreign/-25-chuyen-de-ngu-phap-tieng-anh.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="favorite favorite_left"></div>
-												<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-													<span>-$20</span>
-												</div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Fujifilm X100T 16 MP Digital Camera (Silver)</a>
-													</h6>
-													<div class="product_price">
-														$520.00
-														<span>$590.00</span>
-													</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="foreign" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Foreign/-25-chuyen-de-ngu-phap-tieng-anh.jpg" />
+											<jsp:param name="productName" value="25 chuyên đề ngữ pháp Tiếng Anh" />
+											<jsp:param name="price" value="15.00" />
+											<jsp:param name="newPrice" value="10.00" />
+											<jsp:param name="productId" value="126" />
+											<jsp:param name="bubbleText" value="-33%" />
+											<jsp:param name="bubbleType" value="red" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item it">
-											<div class="product product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="favorite"></div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Samsung CF591 Series Curved 27-Inch FHD Monitor</a>
-													</h6>
-													<div class="product_price">$610.00</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="it" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" />
+											<jsp:param name="productName" value="ChatGPT và 10 ứng dụng AI đình đám" />
+											<jsp:param name="price" value="20.00" />
+											<jsp:param name="productId" value="127" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item it">
-											<div class="product product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/IT/tụ-học-c-bàng-hình-ảnh-_224.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="favorite"></div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Blue Yeti USB Microphone Blackout Edition</a>
-													</h6>
-													<div class="product_price">$120.00</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="it" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/tu-hoc-c-va-sql-server-2008_1434.jpg" />
+											<jsp:param name="productName" value="Tự học C# và hệ CSDL SQL Server" />
+											<jsp:param name="price" value="25.00" />
+											<jsp:param name="productId" value="128" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item lifeskill">
-											<div class="product product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/Life Skill/bia_hoc_cach_yeu_duong_voi_cong.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-													<span>sale</span>
-												</div>
-												<div class="favorite favorite_left"></div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">DYMO LabelWriter 450 Turbo Thermal Label Printer</a>
-													</h6>
-													<div class="product_price">$410.00</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="lifeskill" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/bia_hoc_cach_yeu_duong_voi_cong.jpg" />
+											<jsp:param name="productName" value="Học cách yêu đương với công việc" />
+											<jsp:param name="price" value="15.00" />
+											<jsp:param name="productId" value="129" />
+											<jsp:param name="bubbleText" value="sale" />
+											<jsp:param name="bubbleType" value="red" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
-										<div class="product-item lifeskill">
-											<div class="product product_filter">
-												<div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-													<img src="${pageContext.request.contextPath}/assets/img/books/Life Skill/tu-duy-phan-bien-trong-the-gioi.jpg" alt="" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-												</div>
-												<div class="favorite"></div>
-												<div class="product_info">
-													<h6 class="product_name">
-														<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp">Pryma Headphones, Rose Gold and Grey</a>
-													</h6>
-													<div class="product_price">$180.00</div>
-												</div>
-											</div>
-											<div class="red_button add_to_cart_button">
-												<a href="#">add to cart</a>
-											</div>
-										</div>
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="lifeskill" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/tu-duy-phan-bien-trong-the-gioi.jpg" />
+											<jsp:param name="productName" value="Tư duy phản biện trong thế giới VUCA" />
+											<jsp:param name="price" value="18.00" />
+											<jsp:param name="productId" value="130" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="literature" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" />
+											<jsp:param name="productName" value="Phố xưa người cũ" />
+											<jsp:param name="price" value="10.00" />
+											<jsp:param name="newPrice" value="8.00" />
+											<jsp:param name="productId" value="121" />
+											<jsp:param name="bubbleText" value="-20%" />
+											<jsp:param name="bubbleType" value="red" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="literature" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg" />
+											<jsp:param name="productName" value="Những chuyện lạ ở Tokyo" />
+											<jsp:param name="price" value="12.00" />
+											<jsp:param name="productId" value="122" />
+											<jsp:param name="bubbleText" value="new" />
+											<jsp:param name="bubbleType" value="green" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="lightnovel" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Light Novel/bia_ngoai_ari1_1994aeafbbd9452fa.jpg" />
+											<jsp:param name="productName" value="Arifureta – Từ tầm thường đến bất khả chiến bại" />
+											<jsp:param name="price" value="12.00" />
+											<jsp:param name="productId" value="123" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="novel" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" />
+											<jsp:param name="productName" value="Toàn cầu tiến hoá" />
+											<jsp:param name="price" value="10.00" />
+											<jsp:param name="productId" value="124" />
+											<jsp:param name="bubbleText" value="sale" />
+											<jsp:param name="bubbleType" value="red" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="it" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg" />
+											<jsp:param name="productName" value="Hành trang lập trình" />
+											<jsp:param name="price" value="18.00" />
+											<jsp:param name="productId" value="125" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="foreign" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Foreign/-25-chuyen-de-ngu-phap-tieng-anh.jpg" />
+											<jsp:param name="productName" value="25 chuyên đề ngữ pháp Tiếng Anh" />
+											<jsp:param name="price" value="15.00" />
+											<jsp:param name="newPrice" value="10.00" />
+											<jsp:param name="productId" value="126" />
+											<jsp:param name="bubbleText" value="-33%" />
+											<jsp:param name="bubbleType" value="red" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="it" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" />
+											<jsp:param name="productName" value="ChatGPT và 10 ứng dụng AI đình đám" />
+											<jsp:param name="price" value="20.00" />
+											<jsp:param name="productId" value="127" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="it" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/tu-hoc-c-va-sql-server-2008_1434.jpg" />
+											<jsp:param name="productName" value="Tự học C# và hệ CSDL SQL Server" />
+											<jsp:param name="price" value="25.00" />
+											<jsp:param name="productId" value="128" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="lifeskill" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/bia_hoc_cach_yeu_duong_voi_cong.jpg" />
+											<jsp:param name="productName" value="Học cách yêu đương với công việc" />
+											<jsp:param name="price" value="15.00" />
+											<jsp:param name="productId" value="129" />
+											<jsp:param name="bubbleText" value="sale" />
+											<jsp:param name="bubbleType" value="red" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="category" value="lifeskill" />
+											<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/tu-duy-phan-bien-trong-the-gioi.jpg" />
+											<jsp:param name="productName" value="Tư duy phản biện trong thế giới VUCA" />
+											<jsp:param name="price" value="18.00" />
+											<jsp:param name="productId" value="130" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
 
 									</div>
 								</div>
@@ -593,31 +595,19 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="footer_nav_container">
-								<div class="cr">
-									©2018 All Rights Reserverd. Template by
-									<a href="#">Colorlib</a>
-									&amp; distributed by
-									<a href="https://themewagon.com">ThemeWagon</a>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</footer>
-
 		</div>
+	</div>
 
-		<script src="${pageContext.request.contextPath}/assets/js/jquery-3.2.1.min.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/popper.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/bootstrap.min.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/vendor/Isotope/isotope.pkgd.min.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/vendor/easing/easing.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/vendor/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/js/categories_custom.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-3.2.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/popper.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/Isotope/isotope.pkgd.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/easing/easing.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/categories_custom.js"></script>
 </body>
 
 </html>

@@ -21,7 +21,7 @@
 <body>
 	<div class="super_container">
 		<!-- Tách riêng header ra file Header.jsp -->
-		<jsp:include page="Header.jsp" />
+		<jsp:include page="Parts/Header.jsp" />
 
 		<div class="container single_product_container">
 			<div class="row">
@@ -60,20 +60,20 @@
 								<div class="single_product_thumbnails">
 									<ul>
 										<li>
-											<img src="${pageContext.request.contextPath}/assets/img/coloshop/single_1_thumb.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/coloshop/single_1.jpg">
+											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg">
 										</li>
 										<li class="active">
-											<img src="${pageContext.request.contextPath}/assets/img/coloshop/single_2_thumb.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/coloshop/single_2.jpg">
+											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg">
 										</li>
 										<li>
-											<img src="${pageContext.request.contextPath}/assets/img/coloshop/single_3_thumb.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/coloshop/single_3.jpg">
+											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg">
 										</li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-lg-9 image_col order-lg-2 order-1">
 								<div class="single_product_image">
-									<div class="single_product_image_background" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/single_2.jpg)"></div>
+									<div class="single_product_image_background" style="background-image: url(${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg)"></div>
 								</div>
 							</div>
 						</div>
@@ -176,7 +176,7 @@
 										<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
 									</div>
 									<div class="tab_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/desc_1.jpg" alt="">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="">
 									</div>
 									<div class="tab_text_block">
 										<h2>Pocket cotton sweatshirt</h2>
@@ -185,14 +185,14 @@
 								</div>
 								<div class="col-lg-5 offset-lg-2 desc_col">
 									<div class="tab_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/desc_2.jpg" alt="">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="">
 									</div>
 									<div class="tab_text_block">
 										<h2>Pocket cotton sweatshirt</h2>
 										<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
 									</div>
 									<div class="tab_image desc_last">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/desc_3.jpg" alt="">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="">
 									</div>
 								</div>
 							</div>
@@ -472,23 +472,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="footer_nav_container">
-							<div class="cr">
-								©2018 All Rights Reserverd. This template is made with
-								<i class="fa fa-heart-o" aria-hidden="true"></i>
-								by
-								<a href="#">Colorlib</a>
-								&amp; distributed by
-								<a href="https://themewagon.com">ThemeWagon</a>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</footer>
-
 	</div>
 
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-3.2.1.min.js"></script>

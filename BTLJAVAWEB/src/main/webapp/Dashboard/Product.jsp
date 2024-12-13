@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+<title>Product Management</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -117,7 +117,7 @@
 												<jsp:param name="productName" value="Product C" />
 												<jsp:param name="price" value="150,000 VND" />
 												<jsp:param name="stock" value="10" />
-												<jsp:param name="imagePath" value="../assets/img/books" />
+												<jsp:param name="imagePath" value="../assets/img/books/Light Novel/arifureta-tap-3_5e53504b3a43441d.jpg" />
 											</jsp:include>
 										</tbody>
 									</table>
@@ -238,7 +238,7 @@
 			}
 		</script>
 		-->
-		
+
 		</section>
 	</main>
 	<!-- End #main -->

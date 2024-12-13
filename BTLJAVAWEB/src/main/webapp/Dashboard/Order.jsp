@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+<title>Order Management</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -123,7 +123,7 @@
 												<jsp:param name="client" value="John Doe" />
 												<jsp:param name="totalPrice" value="500,000 VND" />
 												<jsp:param name="status" value="Completed" />
-												<jsp:param name="statusClass" value="bg-success text-white" />
+												<jsp:param name="statusClass" value="bg-success" />
 												<jsp:param name="orderDate" value="10-12-2024" />
 											</jsp:include>
 
@@ -133,7 +133,7 @@
 												<jsp:param name="client" value="Jane Smith" />
 												<jsp:param name="totalPrice" value="300,000 VND" />
 												<jsp:param name="status" value="Pending" />
-												<jsp:param name="statusClass" value="bg-warning text-dark" />
+												<jsp:param name="statusClass" value="bg-warning" />
 												<jsp:param name="orderDate" value="09-12-2024" />
 											</jsp:include>
 
@@ -143,7 +143,7 @@
 												<jsp:param name="client" value="Alice Nguyen" />
 												<jsp:param name="totalPrice" value="400,000 VND" />
 												<jsp:param name="status" value="Canceled" />
-												<jsp:param name="statusClass" value="bg-danger text-white" />
+												<jsp:param name="statusClass" value="bg-danger" />
 												<jsp:param name="orderDate" value="08-12-2024" />
 											</jsp:include>
 										</tbody>
