@@ -30,7 +30,6 @@
     <!-- Template Main CSS File -->
     <link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
 </head>
-
 <body>
     <!-- Include Header and Sidebar -->
     <jsp:include page="Header.jsp" />

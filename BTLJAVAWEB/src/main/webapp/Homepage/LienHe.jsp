@@ -21,7 +21,7 @@
 <body>
 	<div class="super_container">
 		<!-- Tách riêng header ra file Header.jsp -->
-		<jsp:include page="Header.jsp" />
+		<jsp:include page="Parts/Header.jsp" />
 
 		<div class="container contact_container">
 			<div class="row">

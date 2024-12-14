@@ -33,7 +33,7 @@
 </head>
 <body class="index-page">
 	<!-- Tách riêng header ra file Header.jsp -->
-	<jsp:include page="Header.jsp" />
+	<jsp:include page="Parts/Header.jsp" />
 
 	<main class="main">
 

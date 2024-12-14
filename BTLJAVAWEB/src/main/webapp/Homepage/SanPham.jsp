@@ -21,14 +21,13 @@
 <body>
 	<div class="super_container">
 		<!-- Tách riêng header ra file Header.jsp -->
-		<jsp:include page="Header.jsp" />
+		<jsp:include page="Parts/Header.jsp" />
 
 		<div class="container single_product_container">
 			<div class="row">
 				<div class="col">
 
 					<!-- Breadcrumbs -->
-
 					<div class="breadcrumbs d-flex flex-row align-items-center">
 						<ul>
 							<li>
@@ -37,7 +36,7 @@
 							<li>
 								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>
-									Men's
+									Products
 								</a>
 							</li>
 							<li class="active">
@@ -48,7 +47,6 @@
 							</li>
 						</ul>
 					</div>
-
 				</div>
 			</div>
 
@@ -60,20 +58,23 @@
 								<div class="single_product_thumbnails">
 									<ul>
 										<li>
-											<img src="${pageContext.request.contextPath}/assets/img/coloshop/single_1_thumb.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/coloshop/single_1.jpg">
+											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg"
+												style="width: 100%; height: 100%; object-fit: cover;">
 										</li>
 										<li class="active">
-											<img src="${pageContext.request.contextPath}/assets/img/coloshop/single_2_thumb.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/coloshop/single_2.jpg">
+											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/2024_06_11_10_32_29_1-390x510.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/2024_06_11_10_32_29_1-390x510.jpg"
+												style="width: 100%; height: 100%; object-fit: cover;">
 										</li>
 										<li>
-											<img src="${pageContext.request.contextPath}/assets/img/coloshop/single_3_thumb.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/coloshop/single_3.jpg">
+											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/image_195509_1_31258.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/image_195509_1_31258.jpg"
+												style="width: 100%; height: 100%; object-fit: cover;">
 										</li>
 									</ul>
 								</div>
 							</div>
 							<div class="col-lg-9 image_col order-lg-2 order-1">
 								<div class="single_product_image">
-									<div class="single_product_image_background" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/single_2.jpg)"></div>
+									<div class="single_product_image_background" style="background-image: url(${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg)"></div>
 								</div>
 							</div>
 						</div>
@@ -82,15 +83,15 @@
 				<div class="col-lg-5">
 					<div class="product_details">
 						<div class="product_details_title">
-							<h2>Pocket cotton sweatshirt</h2>
-							<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+							<h2>Phố xưa người cũ</h2>
+							<p>Một câu chuyện đậm chất hoài niệm, đưa độc giả về những ký ức xưa, với các nhân vật đầy cảm xúc và cốt truyện sâu lắng.</p>
 						</div>
 						<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 							<span class="ti-truck"></span>
-							<span>free delivery</span>
+							<span>Free delivery for orders over $25</span>
 						</div>
-						<div class="original_price">$629.99</div>
-						<div class="product_price">$495.00</div>
+						<div class="original_price">$10</div>
+						<div class="product_price">$8</div>
 						<ul class="star_rating">
 							<li>
 								<i class="fa fa-star" aria-hidden="true"></i>
@@ -108,16 +109,8 @@
 								<i class="fa fa-star-o" aria-hidden="true"></i>
 							</li>
 						</ul>
-						<div class="product_color">
-							<span>Select Color:</span>
-							<ul>
-								<li style="background: #e54e5d"></li>
-								<li style="background: #252525"></li>
-								<li style="background: #60b3f3"></li>
-							</ul>
-						</div>
 						<div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-							<span>Quantity:</span>
+							<span>Số lượng:</span>
 							<div class="quantity_selector">
 								<span class="minus">
 									<i class="fa fa-minus" aria-hidden="true"></i>
@@ -128,20 +121,18 @@
 								</span>
 							</div>
 							<div class="red_button add_to_cart_button">
-								<a href="#">add to cart</a>
+								<a href="#">Thêm vào giỏ hàng</a>
 							</div>
 							<div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
 						</div>
 					</div>
 				</div>
 			</div>
-
 		</div>
 
 		<!-- Tabs -->
 
 		<div class="tabs_section_container">
-
 			<div class="container">
 				<div class="row">
 					<div class="col">
@@ -160,11 +151,10 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="row">
 					<div class="col">
-
 						<!-- Tab Description -->
-
 						<div id="tab_1" class="tab_container active">
 							<div class="row">
 								<div class="col-lg-5 desc_col">
@@ -172,34 +162,36 @@
 										<h4>Description</h4>
 									</div>
 									<div class="tab_text_block">
-										<h2>Pocket cotton sweatshirt</h2>
-										<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+										<h2>Phố xưa người cũ</h2>
+										<p>"Phố xưa người cũ" là một cuốn sách mang đậm chất hoài niệm, dẫn dắt độc giả trở về những con phố quen thuộc, nơi lưu giữ ký ức và văn hóa truyền thống lâu đời. Từng trang sách khắc họa rõ nét vẻ đẹp của thời gian xưa cũ, với những
+											câu chuyện đời thường giản dị nhưng đầy ý nghĩa, đưa người đọc lạc vào thế giới của một thời đã qua.</p>
 									</div>
 									<div class="tab_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/desc_1.jpg" alt="">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="Phố xưa người cũ">
 									</div>
 									<div class="tab_text_block">
-										<h2>Pocket cotton sweatshirt</h2>
-										<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+										<h2>Phố xưa người cũ</h2>
+										<p>Cuốn sách không chỉ mang lại cảm giác gần gũi, mà còn là một lời nhắc nhở về giá trị của truyền thống và gia đình. Với ngòi bút tinh tế, tác giả tái hiện những khung cảnh đời thường, từ quán nhỏ bên đường, tiếng rao khuya, đến những
+											buổi tụ họp gia đình ấm cúng, tất cả tạo nên một bức tranh sống động của cuộc sống xưa.</p>
 									</div>
 								</div>
 								<div class="col-lg-5 offset-lg-2 desc_col">
 									<div class="tab_image">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/desc_2.jpg" alt="">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="Phố xưa người cũ">
 									</div>
 									<div class="tab_text_block">
-										<h2>Pocket cotton sweatshirt</h2>
-										<p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
+										<h2>Phố xưa người cũ</h2>
+										<p>"Phố xưa người cũ" còn truyền tải thông điệp sâu sắc về sự kết nối giữa quá khứ và hiện tại. Độc giả sẽ cảm nhận được vẻ đẹp tiềm ẩn trong những điều nhỏ bé, từ những câu chuyện chân thành cho đến những khoảnh khắc bình dị nhưng tràn
+											đầy cảm xúc. Đây là cuốn sách không thể bỏ qua cho những ai yêu thích sự hoài cổ và muốn tìm về cội nguồn văn hóa.</p>
 									</div>
 									<div class="tab_image desc_last">
-										<img src="${pageContext.request.contextPath}/assets/img/coloshop/desc_3.jpg" alt="">
+										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="Phố xưa người cũ">
 									</div>
 								</div>
 							</div>
 						</div>
 
 						<!-- Tab Additional Info -->
-
 						<div id="tab_2" class="tab_container">
 							<div class="row">
 								<div class="col additional_info_col">
@@ -219,10 +211,8 @@
 						</div>
 
 						<!-- Tab Reviews -->
-
 						<div id="tab_3" class="tab_container">
 							<div class="row">
-
 								<!-- User Reviews -->
 
 								<div class="col-lg-6 reviews_col">
@@ -263,7 +253,6 @@
 									</div>
 
 									<!-- User Review -->
-
 									<div class="user_review_container d-flex flex-column flex-sm-row">
 										<div class="user">
 											<div class="user_pic"></div>
@@ -340,8 +329,8 @@
 
 					</div>
 				</div>
-			</div>
 
+			</div>
 		</div>
 
 		<!-- Benefit -->
@@ -472,23 +461,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="footer_nav_container">
-							<div class="cr">
-								©2018 All Rights Reserverd. This template is made with
-								<i class="fa fa-heart-o" aria-hidden="true"></i>
-								by
-								<a href="#">Colorlib</a>
-								&amp; distributed by
-								<a href="https://themewagon.com">ThemeWagon</a>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</footer>
-
 	</div>
 
 	<script src="${pageContext.request.contextPath}/assets/js/jquery-3.2.1.min.js"></script>

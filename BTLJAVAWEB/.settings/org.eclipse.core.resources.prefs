@@ -1,3 +1,7 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/Dashboard/Index.jsp=UTF-8
+encoding//src/main/webapp/Dashboard/Parts/Header.jsp=UTF-8
+encoding//src/main/webapp/Dashboard/Parts/Sidebar.jsp=UTF-8
+encoding//src/main/webapp/Dashboard/Product.jsp=UTF-8
+encoding//src/main/webapp/Homepage/Parts/Header.jsp=UTF-8
 encoding/<project>=UTF-8

@@ -26,27 +26,19 @@
 <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
 <link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-<!-- Template Main CSS File -->
+<!-- Main CSS File -->
 <link href="../assets/css/NiceAdminMain.css" rel="stylesheet">
 
-<!-- =======================================================
-  * Template Name: NiceAdmin
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Updated: Apr 20 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
 	<!-- Tách riêng header ra file Header.jsp -->
-	<jsp:include page="Header.jsp" />
+	<jsp:include page="Parts/Header.jsp" />
 
 	<!-- Tách riêng sidebar ra file Sidebar.jsp -->
-	<jsp:include page="Sidebar.jsp" />
+	<jsp:include page="Parts/Sidebar.jsp" />
 
 	<main id="main" class="main">
-
 		<div class="pagetitle">
 			<h1>Dashboard</h1>
 			<nav>
@@ -59,348 +51,247 @@
 			</nav>
 		</div>
 		<!-- End Page Title -->
-
 		<section class="section dashboard">
 			<div class="row">
-
-				<!-- Left side columns -->
-				<div class="col-lg-8">
-					<div class="row">
-
+				<!-- Sales and Revenue Section -->
+				<div class="col-12">
+					<h4>Sales and Revenue</h4>
+					<div class="row g-3">
 						<!-- Sales Card -->
 						<div class="col-xxl-4 col-md-6">
-							<div class="card info-card sales-card">
-
-								<div class="filter">
-									<a class="icon" href="#" data-bs-toggle="dropdown">
-										<i class="bi bi-three-dots"></i>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-										<li class="dropdown-header text-start">
-											<h6>Filter</h6>
-										</li>
-
-										<li>
-											<a class="dropdown-item" href="#">Today</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">This Month</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">This Year</a>
-										</li>
-									</ul>
-								</div>
-
-								<div class="card-body">
-									<h5 class="card-title">
-										Sales
-										<span>| Today</span>
-									</h5>
-
-									<div class="d-flex align-items-center">
-										<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-											<i class="bi bi-cart"></i>
-										</div>
-										<div class="ps-3">
-											<h6>145</h6>
-											<span class="text-success small pt-1 fw-bold">12%</span>
-											<span class="text-muted small pt-2 ps-1">increase</span>
-
-										</div>
-									</div>
-								</div>
-
-							</div>
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="sales-card" />
+								<jsp:param name="title" value="Sales" />
+								<jsp:param name="subtitle" value="Today" />
+								<jsp:param name="icon" value="bi-cart-check" />
+								<jsp:param name="value" value="145" />
+								<jsp:param name="growthClass" value="text-success" />
+								<jsp:param name="growthPercentage" value="12%" />
+								<jsp:param name="growthText" value="increase" />
+							</jsp:include>
 						</div>
-						<!-- End Sales Card -->
 
-						<!-- Revenue Card -->
+						<!-- Total Revenue Card -->
 						<div class="col-xxl-4 col-md-6">
-							<div class="card info-card revenue-card">
-
-								<div class="filter">
-									<a class="icon" href="#" data-bs-toggle="dropdown">
-										<i class="bi bi-three-dots"></i>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-										<li class="dropdown-header text-start">
-											<h6>Filter</h6>
-										</li>
-
-										<li>
-											<a class="dropdown-item" href="#">Today</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">This Month</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">This Year</a>
-										</li>
-									</ul>
-								</div>
-
-								<div class="card-body">
-									<h5 class="card-title">
-										Revenue
-										<span>| This Month</span>
-									</h5>
-
-									<div class="d-flex align-items-center">
-										<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-											<i class="bi bi-currency-dollar"></i>
-										</div>
-										<div class="ps-3">
-											<h6>$3,264</h6>
-											<span class="text-success small pt-1 fw-bold">8%</span>
-											<span class="text-muted small pt-2 ps-1">increase</span>
-
-										</div>
-									</div>
-								</div>
-
-							</div>
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="revenue-card" />
+								<jsp:param name="title" value="Revenue" />
+								<jsp:param name="subtitle" value="This Month" />
+								<jsp:param name="icon" value="bi-cash-stack" />
+								<jsp:param name="value" value="$3,264" />
+								<jsp:param name="growthClass" value="text-success" />
+								<jsp:param name="growthPercentage" value="8%" />
+								<jsp:param name="growthText" value="increase" />
+							</jsp:include>
 						</div>
-						<!-- End Revenue Card -->
+					</div>
+				</div>
 
-						<!-- Customers Card -->
-						<div class="col-xxl-4 col-xl-12">
-
-							<div class="card info-card customers-card">
-
-								<div class="filter">
-									<a class="icon" href="#" data-bs-toggle="dropdown">
-										<i class="bi bi-three-dots"></i>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-										<li class="dropdown-header text-start">
-											<h6>Filter</h6>
-										</li>
-
-										<li>
-											<a class="dropdown-item" href="#">Today</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">This Month</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">This Year</a>
-										</li>
-									</ul>
-								</div>
-
-								<div class="card-body">
-									<h5 class="card-title">
-										Customers
-										<span>| This Year</span>
-									</h5>
-
-									<div class="d-flex align-items-center">
-										<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-											<i class="bi bi-people"></i>
-										</div>
-										<div class="ps-3">
-											<h6>1244</h6>
-											<span class="text-danger small pt-1 fw-bold">12%</span>
-											<span class="text-muted small pt-2 ps-1">decrease</span>
-
-										</div>
-									</div>
-
-								</div>
-							</div>
-
+				<!-- Order and Product Section -->
+				<div class="col-12">
+					<h4>Orders and Products</h4>
+					<div class="row g-3">
+						<!-- Total Orders Card -->
+						<div class="col-xxl-4 col-md-6">
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="order-card" />
+								<jsp:param name="title" value="Total Orders" />
+								<jsp:param name="subtitle" value="Today" />
+								<jsp:param name="icon" value="bi-box-arrow-in-right" />
+								<jsp:param name="value" value="52" />
+								<jsp:param name="growthClass" value="text-success" />
+								<jsp:param name="growthPercentage" value="5%" />
+								<jsp:param name="growthText" value="increase" />
+							</jsp:include>
 						</div>
-						<!-- End Customers Card -->
-
-						<div class="row">
-
-							<!-- Revenue Card -->
-							<div class="col-xxl-4 col-md-6">
-								<div class="card info-card sales-card">
-									<div class="filter">
-										<a class="icon" href="#" data-bs-toggle="dropdown">
-											<i class="bi bi-three-dots"></i>
-										</a>
-										<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-											<li class="dropdown-header text-start">
-												<h6>Filter</h6>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">Today</a>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">This Month</a>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">This Year</a>
-											</li>
-										</ul>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title">
-											Total Revenue
-											<span>| Today</span>
-										</h5>
-										<div class="d-flex align-items-center">
-											<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-												<i class="bi bi-cash"></i>
-												<!-- Icon for revenue -->
-											</div>
-											<div class="ps-3">
-												<h6>${totalRevenue}VNĐ</h6>
-												<!-- Replace with revenue variable -->
-												<span class="text-success small pt-1 fw-bold">12%</span>
-												<span class="text-muted small pt-2 ps-1">increase</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Total Orders Card -->
-							<div class="col-xxl-4 col-md-6">
-								<div class="card info-card sales-card">
-									<div class="filter">
-										<a class="icon" href="#" data-bs-toggle="dropdown">
-											<i class="bi bi-three-dots"></i>
-										</a>
-										<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-											<li class="dropdown-header text-start">
-												<h6>Filter</h6>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">Today</a>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">This Month</a>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">This Year</a>
-											</li>
-										</ul>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title">
-											Total Orders
-											<span>| Today</span>
-										</h5>
-										<div class="d-flex align-items-center">
-											<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-												<i class="bi bi-file-earmark-text"></i>
-												<!-- Icon for orders -->
-											</div>
-											<div class="ps-3">
-												<h6>${totalOrders}</h6>
-												<!-- Replace with total orders variable -->
-												<span class="text-success small pt-1 fw-bold">5%</span>
-												<span class="text-muted small pt-2 ps-1">increase</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Total Products Sold Card -->
-							<div class="col-xxl-4 col-md-6">
-								<div class="card info-card sales-card">
-									<div class="filter">
-										<a class="icon" href="#" data-bs-toggle="dropdown">
-											<i class="bi bi-three-dots"></i>
-										</a>
-										<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-											<li class="dropdown-header text-start">
-												<h6>Filter</h6>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">Today</a>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">This Month</a>
-											</li>
-											<li>
-												<a class="dropdown-item" href="#">This Year</a>
-											</li>
-										</ul>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title">
-											Total Products Sold
-											<span>| Today</span>
-										</h5>
-										<div class="d-flex align-items-center">
-											<div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-												<i class="bi bi-box"></i>
-												<!-- Icon for products -->
-											</div>
-											<div class="ps-3">
-												<h6>${totalProductsSold}</h6>
-												<!-- Replace with total products sold variable -->
-												<span class="text-success small pt-1 fw-bold">8%</span>
-												<span class="text-muted small pt-2 ps-1">increase</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-
-
-
+						<!-- Total Products Sold Card -->
+						<div class="col-xxl-4 col-md-6">
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="product-card" />
+								<jsp:param name="title" value="Total Products Sold" />
+								<jsp:param name="subtitle" value="Today" />
+								<jsp:param name="icon" value="bi-book" />
+								<jsp:param name="value" value="43" />
+								<jsp:param name="growthClass" value="text-success" />
+								<jsp:param name="growthPercentage" value="8%" />
+								<jsp:param name="growthText" value="increase" />
+							</jsp:include>
 						</div>
-						<div class="row">
-							<div class="col-12">
-								<h2>Order Management</h2>
-								<div class="mb-3">
-									<a href="add_order.jsp" class="btn btn-primary">Add New Order</a>
+					</div>
+				</div>
+
+				<!-- Customer and Interaction Section -->
+				<div class="col-12">
+					<h4>Customer Interactions</h4>
+					<div class="row g-3">
+						<!-- Customer Growth Card -->
+						<div class="col-xxl-4 col-md-6">
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="customers-card" />
+								<jsp:param name="title" value="Customers" />
+								<jsp:param name="subtitle" value="This Year" />
+								<jsp:param name="icon" value="bi-person-add" />
+								<jsp:param name="value" value="1244" />
+								<jsp:param name="growthClass" value="text-danger" />
+								<jsp:param name="growthPercentage" value="12%" />
+								<jsp:param name="growthText" value="decrease" />
+							</jsp:include>
+						</div>
+						<!-- New Customer Card -->
+						<div class="col-xxl-4 col-md-6">
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="new-customers-card" />
+								<jsp:param name="title" value="New Customers" />
+								<jsp:param name="subtitle" value="This Year" />
+								<jsp:param name="icon" value="bi-person-plus" />
+								<jsp:param name="value" value="136" />
+								<jsp:param name="growthClass" value="text-success" />
+								<jsp:param name="growthPercentage" value="5%" />
+								<jsp:param name="growthText" value="increase" />
+							</jsp:include>
+						</div>
+					</div>
+				</div>
+
+				<!-- Operational Section -->
+				<div class="col-12">
+					<h4>Operational Insights</h4>
+					<div class="row g-3">
+						<!-- New Arrivals Card -->
+						<div class="col-xxl-4 col-md-4">
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="new-arrivals-card" />
+								<jsp:param name="title" value="New Arrivals" />
+								<jsp:param name="subtitle" value="This Week" />
+								<jsp:param name="icon" value="bi-card-heading" />
+								<jsp:param name="value" value="20" />
+								<jsp:param name="growthClass" value="text-primary" />
+								<jsp:param name="growthPercentage" value="5%" />
+								<jsp:param name="growthText" value="increase" />
+							</jsp:include>
+						</div>
+						<!-- Bestsellers Card -->
+						<div class="col-xxl-4 col-md-4">
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="bestsellers-card" />
+								<jsp:param name="title" value="Bestsellers" />
+								<jsp:param name="subtitle" value="This Month" />
+								<jsp:param name="icon" value="bi-star-fill" />
+								<jsp:param name="value" value="10" />
+								<jsp:param name="growthClass" value="text-success" />
+								<jsp:param name="growthPercentage" value="15%" />
+								<jsp:param name="growthText" value="increase" />
+							</jsp:include>
+						</div>
+						<!-- Top Selling Books Card -->
+						<div class="col-xxl-4 col-md-4">
+							<jsp:include page="Parts/Card.jsp">
+								<jsp:param name="cardType" value="top-selling-books-card" />
+								<jsp:param name="title" value="Top Selling Books" />
+								<jsp:param name="subtitle" value="This Month" />
+								<jsp:param name="icon" value="bi-book" />
+								<jsp:param name="value" value="5" />
+								<jsp:param name="growthClass" value="text-danger" />
+								<jsp:param name="growthPercentage" value="5%" />
+								<jsp:param name="growthText" value="decrease" />
+							</jsp:include>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<div class="table-responsive">
+						<div class="card card-block card-stretch card-height">
+							<div class="card-header d-flex justify-content-between align-items-center mb-0">
+								<div class="header-title">
+									<h5 class="card-title">Latest Orders</h5>
 								</div>
+								<div class="card-header-toolbar d-flex align-items-center">
+									<div class="dropdown">
+										<span id="post-dropdown-02" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+											<i class="ri ri-more-fill"></i>
+										</span>
+										<div class="dropdown-menu dropdown-menu-end" aria-labelledby="post-dropdown-02">
+											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
+												<i class="ph ph-eye mr-2"></i>
+												View
+											</a>
+											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
+												<i class="ph ph-trash mr-2"></i>
+												Delete
+											</a>
+											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
+												<i class="ph ph-pencil-simple mr-2"></i>
+												Edit
+											</a>
+											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
+												<i class="ph ph-printer mr-2"></i>
+												Print
+											</a>
+											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
+												<i class="ph ph-file-arrow-down mr-2"></i>
+												Download
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-body">
 								<div class="table-responsive">
-									<table class="table table-bordered table-striped w-100">
+									<table class="table mb-0 table-borderless table-striped">
 										<thead>
 											<tr>
-												<th>Order ID</th>
-												<th>Customer Name</th>
-												<th>Total Amount</th>
-												<th>Status</th>
-												<th>Order Date</th>
-												<th>Delivery Address</th>
-												<th>Actions</th>
+												<!-- Center-align column titles -->
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Order ID</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Client</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Total Price</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Status</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Order Date</th>
+												<th scope="col" class="text-center">Action</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>001</td>
-												<td>Nguyễn Hưng</td>
-												<td>500,000 VNĐ</td>
-												<td>Completed</td>
-												<td>2024-11-05</td>
-												<td>123 Đường ABC, Quận 1, TP.HCM</td>
-												<td>
-													<a href="view_order.jsp?id=001" class="btn btn-info btn-sm">View</a>
-													<a href="edit_order.jsp?id=001" class="btn btn-warning btn-sm">Edit</a>
-													<button class="btn btn-danger btn-sm" onclick="deleteOrder('001')">Delete</button>
-												</td>
-											</tr>
-											<tr>
-												<td>002</td>
-												<td>Hải Ly</td>
-												<td>300,000 VNĐ</td>
-												<td>Pending</td>
-												<td>2024-11-05</td>
-												<td>456 Đường XYZ, Quận 3, TP.HCM</td>
-												<td>
-													<a href="view_order.jsp?id=002" class="btn btn-info btn-sm">View</a>
-													<a href="edit_order.jsp?id=002" class="btn btn-warning btn-sm">Edit</a>
-													<button class="btn btn-danger btn-sm" onclick="deleteOrder('002')">Delete</button>
-												</td>
-											</tr>
-											<!-- Add more orders as needed -->
+											<!-- Order 001 -->
+											<jsp:include page="Parts/OrderRow.jsp">
+												<jsp:param name="orderId" value="001" />
+												<jsp:param name="client" value="Nguyen Hung" />
+												<jsp:param name="totalPrice" value="500,000 VND" />
+												<jsp:param name="status" value="Completed" />
+												<jsp:param name="statusClass" value="bg-success" />
+												<jsp:param name="orderDate" value="05-10-2024" />
+											</jsp:include>
+
+											<!-- Order 002 -->
+											<jsp:include page="Parts/OrderRow.jsp">
+												<jsp:param name="orderId" value="002" />
+												<jsp:param name="client" value="Hai Ly" />
+												<jsp:param name="totalPrice" value="300,000 VND" />
+												<jsp:param name="status" value="Pending" />
+												<jsp:param name="statusClass" value="bg-warning" />
+												<jsp:param name="orderDate" value="06-11-2024" />
+											</jsp:include>
+
+											<!-- Order 003 -->
+											<jsp:include page="Parts/OrderRow.jsp">
+												<jsp:param name="orderId" value="003" />
+												<jsp:param name="client" value="Pham Hung" />
+												<jsp:param name="totalPrice" value="450,000 VND" />
+												<jsp:param name="status" value="Canceled" />
+												<jsp:param name="statusClass" value="bg-danger" />
+												<jsp:param name="orderDate" value="07-12-2024" />
+											</jsp:include>
 										</tbody>
 									</table>
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
 
-						<script>
+			<script>
     function deleteOrder(orderId) {
         if (confirm('Are you sure you want to delete this order?')) {
             // Call the delete order API or redirect to the delete action
@@ -409,42 +300,41 @@
     }
 </script>
 
+			<!-- Reports -->
+			<div class="col-12">
+				<div class="card">
 
-						<!-- Reports -->
-						<div class="col-12">
-							<div class="card">
+					<div class="filter">
+						<a class="icon" href="#" data-bs-toggle="dropdown">
+							<i class="bi bi-three-dots"></i>
+						</a>
+						<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+							<li class="dropdown-header text-start">
+								<h6>Filter</h6>
+							</li>
 
-								<div class="filter">
-									<a class="icon" href="#" data-bs-toggle="dropdown">
-										<i class="bi bi-three-dots"></i>
-									</a>
-									<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-										<li class="dropdown-header text-start">
-											<h6>Filter</h6>
-										</li>
+							<li>
+								<a class="dropdown-item" href="#">Today</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">This Month</a>
+							</li>
+							<li>
+								<a class="dropdown-item" href="#">This Year</a>
+							</li>
+						</ul>
+					</div>
 
-										<li>
-											<a class="dropdown-item" href="#">Today</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">This Month</a>
-										</li>
-										<li>
-											<a class="dropdown-item" href="#">This Year</a>
-										</li>
-									</ul>
-								</div>
+					<div class="card-body">
+						<h5 class="card-title">
+							Reports
+							<span>/Today</span>
+						</h5>
 
-								<div class="card-body">
-									<h5 class="card-title">
-										Reports
-										<span>/Today</span>
-									</h5>
+						<!-- Line Chart -->
+						<div id="reportsChart"></div>
 
-									<!-- Line Chart -->
-									<div id="reportsChart"></div>
-
-									<script>
+						<script>
                     document.addEventListener("DOMContentLoaded", () => {
                       new ApexCharts(document.querySelector("#reportsChart"), {
                         series: [{
@@ -496,106 +386,17 @@
                       }).render();
                     });
                   </script>
-									<!-- End Line Chart -->
-
-								</div>
-
-							</div>
-						</div>
-						<!-- End Reports -->
-
+						<!-- End Line Chart -->
 					</div>
 				</div>
-				<!-- End Left side columns -->
-
-				<!-- Right side columns -->
-				<div class="col-lg-4">
-
-					<!-- Best Selling Products -->
-					<div class="card">
-						<div class="filter">
-							<a class="icon" href="#" data-bs-toggle="dropdown">
-								<i class="bi bi-three-dots"></i>
-							</a>
-							<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-								<li class="dropdown-header text-start">
-									<h6>Filter</h6>
-								</li>
-								<li>
-									<a class="dropdown-item" href="#">Today</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="#">This Month</a>
-								</li>
-								<li>
-									<a class="dropdown-item" href="#">This Year</a>
-								</li>
-							</ul>
-						</div>
-
-						<div class="card-body">
-							<h5 class="card-title">
-								Best Selling Products
-								<span>| This Month</span>
-							</h5>
-
-							<div class="activity">
-								<div class="activity-item d-flex">
-									<div class="activite-label">1. Romantic Book</div>
-									<div class="activity-content">
-										<span class="text-success fw-bold">100 sold</span>
-									</div>
-								</div>
-								<!-- End activity item-->
-
-								<div class="activity-item d-flex">
-									<div class="activite-label">2. Action Book</div>
-									<div class="activity-content">
-										<span class="text-success fw-bold">85 sold</span>
-									</div>
-								</div>
-								<!-- End activity item-->
-
-								<div class="activity-item d-flex">
-									<div class="activite-label">3. Math Book</div>
-									<div class="activity-content">
-										<span class="text-success fw-bold">70 sold</span>
-									</div>
-								</div>
-								<!-- End activity item-->
-
-								<div class="activity-item d-flex">
-									<div class="activite-label">4. History Book</div>
-									<div class="activity-content">
-										<span class="text-success fw-bold">60 sold</span>
-									</div>
-								</div>
-								<!-- End activity item-->
-
-								<div class="activity-item d-flex">
-									<div class="activite-label">5. Film Book</div>
-									<div class="activity-content">
-										<span class="text-success fw-bold">55 sold</span>
-									</div>
-								</div>
-								<!-- End activity item-->
-
-							</div>
-						</div>
-					</div>
-					<!-- End Best Selling Products -->
-
-				</div>
-				<!-- End Right side columns -->
-
 			</div>
+			<!-- End Reports -->
 		</section>
-
 	</main>
 	<!-- End #main -->
 
 	<!-- ======= Footer ======= -->
-
+	<!-- Back to top button -->
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
 		<i class="bi bi-arrow-up-short"></i>
 	</a>
@@ -610,8 +411,7 @@
 	<script src="../assets/vendor/tinymce/tinymce.min.js"></script>
 	<script src="../assets/vendor/php-email-form/validate.js"></script>
 
-	<!-- Template Main JS File -->
+	<!-- Main JS File -->
 	<script src="../assets/js/NiceAdminMain.js"></script>
-
 </body>
 </html>

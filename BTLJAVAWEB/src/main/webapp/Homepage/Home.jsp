@@ -24,7 +24,7 @@
 <body>
 	<div class="super_container">
 		<!-- Tách riêng header ra file Header.jsp -->
-		<jsp:include page="Header.jsp" />
+		<jsp:include page="Parts/Header.jsp" />
 
 		<!-- Slider -->
 		<div class="main_slider" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/slider_1.jpg)">
