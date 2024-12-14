@@ -46,8 +46,8 @@
 				<div class="col-lg-12 text-right">
 					<div class="logo_container">
 						<a href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
-							colo
-							<span>shop</span>
+							Group
+							<span>13</span>
 						</a>
 					</div>
 					<nav class="navbar">
