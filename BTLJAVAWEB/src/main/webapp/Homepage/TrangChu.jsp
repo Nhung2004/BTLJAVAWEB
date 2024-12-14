@@ -26,15 +26,15 @@
 		<jsp:include page="Parts/Header.jsp" />
 
 		<!-- Slider -->
-		<div class="main_slider" style="background-image: url(${pageContext.request.contextPath}/assets/img/coloshop/slider_1.jpg)">
+		<div class="main_slider" style="background-image: url(${pageContext.request.contextPath}/assets/img/background/HeroBG.jpg)">
 			<div class="container fill_height">
 				<div class="row align-items-center fill_height">
 					<div class="col">
 						<div class="main_slider_content">
-							<h6>Spring / Summer Collection 2017</h6>
-							<h1>Get up to 30% Off New Arrivals</h1>
+							<h6 style="color: white;">Best Selling Books Collection 2024</h6>
+							<h1 style="color: white;">Get up to 20% off for new customers</h1>
 							<div class="red_button shop_now_button">
-								<a href="#">shop now</a>
+								<a href="#" style="color: black;">shop now</a>
 							</div>
 						</div>
 					</div>
@@ -233,6 +233,7 @@
 			</div>
 		</div>
 
+		<!-- DOTW Start 
 		<div class="deal_ofthe_week">
 			<div class="container">
 				<div class="row align-items-center">
@@ -272,6 +273,7 @@
 				</div>
 			</div>
 		</div>
+		DOTW End -->
 
 		<div class="best_sellers">
 			<div class="container">

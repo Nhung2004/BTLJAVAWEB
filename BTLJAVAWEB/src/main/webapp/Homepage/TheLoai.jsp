@@ -36,7 +36,7 @@
 							<li class="active">
 								<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp">
 									<i class="fa fa-angle-right" aria-hidden="true"></i>
-									Men's
+									Products
 								</a>
 							</li>
 						</ul>
@@ -104,7 +104,7 @@
 									<span> 0-1 </span>
 								</li>
 								<li class="active">
-									<i class="fa fa-square-0" aria-hidden="true"></i>
+									<i class="fa fa-square-o" aria-hidden="true"></i>
 									<span> 1-2 </span>
 								</li>
 								<li>
@@ -116,7 +116,7 @@
 									<span> 3-4 </span>
 								</li>
 								<li>
-									<i class="fa fa-square" aria-hidden="true"></i>
+									<i class="fa fa-square-o" aria-hidden="true"></i>
 									<span> 4-5 </span>
 								</li>
 							</ul>
