@@ -42,7 +42,7 @@ public class ViewKhachHang extends HttpServlet {
        // Đưa danh sách vào request attribute
       request.setAttribute("listkhp", listkh);
 //        // Chuyển tiếp đến trang JSP
-      RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/AccountManagement.jsp");
+      RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/Account.jsp");
        dispatcher.forward(request, response);
 	
 

@@ -32,8 +32,8 @@
 </head>
 <body>
     <!-- Include Header and Sidebar -->
-    <jsp:include page="Header.jsp" />
-    <jsp:include page="Sidebar.jsp" />
+    <jsp:include page="Parts/Header.jsp" />
+    <jsp:include page="Parts/Sidebar.jsp" />
 
     <main id="main" class="main">
         <div class="pagetitle">

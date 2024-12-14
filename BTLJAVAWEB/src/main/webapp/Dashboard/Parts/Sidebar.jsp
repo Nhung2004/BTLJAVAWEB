@@ -6,7 +6,7 @@
 	<ul class="sidebar-nav" id="sidebar-nav">
 		<!-- Dashboard Nav -->
 		<li class="nav-item">
-			<a class="nav-link" href="../Dashboard/Index.jsp">
+			<a class="nav-link" href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
 				<i class="bi bi-house-door"></i>
 				<span>Dashboard</span>
 			</a>
@@ -15,8 +15,8 @@
 
 		<!-- Account Management Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="../Dashboard/Account.jsp">
-				<i class="bi bi-person-lines-fill"></i>
+			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewKhachHang">
+				<i class="bi bi-people"></i>
 				<span>Account Management</span>
 			</a>
 		</li>
@@ -24,25 +24,25 @@
 
 		<!-- Products Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="../Dashboard/Product.jsp">
+			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Product.jsp">
 				<i class="bi bi-box"></i>
 				<span>Products Management</span>
 			</a>
 		</li>
 		<!-- End Products Management Page Nav -->
-		
+
 		<!-- Orders Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="../Dashboard/Order.jsp">
+			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Order.jsp">
 				<i class="bi bi-cart-check"></i>
 				<span>Order Management</span>
 			</a>
 		</li>
 		<!-- End Orders Management Page Nav -->
-		
+
 		<!-- Promotions Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="../Dashboard/Promotion.jsp">
+			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Promotion.jsp">
 				<i class="bi bi-gift"></i>
 				<span>Promotions</span>
 			</a>
@@ -51,7 +51,7 @@
 
 		<!-- Register Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="../Dashboard/Register.jsp">
+			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Register.jsp">
 				<i class="bi bi-person-add"></i>
 				<span>Register</span>
 			</a>
@@ -60,7 +60,7 @@
 
 		<!-- Login Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="../Dashboard/Login.jsp">
+			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Login.jsp">
 				<i class="bi bi-box-arrow-in-right"></i>
 				<span>Login</span>
 			</a>
