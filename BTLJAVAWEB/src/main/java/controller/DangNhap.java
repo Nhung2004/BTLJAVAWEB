@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -55,6 +56,16 @@ public class DangNhap extends HttpServlet {
 	        HttpSession session = request.getSession();
 	        session.setAttribute("KhachHang", khachhang);
 	        url = "/Homepage/TrangChu.jsp";  // Chuyển đến trang chủ khi đăng nhập thành công
+	        //  phải chuyển đến cái servlet không phải chuyển đến trang jsp Project
+	        // chưa ngắt kết nối 
+	        //ads
+	        // view: la cai dashboard hom no
+	      
+	      
+
+	        
+	        //. header footer  sidebar
+	        //
 	    } else {
 	        request.setAttribute("baoloi", "Tên đăng nhập hoặc mật khẩu không đúng");
 	        url = "/Homepage/DangNhap.jsp";  // Quay lại trang đăng nhập nếu sai thông tin

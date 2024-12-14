@@ -14,6 +14,51 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 	public ArrayList<KhachHang> data = new ArrayList<>();
 
+	
+	public ArrayList<KhachHang> selectAll20()
+	{
+		ArrayList<KhachHang> resultList = new ArrayList<>();
+		Connection           con        = null;
+
+		try
+		{
+			con = connectionPool.getConnection("selectAll");
+			String            sql = "SELECT * FROM KhachHang LIMIT 20 OFFSET 0";
+			PreparedStatement st  = con.prepareStatement(sql);
+			ResultSet         rs  = st.executeQuery();
+
+			while (rs.next())
+			{
+				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"),
+				        rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"),
+				        rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
+				        rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				resultList.add(kh);
+			}
+
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		} finally
+		{
+			if(con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "selectAll");
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return resultList;
+	}
+	
+	
 	@Override
 	public ArrayList<KhachHang> selectAll()
 	{
@@ -57,6 +102,11 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		return resultList;
 	}
+	
+	
+	
+	
+	
 
 	@Override
 	public KhachHang selectById(KhachHang khachHang)

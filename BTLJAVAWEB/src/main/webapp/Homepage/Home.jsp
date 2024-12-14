@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,82 +100,63 @@
 
 		<!-- New Arrivals -->
 		<div class="new_arrivals">
-			<div class="container">
-				<div class="row">
-					<div class="col text-center">
-						<div class="section_title new_arrivals_title">
-							<h2>New Arrivals</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row align-items-center">
-					<div class="col text-center">
-						<div class="new_arrivals_sorting">
-							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".foreign">Foreign</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".it">IT</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".lifeskill">Life Skill</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".lightnovel">Light Novel</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".literature">Literature</li>
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".novel">Novel</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-				<c:forEach items="${listP}" var="o">
-					<div class="col">
-						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-
-						<div class="product-item literature">
-    <div class="product discount product_filter">
-        <!-- Hình ảnh sản phẩm -->
-        <div class="product_image" style="width: 100%; height: 220px; overflow: hidden; display: flex; justify-content: center; align-items: center; background-color: #f9f9f9;">
-            <img src="${o.imageProduct }" 
-                 alt="Fujifilm X100T" 
-                 style="max-width: 100%; max-height: 100%; object-fit: contain;">
-        </div>
-
-        <!-- Thông tin giảm giá -->
-        <div class="favorite favorite_left"></div>
-        <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center">
-            <span></span>
-        </div>
-
-        <!-- Thông tin sản phẩm -->
-        <div class="product_info">
-            <h6 class="product_name">
-            ${o.nameProduct}
-            </h6>
-            <div class="product_price">
-                ${o.priceProduct }
-                <span>$590.00</span>
+    <div class="container">
+        <!-- Tiêu đề -->
+        <div class="row mb-4">
+            <div class="col text-center">
+                <h2 class="section_title new_arrivals_title">New Arrivals</h2>
             </div>
         </div>
+
+        <!-- Bộ lọc -->
+        <div class="row mb-4">
+            <div class="col text-center">
+                <ul class="arrivals_grid_sorting list-inline">
+                    <li class="list-inline-item"><button class="btn btn-outline-primary active" data-filter="*">All</button></li>
+                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".foreign">Foreign</button></li>
+                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".it">IT</button></li>
+                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".lifeskill">Life Skill</button></li>
+                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".lightnovel">Light Novel</button></li>
+                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".literature">Literature</button></li>
+                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".novel">Novel</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Danh sách sản phẩm -->
+        <div class="row g-4">
+            <c:if test="${not empty listP}">
+                <c:forEach items="${listP}" var="item">
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="card product-item shadow-sm h-100">
+                            <img src="${item.imageProduct}" class="card-img-top" alt="${item.nameProduct}" style="height: 220px; object-fit: contain;">
+                            <div class="card-body text-center d-flex flex-column justify-content-between">
+                                <h6 class="card-title text-truncate">
+                                    <a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp" class="text-decoration-none">${item.descriptions}</a>
+                                </h6>
+                                <p class="card-text text-success fw-bold">$${item.priceProduct}</p>
+                                <form action="${pageContext.request.contextPath}/addGioHang" method="post">
+                                    <input type="hidden" name="productId" value="${item.idProduct}">
+                                    <input type="hidden" name="productName" value="${item.nameProduct}">
+                                    <input type="hidden" name="price" value="${item.priceProduct}">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <input type="hidden" name="image" value="${item.imageProduct}">
+                                    <button type="submit" class="btn btn-primary w-100">Add to Cart</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </c:if>
+            <c:if test="${empty listP}">
+                <div class="col text-center">
+                    <p class="text-muted">No products available</p>
+                </div>
+            </c:if>
+        </div>
     </div>
-
-
-
 </div>
 
-
-
-
-
-
-</div>
-</div>
-</c:forEach>
-
-					
-					
-					
-					
-				</div>
-			</div>
-		</div>
 
 		<div class="deal_ofthe_week">
 			<div class="container">

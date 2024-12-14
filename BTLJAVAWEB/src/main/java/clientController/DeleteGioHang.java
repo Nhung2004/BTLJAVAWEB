@@ -42,7 +42,6 @@ public class DeleteGioHang extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 String productId = request.getParameter("productId");
 
-	        // Giả sử Cart là đối tượng lưu giỏ hàng trong session
 	        HttpSession session = request.getSession();
 	        List<GioHang> cart = (List<GioHang>) session.getAttribute("gioHangList");
 

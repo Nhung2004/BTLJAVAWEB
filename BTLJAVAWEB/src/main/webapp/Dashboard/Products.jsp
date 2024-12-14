@@ -14,24 +14,24 @@
 
 
 <!-- Favicons -->
-<link href="../assets/img/favicon.png" rel="icon">
-<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
+<link href="${pageContext.request.contextPath}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 <!-- Vendor CSS Files -->
-<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-<link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-<link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
 <!-- Template Main CSS File -->
-<link href="../assets/css/NiceAdminMain.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
 
 <!-- =======================================================
   * Template Name: NiceAdmin
@@ -74,51 +74,54 @@
 		<div class="pagetitle">
 			<h1>Thêm Sản Phẩm</h1>
 		</div>
-		<form action="product?action=add" method="post" enctype="multipart/form-data">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="mb-3">
-						<label for="tensanpham" class="form-label">Tên Sản Phẩm</label>
-						<input type="text" class="form-control" id="tensanpham" name="tensanpham" required>
-					</div>
-					<div class="mb-3">
-						<label for="giaban" class="form-label">Giá Bán</label>
-						<input type="number" class="form-control" id="giaban" name="giaban" required>
-					</div>
-					<div class="mb-3">
-						<label for="soluong" class="form-label">Số Lượng</label>
-						<input type="number" class="form-control" id="soluong" name="soluong" required>
-					</div>
-					<div class="mb-3">
-						<label for="hinhanh" class="form-label">Ảnh Sản Phẩm</label>
-						<input type="file" class="form-control" id="hinhanh" name="hinhanh" accept="image/*" required onchange="previewImage(event)">
-					</div>
-					<!-- Thẻ img hiển thị ảnh xem trước -->
-					<div class="mb-3">
-						<img id="preview" src="#" alt="Xem trước ảnh" style="display: none; width: 100%; max-height: 300px; margin-top: 10px;">
-					</div>
-					<div class="mt-3">
-						<button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
-						<button type="reset" class="btn btn-secondary">Đặt lại</button>
-					</div>
-				</div>
-			</div>
-		</form>
+<form action="${pageContext.request.contextPath}/addProduct" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mb-3">
+                <label for="masanpham" class="form-label">Mã Sản Phẩm</label>
+                <input type="text" class="form-control" id="masanpham" name="masanpham">
+            </div>
+            <div class="mb-3">
+                <label for="tensanpham" class="form-label">Tên Sản Phẩm</label>
+                <input type="text" class="form-control" id="tensanpham" name="tensanpham">
+            </div>
+            <div class="mb-3">
+                <label for="giaban" class="form-label">Giá Bán</label>
+                <input type="number" class="form-control" id="giaban" name="giaban">
+            </div>
+            <div class="mb-3">
+                <label for="soluong" class="form-label">Số Lượng</label>
+                <input type="number" class="form-control" id="soluong" name="soluong">
+            </div>
+            
+            <div class="mb-3">
+                <label for="hinhanh" class="form-label">Ảnh Sản Phẩm</label>
+                <input type="file" class="form-control" id="hinhanh" name="hinhanh" accept="image/*" onchange="previewImage(event)">
+                <img id="preview" src="#" alt="Image Preview" style="display: none; max-width: 100px; margin-top: 10px;">
+            </div>
+            
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Thêm Sản Phẩm</button>
+                <button type="reset" class="btn btn-secondary">Đặt lại</button>
+            </div>
+        </div>
+    </div>
+</form>
 
-		<script>
-			function previewImage(event) {
-				const preview = document.getElementById('preview');
-				const file = event.target.files[0];
+<script>
+    function previewImage(event) {
+        const preview = document.getElementById('preview');
+        const file = event.target.files[0];
+        if (file) {
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = 'block';
+        } else {
+            preview.src = '#';
+            preview.style.display = 'none';
+        }
+    }
+</script>
 
-				if (file) {
-					preview.src = URL.createObjectURL(file);
-					preview.style.display = 'block';
-				} else {
-					preview.src = '#';
-					preview.style.display = 'none';
-				}
-			}
-		</script>
 
 		<hr>
 		<br>
@@ -137,23 +140,25 @@
 							<th>Tên Sản Phẩm</th>
 							<th>Giá</th>
 							<th>Số Lượng</th>
-							<th>Ảnh</th>
+							 <th>Ảnh</th>
 							<th>Hành Động</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="product" items="${products}">
 							<tr>
-								<td class="text-center">${product.masanpham}</td>
-								<td>${product.tensanpham}</td>
-								<td class="text-end">${product.giaban}₫</td>
-								<td class="text-center">${product.soluong}</td>
+								<td class="text-center">${product.idProduct}</td>
+								<td>${product.nameProduct}</td>
+								<td class="text-end">${product.priceProduct}₫</td>
+								<td class="text-center">${product.quantity}</td>
+							
 								<td class="text-center">
-									<img src="${product.imagePath}" alt="${product.tensanpham}" width="80" height="80" class="rounded" />
-								</td>
+    <img src="${pageContext.request.contextPath}/uploads/${product.imageProduct}" alt="${product.nameProduct}" width="80" height="80" class="rounded" />
+</td>
+
 								<td class="text-center">
-									<a href="product?action=edit&id=${product.masanpham}" class="btn btn-sm btn-primary">Sửa</a>
-									<a href="product?action=delete&id=${product.masanpham}" class="btn btn-sm btn-danger">Xóa</a>
+									<a href="product?action=edit&id=${product.idProduct}" class="btn btn-sm btn-primary">Sửa</a>
+									<a href="product?action=delete&id=${product.idProduct}" class="btn btn-sm btn-danger">Xóa</a>
 								</td>
 							</tr>
 						</c:forEach>
@@ -175,17 +180,17 @@
 	</a>
 
 	<!-- Vendor JS Files -->
-	<script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
-	<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="../assets/vendor/chart.js/chart.umd.js"></script>
-	<script src="../assets/vendor/echarts/echarts.min.js"></script>
-	<script src="../assets/vendor/quill/quill.js"></script>
-	<script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
-	<script src="../assets/vendor/tinymce/tinymce.min.js"></script>
-	<script src="../assets/vendor/php-email-form/validate.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/apexcharts/apexcharts.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/chart.js/chart.umd.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/echarts/echarts.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/quill/quill.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/simple-datatables/simple-datatables.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/tinymce/tinymce.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/php-email-form/validate.js"></script>
 
 	<!-- Template Main JS File -->
-	<script src="../assets/js/NiceAdminMain.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/NiceAdminMain.js"></script>
 
 </body>
 </html>

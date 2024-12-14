@@ -24,17 +24,19 @@ public class addGioHang extends HttpServlet {
     public addGioHang() {
         super();
     }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            // Lấy thông tin sản phẩm từ request
             String productId = request.getParameter("productId");
             String productName = request.getParameter("productName");
             String image = request.getParameter("image");
             double price = Double.parseDouble(request.getParameter("price"));
             int quantity = Integer.parseInt(request.getParameter("quantity"));
 
-            // Tạo đối tượng GioHang
             GioHang gioHang = new GioHang();
             gioHang.setMasanpham(productId);
             gioHang.setTensanpham(productName);
@@ -42,13 +44,12 @@ public class addGioHang extends HttpServlet {
             gioHang.setGia(price);
             gioHang.setSoluong(quantity);
 
-            // Sử dụng DAO để lưu hoặc cập nhật sản phẩm trong cơ sở dữ liệu
             GioHangDAO gioHangDAO = new GioHangDAO();
             boolean productExists = false;
 
             for (GioHang item : gioHangDAO.selectAll()) {
                 if (item.getMasanpham().equals(productId)) {
-                    item.setSoluong(item.getSoluong() + quantity); // Cộng thêm số lượng
+                    item.setSoluong(item.getSoluong() + quantity);
                     gioHangDAO.update(item); // Cập nhật thông tin vào DB
                     productExists = true;
                     break;
@@ -56,7 +57,7 @@ public class addGioHang extends HttpServlet {
             }
 
             if (!productExists) {
-                gioHangDAO.insert(gioHang); // Thêm sản phẩm mới vào DB
+                gioHangDAO.insert(gioHang); 
             }
 
             // Cập nhật giỏ hàng trong session
@@ -82,7 +83,7 @@ public class addGioHang extends HttpServlet {
 
             session.setAttribute("gioHangList", cart); // Cập nhật lại session
 
-            // Chuyển hướng người dùng tới trang hiển thị giỏ hàng
+           
             response.sendRedirect("ViewGioHang");
         } catch (Exception e) {
             e.printStackTrace();

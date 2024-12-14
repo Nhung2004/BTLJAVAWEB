@@ -1,27 +1,29 @@
-package clientController;
+package controller;
 
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import clientDatabase.ProductDAO;
+import database.KhachHangDAO;
+import model.KhachHang;
 
 /**
- * Servlet implementation class Product
+ * Servlet implementation class ViewKhachHang
  */
-@WebServlet("/Product")
-public class Product extends HttpServlet {
+@WebServlet("/ViewKhachHang")
+public class ViewKhachHang extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Product() {
+    public ViewKhachHang() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,12 +34,19 @@ public class Product extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		//
-		ProductDAO productdao=new ProductDAO();
-		List<clientModel.Product> list=productdao.selectAll();
-		//b2
-		request.setAttribute("listP", list);
-		request.getRequestDispatcher("/Homepage/Home.jsp").forward(request, response);
+		
+		
+		// lấy từ csdl ra để hiển thị
+       KhachHangDAO khachHangDAO = new KhachHangDAO();
+       List<KhachHang> listkh = khachHangDAO.selectAll(); // Lấy danh sách khách hàng từ DB
+       // Đưa danh sách vào request attribute
+      request.setAttribute("listkhp", listkh);
+//        // Chuyển tiếp đến trang JSP
+      RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/AccountManagement.jsp");
+       dispatcher.forward(request, response);
+	
+
+
 	}
 
 	/**

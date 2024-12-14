@@ -43,7 +43,8 @@
 		<!-- End Products Page Nav -->
 
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="AccountManagement.jsp">
+  <a class="nav-link collapsed" href="/BTLJAVAWEB/ViewKhachHang">
+
 				<i class="bi bi-people"></i>
 				<span>Account Management</span>
 			</a>
