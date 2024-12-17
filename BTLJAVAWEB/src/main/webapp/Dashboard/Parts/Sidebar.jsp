@@ -6,7 +6,7 @@
 	<ul class="sidebar-nav" id="sidebar-nav">
 		<!-- Dashboard Nav -->
 		<li class="nav-item">
-			<a class="nav-link" href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
+			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
 				<i class="bi bi-house-door"></i>
 				<span>Dashboard</span>
 			</a>
