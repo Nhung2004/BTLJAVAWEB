@@ -37,6 +37,18 @@ public class KhachHang
 		this.email            = email;
 		this.dangkinhanbantin = dangkinhanbantin;
 	}
+	public KhachHang(
+	        String makhachhang, String tendangnhap, String matkhau, String sodienthoai, String email
+	     
+	)
+	{
+		super();
+		this.makhachhang      = makhachhang;
+		this.tendangnhap      = tendangnhap;
+		this.matkhau          = matkhau;
+		this.sodienthoai	  = sodienthoai;
+		this.email			  = email;
+	}
 
 	public KhachHang()
 	{
