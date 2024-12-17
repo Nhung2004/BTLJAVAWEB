@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<%@ page import="java.sql.*" %>
+<%@ page import="database.KhachHangDAO" %>
+<%@ page import="model.KhachHang" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,164 +39,198 @@
     <jsp:include page="Parts/Header.jsp" />
     <jsp:include page="Parts/Sidebar.jsp" />
 
-    <main id="main" class="main">
-        <div class="pagetitle">
-            <h1>Users Management</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="Index.jsp">Home</a></li>
-                    <li class="breadcrumb-item active">Users Management</li>
-                </ol>
-            </nav>
-        </div>
+    <!-- Nội dung chính (Account Management) -->
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Users Management</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="Index.jsp">Home</a></li>
+                <li class="breadcrumb-item active">Users Management</li>
+            </ol>
+        </nav>
+    </div>
 
-        <section class="account-management">
-            <div class="container py-4">
-                <h2 class="text-center mb-4">Account Management</h2>
-                
-                <!-- Add Account Button -->
-                <div class="text-end mb-3">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAccountModal">
-                        <i class="fas fa-plus-circle me-2"></i> Add Account
-                    </button>
-                </div>
+    <section class="account-management">
+        <div class="container py-4">
+            <h2 class="text-center mb-4">Users Management</h2>
+            
+			<!-- Add Account Button -->
+			<div class="text-end mb-3">
+			    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAccountModal">
+			        <i class="fas fa-plus-circle me-2"></i> Add Account
+			    </button>
+			</div>
 
-                <!-- Account Table -->
-                <table class="table table-hover align-middle bg-white shadow-sm rounded">
-                    <thead class="bg-primary text-white">
+            <!-- Account Table -->
+            <table class="table table-hover align-middle bg-white shadow-sm rounded">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th>Customer ID</th>
+                        <th>Username</th>
+                        <th>Password</th>                   
+                        <th>Phone</th>
+                        <th>Email</th>                   
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                  <%
+                    ArrayList<KhachHang> khachHangs = null;
+                    try {
+                        // Create DAO and fetch list of customers
+                        KhachHangDAO khDAO = new KhachHangDAO();
+                        khachHangs = khDAO.selectAll();  // Call selectAll to fetch all customers
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    %>
+                <tbody>
+                    <% if (khachHangs != null) {
+                    for (KhachHang kh : khachHangs) { %>
                         <tr>
-                            <th>Customer ID</th>
-                            
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Email</th>
-                             
-                            <th>Phone</th>
-                            <th>Role</th>
-                            <th class="text-center">Actions</th>
+                            <td><%= kh.getMakhachhang() %></td>
+                            <td><%= kh.getTendangnhap() %></td>
+                            <td><%= kh.getMatkhau() %></td>
+                             <td><%= kh.getSodienthoai() %></td>
+                            <td><%= kh.getEmail() %></td>
+                            <td>
+                                <!-- Nút Delete mở Modal -->
+                                <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal_<%= kh.getMakhachhang() %>">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                            </td>
+                            <td>
+                                <!-- Nút Edit mở Modal -->
+                                <button type="button" class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#editAccountModal_<%= kh.getMakhachhang() %>">
+                                    <i class="fas fa-edit"></i> Edit
+                                </button>
+                            </td>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="item" items="${listkhp}">
-                            <tr>
-                                <td>${item.makhachhang}</td>
-                                
-                                <td>${item.tendangnhap}</td>
-                                <td>${item.matkhau }</td>
-                                <td>${item.email }</td>
-                                
-                                <td>${item.sodienthoai}</td>
-                                <td>
-                                    <span class="badge bg-success text-uppercase">User</span>
-                                </td>
-                                <td class="text-center">
-                                    <button class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#editAccountModal">
-                                        <i class="fas fa-edit"></i> Edit
-                                    </button>
-                                    <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
-                                        <i class="fas fa-trash-alt"></i> Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
-            </div>
 
-            <!-- Add Account Modal -->
-            <div class="modal fade" id="addAccountModal" tabindex="-1" aria-labelledby="addAccountModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header bg-primary text-white">
-                            <h5 class="modal-title" id="addAccountModalLabel"><i class="fas fa-user-plus me-2"></i> Add New Account</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="addAccountForm">
-                                <div class="mb-3">
-                                    <label for="addUsername" class="form-label">Username</label>
-                                    <input type="email" class="form-control" id="addUsername" placeholder="Enter email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="addPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="addPassword" placeholder="Enter password" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="addRole" class="form-label">Role</label>
-                                    <select class="form-select" id="addRole">
-                                        <option value="User">User</option>
-                                        <option value="Admin">Admin</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Add Account</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+							<!-- Modal Delete -->
+							<div class="modal fade" id="deleteAccountModal_<%= kh.getMakhachhang() %>" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+							    <div class="modal-dialog">
+							        <div class="modal-content">
+							            <div class="modal-header bg-danger text-white">
+							                <h5 class="modal-title">
+							                    <i class="fas fa-exclamation-triangle me-2"></i> Confirm deletion
+							                </h5>
+							                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							            </div>
+							            <div class="modal-body text-center">
+							                <p>Are you sure you want to delete your account: <strong><%= kh.getTendangnhap() %></strong>?</p>
+							            </div>
+							            <div class="modal-footer">
+							                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+							                <!-- Form gửi yêu cầu xóa tài khoản -->
+							                <form action="Quanlytaikhoan" method="POST" id="deleteAccountForm_<%= kh.getMakhachhang() %>">
+							                    <input type="hidden" name="makhachhang" value="<%= kh.getMakhachhang() %>" />
+							                    <input type="hidden" name="chucNang" value="Xoa" />
+							                    <button type="submit" class="btn btn-danger">Agree</button>
+							                </form>
+							            </div>
+							        </div>
+							    </div>
+							</div>
 
-            <!-- Edit Account Modal -->
-            <div class="modal fade" id="editAccountModal" tabindex="-1" aria-labelledby="editAccountModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header bg-primary text-white">
-                            <h5 class="modal-title" id="editAccountModalLabel"><i class="fas fa-user-edit me-2"></i> Edit Account</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form id="editAccountForm">
-                                <div class="mb-3">
-                                    <label for="editUsername" class="form-label">Username</label>
-                                    <input type="email" class="form-control" id="editUsername" placeholder="Enter email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="editPassword" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="editPassword" placeholder="Enter password" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="editRole" class="form-label">Role</label>
-                                    <select class="form-select" id="editRole">
-                                        <option value="User">User</option>
-                                        <option value="Admin">Admin</option>
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Save Changes</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Delete Account Modal -->
-            <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header bg-danger text-white">
-                            <h5 class="modal-title" id="deleteAccountModalLabel"><i class="fas fa-exclamation-triangle me-2"></i> Confirm Deletion</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <!-- Modal Edit -->
+                        <div class="modal fade" id="editAccountModal_<%= kh.getMakhachhang() %>" tabindex="-1" aria-labelledby="editAccountModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-primary text-white">
+                                        <h5 class="modal-title">
+                                            <i class="fas fa-user-edit me-2"></i> Edit Account
+                                        </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="Quanlytaikhoan" method="post">
+                                            <input type="hidden" name="makhachhang" value="<%= kh.getMakhachhang() %>">
+                                            <div class="mb-3">
+                                                <label for="editUsername" class="form-label">Username</label>
+                                                <input type="text" class="form-control" name="tendangnhap" value="<%= kh.getTendangnhap() %>" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="password" class="form-control" name="matkhau" value="<%= kh.getMatkhau() %>" required>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="sodienthoai" class="form-label">Phone</label>
+                                                <input type="number" class="form-control" name="sodienthoai" value="<%= kh.getSodienthoai() %>" required>
+                                            </div>
+                                               <div class="mb-3">
+										        <label for="email" class="form-label">Email</label>
+										        <input type="email" class="form-control" name="email" value="<%= kh.getEmail() %>" required>
+										    </div>
+                                            <button type="submit" name="chucNang" value="Sua" class="btn btn-primary w-100">Save Changes</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-body text-center">
-                            <p>Are you sure you want to delete this account?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="footer" class="footer">
-        <div class="copyright">
-            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+                    <% 
+                    }
+                    } %>
+                </tbody>
+            </table>
         </div>
-        <div class="credits">
-            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </section>
+</main>
+<!-- Modal Add Account -->
+<div class="modal fade" id="addAccountModal" tabindex="-1" aria-labelledby="addAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="addAccountModalLabel">
+                    <i class="fas fa-user-plus me-2"></i> Add New Account
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="Quanlytaikhoan" method="POST">
+                    <input type="hidden" name="chucNang" value="Them">
+                    <div class="mb-3">
+                        <label for="newmakhachhang" class="form-label">Customer id</label>
+                        <input type="text" class="form-control" name="makhachhang" id="newmakhachhang" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newUsername" class="form-label">Username</label>
+                        <input type="text" class="form-control" name="tendangnhap" id="newUsername" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">Password</label>
+                        <input type="password" class="form-control" name="matkhau" id="newPassword" required>
+                    </div>
+                        <div class="mb-3">
+				        <label for="sodienthoai" class="form-label">Phone</label>
+				        <input type="number" class="form-control" name="sodienthoai" id="sodienthaoi" required>
+				    </div>
+				    <div class="mb-3">
+				        <label for="email" class="form-label">Email</label>
+				        <input type="email" class="form-control" name="email" id="email" required> 
+				    </div>
+                    <button type="submit" class="btn btn-primary w-100">Add Account</button>
+                </form>
+            </div>
         </div>
-    </footer>
+    </div>
+</div>
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<!-- Footer -->
+<footer id="footer" class="footer">
+    <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+    <div class="copyright">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+</footer>
+
+  
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
@@ -200,6 +238,7 @@
     </a>
 
     <!-- Vendor JS Files -->
+    
     <script src="${pageContext.request.contextPath}/assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/vendor/chart.js/chart.umd.js"></script>
@@ -212,4 +251,5 @@
     <!-- Template Main JS File -->
     <script src="${pageContext.request.contextPath}/assets/js/NiceAdminMain.js"></script>
 </body>
+
 </html>
