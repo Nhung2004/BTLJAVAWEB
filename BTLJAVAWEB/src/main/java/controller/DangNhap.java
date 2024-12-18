@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,65 +12,50 @@ import javax.servlet.http.HttpSession;
 import database.KhachHangDAO;
 import model.KhachHang;
 
-/**
- * Servlet implementation class DangNhap
- */
 @WebServlet("/dang-nhap")
 public class DangNhap extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    private static final long serialVersionUID = 1L;
+
     public DangNhap() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Always forward to the login page for GET requests
+        RequestDispatcher rd = request.getRequestDispatcher("/Homepage/DangNhap.jsp");
+        rd.forward(request, response);
+    }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    String tendangnhap = request.getParameter("tendangnhap");
-	    String matkhau = request.getParameter("matkhau");
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Retrieve username and password from form
+        String tendangnhap = request.getParameter("tendangnhap");
+        String matkhau = request.getParameter("matkhau");
 
-	    KhachHang kh = new KhachHang();
-	    kh.setTendangnhap(tendangnhap);
-	    kh.setMatkhau(matkhau);
+        // Create a KhachHang object for validation
+        KhachHang kh = new KhachHang();
+        kh.setTendangnhap(tendangnhap);
+        kh.setMatkhau(matkhau);
 
-	    KhachHangDAO khd = new KhachHangDAO(); 
-	    KhachHang khachhang = khd.selectByIDandPassword(kh); 
+        // DAO for database access
+        KhachHangDAO khDAO = new KhachHangDAO();
+        KhachHang khachhang = khDAO.selectByIDandPassword(kh);
 
-	    String url = "";
-	    if (khachhang != null) {
-	        HttpSession session = request.getSession();
-	        session.setAttribute("KhachHang", khachhang);
-	        url = "/Homepage/TrangChu.jsp";  // Chuyển đến trang chủ khi đăng nhập thành công
-	        //  phải chuyển đến cái servlet không phải chuyển đến trang jsp Project
-	        // chưa ngắt kết nối 
-	        //ads
-	        // view: la cai dashboard hom no
-	      
-	      
+        if (khachhang != null) { // Successful login
+            HttpSession session = request.getSession();
+            session.setAttribute("KhachHang", khachhang);
 
-	        
-	        //. header footer  sidebar
-	        //
-	    } else {
-	        request.setAttribute("baoloi", "Tên đăng nhập hoặc mật khẩu không đúng");
-	        url = "/Homepage/DangNhap.jsp";  // Quay lại trang đăng nhập nếu sai thông tin
-	    }
+            // Redirect to a Servlet instead of directly to JSP
+            response.sendRedirect(request.getContextPath() + "/Homepage/TrangChu.jsp");
+        } else { // Failed login
+            request.setAttribute("baoloi", "Tên đăng nhập hoặc mật khẩu không đúng");
 
-	    RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
-	    rd.forward(request, response);
-	}
-
+            // Forward back to login page
+            RequestDispatcher rd = request.getRequestDispatcher("/Homepage/DangNhap.jsp");
+            rd.forward(request, response);
+        }
+    }
 }
