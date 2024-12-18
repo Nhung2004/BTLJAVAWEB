@@ -128,21 +128,23 @@
 				</div>
 
 				<div class="row">
-				   <c:forEach items="${listP}" var="item">
-				
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+				   <c:forEach items="${listP}" var="item">
+				
+				
 							 <jsp:include page="Parts/BookCard.jsp">
-                    <jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/literature/${item.imageProduct}" />
+                    <jsp:param name="image" value="${item.imageProduct}" />
                     <jsp:param name="productName" value="${item.nameProduct}" />
                     <jsp:param name="price" value="${item.priceProduct}" />
                     <jsp:param name="productId" value="${item.idProduct}" />    
                     <jsp:param name="addToCart" value="true" />
                 </jsp:include>
 							
-						</div>
-					</div>
+					
 					                </c:forEach>  
+					                	</div>
+					</div>
 					
 					
 				</div>
