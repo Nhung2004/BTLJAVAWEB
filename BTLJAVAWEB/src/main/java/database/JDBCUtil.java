@@ -12,7 +12,6 @@ public class JDBCUtil implements ConnectionPool
 {
 	private static final Logger logger = Logger.getLogger(JDBCUtil.class.getName());
 
-
 	private final Queue<Connection> connectionPool;
 	private static JDBCUtil         instance;
 
@@ -40,22 +39,15 @@ public class JDBCUtil implements ConnectionPool
 		}
 	}
 
-/* 
-	// Sử dụng Thread-Safe Singleton (Không hoạt động)
-	public static JDBCUtil getInstance()
-	{
-		// Kiểm tra xem JDBCUtil đã được khởi tạo hay chưa
-		if(instance == null)
-		{
-			// Gọi hàm khởi tạo JDBCUtil
-			instance = new JDBCUtil();
-		}
+	/*
+	 * // Sử dụng Thread-Safe Singleton (Không hoạt động) public static JDBCUtil getInstance() { // Kiểm
+	 * tra xem JDBCUtil đã được khởi tạo hay chưa if(instance == null) { // Gọi hàm khởi tạo JDBCUtil
+	 * instance = new JDBCUtil(); }
+	 * 
+	 * // Trả về instance được khởi tạo (Nếu thoả mãn điều kiện) hoặc instance đã có sẵn return
+	 * instance; }
+	 */
 
-		// Trả về instance được khởi tạo (Nếu thoả mãn điều kiện) hoặc instance đã có sẵn
-		return instance;
-	}
-*/
-	
 	// Sử dụng Double-checked locking Singleton
 	public static JDBCUtil getInstance()
 	{
@@ -73,7 +65,7 @@ public class JDBCUtil implements ConnectionPool
 				}
 			}
 		}
-		
+
 		// Trả về instance được khởi tạo (Nếu thoả mãn Double-checked locking) hoặc instance đã có sẵn
 		return instance;
 	}
@@ -85,8 +77,7 @@ public class JDBCUtil implements ConnectionPool
 		if(currentConnectionCount < DatabaseConfig.DB_MAX_CONNECTIONS)
 		{
 			// Nếu chưa đầy, tạo kết nối mới và thêm vào Pool
-			Connection connection = DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USER_NAME,
-			    DatabaseConfig.PASSWORD);
+			Connection connection = DriverManager.getConnection(DatabaseConfig.CONNECTION_URL, DatabaseConfig.USER_NAME, DatabaseConfig.PASSWORD);
 			connectionPool.add(connection);
 
 			// Tăng bộ đếm
@@ -97,12 +88,13 @@ public class JDBCUtil implements ConnectionPool
 	@Override
 	// Method lấy kết nối từ Connection Pool
 	public synchronized Connection getConnection(String objectName) throws SQLException
-	{		
+	{
 		// Điều kiện: Connection Pool không còn kết nối để lấy, Số lượng kết nối đã đạt tối đa
 		while (connectionPool.isEmpty() && currentConnectionCount >= DatabaseConfig.DB_MAX_CONNECTIONS)
 		{
 			// Tạm dừng luồng cho đến khi có kết nối để lấy
-			logger.log(Level.INFO, "{0} is waiting for a connection...", new Object[]{objectName});
+			logger.log(Level.INFO, "{0} is waiting for a connection...", new Object[]
+			{ objectName });
 			try
 			{
 				// Tạm dừng luồng cho đến khi có thông báo (Từ Method closeConnection)
@@ -127,7 +119,8 @@ public class JDBCUtil implements ConnectionPool
 		// Trong trường hợp CP vẫn còn kết nối để lấy, hoặc thêm kết nối mới vào CP thành công:
 		// Trả về kết nối lấy từ Pool
 		Connection connection = connectionPool.poll();
-		logger.log(Level.INFO, "{0} obtained connection: {1}", new Object[]{objectName, connection}); 
+		logger.log(Level.INFO, "{0} obtained connection: {1}", new Object[]
+		{ objectName, connection });
 		return connection;
 	}
 
@@ -143,7 +136,8 @@ public class JDBCUtil implements ConnectionPool
 			{
 				// Nếu còn, trả lại kết nối về Pool
 				connectionPool.add(con);
-				logger.log(Level.INFO, "{0} released connection: {1}", new Object[]{objectName, con});
+				logger.log(Level.INFO, "{0} released connection: {1}", new Object[]
+				{ objectName, con });
 
 				// Thông báo (Đến method getConnection) rằng đã có kết nối khả dụng
 				notifyAll();

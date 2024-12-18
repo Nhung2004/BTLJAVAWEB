@@ -31,7 +31,7 @@ public class ConnectionPoolTest
 		// Tạo đa luồng để test
 		for (int i = 0; i < THREADS; i++)
 		{
-			new Thread(task).start(); 
+			new Thread(task).start();
 		}
 	}
 }

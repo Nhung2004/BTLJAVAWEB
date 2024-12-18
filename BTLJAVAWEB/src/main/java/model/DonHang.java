@@ -17,9 +17,8 @@ public class DonHang
 	private Date      ngaygiaohang;
 
 	public DonHang(
-	        String madonhang, KhachHang khachhang, String diachimuahang, String diachinhanhang, String trangthai,
-	        String hinhthucthanhtoan, String trangthaithanhtoan, double sotiendathanhtoan, double sotienconthieu,
-	        Date ngaydathang, Date ngaygiaohang
+	        String madonhang, KhachHang khachhang, String diachimuahang, String diachinhanhang, String trangthai, String hinhthucthanhtoan, String trangthaithanhtoan, double sotiendathanhtoan, double sotienconthieu, Date ngaydathang,
+	        Date ngaygiaohang
 	)
 	{
 		super();

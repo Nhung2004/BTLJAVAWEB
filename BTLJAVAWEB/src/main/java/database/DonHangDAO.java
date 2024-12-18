@@ -27,12 +27,9 @@ public class DonHangDAO implements DAOInterface<DonHang>
 
 			while (rs.next())
 			{
-				KhachHang khachhang = new KhachHang(rs.getString("makhachhang"), null, null, null, sql, sql, sql, sql, null,
-				        sql, sql, false);
-				DonHang   donHang   = new DonHang(rs.getString("madonhang"), khachhang, rs.getString("diachimuahang"),
-				        rs.getString("diachinhanhang"), rs.getString("trangthai"), rs.getString("hinhthucthanhtoan"),
-				        rs.getString("trangthaithanhtoan"), rs.getDouble("sotiendathanhtoan"),
-				        rs.getDouble("sotienconthieu"), rs.getDate("ngaydathang"), rs.getDate("ngaygiaohang"));
+				KhachHang khachhang = new KhachHang(rs.getString("makhachhang"), null, null, null, sql, sql, sql, sql, null, sql, sql, false);
+				DonHang   donHang   = new DonHang(rs.getString("madonhang"), khachhang, rs.getString("diachimuahang"), rs.getString("diachinhanhang"), rs.getString("trangthai"), rs.getString("hinhthucthanhtoan"), rs.getString("trangthaithanhtoan"),
+				        rs.getDouble("sotiendathanhtoan"), rs.getDouble("sotienconthieu"), rs.getDate("ngaydathang"), rs.getDate("ngaygiaohang"));
 				list.add(donHang);
 			}
 			connectionPool.closeConnection(con, "selectAll");
@@ -58,12 +55,9 @@ public class DonHangDAO implements DAOInterface<DonHang>
 
 			if(rs.next())
 			{
-				KhachHang khachhang = new KhachHang(rs.getString("makhachhang"), null, null, null, sql, sql, sql, sql, null,
-				        sql, sql, false);
-				donHang = new DonHang(rs.getString("madonhang"), khachhang, rs.getString("diachimuahang"),
-				        rs.getString("diachinhanhang"), rs.getString("trangthai"), rs.getString("hinhthucthanhtoan"),
-				        rs.getString("trangthaithanhtoan"), rs.getDouble("sotiendathanhtoan"),
-				        rs.getDouble("sotienconthieu"), rs.getDate("ngaydathang"), rs.getDate("ngaygiaohang"));
+				KhachHang khachhang = new KhachHang(rs.getString("makhachhang"), null, null, null, sql, sql, sql, sql, null, sql, sql, false);
+				donHang = new DonHang(rs.getString("madonhang"), khachhang, rs.getString("diachimuahang"), rs.getString("diachinhanhang"), rs.getString("trangthai"), rs.getString("hinhthucthanhtoan"), rs.getString("trangthaithanhtoan"),
+				        rs.getDouble("sotiendathanhtoan"), rs.getDouble("sotienconthieu"), rs.getDate("ngaydathang"), rs.getDate("ngaygiaohang"));
 			}
 			connectionPool.closeConnection(con, "selectById");
 		}
@@ -82,8 +76,7 @@ public class DonHangDAO implements DAOInterface<DonHang>
 		{
 			Connection con = connectionPool.getConnection("insert");
 
-			String            sql = "INSERT INTO DonHang (madonhang, makhachhang, diachimuahang, diachinhanhang, trangthai, "
-			        + "hinhthucthanhtoan, trangthaithanhtoan, sotiendathanhtoan, sotienconthieu, ngaydathang, ngaygiaohang) "
+			String            sql = "INSERT INTO DonHang (madonhang, makhachhang, diachimuahang, diachinhanhang, trangthai, " + "hinhthucthanhtoan, trangthaithanhtoan, sotiendathanhtoan, sotienconthieu, ngaydathang, ngaygiaohang) "
 			        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getMadonhang());
@@ -116,8 +109,7 @@ public class DonHangDAO implements DAOInterface<DonHang>
 		{
 			Connection con = connectionPool.getConnection("update");
 
-			String            sql = "UPDATE DonHang SET makhachhang = ?, diachimuahang = ?, diachinhanhang = ?, trangthai = ?, "
-			        + "hinhthucthanhtoan = ?, trangthaithanhtoan = ?, sotiendathanhtoan = ?, sotienconthieu = ?, "
+			String            sql = "UPDATE DonHang SET makhachhang = ?, diachimuahang = ?, diachinhanhang = ?, trangthai = ?, " + "hinhthucthanhtoan = ?, trangthaithanhtoan = ?, sotiendathanhtoan = ?, sotienconthieu = ?, "
 			        + "ngaydathang = ?, ngaygiaohang = ? WHERE madonhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getKhachhang().getMakhachhang());

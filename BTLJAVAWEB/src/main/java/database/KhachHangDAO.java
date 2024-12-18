@@ -14,7 +14,6 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 	public ArrayList<KhachHang> data = new ArrayList<>();
 
-	
 	public ArrayList<KhachHang> selectAll20()
 	{
 		ArrayList<KhachHang> resultList = new ArrayList<>();
@@ -29,10 +28,8 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 			while (rs.next())
 			{
-				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"),
-				        rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"),
-				        rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				        rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 				resultList.add(kh);
 			}
 
@@ -57,8 +54,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		return resultList;
 	}
-	
-	
+
 	@Override
 	public ArrayList<KhachHang> selectAll()
 	{
@@ -74,10 +70,8 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 			while (rs.next())
 			{
-				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"),
-				        rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"),
-				        rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				        rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 				resultList.add(kh);
 			}
 
@@ -102,11 +96,6 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		return resultList;
 	}
-	
-	
-	
-	
-	
 
 	@Override
 	public KhachHang selectById(KhachHang khachHang)
@@ -124,10 +113,8 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 			if(rs.next())
 			{
-				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"),
-				        rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"),
-				        rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				        rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 			}
 
 		}
@@ -168,10 +155,8 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 			if(rs.next())
 			{
-				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"),
-				        rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"),
-				        rs.getString("diachinhanhang"), rs.getString("diachimuahang"), rs.getDate("ngaysinh"),
-				        rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
 			}
 
 		}
@@ -440,7 +425,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			System.out.println(sql);
 			ResultSet rs = st.executeQuery();
 
-			// Bước 4: Kiểm tra kết quả trả về 
+			// Bước 4: Kiểm tra kết quả trả về
 			if(rs.next())
 			{
 				ketQua = true;

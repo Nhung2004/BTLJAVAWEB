@@ -14,10 +14,7 @@ public class SanPham
 	private String  ngonngu;
 	private String  mota;
 
-	public SanPham(
-	        String masanpham, String tensanpham, TacGia tacgia, int namxuatban, double giaban, double gianhap, double giagoc,
-	        int soluong, TheLoai theloai, String ngonngu, String mota
-	)
+	public SanPham(String masanpham, String tensanpham, TacGia tacgia, int namxuatban, double giaban, double gianhap, double giagoc, int soluong, TheLoai theloai, String ngonngu, String mota)
 	{
 		super();
 		this.masanpham  = masanpham;
