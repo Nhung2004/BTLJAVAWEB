@@ -1,8 +1,6 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,23 +126,19 @@
 				</div>
 
 				<div class="row">
-				   <c:forEach items="${listP}" var="item">
-				
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-							 <jsp:include page="Parts/BookCard.jsp">
-                    <jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/literature/${item.imageProduct}" />
-                    <jsp:param name="productName" value="${item.nameProduct}" />
-                    <jsp:param name="price" value="${item.priceProduct}" />
-                    <jsp:param name="productId" value="${item.idProduct}" />    
-                    <jsp:param name="addToCart" value="true" />
-                </jsp:include>
-							
+							<c:forEach items="${listP}" var="item">
+								<jsp:include page="Parts/BookCard.jsp">
+									<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/tu-hoc-c-va-sql-server-2008_1434.jpg" />
+									<jsp:param name="productName" value="${item.nameProduct}" />
+									<jsp:param name="price" value="${item.priceProduct}" />
+									<jsp:param name="productId" value="${item.idProduct}" />
+									<jsp:param name="addToCart" value="true" />
+								</jsp:include>
+							</c:forEach>
 						</div>
 					</div>
-					                </c:forEach>  
-					
-					
 				</div>
 			</div>
 		</div>
