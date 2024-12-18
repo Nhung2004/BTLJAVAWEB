@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import database.KhachHangDAO;
-import model.KhachHang;
+import clientDatabase.ProductDAO;
+import clientModel.Product;
 
 /**
- * Servlet implementation class ViewKhachHang
+ * Servlet implementation class ViewSanPham
  */
-@WebServlet("/ViewKhachHang")
-public class ViewKhachHang extends HttpServlet
+@WebServlet("/ViewSanPham")
+public class ViewSanPham extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ViewKhachHang()
+	public ViewSanPham()
 	{
 		super();
 		// TODO Auto-generated constructor stub
@@ -36,17 +36,13 @@ public class ViewKhachHang extends HttpServlet
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
 
-		// lấy từ csdl ra để hiển thị
-		KhachHangDAO    khachHangDAO = new KhachHangDAO();
-		List<KhachHang> listkh       = khachHangDAO.selectAll(); // Lấy danh sách khách hàng từ DB
-		// Đưa danh sách vào request attribute
-		request.setAttribute("listkhp", listkh);
-		// // Chuyển tiếp đến trang JSP 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/Account.jsp");
+		ProductDAO    productDAO = new ProductDAO();
+		List<Product> listsp       = productDAO.selectAll();
+		
+		request.setAttribute("listsp", listsp);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/Product.jsp");
 		dispatcher.forward(request, response);
-
 	}
 
 	/**
@@ -57,5 +53,4 @@ public class ViewKhachHang extends HttpServlet
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }

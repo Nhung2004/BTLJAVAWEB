@@ -65,11 +65,9 @@
 					<thead class="bg-primary text-white">
 						<tr>
 							<th>Customer ID</th>
-
 							<th>Username</th>
 							<th>Password</th>
 							<th>Email</th>
-
 							<th>Phone</th>
 							<th>Role</th>
 							<th class="text-center">Actions</th>
@@ -79,11 +77,9 @@
 						<c:forEach var="item" items="${listkhp}">
 							<tr>
 								<td>${item.makhachhang}</td>
-
 								<td>${item.tendangnhap}</td>
 								<td>${item.matkhau }</td>
 								<td>${item.email }</td>
-
 								<td>${item.sodienthoai}</td>
 								<td>
 									<span class="badge bg-success text-uppercase">User</span>

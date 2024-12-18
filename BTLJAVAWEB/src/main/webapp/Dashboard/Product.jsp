@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,24 +15,24 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <!-- Favicons -->
-<link href="../assets/img/favicon.png" rel="icon">
-<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
+<link href="${pageContext.request.contextPath}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 <!-- Vendor CSS Files -->
-<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-<link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-<link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
 <!-- Template Main CSS File -->
-<link href="../assets/css/NiceAdminMain.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
 </head>
 
 <body>
@@ -93,32 +95,15 @@
 											</tr>
 										</thead>
 										<tbody>
-											<!-- Product 001 -->
-											<jsp:include page="Parts/ProductRow.jsp">
-												<jsp:param name="productId" value="001" />
-												<jsp:param name="productName" value="Product A" />
-												<jsp:param name="price" value="100,000 VND" />
-												<jsp:param name="stock" value="20" />
-												<jsp:param name="imagePath" value="../assets/img/books/Foreign/10-000-cau-dam-thoai-tieng-anh-k.jpg" />
-											</jsp:include>
-
-											<!-- Product 002 -->
-											<jsp:include page="Parts/ProductRow.jsp">
-												<jsp:param name="productId" value="002" />
-												<jsp:param name="productName" value="Product B" />
-												<jsp:param name="price" value="200,000 VND" />
-												<jsp:param name="stock" value="15" />
-												<jsp:param name="imagePath" value="../assets/img/books/Light Novel/arifureta-tap-3_5e53504b3a43441d.jpg" />
-											</jsp:include>
-
-											<!-- Product 003 -->
-											<jsp:include page="Parts/ProductRow.jsp">
-												<jsp:param name="productId" value="003" />
-												<jsp:param name="productName" value="Product C" />
-												<jsp:param name="price" value="150,000 VND" />
-												<jsp:param name="stock" value="10" />
-												<jsp:param name="imagePath" value="../assets/img/books/Light Novel/arifureta-tap-3_5e53504b3a43441d.jpg" />
-											</jsp:include>
+											<c:forEach var="item" items="${listsp}">
+												<jsp:include page="Parts/ProductRow.jsp">
+													<jsp:param name="productId" value="${item.idProduct}" />
+													<jsp:param name="productName" value="${item.nameProduct}" />
+													<jsp:param name="price" value="${item.priceProduct}" />
+													<jsp:param name="stock" value="${item.quantity}" />
+													<jsp:param name="imagePath" value="${item.imageProduct}" />
+												</jsp:include>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -248,17 +233,17 @@
 	</a>
 
 	<!-- Vendor JS Files -->
-	<script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
-	<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="../assets/vendor/chart.js/chart.umd.js"></script>
-	<script src="../assets/vendor/echarts/echarts.min.js"></script>
-	<script src="../assets/vendor/quill/quill.js"></script>
-	<script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
-	<script src="../assets/vendor/tinymce/tinymce.min.js"></script>
-	<script src="../assets/vendor/php-email-form/validate.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/apexcharts/apexcharts.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/chart.js/chart.umd.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/echarts/echarts.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/quill/quill.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/simple-datatables/simple-datatables.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/tinymce/tinymce.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/php-email-form/validate.js"></script>
 
 	<!-- Template Main JS File -->
-	<script src="../assets/js/NiceAdminMain.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/NiceAdminMain.js"></script>
 
 </body>
 </html>
