@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/main_styles.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/responsive.css">
 
-    <script src="${pageContext.request.contextPath}/assets/js/cart.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/cart.js"></script>
 
 </head>
 
@@ -100,62 +100,76 @@
 
 		<!-- New Arrivals -->
 		<div class="new_arrivals">
-    <div class="container">
-        <!-- Tiêu đề -->
-        <div class="row mb-4">
-            <div class="col text-center">
-                <h2 class="section_title new_arrivals_title">New Arrivals</h2>
-            </div>
-        </div>
+			<div class="container">
+				<!-- Tiêu đề -->
+				<div class="row mb-4">
+					<div class="col text-center">
+						<h2 class="section_title new_arrivals_title">New Arrivals</h2>
+					</div>
+				</div>
 
-        <!-- Bộ lọc -->
-        <div class="row mb-4">
-            <div class="col text-center">
-                <ul class="arrivals_grid_sorting list-inline">
-                    <li class="list-inline-item"><button class="btn btn-outline-primary active" data-filter="*">All</button></li>
-                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".foreign">Foreign</button></li>
-                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".it">IT</button></li>
-                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".lifeskill">Life Skill</button></li>
-                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".lightnovel">Light Novel</button></li>
-                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".literature">Literature</button></li>
-                    <li class="list-inline-item"><button class="btn btn-outline-primary" data-filter=".novel">Novel</button></li>
-                </ul>
-            </div>
-        </div>
+				<!-- Bộ lọc -->
+				<div class="row mb-4">
+					<div class="col text-center">
+						<ul class="arrivals_grid_sorting list-inline">
+							<li class="list-inline-item">
+								<button class="btn btn-outline-primary active" data-filter="*">All</button>
+							</li>
+							<li class="list-inline-item">
+								<button class="btn btn-outline-primary" data-filter=".foreign">Foreign</button>
+							</li>
+							<li class="list-inline-item">
+								<button class="btn btn-outline-primary" data-filter=".it">IT</button>
+							</li>
+							<li class="list-inline-item">
+								<button class="btn btn-outline-primary" data-filter=".lifeskill">Life Skill</button>
+							</li>
+							<li class="list-inline-item">
+								<button class="btn btn-outline-primary" data-filter=".lightnovel">Light Novel</button>
+							</li>
+							<li class="list-inline-item">
+								<button class="btn btn-outline-primary" data-filter=".literature">Literature</button>
+							</li>
+							<li class="list-inline-item">
+								<button class="btn btn-outline-primary" data-filter=".novel">Novel</button>
+							</li>
+						</ul>
+					</div>
+				</div>
 
-        <!-- Danh sách sản phẩm -->
-        <div class="row g-4">
-            <c:if test="${not empty listP}">
-                <c:forEach items="${listP}" var="item">
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="card product-item shadow-sm h-100">
-                            <img src="${item.imageProduct}" class="card-img-top" alt="${item.nameProduct}" style="height: 220px; object-fit: contain;">
-                            <div class="card-body text-center d-flex flex-column justify-content-between">
-                                <h6 class="card-title text-truncate">
-                                    <a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp" class="text-decoration-none">${item.descriptions}</a>
-                                </h6>
-                                <p class="card-text text-success fw-bold">$${item.priceProduct}</p>
-                                <form action="${pageContext.request.contextPath}/addGioHang" method="post">
-                                    <input type="hidden" name="productId" value="${item.idProduct}">
-                                    <input type="hidden" name="productName" value="${item.nameProduct}">
-                                    <input type="hidden" name="price" value="${item.priceProduct}">
-                                    <input type="hidden" name="quantity" value="1">
-                                    <input type="hidden" name="image" value="${item.imageProduct}">
-                                    <button type="submit" class="btn btn-primary w-100">Add to Cart</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
-            </c:if>
-            <c:if test="${empty listP}">
-                <div class="col text-center">
-                    <p class="text-muted">No products available</p>
-                </div>
-            </c:if>
-        </div>
-    </div>
-</div>
+				<!-- Danh sách sản phẩm -->
+				<div class="row g-4">
+					<c:if test="${not empty listP}">
+						<c:forEach items="${listP}" var="item">
+							<div class="col-lg-3 col-md-4 col-sm-6">
+								<div class="card product-item shadow-sm h-100">
+									<img src="${item.imageProduct}" class="card-img-top" alt="${item.nameProduct}" style="height: 220px; object-fit: contain;">
+									<div class="card-body text-center d-flex flex-column justify-content-between">
+										<h6 class="card-title text-truncate">
+											<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp" class="text-decoration-none">${item.descriptions}</a>
+										</h6>
+										<p class="card-text text-success fw-bold">$${item.priceProduct}</p>
+										<form action="${pageContext.request.contextPath}/addGioHang" method="post">
+											<input type="hidden" name="productId" value="${item.idProduct}">
+											<input type="hidden" name="productName" value="${item.nameProduct}">
+											<input type="hidden" name="price" value="${item.priceProduct}">
+											<input type="hidden" name="quantity" value="1">
+											<input type="hidden" name="image" value="${item.imageProduct}">
+											<button type="submit" class="btn btn-primary w-100">Add to Cart</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</c:forEach>
+					</c:if>
+					<c:if test="${empty listP}">
+						<div class="col text-center">
+							<p class="text-muted">No products available</p>
+						</div>
+					</c:if>
+				</div>
+			</div>
+		</div>
 
 
 		<div class="deal_ofthe_week">

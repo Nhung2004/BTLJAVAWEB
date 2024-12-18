@@ -10,26 +10,7 @@
 			<img src="${param.image}" alt="${param.productName}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
 		</div>
 
-		<!-- Bubble and Favorite Icon (Optional bubble, Must-have icon) -->
-		<c:choose>
-			<c:when test="${param.bubbleType == 'green' and not empty param.bubbleText}">
-				<div class="product_bubble product_bubble_left product_bubble_${param.bubbleType} d-flex flex-column align-items-center">
-					<span>${param.bubbleText}</span>
-				</div>
-				<div class="favorite"></div>
-			</c:when>
-
-			<c:when test="${param.bubbleType == 'red' and not empty param.bubbleText}">
-				<div class="favorite favorite_left"></div>
-				<div class="product_bubble product_bubble_right product_bubble_${param.bubbleType} d-flex flex-column align-items-center">
-					<span>${param.bubbleText}</span>
-				</div>
-			</c:when>
-
-			<c:otherwise>
-				<div class="favorite"></div>
-			</c:otherwise>
-		</c:choose>
+		<div class="favorite"></div>
 
 		<!-- Product Info -->
 		<div class="product_info">
