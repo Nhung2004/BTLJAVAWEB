@@ -195,13 +195,14 @@
 			</div>
 		</section>
 	</main>
+	
 	<!-- Modal Add Account -->
 	<div class="modal fade" id="addAccountModal" tabindex="-1" aria-labelledby="addAccountModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header bg-primary text-white">
 					<h5 class="modal-title" id="addAccountModalLabel">
-						<i class="fas fa-user-plus me-2"></i>
+						<i class="bi bi-person-plus"></i>
 						Add New Account
 					</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -235,28 +236,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- Back to Top Button -->
-	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
-		<i class="bi bi-arrow-up-short"></i>
-	</a>
-
-	<!-- Footer -->
-	<footer id="footer" class="footer">
-		<div class="credits">
-			Designed by
-			<a href="https://bootstrapmade.com/">BootstrapMade</a>
-		</div>
-		<div class="copyright">
-			&copy; Copyright
-			<strong>
-				<span>NiceAdmin</span>
-			</strong>
-			. All Rights Reserved
-		</div>
-	</footer>
-
-
-
+	
 	<!-- Back to Top Button -->
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
 		<i class="bi bi-arrow-up-short"></i>
