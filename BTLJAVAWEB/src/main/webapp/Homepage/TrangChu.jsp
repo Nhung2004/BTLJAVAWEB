@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -124,6 +125,8 @@
 				</div>
 
 				<div class="row">
+				   <!--   <c:forEach items="${listP}" var="item"> -->
+				
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 							<jsp:include page="Parts/BookCard.jsp">
@@ -229,6 +232,9 @@
 							</jsp:include>
 						</div>
 					</div>
+					           <!--     </c:forEach>  --> 
+					
+					
 				</div>
 			</div>
 		</div>
