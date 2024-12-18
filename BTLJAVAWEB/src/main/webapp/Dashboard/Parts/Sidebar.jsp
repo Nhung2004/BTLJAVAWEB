@@ -26,14 +26,14 @@
 		<li class="nav-item">
 			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewSanPham">
 				<i class="bi bi-box"></i>
-				<span>Products Management</span>
+				<span>Product Management</span>
 			</a>
 		</li>
 		<!-- End Products Management Page Nav -->
 
 		<!-- Orders Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Order.jsp">
+			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewDonHang">
 				<i class="bi bi-cart-check"></i>
 				<span>Order Management</span>
 			</a>

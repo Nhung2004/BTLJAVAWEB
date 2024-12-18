@@ -1,6 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<c:if test="${empty listP}">
+	<c:redirect url="/Product" />
+</c:if>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,9 +132,9 @@
 				<div class="row">
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-							<c:forEach items="${listP}" var="item">
+							<c:forEach var="item" items="${listP}">
 								<jsp:include page="Parts/BookCard.jsp">
-									<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/tu-hoc-c-va-sql-server-2008_1434.jpg" />
+									<jsp:param name="image" value="${item.imageProduct}" />
 									<jsp:param name="productName" value="${item.nameProduct}" />
 									<jsp:param name="price" value="${item.priceProduct}" />
 									<jsp:param name="productId" value="${item.idProduct}" />

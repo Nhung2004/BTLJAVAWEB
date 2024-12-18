@@ -21,26 +21,23 @@ public class ViewProduct extends HttpServlet
 		super();
 	}
 
-	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		ProductDAO productDAO = new ProductDAO();
+		ProductDAO    productDAO = new ProductDAO();
+		List<Product> listP      = productDAO.selectAll();
 
-		// Lấy danh sách sản phẩm từ cơ sở dữ liệu
-		List<Product> list = productDAO.selectAll();
-		System.out.println("Product List Size: " + list.size());
-		for (Product p : list)
+		System.out.println("Product List Size: " + listP.size());
+		for (Product p : listP)
 		{
 			System.out.println(p);
 		}
 
 		// Gắn danh sách vào request và chuyển tiếp tới JSP
-		request.setAttribute("listP", list);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Homepage/Home.jsp");
+		request.setAttribute("listP", listP);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Homepage/TrangChu.jsp");
 		dispatcher.forward(request, response);
 	}
 
-	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		doGet(request, response);

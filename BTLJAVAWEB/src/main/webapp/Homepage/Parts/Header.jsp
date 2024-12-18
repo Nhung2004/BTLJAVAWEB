@@ -53,7 +53,7 @@
 					<nav class="navbar">
 						<ul class="navbar_menu">
 							<li>
-								<a href="TrangChu.jsp">home</a>
+								<a href="/BTLJAVAWEB/Product">home</a>
 							</li>
 							<li>
 								<a href="TheLoai.jsp">shop</a>

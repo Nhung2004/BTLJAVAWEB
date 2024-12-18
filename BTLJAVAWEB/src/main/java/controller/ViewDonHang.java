@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import clientDatabase.ProductDAO;
-import clientModel.Product;
+import database.DonHangDAO;
+import model.DonHang;
 
 /**
- * Servlet implementation class ViewSanPham
+ * Servlet implementation class ViewDonHang
  */
-@WebServlet("/ViewSanPham")
-public class ViewSanPham extends HttpServlet
+@WebServlet("/ViewDonHang")
+public class ViewDonHang extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ViewSanPham()
+	public ViewDonHang()
 	{
 		super();
 		// TODO Auto-generated constructor stub
@@ -35,13 +35,11 @@ public class ViewSanPham extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		// TODO Auto-generated method stub
+		DonHangDAO    donHangDAO = new DonHangDAO();
+		List<DonHang> listdh     = donHangDAO.selectAll();
 
-		ProductDAO    productDAO = new ProductDAO();
-		List<Product> listsp     = productDAO.selectAll();
-
-		request.setAttribute("listsp", listsp);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/Product.jsp");
+		request.setAttribute("listdh", listdh);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/Order.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -50,7 +48,7 @@ public class ViewSanPham extends HttpServlet
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
+
 }
