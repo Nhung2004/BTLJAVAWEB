@@ -12,7 +12,8 @@ public class Product
 	private String matheloai;
 
 	public Product(int idProduct, String nameProduct, String imageProduct, double priceProduct, String title, String descriptions, int quantity, String matheloai)
-	{ // Thêm tham số quantity vào constructor
+	{
+		// Thêm tham số quantity vào constructor
 		super();
 		this.idProduct    = idProduct;
 		this.nameProduct  = nameProduct;
@@ -29,10 +30,10 @@ public class Product
 		super();
 	}
 
-	public Product(String nameProduct, double priceProduct, int quantity, String imageProduct)
+	public Product(int idProduct, String nameProduct, double priceProduct, int quantity)
 	{
+		this.idProduct    = idProduct;
 		this.nameProduct  = nameProduct;
-		this.imageProduct = imageProduct;
 		this.priceProduct = priceProduct;
 		this.quantity     = quantity;
 	}

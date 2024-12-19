@@ -36,7 +36,7 @@
 <link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
 <style>
 .pagination .page-link {
-	color: #007bff; /* Màu xanh đẹp */
+	color: #007bff;
 	border: 1px solid #dee2e6;
 	transition: background-color 0.3s, color 0.3s;
 }
@@ -150,7 +150,7 @@
 											<h5 class="modal-title">Confirm Deletion</h5>
 											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
-										<div class="modal-body">
+										<div class="modal-body text-center">
 											Are you sure you want to delete account:
 											<strong>${khachHang.tendangnhap}</strong>
 											?
@@ -222,7 +222,7 @@
 	<!-- Vendor JS Files -->
 	<script>
     document.addEventListener("DOMContentLoaded", function () {
-        const rowsPerPage = 10; // Số dòng mỗi trang
+        const rowsPerPage = 5; // Số dòng mỗi trang
         const tableBody = document.getElementById("accountTableBody");
         const rows = tableBody.getElementsByTagName("tr");
         const totalRows = rows.length;

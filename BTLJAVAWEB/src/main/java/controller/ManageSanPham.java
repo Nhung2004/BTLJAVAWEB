@@ -90,19 +90,20 @@ public class ManageSanPham extends HttpServlet
 
 			case "Sua":
 			{
+				String idProductStr    = request.getParameter("idProduct");
 				String nameProduct     = request.getParameter("nameProduct");
 				String priceProductStr = request.getParameter("priceProduct");
 				String quantityStr     = request.getParameter("quantity");
-				String imageProduct    = request.getParameter("imageProduct");
 
-				if(nameProduct != null && !nameProduct.isEmpty() && priceProductStr != null && !priceProductStr.isEmpty() && quantityStr != null && !quantityStr.isEmpty() && imageProduct != null && !imageProduct.isEmpty())
+				if(nameProduct != null && !nameProduct.isEmpty() && priceProductStr != null && !priceProductStr.isEmpty() && quantityStr != null && !quantityStr.isEmpty())
 				{
 					try
 					{
+						int    idProduct    = Integer.parseInt(idProductStr);
 						double priceProduct = Double.parseDouble(priceProductStr);
 						int    quantity     = Integer.parseInt(quantityStr);
 
-						Product sp = new Product(nameProduct, priceProduct, quantity, imageProduct);
+						Product sp = new Product(idProduct, nameProduct, priceProduct, quantity);
 
 						int result = productDAO.update(sp);
 
@@ -133,19 +134,20 @@ public class ManageSanPham extends HttpServlet
 
 			case "Them":
 			{
+				String idProductStr    = request.getParameter("idProduct");
 				String nameProduct     = request.getParameter("nameProduct");
 				String priceProductStr = request.getParameter("priceProduct");
 				String quantityStr     = request.getParameter("quantity");
-				String imageProduct    = request.getParameter("imageProduct");
 
-				if(nameProduct != null && !nameProduct.isEmpty() && priceProductStr != null && !priceProductStr.isEmpty() && quantityStr != null && !quantityStr.isEmpty() && imageProduct != null && !imageProduct.isEmpty())
+				if(nameProduct != null && !nameProduct.isEmpty() && priceProductStr != null && !priceProductStr.isEmpty() && quantityStr != null && !quantityStr.isEmpty())
 				{
 					try
 					{
+						int    idProduct    = 0;
 						double priceProduct = Double.parseDouble(priceProductStr);
 						int    quantity     = Integer.parseInt(quantityStr);
 
-						Product sp = new Product(nameProduct, priceProduct, quantity, imageProduct);
+						Product sp = new Product(idProduct, nameProduct, priceProduct, quantity);
 
 						int result = productDAO.insert(sp);
 

@@ -12,13 +12,7 @@
 		<span class="badge bg-success text-uppercase">User</span>
 	</td>
 	<td class="text-center">
-		<button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#editAccountModal_${khachHang.makhachhang}">
-			<i class="fas fa-edit"></i>
-			Edit
-		</button>
-		<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal_${khachHang.makhachhang}">
-			<i class="fas fa-trash-alt"></i>
-			Delete
-		</button>
+		<button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#editAccountModal_${param.userID}">Edit</button>
+		<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal_${param.userID}">Delete</button>
 	</td>
 </tr>

@@ -37,6 +37,24 @@
 
 <!-- Template Main CSS File -->
 <link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
+<style>
+.pagination .page-link {
+	color: #007bff;
+	border: 1px solid #dee2e6;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .page-item.active .page-link {
+	background-color: #007bff;
+	color: #fff;
+	border-color: #007bff;
+}
+
+.pagination .page-link:hover {
+	background-color: #f8f9fa;
+	color: #0056b3;
+}
+</style>
 </head>
 
 <body>
@@ -101,15 +119,77 @@
 												<th scope="col" class="text-center">Action</th>
 											</tr>
 										</thead>
-										<tbody>
-											<c:forEach var="item" items="${listsp}">
+										<tbody id="productTableBody">
+											<c:forEach var="product" items="${listsp}">
 												<jsp:include page="Parts/ProductRow.jsp">
-													<jsp:param name="productId" value="${item.idProduct}" />
-													<jsp:param name="productName" value="${item.nameProduct}" />
-													<jsp:param name="price" value="${item.priceProduct}" />
-													<jsp:param name="stock" value="${item.quantity}" />
-													<jsp:param name="imagePath" value="${pageContext.request.contextPath}${item.imageProduct}" />
+													<jsp:param name="productId" value="${product.idProduct}" />
+													<jsp:param name="productName" value="${product.nameProduct}" />
+													<jsp:param name="price" value="${product.priceProduct}" />
+													<jsp:param name="stock" value="${product.quantity}" />
+													<jsp:param name="imagePath" value="${pageContext.request.contextPath}${product.imageProduct}" />
 												</jsp:include>
+
+												<!-- Edit Product Modal -->
+												<div class="modal fade" id="editProductModal_${product.idProduct}" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header bg-primary text-white">
+																<h5 class="modal-title" id="editProductModalLabel">
+																	<i class="fas fa-box-edit me-2"></i>
+																	Edit Product
+																</h5>
+																<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+															</div>
+															<div class="modal-body">
+																<form action="ManageSanPham" method="POST">
+																	<input type="hidden" name="chucNang" value="Sua">
+																	<input type="hidden" name="idProduct" value="${product.idProduct}">
+																	<div class="mb-3">
+																		<label for="editProductName" class="form-label">Product Name</label>
+																		<input type="text" class="form-control" id="editProductName" name="nameProduct" value="${product.nameProduct}" placeholder="Enter product name" required>
+																	</div>
+																	<div class="mb-3">
+																		<label for="editProductPrice" class="form-label">Price</label>
+																		<input type="number" class="form-control" id="editProductPrice" name="priceProduct" value="${product.priceProduct}" placeholder="Enter price" required>
+																	</div>
+																	<div class="mb-3">
+																		<label for="editProductQuantity" class="form-label">Quantity</label>
+																		<input type="number" class="form-control" id="editProductQuantity" name="quantity" value="${product.quantity}" placeholder="Enter quantity" required>
+																	</div>
+																	<button type="submit" class="btn btn-primary w-100">Save Changes</button>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- Delete Product Modal -->
+												<div class="modal fade" id="deleteProductModal_${product.idProduct}" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header bg-danger text-white">
+																<h5 class="modal-title" id="deleteProductModalLabel">
+																	<i class="fas fa-exclamation-triangle me-2"></i>
+																	Confirm Deletion
+																</h5>
+																<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+															</div>
+															<div class="modal-body text-center">
+																Are you sure you want to delete product:
+																<strong>${product.nameProduct}</strong>
+																?
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+																<form action="${pageContext.request.contextPath}/ManageSanPham" method="post">
+																	<input type="hidden" name="chucNang" value="Xoa">
+																	<input type="hidden" name="idProduct" value="${product.idProduct}">
+																	<button type="submit" class="btn btn-danger">Delete</button>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
 											</c:forEach>
 										</tbody>
 									</table>
@@ -132,22 +212,19 @@
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							<form id="addProductForm" enctype="multipart/form-data">
+							<form id="addProductForm" method="POST" action="<%=request.getContextPath()%>/ManageSanPham">
+								<input type="hidden" name="chucNang" value="Them">
 								<div class="mb-3">
 									<label for="productName" class="form-label">Product Name</label>
-									<input type="text" class="form-control" id="productName" name="productName" placeholder="Enter product name" required>
+									<input type="text" class="form-control" id="productName" name="nameProduct" placeholder="Enter product name" required>
 								</div>
 								<div class="mb-3">
 									<label for="productPrice" class="form-label">Price</label>
-									<input type="number" class="form-control" id="productPrice" name="productPrice" placeholder="Enter price" required>
+									<input type="number" class="form-control" id="productPrice" name="priceProduct" placeholder="Enter price" required>
 								</div>
 								<div class="mb-3">
 									<label for="productQuantity" class="form-label">Quantity</label>
-									<input type="number" class="form-control" id="productQuantity" name="productQuantity" placeholder="Enter quantity" required>
-								</div>
-								<div class="mb-3">
-									<label for="productImage" class="form-label">Product Image</label>
-									<input type="file" class="form-control" id="productImage" name="productImage" accept="image/*" required>
+									<input type="number" class="form-control" id="productQuantity" name="quantity" placeholder="Enter quantity" required>
 								</div>
 								<button type="submit" class="btn btn-primary w-100">Add Product</button>
 							</form>
@@ -155,81 +232,6 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Edit Product Modal -->
-			<div class="modal fade" id="editProductModal" tabindex="-1" aria-labelledby="editProductModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header bg-primary text-white">
-							<h5 class="modal-title" id="editProductModalLabel">
-								<i class="fas fa-box-edit me-2"></i>
-								Edit Product
-							</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<form id="editProductForm" enctype="multipart/form-data">
-								<div class="mb-3">
-									<label for="editProductName" class="form-label">Product Name</label>
-									<input type="text" class="form-control" id="editProductName" name="editProductName" placeholder="Enter product name" required>
-								</div>
-								<div class="mb-3">
-									<label for="editProductPrice" class="form-label">Price</label>
-									<input type="number" class="form-control" id="editProductPrice" name="editProductPrice" placeholder="Enter price" required>
-								</div>
-								<div class="mb-3">
-									<label for="editProductQuantity" class="form-label">Quantity</label>
-									<input type="number" class="form-control" id="editProductQuantity" name="editProductQuantity" placeholder="Enter quantity" required>
-								</div>
-								<div class="mb-3">
-									<label for="editProductImage" class="form-label">Product Image</label>
-									<input type="file" class="form-control" id="editProductImage" name="editProductImage" accept="image/*">
-								</div>
-								<button type="submit" class="btn btn-primary w-100">Save Changes</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Delete Product Modal -->
-			<div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header bg-danger text-white">
-							<h5 class="modal-title" id="deleteProductModalLabel">
-								<i class="fas fa-exclamation-triangle me-2"></i>
-								Confirm Deletion
-							</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body text-center">
-							<p>Are you sure you want to delete this product?</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-danger">Delete</button>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!--
-		<script>
-			function previewImage(event) {
-				const preview = document.getElementById('preview');
-				const file = event.target.files[0];
-
-				if (file) {
-					preview.src = URL.createObjectURL(file);
-					preview.style.display = 'block';
-				} else {
-					preview.src = '#';
-					preview.style.display = 'none';
-				}
-			}
-		</script>
-		-->
 
 		</section>
 	</main>
@@ -240,6 +242,53 @@
 	</a>
 
 	<!-- Vendor JS Files -->
+	<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const rowsPerPage = 5; // Số dòng mỗi trang
+        const tableBody = document.getElementById("productTableBody");
+        const rows = tableBody.getElementsByTagName("tr");
+        const totalRows = rows.length;
+        const totalPages = Math.ceil(totalRows / rowsPerPage);
+
+        const pagination = document.createElement("ul");
+        pagination.className = "pagination";
+
+        function renderTable(page) {
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+
+            // Hiển thị các dòng tương ứng
+            for (let i = 0; i < totalRows; i++) {
+                rows[i].style.display = i >= start && i < end ? "" : "none";
+            }
+        }
+
+        function renderPagination() {
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement("li");
+                li.className = "page-item";
+                li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+
+                li.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    renderTable(i);
+                    document.querySelectorAll(".page-item").forEach(el => el.classList.remove("active"));
+                    li.classList.add("active");
+                });
+
+                if (i === 1) li.classList.add("active"); // Trang đầu tiên được chọn mặc định
+                pagination.appendChild(li);
+            }
+        }
+
+        const paginationContainer = document.createElement("nav");
+        paginationContainer.appendChild(pagination);
+        tableBody.parentElement.insertAdjacentElement("afterend", paginationContainer);
+
+        renderTable(1); // Hiển thị trang đầu tiên
+        renderPagination();
+    });
+</script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/apexcharts/apexcharts.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/chart.js/chart.umd.js"></script>
