@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:if test="${empty listdh}">
-	<c:redirect url="/ViewDonHang" />
+	<c:redirect url="/ManageDonHang" />
 </c:if>
 
 <!DOCTYPE html>
@@ -129,20 +129,24 @@
 								<p id="viewOrderId" class="form-control-plaintext"></p>
 							</div>
 							<div class="mb-3">
-								<label class="form-label">Customer Name:</label>
-								<p id="viewCustomerName" class="form-control-plaintext"></p>
+								<label class="form-label">Order Status:</label>
+								<p id="viewOrderStatus" class="form-control-plaintext"></p>
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Customer ID: )</label>
+								<p id="viewCustomerID" class="form-control-plaintext"></p>
 							</div>
 							<div class="mb-3">
 								<label class="form-label">Order Date:</label>
 								<p id="viewOrderDate" class="form-control-plaintext"></p>
 							</div>
 							<div class="mb-3">
-								<label class="form-label">Status:</label>
-								<p id="viewOrderStatus" class="form-control-plaintext"></p>
+								<label class="form-label">Purchase address:</label>
+								<p id="viewPuchaseAddress" class="form-control-plaintext"></p>
 							</div>
 							<div class="mb-3">
-								<label class="form-label">Total Amount:</label>
-								<p id="viewOrderTotal" class="form-control-plaintext"></p>
+								<label class="form-label">Delivery address:</label>
+								<p id="viewDeliveryAddress" class="form-control-plaintext"></p>
 							</div>
 						</div>
 					</div>
@@ -167,12 +171,16 @@
 									<input type="text" class="form-control" id="editOrderId" name="editOrderId" readonly>
 								</div>
 								<div class="mb-3">
-									<label for="editCustomerName" class="form-label">Customer Name</label>
-									<input type="text" class="form-control" id="editCustomerName" name="editCustomerName" required>
+									<label for="editCustomerName" class="form-label">Customer ID</label>
+									<input type="text" class="form-control" id="editCustomerName" name="editCustomerName" readonly>
 								</div>
 								<div class="mb-3">
 									<label for="editOrderDate" class="form-label">Order Date</label>
-									<input type="date" class="form-control" id="editOrderDate" name="editOrderDate" required>
+									<input type="date" class="form-control" id="editOrderDate" name="editOrderDate" readonly>
+								</div>
+								<div class="mb-3">
+									<label for="editPaymentMethod" class="form-label">Payment Method</label>
+									<input type="text" class="form-control" id="editPaymentMethod" name="editPaymentMethod" required>
 								</div>
 								<div class="mb-3">
 									<label for="editOrderStatus" class="form-label">Status</label>

@@ -134,7 +134,6 @@ public class ManageSanPham extends HttpServlet
 
 			case "Them":
 			{
-				String idProductStr    = request.getParameter("idProduct");
 				String nameProduct     = request.getParameter("nameProduct");
 				String priceProductStr = request.getParameter("priceProduct");
 				String quantityStr     = request.getParameter("quantity");
@@ -164,7 +163,6 @@ public class ManageSanPham extends HttpServlet
 					}
 					catch (NumberFormatException e)
 					{
-						// Handle invalid number format for price or quantity
 						request.setAttribute("message", "Giá hoặc số lượng không hợp lệ.");
 						System.out.println("Invalid price or quantity format");
 					}

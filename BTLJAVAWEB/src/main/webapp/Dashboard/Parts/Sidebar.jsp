@@ -33,7 +33,7 @@
 
 		<!-- Orders Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewDonHang">
+			<a class="nav-link collapsed" href="/BTLJAVAWEB/ManageDonHang">
 				<i class="bi bi-cart-check"></i>
 				<span>Order Management</span>
 			</a>
