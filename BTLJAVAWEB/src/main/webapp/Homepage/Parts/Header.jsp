@@ -56,13 +56,13 @@
 								<a href="/BTLJAVAWEB/Product">home</a>
 							</li>
 							<li>
-								<a href="TheLoai.jsp">shop</a>
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">shop</a>
 							</li>
 							<li>
 								<a href="#">promotion</a>
 							</li>
 							<li>
-								<a href="LienHe.jsp">contact</a>
+								<a href="${pageContext.request.contextPath}/Homepage/LienHe.jsp">contact</a>
 							</li>
 						</ul>
 						<ul class="navbar_user">
@@ -107,13 +107,13 @@
 				</a>
 				<ul class="menu_selection">
 					<li>
-						<a href="#">
+						<a href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp">
 							<i class="fa fa-sign-in" aria-hidden="true"></i>
 							Sign In
 						</a>
 					</li>
 					<li>
-						<a href="#">
+						<a href="${pageContext.request.contextPath}/Homepage/DangKy.jsp">
 							<i class="fa fa-user-plus" aria-hidden="true"></i>
 							Register
 						</a>
@@ -124,13 +124,13 @@
 				<a href="#">home</a>
 			</li>
 			<li class="menu_item">
-				<a href="TheLoai.jsp">shop</a>
+				<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">shop</a>
 			</li>
 			<li class="menu_item">
 				<a href="#">promotion</a>
 			</li>
 			<li class="menu_item">
-				<a href="LienHe.jsp">contact</a>
+				<a href="${pageContext.request.contextPath}/Homepage/LienHe.jsp">contact</a>
 			</li>
 		</ul>
 	</div>
