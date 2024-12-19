@@ -54,24 +54,6 @@
 				<div class="col-lg-7">
 					<div class="single_product_pics">
 						<div class="row">
-							<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
-								<div class="single_product_thumbnails">
-									<ul>
-										<li>
-											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg"
-												style="width: 100%; height: 100%; object-fit: cover;">
-										</li>
-										<li class="active">
-											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/2024_06_11_10_32_29_1-390x510.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/2024_06_11_10_32_29_1-390x510.jpg"
-												style="width: 100%; height: 100%; object-fit: cover;">
-										</li>
-										<li>
-											<img src="${pageContext.request.contextPath}/assets/img/books/Literature/image_195509_1_31258.jpg" alt="" data-image="${pageContext.request.contextPath}/assets/img/books/Literature/image_195509_1_31258.jpg"
-												style="width: 100%; height: 100%; object-fit: cover;">
-										</li>
-									</ul>
-								</div>
-							</div>
 							<div class="col-lg-9 image_col order-lg-2 order-1">
 								<div class="single_product_image">
 									<div class="single_product_image_background" style="background-image: url(${pageContext.request.contextPath}${ChiTiet.imageProduct}"></div>
