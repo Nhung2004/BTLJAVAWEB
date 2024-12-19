@@ -62,7 +62,6 @@
 		<!-- End Page Title -->
 
 		<section class="product-management">
-			<!-- Products List Table -->
 			<div class="row">
 				<div class="col-12">
 					<div class="table-responsive">
@@ -71,12 +70,14 @@
 								<div class="header-title">
 									<h5 class="card-title">Products Management</h5>
 								</div>
+
 								<div class="card-header-toolbar d-flex justify-content-between align-items-center">
 									<!-- Search Bar on the Left -->
 									<div class="d-flex align-items-center me-3">
 										<label class="me-2 mb-0">Search:</label>
 										<input type="search" class="form-control form-control-sm" placeholder="Search Products..." aria-controls="datatable">
 									</div>
+
 									<!-- "Add Product" Button -->
 									<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
 										<i class="fas fa-plus-circle me-2"></i>
@@ -84,12 +85,14 @@
 									</button>
 								</div>
 							</div>
+
 							<div class="card-body">
 								<div class="table-responsive">
+
+									<!-- Product Table -->
 									<table class="table mb-0 table-borderless table-striped">
 										<thead>
 											<tr>
-												<!-- Center-align column titles with borders -->
 												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Product ID</th>
 												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Product Name</th>
 												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Price</th>

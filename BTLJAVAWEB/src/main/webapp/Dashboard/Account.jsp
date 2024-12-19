@@ -88,37 +88,24 @@
 				<table class="table table-hover align-middle bg-white shadow-sm rounded">
 					<thead class="bg-primary text-white">
 						<tr>
-							<th>Customer ID</th>
-							<th>Username</th>
-							<th>Password</th>
-							<th>Email</th>
-							<th>Phone</th>
-							<th>Role</th>
-							<th class="text-center">Actions</th>
+							<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Customer ID</th>
+							<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Username</th>
+							<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Password</th>
+							<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Email</th>
+							<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Phone</th>
+							<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Role</th>
+							<th scope="col" class="text-center">Action</th>
 						</tr>
 					</thead>
 					<tbody id="accountTableBody">
 						<c:forEach var="khachHang" items="${listkhp}">
-							<tr>
-								<td>${khachHang.makhachhang}</td>
-								<td>${khachHang.tendangnhap}</td>
-								<td>${khachHang.matkhau}</td>
-								<td>${khachHang.email}</td>
-								<td>${khachHang.sodienthoai}</td>
-								<td>
-									<span class="badge bg-success text-uppercase">User</span>
-								</td>
-								<td class="text-center">
-									<button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#editAccountModal_${khachHang.makhachhang}">
-										<i class="fas fa-edit"></i>
-										Edit
-									</button>
-									<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal_${khachHang.makhachhang}">
-										<i class="fas fa-trash-alt"></i>
-										Delete
-									</button>
-								</td>
-							</tr>
+							<jsp:include page="Parts/AccountRow.jsp">
+								<jsp:param name="userID" value="${khachHang.makhachhang}" />
+								<jsp:param name="username" value="${khachHang.tendangnhap}" />
+								<jsp:param name="password" value="${khachHang.matkhau}" />
+								<jsp:param name="email" value="${khachHang.email}" />
+								<jsp:param name="phoneNumber" value="${khachHang.sodienthoai}" />
+							</jsp:include>
 
 							<!-- Edit Account Modal -->
 							<div class="modal fade" id="editAccountModal_${khachHang.makhachhang}" tabindex="-1" aria-labelledby="editAccountModalLabel" aria-hidden="true">
