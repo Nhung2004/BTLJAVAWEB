@@ -21,7 +21,14 @@
 			</a>
 		</li>
 		<!-- End Account Management Nav -->
-
+		<!-- Account Statistics Nav -->
+		<li class="nav-item">
+			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/BieuDoThongKeTaiKhoan.jsp">
+				<i class="bi bi-bar-chart"></i>
+				<span>Account Statistics</span>
+			</a>
+		</li>
+		<!-- End Account Statistics Nav -->
 		<!-- Products Management Page Nav -->
 		<li class="nav-item">
 			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewSanPham">
