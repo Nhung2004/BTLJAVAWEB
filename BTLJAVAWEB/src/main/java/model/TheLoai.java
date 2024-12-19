@@ -37,4 +37,10 @@ public class TheLoai
 		this.tentheloai = tentheloai;
 	}
 
+	 @Override
+	    public String toString() {
+	        return "TheLoai [matheloai=" + matheloai + ", tentheloai=" + tentheloai + "]";
+	    }
+	
+
 }
