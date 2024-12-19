@@ -1,14 +1,9 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:if test="${empty listP }">
-<c:redirect url="/Product" />
-<c:redirect url="/Search" />
+	<c:redirect url="/Product" />
+	<c:redirect url="/Search" />
 
 </c:if>
-
-
-
-<
-
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
@@ -110,21 +105,21 @@
 							</div>
 						</div>
 					</div>
-					
-					
-					
-					
+
+
+
+
 				</div>
 			</div>
 		</div>
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
 		<div class="best_sellers">
 			<div class="container">
 				<div class="row">
@@ -139,57 +134,57 @@
 						<div class="product_slider_container">
 							<div class="owl-carousel owl-theme product_slider">
 
-								 <c:forEach items="${listnew}" var="item">
-												<div class="owl-item product_slider_item">
-				
-				
-							 <jsp:include page="Parts/BookCard.jsp">
-                    <jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
-                    <jsp:param name="productName" value="${item.nameProduct}" />
-                    <jsp:param name="price" value="${item.priceProduct}" />
-                    <jsp:param name="productId" value="${item.idProduct}" />    
-                    <jsp:param name="addToCart" value="true" />
-                </jsp:include>
-							
-													</div>
-					
-					                </c:forEach>  
-								
-							
-							<!-- Slider Navigation -->
+								<c:forEach items="${listnew}" var="item">
+									<div class="owl-item product_slider_item">
 
-							<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
-								<i class="fa fa-chevron-left" aria-hidden="true"></i>
-							</div>
-							<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
-								<i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+										<jsp:include page="Parts/BookCard.jsp">
+											<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
+											<jsp:param name="productName" value="${item.nameProduct}" />
+											<jsp:param name="price" value="${item.priceProduct}" />
+											<jsp:param name="productId" value="${item.idProduct}" />
+											<jsp:param name="addToCart" value="true" />
+										</jsp:include>
+
+									</div>
+
+								</c:forEach>
+
+
+								<!-- Slider Navigation -->
+
+								<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+									<i class="fa fa-chevron-left" aria-hidden="true"></i>
+								</div>
+								<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+									<i class="fa fa-chevron-right" aria-hidden="true"></i>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		<!-- New Arrivals -->
 		<div class="new_arrivals">
@@ -201,19 +196,21 @@
 						</div>
 					</div>
 				</div>
-				
-<div class="row align-items-center">
-    <div class="col text-center">
-        <div class="new_arrivals_sorting">
-        
-            <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">All</li>
-                <c:forEach items="${listT }" var="o">
-                <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".foreign"><a href="ViewTheLoai?id=${o.matheloai }" >${o.tentheloai}</a></li>
-                </c:forEach>
-            </ul>
-           
-            <!--  
+
+				<div class="row align-items-center">
+					<div class="col text-center">
+						<div class="new_arrivals_sorting">
+
+							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">All</li>
+								<c:forEach items="${listT }" var="o">
+									<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".foreign">
+										<a href="ViewTheLoai?id=${o.matheloai }">${o.tentheloai}</a>
+									</li>
+								</c:forEach>
+							</ul>
+
+							<!--  
             <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
     <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked">
         All
@@ -225,40 +222,40 @@
     </c:forEach>
 </ul>
 -->
-            
-            
-        </div>
-    </div>
-</div>
-				
-				
-				
-	
-				
+
+
+						</div>
+					</div>
+				</div>
+
+
+
+
+
 
 				<div class="row">
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
-				   <c:forEach items="${listP}" var="item">
-				
-				
-							 <jsp:include page="Parts/BookCard.jsp">
-                    <jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
-                    <jsp:param name="productName" value="${item.nameProduct}" />
-                    <jsp:param name="price" value="${item.priceProduct}" />
-                    <jsp:param name="productId" value="${item.idProduct}" />    
-                    <jsp:param name="addToCart" value="true" />
-                </jsp:include>
-							
-					
-					                </c:forEach>  
-					                	</div>
+							<c:forEach items="${listP}" var="item">
+
+
+								<jsp:include page="Parts/BookCard.jsp">
+									<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
+									<jsp:param name="productName" value="${item.nameProduct}" />
+									<jsp:param name="price" value="${item.priceProduct}" />
+									<jsp:param name="productId" value="${item.idProduct}" />
+									<jsp:param name="addToCart" value="true" />
+								</jsp:include>
+
+
+							</c:forEach>
+						</div>
 					</div>
-					
-					
+
+
 				</div>
-				
-				
+
+
 			</div>
 		</div>
 

@@ -105,7 +105,7 @@
 													<jsp:param name="productName" value="${item.nameProduct}" />
 													<jsp:param name="price" value="${item.priceProduct}" />
 													<jsp:param name="stock" value="${item.quantity}" />
-													<jsp:param name="imagePath" value="${item.imageProduct}" />
+													<jsp:param name="imagePath" value="${pageContext.request.contextPath}${item.imageProduct}" />
 												</jsp:include>
 											</c:forEach>
 										</tbody>

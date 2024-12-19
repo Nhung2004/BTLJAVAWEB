@@ -53,22 +53,16 @@
                 <nav class="navbar">
                     <ul class="navbar_menu">
                         <li>
-                            <a href="TrangChu.jsp">home</a>
+                            <a href="${pageContext.request.contextPath}/Homepage/Home.jsp">home</a>
                         </li>
                         <li>
-                            <a href="TheLoai.jsp">shop</a>
+                            <a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">shop</a>
                         </li>
                         <li>
                             <a href="#">promotion</a>
                         </li>
                         <li>
-                            <a href="#">pages</a>
-                        </li>
-                        <li>
-                            <a href="#">blogs</a>
-                        </li>
-                        <li>
-                            <a href="LienHe.jsp">contact</a>
+                            <a href="${pageContext.request.contextPath}/Homepage/LienHe.jsp">contact</a>
                         </li>
                     </ul>
                     <ul class="navbar_user">
@@ -139,7 +133,7 @@
 				</ul>
 			</li>
 			<li class="menu_item">
-				<a href="#">home</a>
+				<a href="${pageContext.request.contextPath}/Homepage/Home.jsp">home</a>
 			</li>
 			<li class="menu_item">
 				<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">shop</a>
