@@ -159,10 +159,8 @@
 
 							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
 								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">All</li>
-								<c:forEach items="${listT }" var="o">
-									<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".foreign">
-										<a href="ViewTheLoai?id=${o.matheloai }">${o.tentheloai}</a>
-									</li>
+								<c:forEach items="${listT}" var="o">
+									<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".${o.matheloai}">${o.tentheloai}</li>
 								</c:forEach>
 							</ul>
 
@@ -186,6 +184,7 @@
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 							<c:forEach items="${listP}" var="item">
 								<jsp:include page="Parts/BookCard.jsp">
+									<jsp:param name="maTheLoai" value="${item.matheloai}" />
 									<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
 									<jsp:param name="productName" value="${item.nameProduct}" />
 									<jsp:param name="price" value="${item.priceProduct}" />

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- ======= Bookcard Template ======= -->
-<div class="product-item">
+<div class="product-item ${param.maTheLoai}">
 	<div class="product product_filter">
 		<!-- Product Image -->
 		<div class="product_image"

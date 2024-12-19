@@ -28,35 +28,38 @@ public class ViewProduct extends HttpServlet
 		ProductDAO    productDAO = new ProductDAO();
 		List<Product> listP      = productDAO.selectAll();
 
-        // Lấy danh sách sản phẩm từ cơ sở dữ liệu
-        List<Product> list = productDAO.selectAll();
-        System.out.println("Product List Size: " + list.size());
-        for (Product p : list) {
-            System.out.println(p);
-        }
-        
-        List<Product> listnew=productDAO.getLatestProducts();
-        for(Product p2:listnew) {
-            System.out.println(p2);
-        }
-        
-        TheLoaiDAO theloaidao = new TheLoaiDAO();
+		// Lấy danh sách sản phẩm từ cơ sở dữ liệu
+		List<Product> list = productDAO.selectAll();
+		System.out.println("Product List Size: " + list.size());
+		for (Product p : list)
+		{
+			System.out.println(p);
+		}
 
-        // Lấy list theloai tu co sở dữ liệu
-       List<TheLoai> listT=theloaidao.selectAll();
-       for(TheLoai t:listT) {
-    	   System.out.print(t);
-       }
+		List<Product> listnew = productDAO.getLatestProducts();
+		for (Product p2 : listnew)
+		{
+			System.out.println(p2);
+		}
 
-        // Gắn danh sách vào request và chuyển tiếp tới JSP
-       request.setAttribute("listnew", listnew);
+		TheLoaiDAO theloaidao = new TheLoaiDAO();
 
-       request.setAttribute("listT", listT);
+		// Lấy list theloai tu co sở dữ liệu
+		List<TheLoai> listT = theloaidao.selectAll();
+		for (TheLoai t : listT)
+		{
+			System.out.print(t);
+		}
 
-        request.setAttribute("listP", list);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/Homepage/Home.jsp");
-        dispatcher.forward(request, response);
-    }
+		// Gắn danh sách vào request và chuyển tiếp tới JSP
+		request.setAttribute("listnew", listnew);
+
+		request.setAttribute("listT", listT);
+
+		request.setAttribute("listP", list);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Homepage/Home.jsp");
+		dispatcher.forward(request, response);
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
