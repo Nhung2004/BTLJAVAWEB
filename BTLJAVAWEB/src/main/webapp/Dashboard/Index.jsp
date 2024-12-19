@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -53,6 +55,17 @@
 		</div>
 		<!-- End Page Title -->
 		<section class="section dashboard">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 			<div class="row">
 				<!-- Sales and Revenue Section -->
 				<div class="col-12">
@@ -201,97 +214,7 @@
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-12">
-					<div class="table-responsive">
-						<div class="card card-block card-stretch card-height">
-							<div class="card-header d-flex justify-content-between align-items-center mb-0">
-								<div class="header-title">
-									<h5 class="card-title">Latest Orders</h5>
-								</div>
-								<div class="card-header-toolbar d-flex align-items-center">
-									<div class="dropdown">
-										<span id="post-dropdown-02" data-bs-toggle="dropdown" aria-expanded="false" role="button">
-											<i class="ri ri-more-fill"></i>
-										</span>
-										<div class="dropdown-menu dropdown-menu-end" aria-labelledby="post-dropdown-02">
-											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
-												<i class="ph ph-eye mr-2"></i>
-												View
-											</a>
-											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
-												<i class="ph ph-trash mr-2"></i>
-												Delete
-											</a>
-											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
-												<i class="ph ph-pencil-simple mr-2"></i>
-												Edit
-											</a>
-											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
-												<i class="ph ph-printer mr-2"></i>
-												Print
-											</a>
-											<a class="dropdown-item d-flex align-items-center gap-2" href="#">
-												<i class="ph ph-file-arrow-down mr-2"></i>
-												Download
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="card-body">
-								<div class="table-responsive">
-									<table class="table mb-0 table-borderless table-striped">
-										<thead>
-											<tr>
-												<!-- Center-align column titles -->
-												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Order ID</th>
-												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Client</th>
-												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Total Price</th>
-												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Status</th>
-												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Order Date</th>
-												<th scope="col" class="text-center">Action</th>
-											</tr>
-										</thead>
-										<tbody>
-											<!-- Order 001 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="001" />
-												<jsp:param name="client" value="Nguyen Hung" />
-												<jsp:param name="totalPrice" value="500,000 VND" />
-												<jsp:param name="status" value="Completed" />
-												<jsp:param name="statusClass" value="bg-success" />
-												<jsp:param name="orderDate" value="05-10-2024" />
-											</jsp:include>
-
-											<!-- Order 002 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="002" />
-												<jsp:param name="client" value="Hai Ly" />
-												<jsp:param name="totalPrice" value="300,000 VND" />
-												<jsp:param name="status" value="Pending" />
-												<jsp:param name="statusClass" value="bg-warning" />
-												<jsp:param name="orderDate" value="06-11-2024" />
-											</jsp:include>
-
-											<!-- Order 003 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="003" />
-												<jsp:param name="client" value="Pham Hung" />
-												<jsp:param name="totalPrice" value="450,000 VND" />
-												<jsp:param name="status" value="Canceled" />
-												<jsp:param name="statusClass" value="bg-danger" />
-												<jsp:param name="orderDate" value="07-12-2024" />
-											</jsp:include>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+			
 			<script>
     function deleteOrder(orderId) {
         if (confirm('Are you sure you want to delete this order?')) {

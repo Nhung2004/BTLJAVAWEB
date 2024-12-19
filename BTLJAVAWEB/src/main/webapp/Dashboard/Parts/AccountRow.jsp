@@ -3,19 +3,16 @@
 
 <!-- ======= Account Template ======= -->
 <tr>
+	<td class="text-center" style="border-right: 1px solid #ddd;">${param.userID}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">${param.username}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">${param.password}</td>
+	<td class="text-center" style="border-right: 1px solid #ddd;">${param.email}</td>
+	<td class="text-center" style="border-right: 1px solid #ddd;">${param.phoneNumber}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">
-		<div class="badge badge-pill ${param.roleClass} w-100 text-center">${param.role}</div>
+		<span class="badge bg-success text-uppercase">User</span>
 	</td>
 	<td class="text-center">
-		<button class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#editAccountModal">
-			<i class="fas fa-edit"></i>
-			Edit
-		</button>
-		<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
-			<i class="fas fa-trash-alt"></i>
-			Delete
-		</button>
+		<button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#editAccountModal_${param.userID}">Edit</button>
+		<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal_${param.userID}">Delete</button>
 	</td>
 </tr>

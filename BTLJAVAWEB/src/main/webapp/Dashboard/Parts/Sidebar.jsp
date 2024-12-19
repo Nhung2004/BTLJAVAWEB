@@ -15,7 +15,7 @@
 
 		<!-- Account Management Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Account.jsp">
+			<a class="nav-link collapsed" href="/BTLJAVAWEB/ManageKhachHang"> 
 				<i class="bi bi-people"></i>
 				<span>Account Management</span>
 			</a>
@@ -31,7 +31,7 @@
 		<!-- End Account Statistics Nav -->
 		<!-- Products Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewSanPham">
+			<a class="nav-link collapsed" href="/BTLJAVAWEB/ManageSanPham">
 				<i class="bi bi-box"></i>
 				<span>Product Management</span>
 			</a>
@@ -40,7 +40,7 @@
 
 		<!-- Orders Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewDonHang">
+			<a class="nav-link collapsed" href="/BTLJAVAWEB/ManageDonHang">
 				<i class="bi bi-cart-check"></i>
 				<span>Order Management</span>
 			</a>

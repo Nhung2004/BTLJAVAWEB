@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!-- ======= Bookcard Template ======= -->
-<div class="product-item">
+<div class="product-item ${param.maTheLoai}">
 	<div class="product product_filter">
 		<!-- Product Image -->
 		<div class="product_image"
@@ -18,8 +18,9 @@
 		<!-- Product Info -->
 		<div class="product_info">
 			<h6 class="product_name">
-				<a
-					href="${pageContext.request.contextPath}/Homepage/SanPham.jsp?productId=${param.productId}">${param.productName}</a>
+				
+				<!--  	<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp?productId=${param.productId}">${param.productName}</a> -->
+					<a href="ChiTiet?pid=${param.productId}">${param.productName}</a>
 			</h6>
 			<div class="product_price">
 				<c:choose>

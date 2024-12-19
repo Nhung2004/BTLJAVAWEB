@@ -9,9 +9,11 @@ public class Product
 	private String title;
 	private String descriptions;
 	private int    quantity;    // Thêm thuộc tính số lượng
+	private String matheloai;
 
-	public Product(int idProduct, String nameProduct, String imageProduct, double priceProduct, String title, String descriptions, int quantity)
-	{ // Thêm tham số quantity vào constructor
+	public Product(int idProduct, String nameProduct, String imageProduct, double priceProduct, String title, String descriptions, int quantity, String matheloai)
+	{
+		// Thêm tham số quantity vào constructor
 		super();
 		this.idProduct    = idProduct;
 		this.nameProduct  = nameProduct;
@@ -20,11 +22,20 @@ public class Product
 		this.title        = title;
 		this.descriptions = descriptions;
 		this.quantity     = quantity;    // Khởi tạo số lượng
+		this.matheloai    = matheloai;
 	}
 
 	public Product()
 	{
 		super();
+	}
+
+	public Product(int idProduct, String nameProduct, double priceProduct, int quantity)
+	{
+		this.idProduct    = idProduct;
+		this.nameProduct  = nameProduct;
+		this.priceProduct = priceProduct;
+		this.quantity     = quantity;
 	}
 
 	public int getIdProduct()
@@ -97,14 +108,20 @@ public class Product
 		this.quantity = quantity; // Setter cho quantity
 	}
 
+	public String getMatheloai()
+	{
+		return matheloai;
+	}
+
+	public void setMatheloai(String matheloai)
+	{
+		this.matheloai = matheloai;
+	}
+
 	@Override
 	public String toString()
 	{
-		return "Product [idProduct=" + idProduct + ", nameProduct=" + nameProduct + ", imageProduct=" + imageProduct + ", priceProduct=" + priceProduct + ", title=" + title + ", descriptions=" + descriptions + ", quantity=" + quantity + "]"; // Hiển
-		                                                                                                                                                                                                                                          // thị
-		                                                                                                                                                                                                                                          // số
-		                                                                                                                                                                                                                                          // lượng
-		                                                                                                                                                                                                                                          // trong
-		                                                                                                                                                                                                                                          // toString
+		return "Product [idProduct=" + idProduct + ", nameProduct=" + nameProduct + ", imageProduct=" + imageProduct + ", priceProduct=" + priceProduct + ", title=" + title + ", descriptions=" + descriptions + ", quantity=" + quantity
+		        + ", matheloai=" + matheloai + "]";
 	}
 }

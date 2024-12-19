@@ -10,61 +10,54 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import clientModel.GioHang;
+import clientModel.GioHangClient;
 
-/**
- * Servlet implementation class ViewGioHang
- */
 @WebServlet("/ViewGioHang")
-public class ViewGioHang extends HttpServlet
-{
-	private static final long serialVersionUID = 1L;
+public class ViewGioHang extends HttpServlet {
+    private static final long serialVersionUID = 1L;
 
-	public ViewGioHang()
-	{
-		super();
-	}
+    public ViewGioHang() {
+        super();
+    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		try
-		{
-			// Lấy giỏ hàng từ session
-			HttpSession   session     = request.getSession();
-			List<GioHang> gioHangList = (List<GioHang>) session.getAttribute("gioHangList");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        try {
+            // Lấy giỏ hàng từ session
+            HttpSession session = request.getSession();
+            List<GioHangClient> gioHangList = (List<GioHangClient>) session.getAttribute("gioHangList");
 
-			// Kiểm tra nếu giỏ hàng trống
-			if(gioHangList == null || gioHangList.isEmpty())
-			{
-				request.setAttribute("error", "Giỏ hàng của bạn hiện tại trống.");
-				request.getRequestDispatcher("/Homepage/TrangChu.jsp").forward(request, response);
-				return;
-			}
+            // Kiểm tra nếu giỏ hàng trống
+            if (gioHangList == null || gioHangList.isEmpty()) {
+                request.setAttribute("error", "Giỏ hàng của bạn hiện tại trống.");
+                request.getRequestDispatcher("/Homepage/TrangChu.jsp").forward(request, response);
+                return;
+            }
 
-			// Tính tổng giá trị của giỏ hàng
-			double totalPrice = 0;
-			for (GioHang item : gioHangList)
-			{
-				totalPrice += item.getGia() * item.getSoluong();
-			}
+            // Tính tổng giá trị của giỏ hàng
+            double totalPrice = 0;
+            int totalQuantity = 0; // Tổng số lượng sản phẩm trong giỏ hàng
 
-			// Đưa danh sách giỏ hàng và tổng giá trị vào request
-			request.setAttribute("gioHangList", gioHangList);
-			request.setAttribute("totalPrice", totalPrice);
+            for (GioHangClient item : gioHangList) {
+                totalPrice += item.getGia() * item.getSoluong();
+                totalQuantity += item.getSoluong(); // Cộng dồn số lượng sản phẩm
+            }
 
-			// Chuyển đến trang giỏ hàng
-			request.getRequestDispatcher("/Homepage/GioHang.jsp").forward(request, response);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			request.setAttribute("error", "Không thể tải giỏ hàng.");
-			request.getRequestDispatcher("/Homepage/TrangChu.jsp").forward(request, response);
-		}
-	}
+            // Đưa danh sách giỏ hàng, tổng giá trị và tổng số lượng vào request
+            request.setAttribute("gioHangList", gioHangList);
+            request.setAttribute("totalPrice", totalPrice);
+            request.setAttribute("totalQuantity", totalQuantity); // Thêm tổng số lượng
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		doGet(request, response);
-	}
+            // Chuyển đến trang giỏ hàng
+            request.getRequestDispatcher("/Homepage/GioHang.jsp").forward(request, response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            request.setAttribute("error", "Không thể tải giỏ hàng.");
+            request.getRequestDispatcher("/Homepage/TrangChu.jsp").forward(request, response);
+        }
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request, response);
+    }
 }

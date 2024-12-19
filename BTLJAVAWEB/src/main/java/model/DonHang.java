@@ -40,6 +40,17 @@ public class DonHang
 		super();
 	}
 
+	public DonHang(String hinhthucthanhtoan, String trangthai)
+	{
+		this.hinhthucthanhtoan = hinhthucthanhtoan;
+		this.trangthai         = trangthai;
+	}
+
+	public DonHang(String madonhang)
+	{
+		this.madonhang          = madonhang;
+	}
+
 	public String getMadonhang()
 	{
 		return madonhang;
