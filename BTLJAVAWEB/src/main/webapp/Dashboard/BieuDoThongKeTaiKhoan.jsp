@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="keywords" content="">
-<title>Users Management</title>
+<title>Biểu đồ thống kê tài khoản</title>
 
 <!-- Favicons -->
 <link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
