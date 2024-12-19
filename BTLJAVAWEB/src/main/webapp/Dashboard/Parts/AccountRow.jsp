@@ -3,6 +3,7 @@
 
 <!-- ======= Account Template ======= -->
 <tr>
+	<td class="text-center" style="border-right: 1px solid #ddd;">${param.userID}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">${param.username}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">${param.password}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">

@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<c:if test="${empty listkhp}">
+	<c:redirect url="/ManageKhachHang" />
+</c:if>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +34,26 @@
 
 <!-- Template Main CSS File -->
 <link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
+<style>
+.pagination .page-link {
+	color: #007bff; /* Màu xanh đẹp */
+	border: 1px solid #dee2e6;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .page-item.active .page-link {
+	background-color: #007bff;
+	color: #fff;
+	border-color: #007bff;
+}
+
+.pagination .page-link:hover {
+	background-color: #f8f9fa;
+	color: #0056b3;
+}
+</style>
 </head>
+
 <body>
 	<!-- Include Header and Sidebar -->
 	<jsp:include page="Parts/Header.jsp" />
@@ -73,28 +97,88 @@
 							<th class="text-center">Actions</th>
 						</tr>
 					</thead>
-					<tbody>
-						<c:forEach var="item" items="${listkhp}">
+					<tbody id="accountTableBody">
+						<c:forEach var="khachHang" items="${listkhp}">
 							<tr>
-								<td>${item.makhachhang}</td>
-								<td>${item.tendangnhap}</td>
-								<td>${item.matkhau }</td>
-								<td>${item.email }</td>
-								<td>${item.sodienthoai}</td>
+								<td>${khachHang.makhachhang}</td>
+								<td>${khachHang.tendangnhap}</td>
+								<td>${khachHang.matkhau}</td>
+								<td>${khachHang.email}</td>
+								<td>${khachHang.sodienthoai}</td>
 								<td>
 									<span class="badge bg-success text-uppercase">User</span>
 								</td>
 								<td class="text-center">
-									<button class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#editAccountModal">
+									<button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#editAccountModal_${khachHang.makhachhang}">
 										<i class="fas fa-edit"></i>
 										Edit
 									</button>
-									<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal">
+									<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteAccountModal_${khachHang.makhachhang}">
 										<i class="fas fa-trash-alt"></i>
 										Delete
 									</button>
 								</td>
 							</tr>
+
+							<!-- Edit Account Modal -->
+							<div class="modal fade" id="editAccountModal_${khachHang.makhachhang}" tabindex="-1" aria-labelledby="editAccountModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header bg-primary text-white">
+											<h5 class="modal-title">Edit Account</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<form action="ManageKhachHang" method="POST">
+												<input type="hidden" name="makhachhang" value="${khachHang.makhachhang}">
+												<input type="hidden" name="chucNang" value="Sua">
+												<div class="mb-3">
+													<label for="username_${khachHang.makhachhang}" class="form-label">Username</label>
+													<input type="text" class="form-control" id="username_${khachHang.makhachhang}" name="tendangnhap" value="${khachHang.tendangnhap}" required>
+												</div>
+												<div class="mb-3">
+													<label for="password_${khachHang.makhachhang}" class="form-label">Password</label>
+													<input type="password" class="form-control" id="password_${khachHang.makhachhang}" name="matkhau" value="${khachHang.matkhau}" required>
+												</div>
+												<div class="mb-3">
+													<label for="phone_${khachHang.makhachhang}" class="form-label">Phone</label>
+													<input type="text" class="form-control" id="phone_${khachHang.makhachhang}" name="sodienthoai" value="${khachHang.sodienthoai}" required>
+												</div>
+												<div class="mb-3">
+													<label for="email_${khachHang.makhachhang}" class="form-label">Email</label>
+													<input type="email" class="form-control" id="email_${khachHang.makhachhang}" name="email" value="${khachHang.email}" required>
+												</div>
+												<button type="submit" class="btn btn-primary w-100">Save Changes</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Delete Account Modal -->
+							<div class="modal fade" id="deleteAccountModal_${khachHang.makhachhang}" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header bg-danger text-white">
+											<h5 class="modal-title">Confirm Deletion</h5>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											Are you sure you want to delete account:
+											<strong>${khachHang.tendangnhap}</strong>
+											?
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+											<form action="ManageKhachHang" method="POST">
+												<input type="hidden" name="makhachhang" value="${khachHang.makhachhang}">
+												<input type="hidden" name="chucNang" value="Xoa">
+												<button type="submit" class="btn btn-danger">Confirm</button>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
 						</c:forEach>
 					</tbody>
 				</table>
@@ -112,21 +196,27 @@
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">
-							<form id="addAccountForm">
+							<form action="ManageKhachHang" method="POST">
+								<input type="hidden" name="chucNang" value="Them">
 								<div class="mb-3">
-									<label for="addUsername" class="form-label">Username</label>
-									<input type="email" class="form-control" id="addUsername" placeholder="Enter email" required>
+									<label for="newmakhachhang" class="form-label">Customer id</label>
+									<input type="text" class="form-control" name="makhachhang" id="newmakhachhang" required>
 								</div>
 								<div class="mb-3">
-									<label for="addPassword" class="form-label">Password</label>
-									<input type="password" class="form-control" id="addPassword" placeholder="Enter password" required>
+									<label for="newUsername" class="form-label">Username</label>
+									<input type="text" class="form-control" name="tendangnhap" id="newUsername" required>
 								</div>
 								<div class="mb-3">
-									<label for="addRole" class="form-label">Role</label>
-									<select class="form-select" id="addRole">
-										<option value="User">User</option>
-										<option value="Admin">Admin</option>
-									</select>
+									<label for="newPassword" class="form-label">Password</label>
+									<input type="password" class="form-control" name="matkhau" id="newPassword" required>
+								</div>
+								<div class="mb-3">
+									<label for="sodienthoai" class="form-label">Phone</label>
+									<input type="number" class="form-control" name="sodienthoai" id="sodienthaoi" required>
+								</div>
+								<div class="mb-3">
+									<label for="email" class="form-label">Email</label>
+									<input type="email" class="form-control" name="email" id="email" required>
 								</div>
 								<button type="submit" class="btn btn-primary w-100">Add Account</button>
 							</form>
@@ -134,80 +224,8 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Edit Account Modal -->
-			<div class="modal fade" id="editAccountModal" tabindex="-1" aria-labelledby="editAccountModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header bg-primary text-white">
-							<h5 class="modal-title" id="editAccountModalLabel">
-								<i class="fas fa-user-edit me-2"></i>
-								Edit Account
-							</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<form id="editAccountForm">
-								<div class="mb-3">
-									<label for="editUsername" class="form-label">Username</label>
-									<input type="email" class="form-control" id="editUsername" placeholder="Enter email" required>
-								</div>
-								<div class="mb-3">
-									<label for="editPassword" class="form-label">Password</label>
-									<input type="password" class="form-control" id="editPassword" placeholder="Enter password" required>
-								</div>
-								<div class="mb-3">
-									<label for="editRole" class="form-label">Role</label>
-									<select class="form-select" id="editRole">
-										<option value="User">User</option>
-										<option value="Admin">Admin</option>
-									</select>
-								</div>
-								<button type="submit" class="btn btn-primary w-100">Save Changes</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Delete Account Modal -->
-			<div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header bg-danger text-white">
-							<h5 class="modal-title" id="deleteAccountModalLabel">
-								<i class="fas fa-exclamation-triangle me-2"></i>
-								Confirm Deletion
-							</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body text-center">
-							<p>Are you sure you want to delete this account?</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-danger">Delete</button>
-						</div>
-					</div>
-				</div>
-			</div>
 		</section>
 	</main>
-
-	<!-- Footer -->
-	<footer id="footer" class="footer">
-		<div class="copyright">
-			&copy; Copyright
-			<strong>
-				<span>NiceAdmin</span>
-			</strong>
-			. All Rights Reserved
-		</div>
-		<div class="credits">
-			Designed by
-			<a href="https://bootstrapmade.com/">BootstrapMade</a>
-		</div>
-	</footer>
 
 	<!-- Back to Top Button -->
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
@@ -215,6 +233,53 @@
 	</a>
 
 	<!-- Vendor JS Files -->
+	<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const rowsPerPage = 10; // Số dòng mỗi trang
+        const tableBody = document.getElementById("accountTableBody");
+        const rows = tableBody.getElementsByTagName("tr");
+        const totalRows = rows.length;
+        const totalPages = Math.ceil(totalRows / rowsPerPage);
+
+        const pagination = document.createElement("ul");
+        pagination.className = "pagination";
+
+        function renderTable(page) {
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+
+            // Hiển thị các dòng tương ứng
+            for (let i = 0; i < totalRows; i++) {
+                rows[i].style.display = i >= start && i < end ? "" : "none";
+            }
+        }
+
+        function renderPagination() {
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement("li");
+                li.className = "page-item";
+                li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+
+                li.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    renderTable(i);
+                    document.querySelectorAll(".page-item").forEach(el => el.classList.remove("active"));
+                    li.classList.add("active");
+                });
+
+                if (i === 1) li.classList.add("active"); // Trang đầu tiên được chọn mặc định
+                pagination.appendChild(li);
+            }
+        }
+
+        const paginationContainer = document.createElement("nav");
+        paginationContainer.appendChild(pagination);
+        tableBody.parentElement.insertAdjacentElement("afterend", paginationContainer);
+
+        renderTable(1); // Hiển thị trang đầu tiên
+        renderPagination();
+    });
+</script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/apexcharts/apexcharts.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/chart.js/chart.umd.js"></script>
