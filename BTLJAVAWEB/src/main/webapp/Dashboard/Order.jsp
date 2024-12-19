@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:if test="${empty listdh}">
+	<c:redirect url="/ViewDonHang" />
+</c:if>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,24 +19,24 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <!-- Favicons -->
-<link href="../assets/img/favicon.png" rel="icon">
-<link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
+<link href="${pageContext.request.contextPath}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
 <!-- Vendor CSS Files -->
-<link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="../assets/vendor/quill/quill.snow.css" rel="stylesheet">
-<link href="../assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-<link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="../assets/vendor/simple-datatables/style.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
 <!-- Template Main CSS File -->
-<link href="../assets/css/NiceAdminMain.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
 </head>
 
 <body>
@@ -79,73 +85,24 @@
 										<thead>
 											<tr>
 												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Order ID</th>
-												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Client</th>
-												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Total Price</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Client ID</th>
+												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Payment Method</th>
 												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Status</th>
 												<th scope="col" class="text-center" style="border-right: 1px solid #ddd;">Order Date</th>
 												<th scope="col" class="text-center">Action</th>
 											</tr>
 										</thead>
 										<tbody>
-											<!-- Order 001 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="001" />
-												<jsp:param name="client" value="Nguyen Hung" />
-												<jsp:param name="totalPrice" value="500,000 VND" />
-												<jsp:param name="status" value="Completed" />
-												<jsp:param name="statusClass" value="bg-success" />
-												<jsp:param name="orderDate" value="05-10-2024" />
-											</jsp:include>
-
-											<!-- Order 002 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="002" />
-												<jsp:param name="client" value="Hai Ly" />
-												<jsp:param name="totalPrice" value="300,000 VND" />
-												<jsp:param name="status" value="Pending" />
-												<jsp:param name="statusClass" value="bg-warning" />
-												<jsp:param name="orderDate" value="06-11-2024" />
-											</jsp:include>
-
-											<!-- Order 003 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="003" />
-												<jsp:param name="client" value="Pham Hung" />
-												<jsp:param name="totalPrice" value="450,000 VND" />
-												<jsp:param name="status" value="Canceled" />
-												<jsp:param name="statusClass" value="bg-danger" />
-												<jsp:param name="orderDate" value="07-12-2024" />
-											</jsp:include>
-
-											<!-- Order 004 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="004" />
-												<jsp:param name="client" value="John Doe" />
-												<jsp:param name="totalPrice" value="500,000 VND" />
-												<jsp:param name="status" value="Completed" />
-												<jsp:param name="statusClass" value="bg-success" />
-												<jsp:param name="orderDate" value="10-12-2024" />
-											</jsp:include>
-
-											<!-- Order 005 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="005" />
-												<jsp:param name="client" value="Jane Smith" />
-												<jsp:param name="totalPrice" value="300,000 VND" />
-												<jsp:param name="status" value="Pending" />
-												<jsp:param name="statusClass" value="bg-warning" />
-												<jsp:param name="orderDate" value="09-12-2024" />
-											</jsp:include>
-
-											<!-- Order 006 -->
-											<jsp:include page="Parts/OrderRow.jsp">
-												<jsp:param name="orderId" value="006" />
-												<jsp:param name="client" value="Alice Nguyen" />
-												<jsp:param name="totalPrice" value="400,000 VND" />
-												<jsp:param name="status" value="Canceled" />
-												<jsp:param name="statusClass" value="bg-danger" />
-												<jsp:param name="orderDate" value="08-12-2024" />
-											</jsp:include>
+											<c:forEach var="item" items="${listdh}">
+												<jsp:include page="Parts/OrderRow.jsp">
+													<jsp:param name="orderId" value="${item.madonhang}" />
+													<jsp:param name="client" value="${item.khachhang.makhachhang}" />
+													<jsp:param name="paymentMethod" value="${item.hinhthucthanhtoan}" />
+													<jsp:param name="status" value="${item.trangthai}" />
+													<jsp:param name="statusClass" value="bg-success" />
+													<jsp:param name="orderDate" value="${item.ngaydathang}" />
+												</jsp:include>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -271,17 +228,17 @@
 	</a>
 
 	<!-- Vendor JS Files -->
-	<script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
-	<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script src="../assets/vendor/chart.js/chart.umd.js"></script>
-	<script src="../assets/vendor/echarts/echarts.min.js"></script>
-	<script src="../assets/vendor/quill/quill.js"></script>
-	<script src="../assets/vendor/simple-datatables/simple-datatables.js"></script>
-	<script src="../assets/vendor/tinymce/tinymce.min.js"></script>
-	<script src="../assets/vendor/php-email-form/validate.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/apexcharts/apexcharts.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/chart.js/chart.umd.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/echarts/echarts.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/quill/quill.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/simple-datatables/simple-datatables.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/tinymce/tinymce.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/php-email-form/validate.js"></script>
 
 	<!-- Template Main JS File -->
-	<script src="../assets/js/NiceAdminMain.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/NiceAdminMain.js"></script>
 
 </body>
 </html>

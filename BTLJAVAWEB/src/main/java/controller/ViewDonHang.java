@@ -10,21 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import database.KhachHangDAO;
-import model.KhachHang;
+import database.DonHangDAO;
+import model.DonHang;
 
 /**
- * Servlet implementation class ViewKhachHang
+ * Servlet implementation class ViewDonHang
  */
-@WebServlet("/ViewKhachHang")
-public class ViewKhachHang extends HttpServlet
+@WebServlet("/ViewDonHang")
+public class ViewDonHang extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ViewKhachHang()
+	public ViewDonHang()
 	{
 		super();
 		// TODO Auto-generated constructor stub
@@ -35,18 +35,12 @@ public class ViewKhachHang extends HttpServlet
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		// TODO Auto-generated method stub
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		DonHangDAO    donHangDAO = new DonHangDAO();
+		List<DonHang> listdh     = donHangDAO.selectAll();
 
-		// lấy từ csdl ra để hiển thị
-		KhachHangDAO    khachHangDAO = new KhachHangDAO();
-		List<KhachHang> listkh       = khachHangDAO.selectAll(); // Lấy danh sách khách hàng từ DB
-		// Đưa danh sách vào request attribute
-		request.setAttribute("listkhp", listkh);
-		// // Chuyển tiếp đến trang JSP 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/Account.jsp");
+		request.setAttribute("listdh", listdh);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Dashboard/Order.jsp");
 		dispatcher.forward(request, response);
-
 	}
 
 	/**
@@ -54,7 +48,6 @@ public class ViewKhachHang extends HttpServlet
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

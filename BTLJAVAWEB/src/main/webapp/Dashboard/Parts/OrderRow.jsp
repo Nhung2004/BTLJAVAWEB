@@ -4,8 +4,8 @@
 <!-- ======= Order Template ======= -->
 <tr>
 	<td class="text-center" style="border-right: 1px solid #ddd;">${param.orderId}</td>
-	<td style="border-right: 1px solid #ddd;">${param.client}</td>
-	<td class="text-center" style="border-right: 1px solid #ddd;">${param.totalPrice}</td>
+	<td class="text-center" style="border-right: 1px solid #ddd;">${param.client}</td>
+	<td class="text-center" style="border-right: 1px solid #ddd;">${param.paymentMethod}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">
 		<div class="badge badge-pill ${param.statusClass} w-100 text-center">${param.status}</div>
 	</td>

@@ -108,8 +108,7 @@ public class DangKy extends HttpServlet
 
 			Random    rd          = new Random();
 			String    makhachhang = System.currentTimeMillis() + rd.nextInt(1000) + "";
-			KhachHang kh          = new KhachHang(makhachhang, tendangnhap, nhaplaimatkhau, hovaten, gioitinh,
-			        diachikhachhang, diachinhanhang, diachimuahang, ngaySinhDate, dienthoai, email, false);
+			KhachHang kh          = new KhachHang(makhachhang, tendangnhap, nhaplaimatkhau, hovaten, gioitinh, diachikhachhang, diachinhanhang, diachimuahang, ngaySinhDate, dienthoai, email, false);
 			khachHangDAO.insert(kh);
 			url = "/Homepage/DangNhap.jsp";
 
@@ -127,8 +126,6 @@ public class DangKy extends HttpServlet
 		//
 
 	}
-	
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -143,23 +140,16 @@ public class DangKy extends HttpServlet
 
 // sử dụng javatubles javatubles
 // lấy tống số bản ghi trong cơ sở dữ liệu
-// 
-/*import org.javatubles.*
+//
+/*
+ * import org.javatubles.*
  * 
- * public class usercontrol{
- *   priavre UserModel um;
- *   public usercontrol()
-{
-
-this.um=new UserModel();
-}
-
-public boolean adduser..
-public boolean deluser
-public boolean edituser
-public userobject getUserObject(
-public userObject get userObject(string username, string userpassword)
- * }
+ * public class usercontrol{ priavre UserModel um; public usercontrol() {
+ * 
+ * this.um=new UserModel(); }
+ * 
+ * public boolean adduser.. public boolean deluser public boolean edituser public userobject
+ * getUserObject( public userObject get userObject(string username, string userpassword) }
  */
 
 /*
@@ -167,4 +157,3 @@ public userObject get userObject(string username, string userpassword)
  * public class UserLibrary{
  * 
  */
-

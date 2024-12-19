@@ -26,12 +26,10 @@ public class ChiTietDonHangDAO implements DAOInterface<ChiTietDonHang>
 
 			while (rs.next())
 			{
-				DonHang        donhang = new DonHang(rs.getString("madonhang"), null, null, null, null, null, null, 0, 0,
-				        null, null);
+				DonHang        donhang = new DonHang(rs.getString("madonhang"), null, null, null, null, null, null, 0, 0, null, null);
 				SanPham        sanpham = new SanPham();
-				ChiTietDonHang chiTiet = new ChiTietDonHang(rs.getString("machitietdonhang"), donhang, sanpham,
-				        rs.getDouble("soluong"), rs.getDouble("giagoc"), rs.getDouble("giamgia"), rs.getDouble("giaban"),
-				        rs.getDouble("thuevat"), rs.getDouble("tongtien"));
+				ChiTietDonHang chiTiet = new ChiTietDonHang(rs.getString("machitietdonhang"), donhang, sanpham, rs.getDouble("soluong"), rs.getDouble("giagoc"), rs.getDouble("giamgia"), rs.getDouble("giaban"), rs.getDouble("thuevat"),
+				        rs.getDouble("tongtien"));
 				list.add(chiTiet);
 			}
 			connectionPool.closeConnection(con, "selectAll");
@@ -57,12 +55,9 @@ public class ChiTietDonHangDAO implements DAOInterface<ChiTietDonHang>
 
 			if(rs.next())
 			{
-				DonHang donhang = new DonHang(rs.getString("madonhang"), null, null, null, null, null, null, 0, 0, null,
-				        null);
+				DonHang donhang = new DonHang(rs.getString("madonhang"), null, null, null, null, null, null, 0, 0, null, null);
 				SanPham sanpham = new SanPham(rs.getString("masanpham"), sql, null, 0, 0, 0, 0, 0, null, sql, sql);
-				chiTiet = new ChiTietDonHang(rs.getString("machitietdonhang"), donhang, sanpham, rs.getDouble("soluong"),
-				        rs.getDouble("giagoc"), rs.getDouble("giamgia"), rs.getDouble("giaban"), rs.getDouble("thuevat"),
-				        rs.getDouble("tongtien"));
+				chiTiet = new ChiTietDonHang(rs.getString("machitietdonhang"), donhang, sanpham, rs.getDouble("soluong"), rs.getDouble("giagoc"), rs.getDouble("giamgia"), rs.getDouble("giaban"), rs.getDouble("thuevat"), rs.getDouble("tongtien"));
 			}
 			connectionPool.closeConnection(con, "selectById");
 		}
@@ -80,8 +75,7 @@ public class ChiTietDonHangDAO implements DAOInterface<ChiTietDonHang>
 		try
 		{
 			Connection        con = connectionPool.getConnection("insert");
-			String            sql = "INSERT INTO ChiTietDonHang (machitietdonhang, madonhang, masanpham, soluong, giagoc, giamgia, giaban, thuevat, tongtien) "
-			        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String            sql = "INSERT INTO ChiTietDonHang (machitietdonhang, madonhang, masanpham, soluong, giagoc, giamgia, giaban, thuevat, tongtien) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getMachitietdonhang());
 			st.setString(2, t.getDonhang().getMadonhang());
@@ -110,8 +104,7 @@ public class ChiTietDonHangDAO implements DAOInterface<ChiTietDonHang>
 		try
 		{
 			Connection        con = connectionPool.getConnection("insertAll");
-			String            sql = "INSERT INTO ChiTietDonHang (machitietdonhang, madonhang, masanpham, soluong, giagoc, giamgia, giaban, thuevat, tongtien) "
-			        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String            sql = "INSERT INTO ChiTietDonHang (machitietdonhang, madonhang, masanpham, soluong, giagoc, giamgia, giaban, thuevat, tongtien) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			for (ChiTietDonHang chiTiet : arr)
@@ -188,8 +181,7 @@ public class ChiTietDonHangDAO implements DAOInterface<ChiTietDonHang>
 		try
 		{
 			Connection        con = connectionPool.getConnection("update");
-			String            sql = "UPDATE ChiTietDonHang SET madonhang = ?, masanpham = ?, soluong = ?, giagoc = ?, giamgia = ?, "
-			        + "giaban = ?, thuevat = ?, tongtien = ? WHERE machitietdonhang = ?";
+			String            sql = "UPDATE ChiTietDonHang SET madonhang = ?, masanpham = ?, soluong = ?, giagoc = ?, giamgia = ?, " + "giaban = ?, thuevat = ?, tongtien = ? WHERE machitietdonhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getDonhang().getMadonhang());
 			st.setString(2, t.getSanpham().getMasanpham());

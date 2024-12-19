@@ -17,21 +17,24 @@ import model.SanPham;
  * Servlet implementation class DeleteGioHang
  */
 @WebServlet("/DeleteGioHang")
-public class DeleteGioHang extends HttpServlet {
+public class DeleteGioHang extends HttpServlet
+{
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DeleteGioHang() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public DeleteGioHang()
+	{
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
@@ -39,23 +42,23 @@ public class DeleteGioHang extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 String productId = request.getParameter("productId");
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	{
+		String productId = request.getParameter("productId");
 
-	        HttpSession session = request.getSession();
-	        List<GioHang> cart = (List<GioHang>) session.getAttribute("gioHangList");
+		HttpSession   session = request.getSession();
+		List<GioHang> cart    = (List<GioHang>) session.getAttribute("gioHangList");
 
-	        if (cart != null) {
-	            cart.removeIf(item -> item.getMasanpham().equals(productId)); // Xóa sản phẩm khỏi giỏ hàng
-	            session.setAttribute("gioHangList", cart); // Cập nhật lại giỏ hàng trong session
-	        }
+		if(cart != null)
+		{
+			cart.removeIf(item -> item.getMasanpham().equals(productId)); // Xóa sản phẩm khỏi giỏ hàng
+			session.setAttribute("gioHangList", cart); // Cập nhật lại giỏ hàng trong session
+		}
 
-	        // Sau khi xóa, chuyển hướng lại về trang giỏ hàng
-	        //response.sendRedirect(request.getContextPath() + "/giohang.jsp");
-            request.getRequestDispatcher("/Homepage/GioHang.jsp").forward(request, response);
+		// Sau khi xóa, chuyển hướng lại về trang giỏ hàng
+		// response.sendRedirect(request.getContextPath() + "/giohang.jsp");
+		request.getRequestDispatcher("/Homepage/GioHang.jsp").forward(request, response);
 
-	    }
-	
 	}
 
-
+}

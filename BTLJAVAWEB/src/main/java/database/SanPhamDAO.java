@@ -34,9 +34,8 @@ public class SanPhamDAO implements DAOInterface<SanPham>
 			{
 				TacGia  tacGia  = new TacGia(rs.getString("matacgia"), null, null, null);
 				TheLoai theLoai = new TheLoai(rs.getString("matheloai"), null);
-				SanPham sp      = new SanPham(rs.getString("masanpham"), rs.getString("tensanpham"), tacGia,
-				        rs.getInt("namxuatban"), rs.getDouble("giaban"), rs.getDouble("gianhap"), rs.getDouble("giagoc"),
-				        rs.getInt("soluong"), theLoai, rs.getString("ngonngu"), rs.getString("mota"));
+				SanPham sp      = new SanPham(rs.getString("masanpham"), rs.getString("tensanpham"), tacGia, rs.getInt("namxuatban"), rs.getDouble("giaban"), rs.getDouble("gianhap"), rs.getDouble("giagoc"), rs.getInt("soluong"), theLoai,
+				        rs.getString("ngonngu"), rs.getString("mota"));
 				list.add(sp);
 			}
 			connectionPool.closeConnection(con, "selectAll");
@@ -64,9 +63,8 @@ public class SanPhamDAO implements DAOInterface<SanPham>
 			{
 				TacGia  tacGia  = new TacGia(rs.getString("matacgia"), null, null, null);
 				TheLoai theLoai = new TheLoai(rs.getString("matheloai"), null);
-				sp = new SanPham(rs.getString("masanpham"), rs.getString("tensanpham"), tacGia, rs.getInt("namxuatban"),
-				        rs.getDouble("giaban"), rs.getDouble("gianhap"), rs.getDouble("giagoc"), rs.getInt("soluong"),
-				        theLoai, rs.getString("ngonngu"), rs.getString("mota"));
+				sp = new SanPham(rs.getString("masanpham"), rs.getString("tensanpham"), tacGia, rs.getInt("namxuatban"), rs.getDouble("giaban"), rs.getDouble("gianhap"), rs.getDouble("giagoc"), rs.getInt("soluong"), theLoai, rs.getString("ngonngu"),
+				        rs.getString("mota"));
 			}
 			connectionPool.closeConnection(con, "selectById");
 		}
@@ -203,8 +201,7 @@ public class SanPhamDAO implements DAOInterface<SanPham>
 		try
 		{
 			Connection        con = connectionPool.getConnection("update");
-			String            sql = "UPDATE SanPham SET tensanpham = ?, matacgia = ?, namxuatban = ?, giaban = ?, gianhap = ?, "
-			        + "giagoc = ?, soluong = ?, matheloai = ?, ngonngu = ?, mota = ? WHERE masanpham = ?";
+			String            sql = "UPDATE SanPham SET tensanpham = ?, matacgia = ?, namxuatban = ?, giaban = ?, gianhap = ?, " + "giagoc = ?, soluong = ?, matheloai = ?, ngonngu = ?, mota = ? WHERE masanpham = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getTensanpham());
 			st.setString(2, t.getTacgia().getMatacgia());

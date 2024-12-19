@@ -192,7 +192,6 @@
 								<div class="col">
 
 									<!-- Product Sorting -->
-
 									<div class="product_sorting_container product_sorting_container_top">
 										<ul class="product_sorting">
 											<li>

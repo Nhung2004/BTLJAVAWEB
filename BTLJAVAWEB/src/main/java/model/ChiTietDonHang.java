@@ -12,10 +12,7 @@ public class ChiTietDonHang
 	private double  thuevat;
 	private double  tongtien;
 
-	public ChiTietDonHang(
-	        String machitietdonhang, DonHang donhang, SanPham sanpham, double soluong, double giagoc, double giamgia,
-	        double giaban, double thuevat, double tongtien
-	)
+	public ChiTietDonHang(String machitietdonhang, DonHang donhang, SanPham sanpham, double soluong, double giagoc, double giamgia, double giaban, double thuevat, double tongtien)
 	{
 		super();
 		this.machitietdonhang = machitietdonhang;

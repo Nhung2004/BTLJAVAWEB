@@ -211,8 +211,7 @@ public class TacGiaDAO implements DAOInterface<TacGia>
 	{
 		TacGiaDAO tacGiaDAO = new TacGiaDAO();
 
-		TacGia newTacGia = new TacGia("TG07", "Nguyễn Ngọc Hưng", Date.valueOf("2004-1-1"),
-		        "Tác giả nổi tiếng trong lĩnh vực văn học.");
+		TacGia newTacGia = new TacGia("TG07", "Nguyễn Ngọc Hưng", Date.valueOf("2004-1-1"), "Tác giả nổi tiếng trong lĩnh vực văn học.");
 
 		@SuppressWarnings("unused")
 		int result = tacGiaDAO.insert(newTacGia);
