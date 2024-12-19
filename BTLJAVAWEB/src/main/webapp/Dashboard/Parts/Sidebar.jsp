@@ -24,7 +24,7 @@
 
 		<!-- Products Management Page Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewSanPham">
+			<a class="nav-link collapsed" href="/BTLJAVAWEB/ManageSanPham">
 				<i class="bi bi-box"></i>
 				<span>Product Management</span>
 			</a>

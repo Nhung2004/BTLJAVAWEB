@@ -29,6 +29,14 @@ public class Product
 		super();
 	}
 
+	public Product(String nameProduct, double priceProduct, int quantity, String imageProduct)
+	{
+		this.nameProduct  = nameProduct;
+		this.imageProduct = imageProduct;
+		this.priceProduct = priceProduct;
+		this.quantity     = quantity;
+	}
+
 	public int getIdProduct()
 	{
 		return idProduct;

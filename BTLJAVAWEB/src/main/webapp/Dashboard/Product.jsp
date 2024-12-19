@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:if test="${empty listsp}">
-	<c:redirect url="/ViewSanPham" />
+	<c:redirect url="/ManageSanPham" />
 </c:if>
 
 <!DOCTYPE html>

@@ -12,9 +12,6 @@ import javax.servlet.RequestDispatcher;
 import database.KhachHangDAO;
 import model.KhachHang;
 
-/**
- * Servlet implementation class Quanlytaikhoan
- */
 @WebServlet("/ManageKhachHang")
 public class ManageKhachHang extends HttpServlet
 {
@@ -41,9 +38,11 @@ public class ManageKhachHang extends HttpServlet
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		/*
 		request.setCharacterEncoding("utf-8");
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
+		*/
 
 		String chucNang = request.getParameter("chucNang");
 
@@ -53,14 +52,12 @@ public class ManageKhachHang extends HttpServlet
 			return;
 		}
 
-		// Initialize the DAO for database operations
 		KhachHangDAO khachHangDAO = new KhachHangDAO();
 
 		switch (chucNang)
 		{
 			case "Xoa":
 			{
-				// Handle account deletion
 				String makhachhang = request.getParameter("makhachhang");
 
 				if(makhachhang != null)
