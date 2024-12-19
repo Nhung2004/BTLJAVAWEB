@@ -18,8 +18,9 @@
 		<!-- Product Info -->
 		<div class="product_info">
 			<h6 class="product_name">
-				<a
-					href="${pageContext.request.contextPath}/Homepage/SanPham.jsp?productId=${param.productId}">${param.productName}</a>
+				
+				<!--  	<a href="${pageContext.request.contextPath}/Homepage/SanPham.jsp?productId=${param.productId}">${param.productName}</a> -->
+					<a href="ChiTiet?pid=${param.productId}">${param.productName}</a>
 			</h6>
 			<div class="product_price">
 				<c:choose>

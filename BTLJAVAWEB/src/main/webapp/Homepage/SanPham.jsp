@@ -74,7 +74,7 @@
 							</div>
 							<div class="col-lg-9 image_col order-lg-2 order-1">
 								<div class="single_product_image">
-									<div class="single_product_image_background" style="background-image: url(${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg)"></div>
+									<div class="single_product_image_background" style="background-image: url(${pageContext.request.contextPath}${ChiTiet.imageProduct}"></div>
 								</div>
 							</div>
 						</div>
