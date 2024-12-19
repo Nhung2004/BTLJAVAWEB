@@ -17,7 +17,7 @@ public class DatabaseConfig
 	public static String USER_NAME          = "sa";
 	public static String PASSWORD           = "123456789";
 	public static int    DB_MIN_CONNECTIONS = 100;
-	public static int    DB_MAX_CONNECTIONS = 250;
+	public static int    DB_MAX_CONNECTIONS = 250; 
 
 	private DatabaseConfig()
 	{
