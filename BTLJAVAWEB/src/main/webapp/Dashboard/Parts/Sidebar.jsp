@@ -15,7 +15,7 @@
 
 		<!-- Account Management Nav -->
 		<li class="nav-item">
-			<a class="nav-link collapsed" href="/BTLJAVAWEB/ViewKhachHang">
+			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Account.jsp">
 				<i class="bi bi-people"></i>
 				<span>Account Management</span>
 			</a>
