@@ -12,13 +12,7 @@
 	</td>
 
 	<td class="text-center">
-		<button class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#editProductModal">
-			<i class="fas fa-edit"></i>
-			Edit
-		</button>
-		<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteProductModal">
-			<i class="fas fa-trash-alt"></i>
-			Delete
-		</button>
+		<button class="btn btn-sm btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#editProductModal_${param.productId}">Edit</button>
+		<button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteProductModal_${param.productId}">Delete</button>
 	</td>
 </tr>

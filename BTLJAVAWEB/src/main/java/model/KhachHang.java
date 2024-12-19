@@ -39,6 +39,15 @@ public class KhachHang
 		super();
 	}
 
+	public KhachHang(String makhachhang, String tendangnhap, String matkhau, String sodienthoai, String email)
+	{
+		this.makhachhang = makhachhang;
+		this.tendangnhap = tendangnhap;
+		this.matkhau     = matkhau;
+		this.sodienthoai = sodienthoai;
+		this.email       = email;
+	}
+
 	public String getMakhachhang()
 	{
 		return makhachhang;

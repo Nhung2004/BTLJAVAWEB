@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import clientModel.Product;
 import database.DAOInterface;
@@ -49,7 +50,7 @@ public class ProductDAO implements DAOInterface<Product>
 		try
 		{
 			Connection        con = connectionPool.getConnection("selectById");
-			String            sql = "SELECT * FROM ProductClient WHERE masanpham = ?";
+			String            sql = "SELECT * FROM ProductClient WHERE idProduct = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setInt(1, t.getIdProduct());
 			ResultSet rs = st.executeQuery();
@@ -73,13 +74,21 @@ public class ProductDAO implements DAOInterface<Product>
 		int result = 0;
 		try
 		{
+			ArrayList<String> imagePaths = new ArrayList<>();
+			imagePaths.add("/assets/img/books/Light%20Novel/bia_bao_mau_1_d2c2fe39133d48d1aa.jpg");
+			imagePaths.add("/assets/img/books/Life%20Skill/tam-ly-hoc-that-ky-dieu_131182_1.jpg");
+			imagePaths.add("/assets/img/books/Literature/b_a_ha_noi_mu_rom_va_tem_phieu_4.jpg");
+
+			Random random        = new Random();
+			String selectedImage = imagePaths.get(random.nextInt(imagePaths.size()));
+
 			Connection        con = connectionPool.getConnection("insert");
-			String            sql = "INSERT INTO ProductClient (tensanpham, giaban, soluong, hinhanh) VALUES (?, ?, ?, ?)";
+			String            sql = "INSERT INTO ProductClient (nameProduct, priceProduct, quantity, imageProduct) VALUES (?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getNameProduct());
 			st.setDouble(2, t.getPriceProduct());
 			st.setInt(3, t.getQuantity());
-			st.setString(4, t.getImageProduct());
+			st.setString(4, selectedImage);
 			result = st.executeUpdate();
 			connectionPool.closeConnection(con, "insert");
 		}
@@ -96,16 +105,25 @@ public class ProductDAO implements DAOInterface<Product>
 		int result = 0;
 		try
 		{
+			ArrayList<String> imagePaths = new ArrayList<>();
+			imagePaths.add("/assets/img/books/Light%20Novel/bia_bao_mau_1_d2c2fe39133d48d1aa.jpg");
+			imagePaths.add("/assets/img/books/Life%20Skill/tam-ly-hoc-that-ky-dieu_131182_1.jpg");
+			imagePaths.add("/assets/img/books/Literature/b_a_ha_noi_mu_rom_va_tem_phieu_4.jpg");
+
+			Random random = new Random();
+
 			Connection        con = connectionPool.getConnection("insertAll");
-			String            sql = "INSERT INTO ProductClient (tensanpham, giaban, soluong, hinhanh) VALUES (?, ?, ?, ?)";
+			String            sql = "INSERT INTO ProductClient (nameProduct, priceProduct, quantity, imageProduct) VALUES (?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			for (Product product : arr)
 			{
+				String selectedImage = imagePaths.get(random.nextInt(imagePaths.size()));
+
 				st.setString(1, product.getNameProduct());
 				st.setDouble(2, product.getPriceProduct());
 				st.setInt(3, product.getQuantity());
-				st.setString(4, product.getImageProduct());
+				st.setString(4, selectedImage);
 				result += st.executeUpdate();
 			}
 			connectionPool.closeConnection(con, "insertAll");
@@ -124,7 +142,7 @@ public class ProductDAO implements DAOInterface<Product>
 		try
 		{
 			Connection        con = connectionPool.getConnection("delete");
-			String            sql = "DELETE FROM ProductClient WHERE masanpham = ?";
+			String            sql = "DELETE FROM ProductClient WHERE idProduct = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setInt(1, t.getIdProduct());
 			result = st.executeUpdate();
@@ -144,7 +162,7 @@ public class ProductDAO implements DAOInterface<Product>
 		try
 		{
 			Connection        con = connectionPool.getConnection("deleteAll");
-			String            sql = "DELETE FROM ProductClient WHERE masanpham = ?";
+			String            sql = "DELETE FROM ProductClient WHERE idProduct = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			for (Product product : arr)
@@ -168,13 +186,12 @@ public class ProductDAO implements DAOInterface<Product>
 		try
 		{
 			Connection        con = connectionPool.getConnection("update");
-			String            sql = "UPDATE ProductClient SET tensanpham = ?, giaban = ?, soluong = ?, hinhanh = ? WHERE masanpham = ?";
+			String            sql = "UPDATE ProductClient SET nameProduct = ?, priceProduct = ?, quantity = ? WHERE idProduct = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 			st.setString(1, t.getNameProduct());
 			st.setDouble(2, t.getPriceProduct());
 			st.setInt(3, t.getQuantity());
-			st.setString(4, t.getImageProduct());
-			st.setInt(5, t.getIdProduct());
+			st.setInt(4, t.getIdProduct());
 			result = st.executeUpdate();
 			connectionPool.closeConnection(con, "update");
 		}
@@ -219,7 +236,7 @@ public class ProductDAO implements DAOInterface<Product>
 		{
 			Connection con = connectionPool.getConnection("getLatestProducts");
 
-			// Giả sử masanpham tăng dần khi thêm sản phẩm
+			// Giả sử idProduct tăng dần khi thêm sản phẩm
 			String            sql = "SELECT TOP 5 * \r\n" + "FROM ProductClient \r\n" + "ORDER BY idProduct DESC;\r\n" + "";
 			PreparedStatement st  = con.prepareStatement(sql);
 			ResultSet         rs  = st.executeQuery();
