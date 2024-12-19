@@ -53,7 +53,24 @@ public class ViewTheLoai extends HttpServlet
 
 		request.setAttribute("listP", list);
 		
+
 		System.out.println("abcdefh");
+//
+//        List<Product> listnew=productDAO.getLatestProducts();
+//        
+//        TheLoaiDAO theloaidao = new TheLoaiDAO();
+//       List<model.TheLoai> listT=theloaidao.selectAll();
+        //List<model.TheLoai> listT=theloaidao.selectAll();
+
+
+		
+		 request.setAttribute("listnew", listnew);
+
+	       request.setAttribute("listT", listT);
+	       request.setAttribute("listT", list);
+	       
+			request.setAttribute("listP", list);
+
 
 		request.getRequestDispatcher("/Homepage/Home.jsp").forward(request, response);
 	}

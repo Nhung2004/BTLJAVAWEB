@@ -1,3 +1,11 @@
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:if test="${empty listP }">
+	<c:redirect url="/Product" />
+
+</c:if>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
@@ -23,6 +31,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/responsive.css">
 
 <script src="${pageContext.request.contextPath}/assets/js/cart.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
 </head>
 
@@ -103,11 +112,14 @@
 			</div>
 		</div>
 
+
+<!-- New Product -->
+
 		<div class="best_sellers">
 			<div class="container">
 				<div class="row">
 					<div class="col text-center">
-						<div class="section_title new_arrivals_title">
+						<div class="section_title new_arrivals_title animate__animated animate__bounceIn">
 							<h2>New Product</h2>
 						</div>
 					</div>
@@ -117,7 +129,7 @@
 						<div class="product_slider_container">
 							<div class="owl-carousel owl-theme product_slider">
 								<c:forEach items="${listnew}" var="item">
-									<div class="owl-item product_slider_item">
+									<div class="owl-item product_slider_item animate__animated animate__fadeInUp">
 										<jsp:include page="Parts/BookCard.jsp">
 											<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
 											<jsp:param name="productName" value="${item.nameProduct}" />
@@ -141,6 +153,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- end NewProduct -->
 
 		<!-- New Arrivals -->
 		<div class="new_arrivals">
@@ -183,6 +196,10 @@
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 							<c:forEach items="${listP}" var="item">
+
+
+
+
 								<jsp:include page="Parts/BookCard.jsp">
 									<jsp:param name="maTheLoai" value="${item.matheloai}" />
 									<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />

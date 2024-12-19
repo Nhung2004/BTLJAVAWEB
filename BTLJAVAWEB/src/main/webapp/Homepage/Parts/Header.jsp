@@ -91,7 +91,7 @@
                         <li class="checkout">
                             <a href="${pageContext.request.contextPath}/Homepage/GioHang.jsp">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span id="checkout_items" class="checkout_items">2</span>
+                                <span id="checkout_items" class="checkout_items">${totalQuantity}</span>
                             </a>
                         </li>
                     </ul>
