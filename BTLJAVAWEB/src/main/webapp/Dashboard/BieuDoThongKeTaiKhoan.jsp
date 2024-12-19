@@ -50,6 +50,38 @@
     background-color: #f8f9fa;
     color: #0056b3;
 }
+.card {
+    border-radius: 12px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ff4c4c; /* Màu nền đỏ */
+    width: 250px; /* Giảm kích thước thẻ */
+    margin: 0 auto; /* Canh giữa thẻ */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 20px;
+    color: #fff; /* Màu chữ trắng */
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 30px;
+    color: #fff; /* Màu chữ trắng */
+    font-weight: bold;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+
 </style>
 </head>
 <body>
@@ -59,23 +91,43 @@
 
     <!-- Nội dung chính (Account Management) -->
     <main id="main" class="main">
-        <!-- Biểu đồ thống kê số tài khoản người dùng -->
-        <div class="container py-4">
-            <h2 class="text-center mb-4">Account Statistics by Month</h2>
-            <canvas id="accountStatsChart" width="400" height="200"></canvas>
-        </div>
 
         <%
-        // Lấy thống kê số tài khoản theo tháng từ DAO
-        KhachHangDAO khDAO = new KhachHangDAO();
-        int[] monthlyStats = khDAO.getAccountStatisticsByMonth(); // Giả sử hàm này trả về mảng gồm số tài khoản theo từng tháng (12 tháng)
-
-        // Kiểm tra giá trị trả về của monthlyStats
-        if (monthlyStats == null || monthlyStats.length < 12) {
-            monthlyStats = new int[12]; // Đảm bảo có đủ 12 tháng
+	        // Lấy thống kê số tài khoản theo tháng từ DAO
+	        KhachHangDAO khDAO = new KhachHangDAO();
+	        int[] monthlyStats = khDAO.getAccountStatisticsByMonth(); // Giả sử hàm này trả về mảng gồm số tài khoản theo từng tháng (12 tháng)
+	
+	        // Kiểm tra giá trị trả về của monthlyStats
+	        if (monthlyStats == null || monthlyStats.length < 12) {
+	            monthlyStats = new int[12]; // Đảm bảo có đủ 12 tháng
         }
         %>
+		<%
+		    // Tính tổng số tài khoản từ mảng monthlyStats
+		    int totalAccounts = 0;
+		    for (int i = 0; i < monthlyStats.length; i++) {
+		        totalAccounts += monthlyStats[i];
+		    }
+		%>
+<div class="container py-4">
+    <h2 class="text-center mb-4">Account Statistics by Month</h2>
 
+    <!-- Hiển thị tổng số tài khoản -->
+    <div class="card text-center mb-4" style="background-color: #ff4c4c; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 250px; margin: 0 auto;">
+        <div class="card-body">
+            <h4 class="card-title" style="font-size: 20px; color: #fff; font-weight: bold;">Total Accounts</h4>
+            <h2 class="card-text" style="font-size: 30px; color: #fff; font-weight: bold;">
+                <%= totalAccounts %>
+            </h2>
+        </div>
+    </div>
+
+    <!-- Biểu đồ -->
+    <canvas id="accountStatsChart" width="400" height="200"></canvas>
+</div>
+
+
+		
     </main>
 
     <!-- Footer -->
