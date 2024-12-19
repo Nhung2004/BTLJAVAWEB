@@ -452,4 +452,26 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 		}
 		return ketQua;
 	}
+	public int[] getAccountStatisticsByMonth() {
+	    int[] monthlyStats = new int[12]; // Mảng để lưu số tài khoản cho mỗi tháng
+	    String sql = "SELECT MONTH(created_at) AS month, COUNT(*) AS count " +
+	                 "FROM khachhang " +
+	                 "GROUP BY MONTH(created_at) " +
+	                 "ORDER BY month";
+	    try (Connection conn = connectionPool.getConnection("bdc");
+	         PreparedStatement stmt = conn.prepareStatement(sql);
+	         ResultSet rs = stmt.executeQuery()) {
+	        
+	        while (rs.next()) {
+	            int month = rs.getInt("month") - 1; // Lấy tháng (0-based index)
+	            int count = rs.getInt("count");
+	            monthlyStats[month] = count; // Lưu số tài khoản vào mảng
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
+	    return monthlyStats;
+	}
+
+
 }
