@@ -1,11 +1,5 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:if test="${empty listP }">
-	<c:redirect url="/Product" />
-	<c:redirect url="/Search" />
-
-</c:if>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:if test="${empty listP}">
 	<c:redirect url="/Product" />
@@ -14,7 +8,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Colo Shop</title>
+<title>Group 13</title>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Colo Shop Template">
@@ -105,20 +99,9 @@
 							</div>
 						</div>
 					</div>
-
-
-
-
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
 
 		<div class="best_sellers">
 			<div class="container">
@@ -133,11 +116,8 @@
 					<div class="col">
 						<div class="product_slider_container">
 							<div class="owl-carousel owl-theme product_slider">
-
 								<c:forEach items="${listnew}" var="item">
 									<div class="owl-item product_slider_item">
-
-
 										<jsp:include page="Parts/BookCard.jsp">
 											<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
 											<jsp:param name="productName" value="${item.nameProduct}" />
@@ -145,14 +125,10 @@
 											<jsp:param name="productId" value="${item.idProduct}" />
 											<jsp:param name="addToCart" value="true" />
 										</jsp:include>
-
 									</div>
-
 								</c:forEach>
 
-
 								<!-- Slider Navigation -->
-
 								<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
 									<i class="fa fa-chevron-left" aria-hidden="true"></i>
 								</div>
@@ -165,26 +141,6 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 		<!-- New Arrivals -->
 		<div class="new_arrivals">
@@ -211,34 +167,24 @@
 							</ul>
 
 							<!--  
-            <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-    <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked">
-        All
-    </li>
-    <c:forEach items="${listT}" var="o">
-        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center">
-            <a href="ViewTheLoai?id=${o.matheloai}">${o.tentheloai}</a>
-        </li>
-    </c:forEach>
-</ul>
--->
-
+							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
+								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked">All</li>
+								<c:forEach items="${listT}" var="o">
+									<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center">
+										<a href="ViewTheLoai?id=${o.matheloai}">${o.tentheloai}</a>
+									</li>
+								</c:forEach>
+							</ul>
+							-->
 
 						</div>
 					</div>
 				</div>
 
-
-
-
-
-
 				<div class="row">
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 							<c:forEach items="${listP}" var="item">
-
-
 								<jsp:include page="Parts/BookCard.jsp">
 									<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
 									<jsp:param name="productName" value="${item.nameProduct}" />
@@ -246,16 +192,10 @@
 									<jsp:param name="productId" value="${item.idProduct}" />
 									<jsp:param name="addToCart" value="true" />
 								</jsp:include>
-
-
 							</c:forEach>
 						</div>
 					</div>
-
-
 				</div>
-
-
 			</div>
 		</div>
 
@@ -429,7 +369,6 @@
 							</div>
 
 							<!-- Slider Navigation -->
-
 							<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
 								<i class="fa fa-chevron-left" aria-hidden="true"></i>
 							</div>
@@ -443,7 +382,6 @@
 		</div>
 
 		<!-- Benefit -->
-
 		<div class="benefit">
 			<div class="container">
 				<div class="row benefit_row">
@@ -494,10 +432,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- Blogs 
-		
-		End Blogs -->
 
 		<!-- Newsletter -->
 
