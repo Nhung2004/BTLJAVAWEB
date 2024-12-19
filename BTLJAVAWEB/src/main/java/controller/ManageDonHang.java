@@ -97,23 +97,35 @@ public class ManageDonHang extends HttpServlet
 						DonHang temp = new DonHang(madonhang);
 						DonHang dh   = donHangDAO.selectById(temp);
 
-						int result = donHangDAO.update(dh);
-
-						if(result > 0)
+						if(dh != null)
 						{
-							request.setAttribute("message", "Cập nhật đơn hàng thành công.");
-							System.out.println("Edit Success");
+							dh.setHinhthucthanhtoan(hinhthucthanhtoan);
+							dh.setTrangthai(trangthai);
+
+							int result = donHangDAO.update(dh);
+
+							if(result > 0)
+							{
+								request.setAttribute("message", "Cập nhật đơn hàng thành công.");
+								System.out.println("Edit Success");
+							}
+							else
+							{
+								request.setAttribute("message", "Không thể cập nhật đơn hàng.");
+								System.out.println("Edit Failed");
+							}
 						}
 						else
 						{
-							request.setAttribute("message", "Không thể cập nhật đơn hàng.");
-							System.out.println("Edit Failed");
+							request.setAttribute("message", "Đơn hàng không tồn tại.");
+							System.out.println("Order not found");
 						}
 					}
 					catch (Exception e)
 					{
 						request.setAttribute("message", "Dữ liệu không hợp lệ.");
 						System.out.println("Invalid format");
+						e.printStackTrace();
 					}
 				}
 				else

@@ -37,6 +37,24 @@
 
 <!-- Template Main CSS File -->
 <link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
+<style>
+.pagination .page-link {
+	color: #007bff;
+	border: 1px solid #dee2e6;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .page-item.active .page-link {
+	background-color: #007bff;
+	color: #fff;
+	border-color: #007bff;
+}
+
+.pagination .page-link:hover {
+	background-color: #f8f9fa;
+	color: #0056b3;
+}
+</style>
 </head>
 
 <body>
@@ -92,137 +110,165 @@
 												<th scope="col" class="text-center">Action</th>
 											</tr>
 										</thead>
-										<tbody>
-											<c:forEach var="item" items="${listdh}">
+										<tbody id="orderTableBody">
+											<c:forEach var="donHang" items="${listdh}">
 												<jsp:include page="Parts/OrderRow.jsp">
-													<jsp:param name="orderId" value="${item.madonhang}" />
-													<jsp:param name="client" value="${item.khachhang.makhachhang}" />
-													<jsp:param name="paymentMethod" value="${item.hinhthucthanhtoan}" />
-													<jsp:param name="status" value="${item.trangthai}" />
-													<jsp:param name="statusClass" value="bg-success" />
-													<jsp:param name="orderDate" value="${item.ngaydathang}" />
+													<jsp:param name="orderId" value="${donHang.madonhang}" />
+													<jsp:param name="client" value="${donHang.khachhang.makhachhang}" />
+													<jsp:param name="paymentMethod" value="${donHang.hinhthucthanhtoan}" />
+													<jsp:param name="status" value="${donHang.trangthai}" />
+													<jsp:param name="orderDate" value="${donHang.ngaydathang}" />
 												</jsp:include>
+
+												<!-- View Order Modal -->
+												<div class="modal fade" id="viewOrderModal_${donHang.madonhang}" tabindex="-1" aria-labelledby="viewOrderModalLabel" aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header bg-info text-white">
+																<h5 class="modal-title" id="viewOrderModalLabel">
+																	<i class="fas fa-eye me-2"></i>
+																	View Order Details
+																</h5>
+																<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+															</div>
+															<div class="modal-body">
+																<div class="mb-3 row">
+																	<label class="col-sm-4 col-form-label">Order ID:</label>
+																	<div class="col-sm-8">
+																		<p class="form-control-plaintext">${donHang.madonhang}</p>
+																	</div>
+																</div>
+																<div class="mb-3 row">
+																	<label class="col-sm-4 col-form-label">Order Status:</label>
+																	<div class="col-sm-8">
+																		<p class="form-control-plaintext">${donHang.trangthai}</p>
+																	</div>
+																</div>
+																<div class="mb-3 row">
+																	<label class="col-sm-4 col-form-label">Customer ID:</label>
+																	<div class="col-sm-8">
+																		<p class="form-control-plaintext">${donHang.khachhang.makhachhang}</p>
+																	</div>
+																</div>
+																<div class="mb-3 row">
+																	<label class="col-sm-4 col-form-label">Order Date:</label>
+																	<div class="col-sm-8">
+																		<p class="form-control-plaintext">${donHang.ngaydathang}</p>
+																	</div>
+																</div>
+																<div class="mb-3 row">
+																	<label class="col-sm-4 col-form-label">Purchase Address:</label>
+																	<div class="col-sm-8">
+																		<p class="form-control-plaintext">${donHang.diachimuahang}</p>
+																	</div>
+																</div>
+																<div class="mb-3 row">
+																	<label class="col-sm-4 col-form-label">Delivery Address:</label>
+																	<div class="col-sm-8">
+																		<p class="form-control-plaintext">${donHang.diachinhanhang}</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- Edit Order Modal -->
+												<div class="modal fade" id="editOrderModal_${donHang.madonhang}" tabindex="-1" aria-labelledby="editOrderModalLabel_${donHang.madonhang}" aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header bg-warning text-white">
+																<h5 class="modal-title" id="editOrderModalLabel_${donHang.madonhang}">
+																	<i class="fas fa-edit me-2"></i>
+																	Edit Order
+																</h5>
+																<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+															</div>
+															<div class="modal-body">
+																<form action="${pageContext.request.contextPath}/ManageDonHang" method="post">
+																	<input type="hidden" name="chucNang" value="Sua">
+																	<div class="mb-3 row">
+																		<label for="editOrderId_${donHang.madonhang}" class="col-sm-4 col-form-label">Order ID:</label>
+																		<div class="col-sm-8">
+																			<input type="text" class="form-control-plaintext" id="editOrderId_${donHang.madonhang}" name="madonhang" value="${donHang.madonhang}" readonly>
+																		</div>
+																	</div>
+																	<div class="mb-3 row">
+																		<label for="editCustomerId_${donHang.madonhang}" class="col-sm-4 col-form-label">Customer ID:</label>
+																		<div class="col-sm-8">
+																			<input type="text" class="form-control-plaintext" id="editCustomerId_${donHang.madonhang}" value="${donHang.khachhang.makhachhang}" readonly>
+																		</div>
+																	</div>
+																	<div class="mb-3 row">
+																		<label for="editOrderDate_${donHang.madonhang}" class="col-sm-4 col-form-label">Order Date:</label>
+																		<div class="col-sm-8">
+																			<input type="date" class="form-control-plaintext" id="editOrderDate_${donHang.madonhang}" value="${donHang.ngaydathang}" readonly>
+																		</div>
+																	</div>
+																	<div class="mb-3 row">
+																		<label for="editPaymentMethod_${donHang.madonhang}" class="col-sm-4 col-form-label">Payment Method:</label>
+																		<div class="col-sm-8">
+																			<input type="text" class="form-control" id="editPaymentMethod_${donHang.madonhang}" name="hinhthucthanhtoan" value="${donHang.hinhthucthanhtoan}" required>
+																		</div>
+																	</div>
+																	<div class="mb-3 row">
+																		<label for="editOrderStatus_${donHang.madonhang}" class="col-sm-4 col-form-label">Status:</label>
+																		<div class="col-sm-8">
+																			<select class="form-select" id="editOrderStatus_${donHang.madonhang}" name="trangthai" required>
+																				<option value="Pending" ${donHang.trangthai == 'Pending' ? 'selected' : ''}>Pending</option>
+																				<option value="Processing" ${donHang.trangthai == 'Processing' ? 'selected' : ''}>Processing</option>
+																				<option value="Shipped" ${donHang.trangthai == 'Shipped' ? 'selected' : ''}>Shipped</option>
+																				<option value="Delivered" ${donHang.trangthai == 'Delivered' ? 'selected' : ''}>Delivered</option>
+																				<option value="Completed" ${donHang.trangthai == 'Completed' ? 'selected' : ''}>Completed</option>
+																				<option value="Cancelled" ${donHang.trangthai == 'Cancelled' ? 'selected' : ''}>Cancelled</option>
+																			</select>
+																		</div>
+																	</div>
+																	<button type="submit" class="btn btn-warning w-100">Save Changes</button>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- Delete Order Modal -->
+												<div class="modal fade" id="deleteOrderModal_${donHang.madonhang}" tabindex="-1" aria-labelledby="deleteOrderModalLabel_${donHang.madonhang}" aria-hidden="true">
+													<div class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header bg-danger text-white">
+																<h5 class="modal-title" id="deleteOrderModalLabel_${donHang.madonhang}">
+																	<i class="fas fa-trash me-2"></i>
+																	Confirm Order Deletion
+																</h5>
+																<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+															</div>
+															<div class="modal-body text-center">
+																<p>Are you sure you want to delete this order?</p>
+																<p>
+																	<strong>
+																		Order ID:
+																		<span>${donHang.madonhang}</span>
+																	</strong>
+																</p>
+															</div>
+															<div class="modal-footer">
+																<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+																<!-- Form for deleting the order -->
+																<form action="${pageContext.request.contextPath}/ManageDonHang" method="post" class="d-inline">
+																	<input type="hidden" name="chucNang" value="Xoa">
+																	<input type="hidden" name="madonhang" value="${donHang.madonhang}">
+																	<button type="submit" class="btn btn-danger">Delete</button>
+																</form>
+															</div>
+														</div>
+													</div>
+												</div>
+
 											</c:forEach>
 										</tbody>
 									</table>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- View Order Modal -->
-			<div class="modal fade" id="viewOrderModal" tabindex="-1" aria-labelledby="viewOrderModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header bg-info text-white">
-							<h5 class="modal-title" id="viewOrderModalLabel">
-								<i class="fas fa-eye me-2"></i>
-								View Order Details
-							</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<div class="mb-3">
-								<label class="form-label">Order ID:</label>
-								<p id="viewOrderId" class="form-control-plaintext"></p>
-							</div>
-							<div class="mb-3">
-								<label class="form-label">Order Status:</label>
-								<p id="viewOrderStatus" class="form-control-plaintext"></p>
-							</div>
-							<div class="mb-3">
-								<label class="form-label">Customer ID: )</label>
-								<p id="viewCustomerID" class="form-control-plaintext"></p>
-							</div>
-							<div class="mb-3">
-								<label class="form-label">Order Date:</label>
-								<p id="viewOrderDate" class="form-control-plaintext"></p>
-							</div>
-							<div class="mb-3">
-								<label class="form-label">Purchase address:</label>
-								<p id="viewPuchaseAddress" class="form-control-plaintext"></p>
-							</div>
-							<div class="mb-3">
-								<label class="form-label">Delivery address:</label>
-								<p id="viewDeliveryAddress" class="form-control-plaintext"></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Edit Order Modal -->
-			<div class="modal fade" id="editOrderModal" tabindex="-1" aria-labelledby="editOrderModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header bg-warning text-white">
-							<h5 class="modal-title" id="editOrderModalLabel">
-								<i class="fas fa-edit me-2"></i>
-								Edit Order
-							</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<form id="editOrderForm">
-								<div class="mb-3">
-									<label for="editOrderId" class="form-label">Order ID</label>
-									<input type="text" class="form-control" id="editOrderId" name="editOrderId" readonly>
-								</div>
-								<div class="mb-3">
-									<label for="editCustomerName" class="form-label">Customer ID</label>
-									<input type="text" class="form-control" id="editCustomerName" name="editCustomerName" readonly>
-								</div>
-								<div class="mb-3">
-									<label for="editOrderDate" class="form-label">Order Date</label>
-									<input type="date" class="form-control" id="editOrderDate" name="editOrderDate" readonly>
-								</div>
-								<div class="mb-3">
-									<label for="editPaymentMethod" class="form-label">Payment Method</label>
-									<input type="text" class="form-control" id="editPaymentMethod" name="editPaymentMethod" required>
-								</div>
-								<div class="mb-3">
-									<label for="editOrderStatus" class="form-label">Status</label>
-									<select class="form-select" id="editOrderStatus" name="editOrderStatus" required>
-										<option value="Pending">Pending</option>
-										<option value="Processing">Processing</option>
-										<option value="Shipped">Shipped</option>
-										<option value="Delivered">Delivered</option>
-										<option value="Completed">Completed</option>
-										<option value="Cancelled">Cancelled</option>
-									</select>
-								</div>
-								<button type="submit" class="btn btn-warning w-100">Save Changes</button>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Delete Order Modal -->
-			<div class="modal fade" id="deleteOrderModal" tabindex="-1" aria-labelledby="deleteOrderModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header bg-danger text-white">
-							<h5 class="modal-title" id="deleteOrderModalLabel">
-								<i class="fas fa-trash me-2"></i>
-								Confirm Order Deletion
-							</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body text-center">
-							<p>Are you sure you want to delete this order?</p>
-							<p>
-								<strong>
-									Order ID:
-									<span id="deleteOrderId"></span>
-								</strong>
-							</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-danger" id="confirmDeleteOrder">Delete</button>
 						</div>
 					</div>
 				</div>
@@ -236,6 +282,53 @@
 	</a>
 
 	<!-- Vendor JS Files -->
+	<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const rowsPerPage = 5; // Số dòng mỗi trang
+        const tableBody = document.getElementById("orderTableBody");
+        const rows = tableBody.getElementsByTagName("tr");
+        const totalRows = rows.length;
+        const totalPages = Math.ceil(totalRows / rowsPerPage);
+
+        const pagination = document.createElement("ul");
+        pagination.className = "pagination";
+
+        function renderTable(page) {
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+
+            // Hiển thị các dòng tương ứng
+            for (let i = 0; i < totalRows; i++) {
+                rows[i].style.display = i >= start && i < end ? "" : "none";
+            }
+        }
+
+        function renderPagination() {
+            for (let i = 1; i <= totalPages; i++) {
+                const li = document.createElement("li");
+                li.className = "page-item";
+                li.innerHTML = `<a class="page-link" href="#">${i}</a>`;
+
+                li.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    renderTable(i);
+                    document.querySelectorAll(".page-item").forEach(el => el.classList.remove("active"));
+                    li.classList.add("active");
+                });
+
+                if (i === 1) li.classList.add("active"); // Trang đầu tiên được chọn mặc định
+                pagination.appendChild(li);
+            }
+        }
+
+        const paginationContainer = document.createElement("nav");
+        paginationContainer.appendChild(pagination);
+        tableBody.parentElement.insertAdjacentElement("afterend", paginationContainer);
+
+        renderTable(1); // Hiển thị trang đầu tiên
+        renderPagination();
+    });
+</script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/apexcharts/apexcharts.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/chart.js/chart.umd.js"></script>
