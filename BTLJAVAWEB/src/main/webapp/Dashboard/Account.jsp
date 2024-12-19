@@ -33,24 +33,6 @@
 
 <!-- Template Main CSS File -->
 <link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
-<style >
-.pagination .page-link {
-    color: #007bff; /* Màu xanh đẹp */
-    border: 1px solid #dee2e6;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #007bff;
-}
-
-.pagination .page-link:hover {
-    background-color: #f8f9fa;
-    color: #0056b3;
-}
-</style>
 </head>
 <body>
 	<!-- Include Header and Sidebar -->
