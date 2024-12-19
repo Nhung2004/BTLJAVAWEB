@@ -62,12 +62,6 @@
 								<a href="#">promotion</a>
 							</li>
 							<li>
-								<a href="#">pages</a>
-							</li>
-							<li>
-								<a href="#">blogs</a>
-							</li>
-							<li>
 								<a href="LienHe.jsp">contact</a>
 							</li>
 						</ul>
@@ -134,12 +128,6 @@
 			</li>
 			<li class="menu_item">
 				<a href="#">promotion</a>
-			</li>
-			<li class="menu_item">
-				<a href="#">pages</a>
-			</li>
-			<li class="menu_item">
-				<a href="#">blog</a>
 			</li>
 			<li class="menu_item">
 				<a href="LienHe.jsp">contact</a>
