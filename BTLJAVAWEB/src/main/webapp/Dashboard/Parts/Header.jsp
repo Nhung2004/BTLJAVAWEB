@@ -217,7 +217,7 @@
 				            <hr class="dropdown-divider">
 				        </li>
 				        <li>
-				            <a class="dropdown-item d-flex align-items-center" href="Profile.jsp">
+				            <a class="dropdown-item d-flex align-items-center" href="${pageContext.request.contextPath}/Dashboard/Profile.jsp">
 				                <i class="bi bi-person"></i>
 				                <span>My Profile</span>
 				            </a>
