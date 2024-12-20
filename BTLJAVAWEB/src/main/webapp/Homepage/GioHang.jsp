@@ -10,9 +10,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Cart</title>
 
-<!-- Bootstrap CSS -->
-<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Vendor CSS -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/main_styles.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/responsive.css">
 
 <!-- Main CSS -->
 <link href="${pageContext.request.contextPath}/assets/css/GpMain.css" rel="stylesheet">
@@ -48,7 +54,48 @@ img {
 </head>
 
 <body>
-	<main class="main">
+	<div class="super_container">
+		<div class="main_nav_container" style="border-bottom: 2px solid #000;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-right">
+						<div class="logo_container">
+							<a href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
+								Group
+								<span>13</span>
+							</a>
+						</div>
+						<nav class="navbar">
+							<ul class="navbar_menu">
+								<li>
+									<a href="${pageContext.request.contextPath}/Homepage/Home.jsp">home</a>
+								</li>
+								<li>
+									<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">shop</a>
+								</li>
+								<li>
+									<a href="#">promotion</a>
+								</li>
+								<li>
+									<a href="${pageContext.request.contextPath}/Homepage/LienHe.jsp">contact</a>
+								</li>
+							</ul>
+							<ul class="navbar_user">
+								<li class="thongtintaikhoan">
+									<a href="${pageContext.request.contextPath}/Homepage/ProfileClient.jsp">
+										<i class="fa fa-user fa-2x" aria-hidden="true"></i>
+									</a>
+								</li>
+							</ul>
+							<div class="hamburger_container">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Cart Section -->
 		<section id="cart" class="cart section">
 			<div class="container">
@@ -145,15 +192,16 @@ img {
 				</div>
 			</div>
 		</section>
-	</main>
-
-	<!-- Scroll Top -->
-	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
-		<i class="bi bi-arrow-up-short"></i>
-	</a>
+	</div>
 
 	<!-- Vendor JS -->
 	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-3.2.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/popper.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/Isotope/isotope.pkgd.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/easing/easing.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/custom.js"></script>
 </body>
-
 </html>

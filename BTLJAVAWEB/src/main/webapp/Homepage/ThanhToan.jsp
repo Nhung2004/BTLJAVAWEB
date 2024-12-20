@@ -14,36 +14,77 @@
 <link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
 <link href="${pageContext.request.contextPath}/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect">
-<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-	rel="stylesheet">
-
 <!-- Vendor CSS Files -->
-<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/aos/aos.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/glightbox/css/glightbox.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/main_styles.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/responsive.css">
 
 <!-- Main CSS File -->
 <link href="${pageContext.request.contextPath}/assets/css/GpMain.css" rel="stylesheet">
 </head>
 
 <body class="index-page">
-	<main class="mt-5 pt-4">
+	<div class="super_container">
+		<div class="main_nav_container" style="border-bottom: 2px solid #000;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12 text-right">
+						<div class="logo_container">
+							<a href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
+								Group
+								<span>13</span>
+							</a>
+						</div>
+						<nav class="navbar">
+							<ul class="navbar_menu">
+								<li>
+									<a href="${pageContext.request.contextPath}/Homepage/Home.jsp">home</a>
+								</li>
+								<li>
+									<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">shop</a>
+								</li>
+								<li>
+									<a href="#">promotion</a>
+								</li>
+								<li>
+									<a href="${pageContext.request.contextPath}/Homepage/LienHe.jsp">contact</a>
+								</li>
+							</ul>
+							<ul class="navbar_user">
+								<li class="thongtintaikhoan" style="margin-right: 20px;">
+									<a href="${pageContext.request.contextPath}/Homepage/ProfileClient.jsp">
+										<i class="fa fa-user fa-2x" aria-hidden="true"></i>
+									</a>
+								</li>
+								<li class="checkout">
+									<a href="${pageContext.request.contextPath}/Homepage/GioHang.jsp">
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<span id="checkout_items" class="checkout_items">${totalQuantity}</span>
+									</a>
+								</li>
+							</ul>
+							<div class="hamburger_container">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</div>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="container">
-		
 			<!-- Heading -->
 			<h2 class="my-5 text-center">Payment</h2>
 
-			<!-- Grid row -->
 			<div class="row">
-				<!-- Left Column -->
 				<div class="col-md-8 mb-4">
-					<!-- Thành viên -->
 					<div class="card p-4 mb-4 shadow-sm">
 						<h4>
 							Already a member?
@@ -192,14 +233,9 @@
 				</div>
 
 				<!-- Right Column -->
-				  
-				
-					
-				</div>
 			</div>
 		</div>
-	</main>
-
+	</div>
 
 	<!-- Scroll Top -->
 	<a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
@@ -218,6 +254,14 @@
 	<script src="${pageContext.request.contextPath}/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/jquery-3.2.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/popper.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/css/bootstrap4/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/Isotope/isotope.pkgd.min.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/vendor/easing/easing.js"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/custom.js"></script>
 
 	<!-- Main JS File -->
 	<script src="${pageContext.request.contextPath}/assets/js/GpMain.js"></script>
