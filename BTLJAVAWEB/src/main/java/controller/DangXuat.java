@@ -34,7 +34,7 @@ public class DangXuat extends HttpServlet {
 		String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 		+ request.getContextPath();
 		
-		response.sendRedirect(url+"/Dashboard/Index.jsp");
+		response.sendRedirect(url+"/Homepage/DangNhap.jsp");
 	}
 
 	/**
