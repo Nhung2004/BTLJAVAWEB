@@ -17,18 +17,17 @@
 									My Account
 									<i class="fa fa-angle-down"></i>
 								</a>
-								
-								
 								<%
-								    Object obj = session.getAttribute("KhachHang");
-								    KhachHang khachHang = null;
-								
-				
-								    if (obj != null) {
-								        khachHang = (KhachHang) obj; // Gán nếu không null
-								    }
-				
-								    if (khachHang == null) {
+								Object                obj       = session.getAttribute("KhachHang");
+								KhachHang             khachHang = null;
+
+								if(obj != null)
+								{
+									khachHang = (KhachHang) obj; // Gán nếu không null
+								}
+
+								if(khachHang == null)
+								{
 								%>
 								<ul class="account_selection">
 									<li>
@@ -45,26 +44,28 @@
 									</li>
 								</ul>
 								<%
-								    } else if ("user".equals(khachHang.getRole())) { 
-								        // Nếu là user
+								}
+								else if("user".equals(khachHang.getRole()))
+								{
+								// Nếu là user
 								%>
 								<ul class="account_selection">
 									<li>
-										<a  href="${pageContext.request.contextPath}/dang-xuat">
+										<a href="${pageContext.request.contextPath}/dang-xuat">
 											<i class="fa fa-sign-in" aria-hidden="true"></i>
 											Sign Out
 										</a>
 									</li>
 								</ul>
 								<%
-								    } else { 
-								        // Nếu là admin 
+								}
+								else
+								{
+								// Nếu là admin
 								%>
-								    <a class="btn btn-primary" href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
-								        Trang chủ
-								    </a>
+								<a class="btn btn-primary" href="${pageContext.request.contextPath}/Dashboard/Index.jsp"> Trang chủ </a>
 								<%
-								    }
+								}
 								%>
 							</li>
 						</ul>
@@ -77,68 +78,60 @@
 	<!-- Main Navigation -->
 
 	<div class="main_nav_container">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-right">
-                <div class="logo_container">
-                    <a href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
-                        Group
-                        <span>13</span>
-                    </a>
-                </div>
-                <nav class="navbar">
-                    <ul class="navbar_menu">
-                        <li>
-                            <a href="${pageContext.request.contextPath}/Homepage/Home.jsp">home</a>
-                        </li>
-                        <li>
-                            <a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">shop</a>
-                        </li>
-                        <li>
-                            <a href="#">promotion</a>
-                        </li>
-                        <li>
-                            <a href="${pageContext.request.contextPath}/Homepage/LienHe.jsp">contact</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar_user">
-                        <li>
-                            <!-- Tìm kiếm -->
-                            <form action="Search" method="get" style="display: inline;">
-                                <input 
-                                    type="text" 
-                                    name="query" 
-                                    placeholder="Search..." 
-                                    style="padding: 5px; border-radius: 4px; border: 1px solid #ccc;"
-                                >
-                                <button 
-                                    type="submit" 
-                                    style="background-color: transparent; border: none; cursor: pointer;"
-                                >
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </button>
-                            </form>
-                        </li>
-                        <li class="thongtintaikhoan">
-                            <a a href="${pageContext.request.contextPath}/Homepage/ProfileClient.jsp">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="checkout">
-                            <a href="${pageContext.request.contextPath}/Homepage/GioHang.jsp">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                <span id="checkout_items" class="checkout_items">${totalQuantity}</span>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="hamburger_container">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
-                    </div>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 text-right">
+					<div class="logo_container">
+						<a href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
+							Group
+							<span>13</span>
+						</a>
+					</div>
+					<nav class="navbar">
+						<ul class="navbar_menu">
+							<li>
+								<a href="${pageContext.request.contextPath}/Homepage/Home.jsp">home</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/Homepage/TheLoai.jsp">shop</a>
+							</li>
+							<li>
+								<a href="#">promotion</a>
+							</li>
+							<li>
+								<a href="${pageContext.request.contextPath}/Homepage/LienHe.jsp">contact</a>
+							</li>
+						</ul>
+						<ul class="navbar_user">
+							<li>
+								<!-- Tìm kiếm -->
+								<form action="Search" method="get" style="display: inline;">
+									<input type="text" name="query" placeholder="Search..." style="padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+									<button type="submit" style="background-color: transparent; border: none; cursor: pointer;">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+								</form>
+							</li>
+							<li class="thongtintaikhoan">
+								<a a href="${pageContext.request.contextPath}/Homepage/ProfileClient.jsp">
+									<i class="fa fa-user" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="checkout">
+								<a href="${pageContext.request.contextPath}/Homepage/GioHang.jsp">
+									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+									<span id="checkout_items" class="checkout_items">${totalQuantity}</span>
+								</a>
+							</li>
+						</ul>
+						<div class="hamburger_container">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
 </header>
 
 <div class="fs_menu_overlay"></div>
