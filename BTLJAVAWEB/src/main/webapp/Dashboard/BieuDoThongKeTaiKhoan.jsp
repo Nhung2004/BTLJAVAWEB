@@ -4,6 +4,7 @@
 <%@ page import="database.KhachHangDAO"%>
 <%@ page import="model.KhachHang"%>
 <%@ page import="java.util.ArrayList"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,167 +36,176 @@
 <link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
 <style>
 .pagination .page-link {
-    color: #007bff; /* Màu xanh đẹp */
-    border: 1px solid #dee2e6;
-    transition: background-color 0.3s, color 0.3s;
+	color: #007bff; /* Màu xanh đẹp */
+	border: 1px solid #dee2e6;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #007bff;
-    color: #fff;
-    border-color: #007bff;
+	background-color: #007bff;
+	color: #fff;
+	border-color: #007bff;
 }
 
 .pagination .page-link:hover {
-    background-color: #f8f9fa;
-    color: #0056b3;
+	background-color: #f8f9fa;
+	color: #0056b3;
 }
+
 .card {
-    border-radius: 12px;
-    padding: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: #ff4c4c; /* Màu nền đỏ */
-    width: 250px; /* Giảm kích thước thẻ */
-    margin: 0 auto; /* Canh giữa thẻ */
+	border-radius: 12px;
+	padding: 15px;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	background-color: #ff4c4c; /* Màu nền đỏ */
+	width: 250px; /* Giảm kích thước thẻ */
+	margin: 0 auto; /* Canh giữa thẻ */
 }
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+	transform: scale(1.05);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
-    font-size: 20px;
-    color: #fff; /* Màu chữ trắng */
-    font-weight: bold;
+	font-size: 20px;
+	color: #fff; /* Màu chữ trắng */
+	font-weight: bold;
 }
 
 .card-text {
-    font-size: 30px;
-    color: #fff; /* Màu chữ trắng */
-    font-weight: bold;
+	font-size: 30px;
+	color: #fff; /* Màu chữ trắng */
+	font-weight: bold;
 }
 
 .card-body {
-    padding: 15px;
-    text-align: center;
+	padding: 15px;
+	text-align: center;
 }
-
-
 </style>
 </head>
 <body>
-   	<!-- Tách riêng header ra file Header.jsp -->
+	<!-- Tách riêng header ra file Header.jsp -->
 	<jsp:include page="Parts/Header.jsp" />
 
 	<!-- Tách riêng sidebar ra file Sidebar.jsp -->
 	<jsp:include page="Parts/Sidebar.jsp" />
 
-    <!-- Nội dung chính (Account Management) -->
-    <main id="main" class="main">
+	<!-- Nội dung chính (Account Management) -->
+	<main id="main" class="main">
 
-        <%
-	        // Lấy thống kê số tài khoản theo tháng từ DAO
-	        KhachHangDAO khDAO = new KhachHangDAO();
-	        int[] monthlyStats = khDAO.getAccountStatisticsByMonth(); // Giả sử hàm này trả về mảng gồm số tài khoản theo từng tháng (12 tháng)
-	
-	        // Kiểm tra giá trị trả về của monthlyStats
-	        if (monthlyStats == null || monthlyStats.length < 12) {
-	            monthlyStats = new int[12]; // Đảm bảo có đủ 12 tháng
-        }
-        %>
 		<%
-		    // Tính tổng số tài khoản từ mảng monthlyStats
-		    int totalAccounts = 0;
-		    for (int i = 0; i < monthlyStats.length; i++) {
-		        totalAccounts += monthlyStats[i];
-		    }
+		// Lấy thống kê số tài khoản theo tháng từ DAO
+		KhachHangDAO khDAO = new KhachHangDAO();
+		int[] monthlyStats = khDAO.getAccountStatisticsByMonth(); // Giả sử hàm này trả về mảng gồm số tài khoản theo từng tháng (12 tháng)
+
+		// Kiểm tra giá trị trả về của monthlyStats
+		if (monthlyStats == null || monthlyStats.length < 12) {
+			monthlyStats = new int[12]; // Đảm bảo có đủ 12 tháng
+		}
 		%>
-<div class="container py-4">
-    <h2 class="text-center mb-4">Account Statistics by Month</h2>
+		<%
+		// Tính tổng số tài khoản từ mảng monthlyStats
+		int totalAccounts = 0;
+		for (int i = 0; i < monthlyStats.length; i++) {
+			totalAccounts += monthlyStats[i];
+		}
+		%>
+		<div class="container py-4">
+			<h2 class="text-center mb-4">Account Statistics by Month</h2>
 
-    <!-- Hiển thị tổng số tài khoản -->
-    <div class="card text-center mb-4" style="background-color: #ff4c4c; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 250px; margin: 0 auto;">
-        <div class="card-body">
-            <h4 class="card-title" style="font-size: 20px; color: #fff; font-weight: bold;">Total Accounts</h4>
-            <h2 class="card-text" style="font-size: 30px; color: #fff; font-weight: bold;">
-                <%= totalAccounts %>
-            </h2>
-        </div>
-    </div>
+			<!-- Hiển thị tổng số tài khoản -->
+			<div class="card text-center mb-4" style="background-color: #ff4c4c; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 250px; margin: 0 auto;">
+				<div class="card-body">
+					<h4 class="card-title" style="font-size: 20px; color: #fff; font-weight: bold;">Total Accounts</h4>
+					<h2 class="card-text" style="font-size: 30px; color: #fff; font-weight: bold;">
+						<%=totalAccounts%>
+					</h2>
+				</div>
+			</div>
 
-    <!-- Biểu đồ -->
-    <canvas id="accountStatsChart" width="400" height="200"></canvas>
-</div>
+			<!-- Biểu đồ -->
+			<canvas id="accountStatsChart" width="400" height="200"></canvas>
+		</div>
+	</main>
 
+	<!-- Vendor JS Files -->
 
-		
-    </main>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Dữ liệu cho biểu đồ
+			var data = {
+				labels : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+						'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ], // Tên các tháng
+				datasets : [ {
+					label : 'User Accounts per Month',
+					data : [
+	<%=monthlyStats[0]%>
+		,
+	<%=monthlyStats[1]%>
+		,
+	<%=monthlyStats[2]%>
+		,
+	<%=monthlyStats[3]%>
+		,
+	<%=monthlyStats[4]%>
+		,
+	<%=monthlyStats[5]%>
+		,
+	<%=monthlyStats[6]%>
+		,
+	<%=monthlyStats[7]%>
+		,
+	<%=monthlyStats[8]%>
+		,
+	<%=monthlyStats[9]%>
+		,
+	<%=monthlyStats[10]%>
+		,
+	<%=monthlyStats[11]%>
+		], // Dữ liệu từ Java
+					backgroundColor : '#36a2eb', // Màu sắc cột
+					borderColor : '#36a2eb', // Màu viền cột
+					borderWidth : 1
+				} ]
+			};
 
-    <!-- Footer -->
-    <footer id="footer" class="footer">
-        <div class="credits">
-            Designed by
-            <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-        <div class="copyright">
-            &copy; Copyright
-            <strong>
-                <span>NiceAdmin</span>
-            </strong>
-            . All Rights Reserved
-        </div>
-    </footer>
+			// Tạo biểu đồ cột
+			var ctx = document.getElementById('accountStatsChart').getContext(
+					'2d');
+			var accountStatsChart = new Chart(ctx, {
+				type : 'bar', // Loại biểu đồ (bar)
+				data : data,
+				options : {
+					responsive : true,
+					plugins : {
+						legend : {
+							position : 'top',
+						},
+						tooltip : {
+							callbacks : {
+								label : function(tooltipItem) {
+									return tooltipItem.label + ': '
+											+ tooltipItem.raw + ' accounts';
+								}
+							}
+						}
+					},
+					scales : {
+						y : {
+							beginAtZero : true
+						// Đảm bảo trục Y bắt đầu từ 0
+						}
+					}
+				}
+			});
+		});
+	</script>
 
-    <!-- Vendor JS Files -->
+	<!-- Template Main JS File -->
+	<script src="${pageContext.request.contextPath}/assets/js/NiceAdminMain.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Dữ liệu cho biểu đồ
-            var data = {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // Tên các tháng
-                datasets: [{
-                    label: 'User Accounts per Month',
-                    data: [<%= monthlyStats[0] %>, <%= monthlyStats[1] %>, <%= monthlyStats[2] %>, <%= monthlyStats[3] %>, <%= monthlyStats[4] %>, <%= monthlyStats[5] %>, 
-                           <%= monthlyStats[6] %>, <%= monthlyStats[7] %>, <%= monthlyStats[8] %>, <%= monthlyStats[9] %>, <%= monthlyStats[10] %>, <%= monthlyStats[11] %>], // Dữ liệu từ Java
-                    backgroundColor: '#36a2eb', // Màu sắc cột
-                    borderColor: '#36a2eb', // Màu viền cột
-                    borderWidth: 1
-                }]
-            };
-
-            // Tạo biểu đồ cột
-            var ctx = document.getElementById('accountStatsChart').getContext('2d');
-            var accountStatsChart = new Chart(ctx, {
-                type: 'bar', // Loại biểu đồ (bar)
-                data: data,
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(tooltipItem) {
-                                    return tooltipItem.label + ': ' + tooltipItem.raw + ' accounts';
-                                }
-                            }
-                        }
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true // Đảm bảo trục Y bắt đầu từ 0
-                        }
-                    }
-                }
-            });
-        });
-    </script>
-
-    <!-- Template Main JS File -->
-    <script src="${pageContext.request.contextPath}/assets/js/NiceAdminMain.js"></script>
-  <!-- ======= Footer ======= -->
+	<!-- ======= Footer ======= -->
 	<!-- Back to top button -->
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
 		<i class="bi bi-arrow-up-short"></i>

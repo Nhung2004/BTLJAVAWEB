@@ -7,7 +7,7 @@
 
 	<div class="d-flex align-items-center justify-content-between">
 		<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp" class="logo d-flex align-items-center">
-			<img src="../assets/img/logo.png" alt="">
+			<img src="${pageContext.request.contextPath}/assets/img/logo.png" alt="">
 			<span class="d-none d-lg-block">Group13</span>
 		</a>
 		<i class="bi bi-list toggle-sidebar-btn"></i>
@@ -186,73 +186,72 @@
 			<!-- End Messages Nav -->
 
 			<li class="nav-item dropdown pe-3">
-					<%
-				    Object obj = session.getAttribute("KhachHang");
-				    KhachHang khachHang = null;
-				
-
-				    if (obj != null) {
-				        khachHang = (KhachHang) obj; // Gán nếu không null
-				    }
-
-				    if (khachHang == null) {
-				%>
-				    <a class="btn btn-primary" style="white-space: nowrap;" href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp">
-				        Đăng nhập
-				    </a>
 				<%
-				    } else if ("admin".equals(khachHang.getRole())) { 
-				        // Nếu là admin
-				%>
-				    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-				        <img src="${pageContext.request.contextPath}/assets/img/dashboard/admin1.png" alt="Profile" class="rounded-circle">
-				        <span class="d-none d-md-block dropdown-toggle ps-2"><%= khachHang.getTendangnhap() %>></span>
-				    </a>
-				
-				    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-				        <li class="dropdown-header">
-				            <h6><%= khachHang.getTendangnhap() %></h6>
-				        </li>
-				        <li>
-				            <hr class="dropdown-divider">
-				        </li>
-				        <li>
-				            <a class="dropdown-item d-flex align-items-center" href="${pageContext.request.contextPath}/Dashboard/Profile.jsp">
-				                <i class="bi bi-person"></i>
-				                <span>My Profile</span>
-				            </a>
-				        </li>
-				        <li>
-				            <hr class="dropdown-divider">
-				        </li>
-				        <li>
-				            <hr class="dropdown-divider">
-				        </li>
-				        <li>
-				            <a class="dropdown-item d-flex align-items-center" href="${pageContext.request.contextPath}/dang-xuat">
-				                <i class="bi bi-box-arrow-right"></i>
-				                <span>Sign Out</span>
-				            </a>
-				        </li>
-				    </ul>
-				<%
-				    } else { 
-				        // Nếu là user thông thường
-				%>
-				    <a class="btn btn-primary" href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp">
-				        Trang chủ
-				    </a>
-				<%
-				    }
-				%>
+				Object                obj       = session.getAttribute("KhachHang");
+				KhachHang             khachHang = null;
 
+				if(obj != null)
+				{
+					khachHang = (KhachHang) obj; // Gán nếu không null
+				}
+
+				if(khachHang == null)
+				{
+				%>
+				<a class="btn btn-primary" style="white-space: nowrap;" href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp">Login</a>
+				<%
+				}
+				else if("admin".equals(khachHang.getRole()))
+				{
+				// Nếu là admin
+				%>
+				<a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+					<img src="${pageContext.request.contextPath}/assets/img/dashboard/admin1.png" alt="Profile" class="rounded-circle">
+					<span class="d-none d-md-block dropdown-toggle ps-2"><%=khachHang.getTendangnhap()%>
+					</span>
+				</a>
+
+				<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+					<li class="dropdown-header">
+						<h6><%=khachHang.getTendangnhap()%></h6>
+					</li>
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="${pageContext.request.contextPath}/Dashboard/Profile.jsp">
+							<i class="bi bi-person"></i>
+							<span>My Profile</span>
+						</a>
+					</li>
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+					<li>
+						<hr class="dropdown-divider">
+					</li>
+					<li>
+						<a class="dropdown-item d-flex align-items-center" href="${pageContext.request.contextPath}/dang-xuat">
+							<i class="bi bi-box-arrow-right"></i>
+							<span>Sign Out</span>
+						</a>
+					</li>
+				</ul>
+				<%
+				}
+				else
+				{
+				// Nếu là user thông thường
+				%>
+				<a class="btn btn-primary" href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp"> Trang chủ </a>
+				<%
+				}
+				%>
 				<!-- End Profile Dropdown Items -->
 			</li>
 			<!-- End Profile Nav -->
-
 		</ul>
 	</nav>
 	<!-- End Icons Navigation -->
-
 </header>
 <!-- End Header -->

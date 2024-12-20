@@ -46,33 +46,6 @@
 			</a>
 		</li>
 		<!-- End Orders Management Page Nav -->
-
-		<!-- Promotions Management Page Nav -->
-		<li class="nav-item">
-			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Promotion.jsp">
-				<i class="bi bi-gift"></i>
-				<span>Promotions</span>
-			</a>
-		</li>
-		<!-- End Promotions Management Page Nav -->
-
-		<!-- Register Page Nav -->
-		<li class="nav-item">
-			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Register.jsp">
-				<i class="bi bi-person-add"></i>
-				<span>Register</span>
-			</a>
-		</li>
-		<!-- End Register Page Nav -->
-
-		<!-- Login Page Nav -->
-		<li class="nav-item">
-			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Login.jsp">
-				<i class="bi bi-box-arrow-in-right"></i>
-				<span>Login</span>
-			</a>
-		</li>
-		<!-- End Login Page Nav -->
 	</ul>
 </aside>
 

@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Colo Shop Categories</title>
+<title>Thể loại</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Colo Shop Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/bootstrap4/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="../assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/bootstrap-icons/font/bootstrap-icons.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/vendor/OwlCarousel2-2.2.1/owl.theme.default.css">
@@ -125,52 +125,40 @@
 						<!-- Color -->
 						<div class="sidebar_section">
 							<div class="sidebar_title">
-								<h5>Color</h5>
+								<h5>Book Type</h5>
 							</div>
 							<ul class="checkboxes">
 								<li>
 									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>Black</span>
+									<span>Classic</span>
 								</li>
 								<li class="active">
-									<i class="fa fa-square" aria-hidden="true"></i>
-									<span>Pink</span>
+									<i class="fa fa-square-o" aria-hidden="true"></i>
+									<span>Special Edition</span>
 								</li>
 								<li>
 									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>White</span>
+									<span>E-Book</span>
 								</li>
 								<li>
 									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>Blue</span>
+									<span>Audio Books</span>
 								</li>
 								<li>
 									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>Orange</span>
+									<span>Hardcover</span>
 								</li>
 								<li>
 									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>White</span>
+									<span>Paperback</span>
 								</li>
 								<li>
 									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>Blue</span>
+									<span>Limited Edition</span>
 								</li>
 								<li>
 									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>Orange</span>
-								</li>
-								<li>
-									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>White</span>
-								</li>
-								<li>
-									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>Blue</span>
-								</li>
-								<li>
-									<i class="fa fa-square-o" aria-hidden="true"></i>
-									<span>Orange</span>
+									<span>Digital Bundle</span>
 								</li>
 							</ul>
 							<div class="show_more">
@@ -357,9 +345,9 @@
 											<jsp:param name="productId" value="130" />
 											<jsp:param name="addToCart" value="true" />
 										</jsp:include>
-										
-										
-										
+
+
+
 									</div>
 								</div>
 							</div>

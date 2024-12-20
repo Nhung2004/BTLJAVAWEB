@@ -16,9 +16,11 @@ public class KhachHang
 	private String  sodienthoai;
 	private String  email;
 	private boolean dangkinhanbantin;
-	private String role;
+	private String  role;
 
-	public KhachHang(String makhachhang, String tendangnhap, String matkhau, String hovaten, String gioitinh, String diachi, String diachinhanhang, String diachimuahang, Date ngaysinh, String sodienthoai, String email, boolean dangkinhanbantin, String role)
+	public KhachHang(
+	        String makhachhang, String tendangnhap, String matkhau, String hovaten, String gioitinh, String diachi, String diachinhanhang, String diachimuahang, Date ngaysinh, String sodienthoai, String email, boolean dangkinhanbantin, String role
+	)
 	{
 		super();
 		this.makhachhang      = makhachhang;
@@ -33,19 +35,20 @@ public class KhachHang
 		this.sodienthoai      = sodienthoai;
 		this.email            = email;
 		this.dangkinhanbantin = dangkinhanbantin;
-		this.role 			  = role;
+		this.role             = role;
 	}
+
 	public KhachHang(
 	        String makhachhang, String tendangnhap, String matkhau, String sodienthoai, String email
-	     
+
 	)
 	{
 		super();
-		this.makhachhang      = makhachhang;
-		this.tendangnhap      = tendangnhap;
-		this.matkhau          = matkhau;
-		this.sodienthoai	  = sodienthoai;
-		this.email			  = email;
+		this.makhachhang = makhachhang;
+		this.tendangnhap = tendangnhap;
+		this.matkhau     = matkhau;
+		this.sodienthoai = sodienthoai;
+		this.email       = email;
 	}
 
 	public KhachHang()
@@ -53,14 +56,14 @@ public class KhachHang
 		super();
 	}
 
-	public KhachHang(String makhachhang, String tendangnhap, String matkhau, String sodienthoai, String email,String role)
+	public KhachHang(String makhachhang, String tendangnhap, String matkhau, String sodienthoai, String email, String role)
 	{
 		this.makhachhang = makhachhang;
 		this.tendangnhap = tendangnhap;
 		this.matkhau     = matkhau;
 		this.sodienthoai = sodienthoai;
 		this.email       = email;
-		this.role       = role;
+		this.role        = role;
 	}
 
 	public String getMakhachhang()
@@ -182,13 +185,17 @@ public class KhachHang
 	{
 		this.dangkinhanbantin = dangkinhanbantin;
 	}
-	
-	public String getRole() {
+
+	public String getRole()
+	{
 		return role;
 	}
-	public void setRole(String role) {
+
+	public void setRole(String role)
+	{
 		this.role = role;
 	}
+
 	@Override
 	public String toString()
 	{
