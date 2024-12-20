@@ -78,14 +78,14 @@
                                     <div class="row mb-3">
                                         <div class="col-sm-3"><h6 class="mb-0">Gender</h6></div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" class="form-control" name="hovaten" 
+                                            <input type="text" class="form-control" name="gioitinh" 
                                                 value="<%= khachHang.getGioitinh() %>">
                                         </div>
                                     </div>
                                     <div class="row mb-3">
                                         <div class="col-sm-3"><h6 class="mb-0">Date of birth</h6></div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" class="form-control" name="hovaten" 
+                                            <input type="text" class="form-control" name="ngaysinh" 
                                                 value="<%= khachHang.getNgaysinh() %>">
                                         </div>
                                     </div>
@@ -113,7 +113,7 @@
                                     <div class="row mb-3">
                                         <div class="col-sm-3"><h6 class="mb-0">Delivery address</h6></div>
                                         <div class="col-sm-9 text-secondary">
-                                            <input type="text" class="form-control" name="diachi" 
+                                            <input type="text" class="form-control" name="diachinhanhang" 
                                                 value="<%= khachHang.getDiachinhanhang() %>">
                                         </div>
                                     </div>
