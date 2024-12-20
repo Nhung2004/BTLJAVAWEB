@@ -44,20 +44,20 @@
 	<!-- Nội dung chính (Account Management) -->
 	<main id="main" class="main">
 		<div class="pagetitle">
-			<h1>Users Management</h1>
+			<h1>Accounts Management</h1>
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">
 						<a href="Index.jsp">Home</a>
 					</li>
-					<li class="breadcrumb-item active">Users Management</li>
+					<li class="breadcrumb-item active">Accounts Management</li>
 				</ol>
 			</nav>
 		</div>
 
 		<section class="account-management">
 			<div class="container py-4">
-				<h2 class="text-center mb-4">Users Management</h2>
+				<h2 class="text-center mb-4">Accounts Management</h2>
 
 				<!-- Add Account Button -->
 				<div class="text-end mb-3">
