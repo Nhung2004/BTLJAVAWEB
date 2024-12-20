@@ -81,10 +81,10 @@ public class ManageKhachHang extends HttpServlet
 				String matkhau     = request.getParameter("matkhau");
 				String sodienthoai = request.getParameter("sodienthoai");
 				String email       = request.getParameter("email");
-
-				if(makhachhang != null && tendangnhap != null && matkhau != null && sodienthoai != null && email != null)
+				String role       = request.getParameter("role");
+				if(makhachhang != null && tendangnhap != null && matkhau != null && sodienthoai != null && email != null && role != null)
 				{
-					KhachHang kh     = new KhachHang(makhachhang, tendangnhap, matkhau, sodienthoai, email);
+					KhachHang kh     = new KhachHang(makhachhang, tendangnhap, matkhau, sodienthoai, email, role);
 					int       result = khachHangDAO.update(kh);
 
 					if(result > 0)
