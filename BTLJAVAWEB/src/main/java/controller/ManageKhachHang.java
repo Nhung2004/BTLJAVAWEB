@@ -1,12 +1,15 @@
 package controller;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import java.util.Date;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import database.KhachHangDAO;
@@ -76,16 +79,32 @@ public class ManageKhachHang extends HttpServlet
 			}
 			case "Sua":
 			{
-				String makhachhang = request.getParameter("makhachhang");
-				String tendangnhap = request.getParameter("tendangnhap");
-				String matkhau     = request.getParameter("matkhau");
-				String sodienthoai = request.getParameter("sodienthoai");
-				String email       = request.getParameter("email");
-				String role       = request.getParameter("role");
+		        String makhachhang = request.getParameter("makhachhang");
+		        String hovaten = request.getParameter("hovaten");
+		        String email = request.getParameter("email");
+		        String sodienthoai = request.getParameter("sodienthoai");
+		        String diachi = request.getParameter("diachi");
+		        String matkhau = request.getParameter("matkhau");
+		        String tendangnhap = request.getParameter("tendangnhap");
+		        String gioitinh = request.getParameter("gioitinh");
+		        String diachinhanhang = request.getParameter("diachinhanhang");
+		        String diachigiaohang = request.getParameter("diachigiaohang");
+		        String dangkynhantin = request.getParameter("dangkynhantin");
+		        String role = request.getParameter("role");
+		        String ngaysinhStr = request.getParameter("ngaysinh");
+		        
 				if(makhachhang != null && tendangnhap != null && matkhau != null && sodienthoai != null && email != null && role != null)
-				{
-					KhachHang kh     = new KhachHang(makhachhang, tendangnhap, matkhau, sodienthoai, email, role);
-					int       result = khachHangDAO.update(kh);
+				{ Date ngaysinh = null;
+		            try {
+		                // Chuyển đổi ngaysinh từ String sang Date
+		                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); // Định dạng ngày sinh
+		                ngaysinh = sdf.parse(ngaysinhStr);
+		            } catch (Exception e) {
+		                e.printStackTrace();
+		            }
+		            KhachHang kh = new KhachHang(makhachhang, tendangnhap, matkhau, hovaten, gioitinh, diachi, diachigiaohang,
+		                    diachinhanhang, ngaysinh, sodienthoai, email, false, role);
+					int       result = khachHangDAO.update2(kh);
 
 					if(result > 0)
 					{
