@@ -54,6 +54,7 @@
 			</nav>
 		</div>
 		<!-- End Page Title -->
+		
 		<section class="section dashboard">
 			<div class="row">
 				<!-- Sales and Revenue Section -->
@@ -202,16 +203,6 @@
 					</div>
 				</div>
 			</div>
-
-			
-			<script>
-    function deleteOrder(orderId) {
-        if (confirm('Are you sure you want to delete this order?')) {
-            // Call the delete order API or redirect to the delete action
-            window.location.href = `delete_order.jsp?id=${orderId}`;
-        }
-    }
-</script>
 
 			<!-- Reports -->
 			<div class="col-12">

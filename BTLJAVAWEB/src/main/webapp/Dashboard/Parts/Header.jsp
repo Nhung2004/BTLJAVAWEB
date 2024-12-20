@@ -7,7 +7,7 @@
 
 	<div class="d-flex align-items-center justify-content-between">
 		<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp" class="logo d-flex align-items-center">
-			<img src="../assets/img/logo.png" alt="">
+			<img src="${pageContext.request.contextPath}/assets/img/logo.png" alt="">
 			<span class="d-none d-lg-block">Group13</span>
 		</a>
 		<i class="bi bi-list toggle-sidebar-btn"></i>
@@ -247,14 +247,11 @@
 				<%
 				}
 				%>
-
 				<!-- End Profile Dropdown Items -->
 			</li>
 			<!-- End Profile Nav -->
-
 		</ul>
 	</nav>
 	<!-- End Icons Navigation -->
-
 </header>
 <!-- End Header -->
