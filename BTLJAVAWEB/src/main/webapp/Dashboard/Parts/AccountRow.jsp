@@ -9,7 +9,7 @@
 	<td class="text-center" style="border-right: 1px solid #ddd;">${param.email}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">${param.phoneNumber}</td>
 	<td class="text-center" style="border-right: 1px solid #ddd;">
-		<span class="badge bg-success text-uppercase">User</span>
+		<span class="badge bg-success text-uppercase">${param.role}</span>
 	</td>
 	<td class="text-center">
 		<button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#editAccountModal_${param.userID}">Edit</button>
