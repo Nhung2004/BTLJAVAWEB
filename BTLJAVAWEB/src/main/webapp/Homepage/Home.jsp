@@ -124,33 +124,77 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<div class="product_slider_container">
-							<div class="owl-carousel owl-theme product_slider">
-								<c:forEach items="${listnew}" var="item">
-									<div class="owl-item product_slider_item animate__animated animate__fadeInUp">
-										<jsp:include page="Parts/BookCard.jsp">
-											<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
-											<jsp:param name="productName" value="${item.nameProduct}" />
-											<jsp:param name="price" value="${item.priceProduct}" />
-											<jsp:param name="productId" value="${item.idProduct}" />
-											<jsp:param name="addToCart" value="true" />
-										</jsp:include>
-									</div>
-								</c:forEach>
+			<div class="row">
+    <div class="col">
+        <div class="product_slider_container">
+            <div class="owl-carousel owl-theme product_slider">
+                <c:forEach items="${listnew}" var="item">
+                    <div class="owl-item product_slider_item animate__animated animate__fadeInUp" style="position: relative;">
+                        <div class="product_card">
+                            <!-- Phần hiển thị sản phẩm -->
+                            <jsp:include page="Parts/BookCard.jsp">
+                                <jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
+                                <jsp:param name="productName" value="${item.nameProduct}" />
+                                <jsp:param name="price" value="${item.priceProduct}" />
+                                <jsp:param name="productId" value="${item.idProduct}" />
+                                <jsp:param name="addToCart" value="true" />
+                            </jsp:include>
+                        </div>
+                        <!-- Nhãn "NEW" -->
+                        <div style="
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            background-color: red;
+                            color: white;
+                            font-size: 12px;
+                            font-weight: bold;
+                            padding: 5px 10px;
+                            border-radius: 5px;
+                            z-index: 10;
+                            animation: blink 2.5s infinite;
+                        ">
+                            NEW
+                        </div>
+                    </div>
+                </c:forEach>
 
-								<!-- Slider Navigation -->
-								<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
-									<i class="fa fa-chevron-left" aria-hidden="true"></i>
-								</div>
-								<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
-									<i class="fa fa-chevron-right" aria-hidden="true"></i>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                <!-- Slider Navigation -->
+                <div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                </div>
+                <div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CSS Nhúng Trực Tiếp -->
+<style>
+    /* Hiệu ứng nhấp nháy (blink) */
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    /* Hiệu ứng chuyển động nhẹ (hover, fade) */
+    .product_card {
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
+
+    .product_card:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+</style>
+
+				
 			</div>
 		</div>
 		<!-- end NewProduct -->
@@ -258,144 +302,137 @@
 		DOTW End -->
 
 		<div class="best_sellers">
-			<div class="container">
-				<div class="row">
-					<div class="col text-center">
-						<div class="section_title new_arrivals_title">
-							<h2>Best Sellers</h2>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col">
-						<div class="product_slider_container">
-							<div class="owl-carousel owl-theme product_slider">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section_title new_arrivals_title">
+                    <h2>Best Sellers</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="product_slider_container">
+                    <div class="owl-carousel owl-theme product_slider">
+                        <!-- Sản phẩm 1 -->
+                        <div class="owl-item product_slider_item">
+                            <jsp:include page="Parts/BookCard.jsp">
+                                <jsp:param name="category" value="literature" />
+                                <jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" />
+                                <jsp:param name="productName" value="Phố xưa người cũ" />
+                                <jsp:param name="price" value="10.00" />
+                                <jsp:param name="newPrice" value="8.00" />
+                                <jsp:param name="productId" value="121" />
+                                <jsp:param name="bubbleText" value="-20%" />
+                                <jsp:param name="bubbleType" value="red" />
+                            </jsp:include>
+                            <div class="sale">Sale </div>
+                        </div>
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="literature" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" />
-										<jsp:param name="productName" value="Phố xưa người cũ" />
-										<jsp:param name="price" value="10.00" />
-										<jsp:param name="newPrice" value="8.00" />
-										<jsp:param name="productId" value="121" />
-										<jsp:param name="bubbleText" value="-20%" />
-										<jsp:param name="bubbleType" value="red" />
-									</jsp:include>
-								</div>
+                        <!-- Sản phẩm 2 -->
+                        <div class="owl-item product_slider_item">
+                            <jsp:include page="Parts/BookCard.jsp">
+                                <jsp:param name="category" value="literature" />
+                                <jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg" />
+                                <jsp:param name="productName" value="Những chuyện lạ ở Tokyo" />
+                                <jsp:param name="price" value="12.00" />
+                                <jsp:param name="productId" value="122" />
+                                <jsp:param name="bubbleText" value="new" />
+                                <jsp:param name="bubbleType" value="green" />
+                            </jsp:include>
+                              <div  class="sale">
+   
+                                SALE
+                            </div>
+                        </div>
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="literature" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Literature/8935235240308.jpg" />
-										<jsp:param name="productName" value="Những chuyện lạ ở Tokyo" />
-										<jsp:param name="price" value="12.00" />
-										<jsp:param name="productId" value="122" />
-										<jsp:param name="bubbleText" value="new" />
-										<jsp:param name="bubbleType" value="green" />
-									</jsp:include>
-								</div>
+                        <!-- Sản phẩm 3 có Sale -->
+                        <div class="owl-item product_slider_item">
+                            <jsp:include page="Parts/BookCard.jsp">
+                                <jsp:param name="category" value="novel" />
+                                <jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" />
+                                <jsp:param name="productName" value="Toàn cầu tiến hoá" />
+                                <jsp:param name="price" value="10.00" />
+                                <jsp:param name="productId" value="124" />
+                                <jsp:param name="bubbleText" value="sale" />
+                                <jsp:param name="bubbleType" value="red" />
+                            </jsp:include>
+                            <div  class="sale">
+   
+                                SALE
+                            </div>
+                        </div>
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="lightnovel" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Light Novel/bia_ngoai_ari1_1994aeafbbd9452fa.jpg" />
-										<jsp:param name="productName" value="Arifureta – Từ tầm thường đến bất khả chiến bại" />
-										<jsp:param name="price" value="12.00" />
-										<jsp:param name="productId" value="123" />
-									</jsp:include>
-								</div>
+                        <!-- Các sản phẩm khác -->
+                        <div class="owl-item product_slider_item">
+                            <jsp:include page="Parts/BookCard.jsp">
+                                <jsp:param name="category" value="it" />
+                                <jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg" />
+                                <jsp:param name="productName" value="Hành trang lập trình" />
+                                <jsp:param name="price" value="18.00" />
+                                <jsp:param name="productId" value="125" />
+                            </jsp:include>
+                              <div  class="sale">
+   
+                                SALE
+                            </div>
+                        </div>
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="novel" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Novel/bia_thuong_toan_cau_tien_hoa_1_5.jpg" />
-										<jsp:param name="productName" value="Toàn cầu tiến hoá" />
-										<jsp:param name="price" value="10.00" />
-										<jsp:param name="productId" value="124" />
-										<jsp:param name="bubbleText" value="sale" />
-										<jsp:param name="bubbleType" value="red" />
-									</jsp:include>
-								</div>
+                        <!-- Các sản phẩm khác ở đây... -->
+                    </div>
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="it" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/hanh-trang-lap-trinh_105192_1.jpg" />
-										<jsp:param name="productName" value="Hành trang lập trình" />
-										<jsp:param name="price" value="18.00" />
-										<jsp:param name="productId" value="125" />
-									</jsp:include>
-								</div>
+                    <!-- Slider Navigation -->
+                    <div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                    </div>
+                    <div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="foreign" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Foreign/-25-chuyen-de-ngu-phap-tieng-anh.jpg" />
-										<jsp:param name="productName" value="25 chuyên đề ngữ pháp Tiếng Anh" />
-										<jsp:param name="price" value="15.00" />
-										<jsp:param name="newPrice" value="10.00" />
-										<jsp:param name="productId" value="126" />
-										<jsp:param name="bubbleText" value="-33%" />
-										<jsp:param name="bubbleType" value="red" />
-									</jsp:include>
-								</div>
+<!-- CSS Nhúng Trực Tiếp -->
+<style>
+     .sale{
+     
+                                position: absolute;
+                                top: 10px;
+                                left: 10px;
+                                background-color: red;
+                                color: white;
+                                font-size: 12px;
+                                font-weight: bold;
+                                padding: 5px 10px;
+                                border-radius: 5px;
+                                z-index: 10;
+                                animation: blink 2.5s infinite;
+     
+     }
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="it" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/chat-gpt-va-10-ung-dung-ai-dinh.jpg" />
-										<jsp:param name="productName" value="ChatGPT và 10 ứng dụng AI đình đám" />
-										<jsp:param name="price" value="20.00" />
-										<jsp:param name="productId" value="127" />
-									</jsp:include>
-								</div>
+    /* Hiệu ứng nhấp nháy (blink) */
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="it" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/IT/tu-hoc-c-va-sql-server-2008_1434.jpg" />
-										<jsp:param name="productName" value="Tự học C# và hệ CSDL SQL Server" />
-										<jsp:param name="price" value="25.00" />
-										<jsp:param name="productId" value="128" />
-									</jsp:include>
-								</div>
+    /* Hiệu ứng chuyển động nhẹ (hover, fade) */
+    .product_card {
+        transition: transform 0.5s ease, opacity 0.5s ease;
+    }
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="lifeskill" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/bia_hoc_cach_yeu_duong_voi_cong.jpg" />
-										<jsp:param name="productName" value="Học cách yêu đương với công việc" />
-										<jsp:param name="price" value="15.00" />
-										<jsp:param name="productId" value="129" />
-										<jsp:param name="bubbleText" value="sale" />
-										<jsp:param name="bubbleType" value="red" />
-									</jsp:include>
-								</div>
+    .product_card:hover {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+</style>
 
-								<div class="owl-item product_slider_item">
-									<jsp:include page="Parts/BookCard.jsp">
-										<jsp:param name="category" value="lifeskill" />
-										<jsp:param name="image" value="${pageContext.request.contextPath}/assets/img/books/Life Skill/tu-duy-phan-bien-trong-the-gioi.jpg" />
-										<jsp:param name="productName" value="Tư duy phản biện trong thế giới VUCA" />
-										<jsp:param name="price" value="18.00" />
-										<jsp:param name="productId" value="130" />
-									</jsp:include>
-								</div>
-							</div>
-
-							<!-- Slider Navigation -->
-							<div class="product_slider_nav_left product_slider_nav d-flex align-items-center justify-content-center flex-column">
-								<i class="fa fa-chevron-left" aria-hidden="true"></i>
-							</div>
-							<div class="product_slider_nav_right product_slider_nav d-flex align-items-center justify-content-center flex-column">
-								<i class="fa fa-chevron-right" aria-hidden="true"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<!-- Benefit -->
 		<div class="benefit">
