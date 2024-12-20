@@ -1,3 +1,4 @@
+<%@page import="model.KhachHang"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <header class="header trans_300">
@@ -16,6 +17,19 @@
 									My Account
 									<i class="fa fa-angle-down"></i>
 								</a>
+								
+								
+								<%
+								    Object obj = session.getAttribute("KhachHang");
+								    KhachHang khachHang = null;
+								
+				
+								    if (obj != null) {
+								        khachHang = (KhachHang) obj; // Gán nếu không null
+								    }
+				
+								    if (khachHang == null) {
+								%>
 								<ul class="account_selection">
 									<li>
 										<a href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp">
@@ -30,6 +44,28 @@
 										</a>
 									</li>
 								</ul>
+								<%
+								    } else if ("user".equals(khachHang.getRole())) { 
+								        // Nếu là user
+								%>
+								<ul class="account_selection">
+									<li>
+										<a  href="${pageContext.request.contextPath}/dang-xuat">
+											<i class="fa fa-sign-in" aria-hidden="true"></i>
+											Sign Out
+										</a>
+									</li>
+								</ul>
+								<%
+								    } else { 
+								        // Nếu là admin 
+								%>
+								    <a class="btn btn-primary" href="${pageContext.request.contextPath}/Dashboard/Index.jsp">
+								        Trang chủ
+								    </a>
+								<%
+								    }
+								%>
 							</li>
 						</ul>
 					</div>
@@ -83,8 +119,8 @@
                                 </button>
                             </form>
                         </li>
-                        <li>
-                            <a href="#">
+                        <li class="thongtintaikhoan">
+                            <a a href="${pageContext.request.contextPath}/Homepage/ProfileClient.jsp">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                             </a>
                         </li>
