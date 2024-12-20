@@ -79,7 +79,7 @@ public class addProduct extends HttpServlet
 			{
 				// Truyền lại danh sách sản phẩm và hiển thị lên trang Products.jsp
 				request.setAttribute("products", productDAO.selectAll());
-				request.getRequestDispatcher("/Dashboard/Products.jsp").forward(request, response);
+				request.getRequestDispatcher("/Dashboard/Product.jsp").forward(request, response);
 			}
 			else
 			{
