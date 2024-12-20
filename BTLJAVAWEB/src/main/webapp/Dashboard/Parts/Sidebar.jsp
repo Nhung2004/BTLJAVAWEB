@@ -46,15 +46,6 @@
 			</a>
 		</li>
 		<!-- End Orders Management Page Nav -->
-
-		<!-- Promotions Management Page Nav -->
-		<li class="nav-item">
-			<a class="nav-link collapsed" href="${pageContext.request.contextPath}/Dashboard/Promotion.jsp">
-				<i class="bi bi-gift"></i>
-				<span>Promotions</span>
-			</a>
-		</li>
-		<!-- End Promotions Management Page Nav -->
 	</ul>
 </aside>
 

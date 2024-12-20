@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="top_nav_left">free shipping on all u.s orders over $50</div>
+					<div class="top_nav_left">Free shipping for all orders over 199.000 VNĐ</div>
 				</div>
 				<div class="col-md-6 text-right">
 					<div class="top_nav_right">

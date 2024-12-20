@@ -158,11 +158,34 @@ keyframes blink { 0%, 100% {
 }
 
 50
+
+
+
+
+
+
 %
 {
 opacity
+
+
+
+
+
+
 :
-0;
+
+
+
+
+
+
+0
+
+
+
+
+;
 }
 }
 
@@ -196,25 +219,12 @@ opacity
 				<div class="row align-items-center">
 					<div class="col text-center">
 						<div class="new_arrivals_sorting">
-
 							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
 								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">All</li>
 								<c:forEach items="${listT}" var="o">
 									<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".${o.matheloai}">${o.tentheloai}</li>
 								</c:forEach>
 							</ul>
-
-							<!--  
-							<ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-								<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked">All</li>
-								<c:forEach items="${listT}" var="o">
-									<li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center">
-										<a href="ViewTheLoai?id=${o.matheloai}">${o.tentheloai}</a>
-									</li>
-								</c:forEach>
-							</ul>
-							-->
-
 						</div>
 					</div>
 				</div>
@@ -223,10 +233,6 @@ opacity
 					<div class="col">
 						<div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
 							<c:forEach items="${listP}" var="item">
-
-
-
-
 								<jsp:include page="Parts/BookCard.jsp">
 									<jsp:param name="maTheLoai" value="${item.matheloai}" />
 									<jsp:param name="image" value="${pageContext.request.contextPath}${item.imageProduct}" />
@@ -241,48 +247,6 @@ opacity
 				</div>
 			</div>
 		</div>
-
-		<!-- DOTW Start 
-		<div class="deal_ofthe_week">
-			<div class="container">
-				<div class="row align-items-center">
-					<div class="col-lg-6">
-						<div class="deal_ofthe_week_img">
-							<img src="${pageContext.request.contextPath}/assets/img/coloshop/deal_ofthe_week.png" alt="">
-						</div>
-					</div>
-					<div class="col-lg-6 text-right deal_ofthe_week_col">
-						<div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
-							<div class="section_title">
-								<h2>Deal Of The Week</h2>
-							</div>
-							<ul class="timer">
-								<li class="d-inline-flex flex-column justify-content-center align-items-center">
-									<div id="day" class="timer_num">03</div>
-									<div class="timer_unit">Day</div>
-								</li>
-								<li class="d-inline-flex flex-column justify-content-center align-items-center">
-									<div id="hour" class="timer_num">15</div>
-									<div class="timer_unit">Hours</div>
-								</li>
-								<li class="d-inline-flex flex-column justify-content-center align-items-center">
-									<div id="minute" class="timer_num">45</div>
-									<div class="timer_unit">Mins</div>
-								</li>
-								<li class="d-inline-flex flex-column justify-content-center align-items-center">
-									<div id="second" class="timer_num">23</div>
-									<div class="timer_unit">Sec</div>
-								</li>
-							</ul>
-							<div class="red_button deal_ofthe_week_button">
-								<a href="#">shop now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		DOTW End -->
 
 		<div class="best_sellers">
 			<div class="container">
@@ -391,11 +355,34 @@ keyframes blink { 0%, 100% {
 }
 
 50
+
+
+
+
+
+
 %
 {
 opacity
+
+
+
+
+
+
 :
-0;
+
+
+
+
+
+
+0
+
+
+
+
+;
 }
 }
 

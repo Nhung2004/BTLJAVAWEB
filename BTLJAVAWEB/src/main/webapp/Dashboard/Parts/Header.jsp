@@ -198,7 +198,7 @@
 				if(khachHang == null)
 				{
 				%>
-				<a class="btn btn-primary" style="white-space: nowrap;" href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp"> Đăng nhập </a>
+				<a class="btn btn-primary" style="white-space: nowrap;" href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp">Login</a>
 				<%
 				}
 				else if("admin".equals(khachHang.getRole()))
@@ -207,7 +207,7 @@
 				%>
 				<a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
 					<img src="${pageContext.request.contextPath}/assets/img/dashboard/admin1.png" alt="Profile" class="rounded-circle">
-					<span class="d-none d-md-block dropdown-toggle ps-2"><%=khachHang.getTendangnhap()%>>
+					<span class="d-none d-md-block dropdown-toggle ps-2"><%=khachHang.getTendangnhap()%>
 					</span>
 				</a>
 

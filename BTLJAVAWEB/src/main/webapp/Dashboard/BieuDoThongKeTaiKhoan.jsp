@@ -127,25 +127,7 @@
 			<!-- Biểu đồ -->
 			<canvas id="accountStatsChart" width="400" height="200"></canvas>
 		</div>
-
-
-
 	</main>
-
-	<!-- Footer -->
-	<footer id="footer" class="footer">
-		<div class="credits">
-			Designed by
-			<a href="https://bootstrapmade.com/">BootstrapMade</a>
-		</div>
-		<div class="copyright">
-			&copy; Copyright
-			<strong>
-				<span>NiceAdmin</span>
-			</strong>
-			. All Rights Reserved
-		</div>
-	</footer>
 
 	<!-- Vendor JS Files -->
 
@@ -222,6 +204,7 @@
 
 	<!-- Template Main JS File -->
 	<script src="${pageContext.request.contextPath}/assets/js/NiceAdminMain.js"></script>
+
 	<!-- ======= Footer ======= -->
 	<!-- Back to top button -->
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
