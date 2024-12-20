@@ -27,7 +27,7 @@ public class DonHangDAO implements DAOInterface<DonHang>
 
 			while (rs.next())
 			{
-				KhachHang khachhang = new KhachHang(rs.getString("makhachhang"), null, null, null, sql, sql, sql, sql, null, sql, sql, false);
+				KhachHang khachhang = new KhachHang(rs.getString("makhachhang"), null, null, null, sql, sql, sql, sql, null, sql, sql, false,null);
 				DonHang   donHang   = new DonHang(rs.getString("madonhang"), khachhang, rs.getString("diachimuahang"), rs.getString("diachinhanhang"), rs.getString("trangthai"), rs.getString("hinhthucthanhtoan"), rs.getString("trangthaithanhtoan"),
 				        rs.getDouble("sotiendathanhtoan"), rs.getDouble("sotienconthieu"), rs.getDate("ngaydathang"), rs.getDate("ngaygiaohang"));
 				list.add(donHang);
@@ -55,7 +55,7 @@ public class DonHangDAO implements DAOInterface<DonHang>
 
 			if(rs.next())
 			{
-				KhachHang khachhang = new KhachHang(rs.getString("makhachhang"), null, null, null, sql, sql, sql, sql, null, sql, sql, false);
+				KhachHang khachhang = new KhachHang(rs.getString("makhachhang"), null, null, null, sql, sql, sql, sql, null, sql, sql, false,null);
 				donHang = new DonHang(rs.getString("madonhang"), khachhang, rs.getString("diachimuahang"), rs.getString("diachinhanhang"), rs.getString("trangthai"), rs.getString("hinhthucthanhtoan"), rs.getString("trangthaithanhtoan"),
 				        rs.getDouble("sotiendathanhtoan"), rs.getDouble("sotienconthieu"), rs.getDate("ngaydathang"), rs.getDate("ngaygiaohang"));
 			}
