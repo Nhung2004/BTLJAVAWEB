@@ -49,6 +49,7 @@ public class DangKy extends HttpServlet
 		String dienthoai       = request.getParameter("dienthoai");
 		String email           = request.getParameter("email");
 		String dongy           = request.getParameter("dongy");
+		String role       = request.getParameter("role");
 
 		request.setAttribute("tendangnhap", tendangnhap);
 		request.setAttribute("matkhau", matkhau);
@@ -108,7 +109,7 @@ public class DangKy extends HttpServlet
 
 			Random    rd          = new Random();
 			String    makhachhang = System.currentTimeMillis() + rd.nextInt(1000) + "";
-			KhachHang kh          = new KhachHang(makhachhang, tendangnhap, nhaplaimatkhau, hovaten, gioitinh, diachikhachhang, diachinhanhang, diachimuahang, ngaySinhDate, dienthoai, email, false);
+			KhachHang kh          = new KhachHang(makhachhang, tendangnhap, nhaplaimatkhau, hovaten, gioitinh, diachikhachhang, diachinhanhang, diachimuahang, ngaySinhDate, dienthoai, email, false,role);
 			khachHangDAO.insert(kh);
 			url = "/Homepage/DangNhap.jsp";
 
