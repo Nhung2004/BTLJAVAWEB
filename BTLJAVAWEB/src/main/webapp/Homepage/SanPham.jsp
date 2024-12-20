@@ -65,15 +65,15 @@
 				<div class="col-lg-5">
 					<div class="product_details">
 						<div class="product_details_title">
-							<h2>Phố xưa người cũ</h2>
-							<p>Một câu chuyện đậm chất hoài niệm, đưa độc giả về những ký ức xưa, với các nhân vật đầy cảm xúc và cốt truyện sâu lắng.</p>
+							<h2>${ChiTiet.nameProduct}</h2>
+							<p>${ChiTiet.descriptions}</p>
 						</div>
 						<div class="free_delivery d-flex flex-row align-items-center justify-content-center">
 							<span class="ti-truck"></span>
 							<span>Free delivery for orders over $25</span>
 						</div>
 						<div class="original_price">$10</div>
-						<div class="product_price">$8</div>
+						<div class="product_price">priceProduct</div>
 						<ul class="star_rating">
 							<li>
 								<i class="fa fa-star" aria-hidden="true"></i>
@@ -144,22 +144,22 @@
 										<h4>Description</h4>
 									</div>
 									<div class="tab_text_block">
-										<h2>Phố xưa người cũ</h2>
+										<h2>${ChiTiet.nameProduct}</h2>
 										<p>"Phố xưa người cũ" là một cuốn sách mang đậm chất hoài niệm, dẫn dắt độc giả trở về những con phố quen thuộc, nơi lưu giữ ký ức và văn hóa truyền thống lâu đời. Từng trang sách khắc họa rõ nét vẻ đẹp của thời gian xưa cũ, với những
 											câu chuyện đời thường giản dị nhưng đầy ý nghĩa, đưa người đọc lạc vào thế giới của một thời đã qua.</p>
 									</div>
 									<div class="tab_image">
-										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="Phố xưa người cũ">
+										<img src="${pageContext.request.contextPath}${ChiTiet.imageProduct}" alt="Phố xưa người cũ">
 									</div>
 									<div class="tab_text_block">
-										<h2>Phố xưa người cũ</h2>
+										<h2>${ChiTiet.nameProduct}</h2>
 										<p>Cuốn sách không chỉ mang lại cảm giác gần gũi, mà còn là một lời nhắc nhở về giá trị của truyền thống và gia đình. Với ngòi bút tinh tế, tác giả tái hiện những khung cảnh đời thường, từ quán nhỏ bên đường, tiếng rao khuya, đến những
 											buổi tụ họp gia đình ấm cúng, tất cả tạo nên một bức tranh sống động của cuộc sống xưa.</p>
 									</div>
 								</div>
 								<div class="col-lg-5 offset-lg-2 desc_col">
 									<div class="tab_image">
-										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="Phố xưa người cũ">
+										<img src="${pageContext.request.contextPath}${ChiTiet.imageProduct}" alt="Phố xưa người cũ">
 									</div>
 									<div class="tab_text_block">
 										<h2>Phố xưa người cũ</h2>
@@ -167,7 +167,7 @@
 											đầy cảm xúc. Đây là cuốn sách không thể bỏ qua cho những ai yêu thích sự hoài cổ và muốn tìm về cội nguồn văn hóa.</p>
 									</div>
 									<div class="tab_image desc_last">
-										<img src="${pageContext.request.contextPath}/assets/img/books/Literature/8935278607373_1.jpg" alt="Phố xưa người cũ">
+										<img src="${pageContext.request.contextPath}${ChiTiet.imageProduct}" alt="Phố xưa người cũ">
 									</div>
 								</div>
 							</div>
