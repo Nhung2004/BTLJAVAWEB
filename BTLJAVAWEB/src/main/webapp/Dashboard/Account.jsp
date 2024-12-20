@@ -34,24 +34,6 @@
 
 <!-- Template Main CSS File -->
 <link href="${pageContext.request.contextPath}/assets/css/NiceAdminMain.css" rel="stylesheet">
-<style>
-.pagination .page-link {
-	color: #007bff;
-	border: 1px solid #dee2e6;
-	transition: background-color 0.3s, color 0.3s;
-}
-
-.pagination .page-item.active .page-link {
-	background-color: #007bff;
-	color: #fff;
-	border-color: #007bff;
-}
-
-.pagination .page-link:hover {
-	background-color: #f8f9fa;
-	color: #0056b3;
-}
-</style>
 </head>
 
 <body>
@@ -106,6 +88,7 @@
 								<jsp:param name="password" value="${khachHang.matkhau}" />
 								<jsp:param name="email" value="${khachHang.email}" />
 								<jsp:param name="phoneNumber" value="${khachHang.sodienthoai}" />
+								<jsp:param name="role" value="${khachHang.role}" />
 							</jsp:include>
 
 							<!-- Edit Account Modal -->
@@ -135,6 +118,13 @@
 												<div class="mb-3">
 													<label for="email_${khachHang.makhachhang}" class="form-label">Email</label>
 													<input type="email" class="form-control" id="email_${khachHang.makhachhang}" name="email" value="${khachHang.email}" required>
+												</div>
+												<div class="mb-3">
+												    <label for="role_${khachHang.makhachhang}" class="form-label">Role</label>
+												    <select class="form-control" id="role_${khachHang.makhachhang}" name="role" required>
+												        <option value="user" ${khachHang.role == 'user' ? 'selected' : ''}>User</option>
+												        <option value="admin" ${khachHang.role == 'admin' ? 'selected' : ''}>Admin</option>
+												    </select>
 												</div>
 												<button type="submit" class="btn btn-primary w-100">Save Changes</button>
 											</form>
