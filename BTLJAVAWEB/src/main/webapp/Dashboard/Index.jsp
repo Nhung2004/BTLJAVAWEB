@@ -55,17 +55,6 @@
 		</div>
 		<!-- End Page Title -->
 		<section class="section dashboard">
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 			<div class="row">
 				<!-- Sales and Revenue Section -->
 				<div class="col-12">
