@@ -34,11 +34,13 @@ public class DangNhap extends HttpServlet {
         // Retrieve username and password from form
         String tendangnhap = request.getParameter("tendangnhap");
         String matkhau = request.getParameter("matkhau");
+        String role = request.getParameter("role");
 
         // Create a KhachHang object for validation
         KhachHang kh = new KhachHang();
         kh.setTendangnhap(tendangnhap);
         kh.setMatkhau(matkhau);
+        kh.setRole(role);
 
         // DAO for database access
         KhachHangDAO khDAO = new KhachHangDAO();
@@ -48,8 +50,13 @@ public class DangNhap extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("KhachHang", khachhang);
 
-            // Redirect to a Servlet instead of directly to JSP
-            response.sendRedirect(request.getContextPath() + "/Homepage/TrangChu.jsp");
+            if ("admin".equals(khachhang.getRole())) {
+                // Redirect to admin dashboard
+                response.sendRedirect(request.getContextPath() + "/Dashboard/Index.jsp");
+            } else {
+                // Redirect to user homepage
+                response.sendRedirect(request.getContextPath() + "/Homepage/TrangChu.jsp");
+            }
         } else { // Failed login
             request.setAttribute("baoloi", "Tên đăng nhập hoặc mật khẩu không đúng");
 
