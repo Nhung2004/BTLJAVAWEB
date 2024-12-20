@@ -29,7 +29,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			while (rs.next())
 			{
 				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
-				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"));
 				resultList.add(kh);
 			}
 
@@ -71,7 +71,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			while (rs.next())
 			{
 				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
-				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"));
 				resultList.add(kh);
 			}
 
@@ -114,7 +114,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			if(rs.next())
 			{
 				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
-				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"));
 			}
 
 		}
@@ -156,7 +156,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			if(rs.next())
 			{
 				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
-				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"));
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"));
 			}
 
 		}
@@ -239,7 +239,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 		try
 		{
 			con = connectionPool.getConnection("insertAll");
-			String            sql = "INSERT INTO KhachHang (makhachhang, tendangnhap, matkhau, hovaten, gioitinh, diachi, diachinhanhang, diachimuahang, ngaysinh, sodienthoai, email, dangkynhanbantin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String            sql = "INSERT INTO KhachHang (makhachhang, tendangnhap, matkhau, hovaten, gioitinh, diachi, diachinhanhang, diachimuahang, ngaysinh, sodienthoai, email, dangkynhanbantin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			for (KhachHang kh : arr)
@@ -366,7 +366,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 		try
 		{
 			con = connectionPool.getConnection("update");
-			String            sql = "UPDATE KhachHang SET tendangnhap = ?, matkhau = ?, hovaten = ?, gioitinh = ?, diachi = ?, diachinhanhang = ?, diachimuahang = ?, ngaysinh = ?, sodienthoai = ?, email = ?, dangkynhanbantin = ? WHERE makhachhang = ?";
+			String            sql = "UPDATE KhachHang SET tendangnhap = ?, matkhau = ?, hovaten = ?, gioitinh = ?, diachi = ?, diachinhanhang = ?, diachimuahang = ?, ngaysinh = ?, sodienthoai = ?, email = ?, dangkynhanbantin = ? , role = ? WHERE makhachhang = ?";
 			PreparedStatement st  = con.prepareStatement(sql);
 
 			st.setString(1, kh.getTendangnhap());
@@ -380,7 +380,8 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			st.setString(9, kh.getSodienthoai());
 			st.setString(10, kh.getEmail());
 			st.setBoolean(11, kh.isDangKyNhanBangTin());
-			st.setString(12, kh.getMakhachhang());
+			st.setString(12, kh.getRole());
+			st.setString(13, kh.getMakhachhang());
 
 			result = st.executeUpdate();
 
