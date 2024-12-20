@@ -406,7 +406,92 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		return result;
 	}
+	public int update2(KhachHang kh)
+	{
+		int        result = 0;
+		Connection con    = null;
 
+		try
+		{
+			con = connectionPool.getConnection("update");
+			String            sql = "UPDATE KhachHang SET tendangnhap = ?, matkhau = ?, sodienthoai = ?, email = ?, role = ? WHERE makhachhang = ?";
+			PreparedStatement st  = con.prepareStatement(sql);
+
+			st.setString(1, kh.getTendangnhap());
+			st.setString(2, kh.getMatkhau());
+			st.setString(3, kh.getSodienthoai());
+			st.setString(4, kh.getEmail());
+			st.setString(5, kh.getRole());
+			st.setString(6, kh.getMakhachhang());
+
+			result = st.executeUpdate();
+
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		} finally
+		{
+			if(con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "update");
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return result;
+	}
+	public int updateClient(KhachHang kh)
+	{
+		int        result = 0;
+		Connection con    = null;
+
+		try
+		{
+			con = connectionPool.getConnection("updateClient");
+			String            sql = "UPDATE KhachHang SET  hovaten = ?,gioitinh = ? , diachi = ?, diachinhanhang = ?,  ngaysinh = ?,sodienthoai = ?, email = ? WHERE makhachhang = ?";
+			PreparedStatement st  = con.prepareStatement(sql);
+
+			
+			
+			st.setString(1, kh.getHovaten());
+			st.setString(2, kh.getGioitinh());
+			st.setString(3, kh.getDiachi());
+			st.setString(4, kh.getDiachinhanhang());			
+			st.setDate(5, (Date) kh.getNgaysinh());
+			st.setString(6, kh.getSodienthoai());
+			st.setString(7, kh.getEmail());			
+			st.setString(8, kh.getMakhachhang());
+
+			result = st.executeUpdate();
+
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		} finally
+		{
+			if(con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "update");
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return result;
+	}
 	public boolean kiemTraTenDangNhap(String tenDangNhap)
 	{
 		boolean    ketQua = false;
@@ -473,6 +558,68 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 	    }
 	    return monthlyStats;
 	}
+	public KhachHang selectByIdCl(String makhachhang) {
+        KhachHang kh = null;
+        Connection con = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
 
+        try {
+            // Lấy kết nối từ connection pool
+            con = connectionPool.getConnection("selectById");
 
+            // SQL query để lấy thông tin khách hàng theo mã khách hàng
+            String sql = "SELECT * FROM KhachHang WHERE makhachhang = ?";
+            stmt = con.prepareStatement(sql);
+            stmt.setString(1, makhachhang); // Gán giá trị cho tham số
+
+            rs = stmt.executeQuery();
+
+            // Kiểm tra kết quả trả về
+            if (rs.next()) {
+                // Khởi tạo đối tượng KhachHang và gán dữ liệu từ ResultSet
+                kh = new KhachHang(
+                    rs.getString("makhachhang"),
+                    rs.getString("tendangnhap"),
+                    rs.getString("matkhau"),
+                    rs.getString("hovaten"),
+                    rs.getString("gioitinh"),
+                    rs.getString("diachigiaohang"),
+                    rs.getString("diachinhanhang"),
+                    rs.getString("diachi"),
+                    rs.getDate("ngaysinh"),
+                    rs.getString("sodienthoai"),
+                    rs.getString("email"),
+                    rs.getBoolean("dangkynhantin"),
+                    rs.getString("role")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            if (con != null) {
+                try {
+                    connectionPool.closeConnection(con, "selectById");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        return kh;
+    }
 }
