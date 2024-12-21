@@ -71,7 +71,7 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="Index.jsp">Home</a>
+						<a href="Dashboard/Index.jsp">Home</a>
 					</li>
 					<li class="breadcrumb-item">Order Management</li>
 				</ol>
