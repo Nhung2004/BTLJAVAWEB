@@ -3,7 +3,6 @@ package clientController;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,7 +40,7 @@ public class ManageKhachHangClient extends HttpServlet {
         String role = request.getParameter("role");
         String ngaysinhStr = request.getParameter("ngaysinh");
 
-        if (hovaten != null && gioitinh != null && diachi != null && diachinhanhang != null && sodienthoai != null  && email != null) {
+        if (hovaten != null && gioitinh != null && diachi != null && diachinhanhang != null && sodienthoai != null && email != null) {
             // Chuyển đổi ngày sinh từ String sang java.util.Date
             Date ngaysinh = null;
             try {
@@ -50,49 +49,58 @@ public class ManageKhachHangClient extends HttpServlet {
             } catch (Exception e) {
                 e.printStackTrace();
                 request.setAttribute("message", "Định dạng ngày sinh không hợp lệ.");
-                request.getRequestDispatcher("/ProfileClient.jsp").forward(request, response);
-                return;
+                request.getRequestDispatcher("/Homepage/EditClient.jsp").forward(request, response);
+                return;  // Dừng nếu có lỗi
             }
 
             // Chuyển đổi java.util.Date sang java.sql.Date
             java.sql.Date sqlNgaysinh = new java.sql.Date(ngaysinh.getTime());
 
-            // Tạo đối tượng KhachHang
-            KhachHang kh = new KhachHang(makhachhang, tendangnhap, matkhau, hovaten, gioitinh, diachi,
-            		 diachinhanhang,diachimuahang, sqlNgaysinh, sodienthoai, email, false, role);
+            // Lấy khách hàng từ session để cập nhật thông tin
+            HttpSession session = request.getSession();
+            KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
+
+            // Cập nhật thông tin khách hàng bằng các setter
+            khachHang.setHovaten(hovaten);
+            khachHang.setGioitinh(gioitinh);
+            khachHang.setNgaysinh(sqlNgaysinh);
+            khachHang.setEmail(email);
+            khachHang.setSodienthoai(sodienthoai);
+            khachHang.setDiachi(diachi);
+            khachHang.setDiachinhanhang(diachinhanhang);
+            khachHang.setDiachimuahang(diachimuahang);
+            khachHang.setTendangnhap(tendangnhap);
+            khachHang.setMatkhau(matkhau);
+            khachHang.setRole(role);
 
             // Cập nhật khách hàng vào cơ sở dữ liệu
-            int result = khachHangDAO.updateClient(kh);
+            int result = khachHangDAO.updateClient(khachHang);
 
             if (result > 0) {
+                // Cập nhật lại khách hàng trong session
+                session.setAttribute("KhachHang", khachHang);
                 request.setAttribute("message", "Cập nhật tài khoản thành công.");
-                System.out.println("Edit Success");
             } else {
                 request.setAttribute("message", "Không thể cập nhật tài khoản.");
-                System.out.println("Edit Failed");
             }
+
+            // Chuyển hướng về ProfileClient.jsp sau khi cập nhật thành công
+            response.sendRedirect(request.getContextPath() + "/Homepage/DangNhap.jsp");
         } else {
             request.setAttribute("message", "Vui lòng điền đầy đủ thông tin.");
-            request.getRequestDispatcher("/ProfileClient.jsp").forward(request, response);
-            return;
+            request.getRequestDispatcher("/Homepage/EditClient.jsp").forward(request, response);
         }
-
-        // Gọi lại phương thức doGet để xử lý yêu cầu GET
-        doGet(request, response);
     }
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Xử lý yêu cầu GET (ví dụ: hiển thị thông tin khách hàng)
-        KhachHangDAO khachHangDAO = new KhachHangDAO();
+        // Nếu có cần thiết, có thể thêm code để lấy thông tin khách hàng từ cơ sở dữ liệu
         HttpSession session = request.getSession();
+        KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
 
-        // Lấy khách hàng từ database và đặt vào session
-        String makhachhang = request.getParameter("makhachhang");
-        KhachHang kh = khachHangDAO.selectByIdCl(makhachhang);
-        session.setAttribute("KhachHang", kh);
-
-        // Chuyển tiếp đến trang ProfileClient.jsp
+        // Chuyển tiếp đến ProfileClient.jsp sau khi đảm bảo session đã được cập nhật
         response.sendRedirect(request.getContextPath() + "/Homepage/DangNhap.jsp");
     }
+
 }
