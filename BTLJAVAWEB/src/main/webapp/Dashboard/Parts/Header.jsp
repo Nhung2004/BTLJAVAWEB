@@ -6,8 +6,8 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
 	<div class="d-flex align-items-center justify-content-between">
-		<a href="${pageContext.request.contextPath}/Homepage/TrangChu.jsp" class="logo d-flex align-items-center">
-			<img src="${pageContext.request.contextPath}/assets/img/logo.png" alt="">
+		<a href="${pageContext.request.contextPath}/Dashboard/Index.jsp" class="logo d-flex align-items-center">
+			<img src="${pageContext.request.contextPath}/assets/img/" alt="">
 			<span class="d-none d-lg-block">Group13</span>
 		</a>
 		<i class="bi bi-list toggle-sidebar-btn"></i>
