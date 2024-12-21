@@ -15,13 +15,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/single_responsive.css">
 </head>
 <body>
-    <%
-        KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
-        if (khachHang == null) {
-            response.sendRedirect("Login.jsp");
-            return;
-        }
-    %>
+    
     <div class="super_container">
         <!-- Header -->
         <jsp:include page="Parts/Header.jsp" />
@@ -44,7 +38,14 @@
                     </div>
                 </div>
             </div>
-            <div class="main-body p-10">
+            <%
+		        KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
+		        if (khachHang == null) {
+		            response.sendRedirect("Login.jsp");
+		            return;
+		        }
+		    %>
+		            <div class="main-body p-10">
                 <div class="row">
                     <!-- Profile picture -->
                     <div class="col-lg-4">
