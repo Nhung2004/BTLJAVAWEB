@@ -6,10 +6,10 @@
 	<div class="top_nav">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<div class="top_nav_left">Free shipping for all orders over 199.000 VNĐ</div>
 				</div>
-				<div class="col-md-6 text-right">
+				<div class="col-md-8 text-right">
 					<div class="top_nav_right">
 						<ul class="top_nav_menu">
 							<li class="account">
@@ -55,6 +55,18 @@
 											<i class="fa fa-sign-in" aria-hidden="true"></i>
 											Sign Out
 										</a>
+									</li>								
+									<li>
+									    <a href="${pageContext.request.contextPath}/Homepage/ProfileClient.jsp">
+									        <i class="fa fa-user" aria-hidden="true"></i>
+									        Profile
+									    </a>
+									</li>
+									<li>
+									    <a href="${pageContext.request.contextPath}/Homepage/ChangePassword.jsp">
+									        <i class="fa fa-key" aria-hidden="true"></i>
+									        Change password
+									    </a>
 									</li>
 								</ul>
 								<%
@@ -112,11 +124,6 @@
 									</button>
 								</form>
 							</li>
-							<li class="thongtintaikhoan">
-								<a a href="${pageContext.request.contextPath}/Homepage/ProfileClient.jsp">
-									<i class="fa fa-user" aria-hidden="true"></i>
-								</a>
-							</li>
 							<li class="checkout">
 								<a href="${pageContext.request.contextPath}/Homepage/GioHang.jsp">
 									<i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -132,6 +139,27 @@
 			</div>
 		</div>
 	</div>
+<style>
+/* Đặt chiều rộng mặc định cho menu */
+.top_nav_menu .account .account_selection {
+    width: 150px; /* Chiều rộng mặc định */
+    transition: all 0.3s ease; /* Hiệu ứng mượt */
+    overflow: hidden; /* Ẩn phần thừa nếu có */
+}
+
+/* Khi di chuột vào menu, mở rộng chiều rộng */
+.top_nav_menu .account:hover .account_selection {
+    width: 220px; /* Chiều rộng khi di chuột */
+}
+
+/* Căn chỉnh các mục trong menu */
+.top_nav_menu .account .account_selection li a {
+    white-space: nowrap; /* Ngăn xuống dòng */
+    display: block;
+    padding: 5px 10px;
+}
+
+</style>
 </header>
 
 <div class="fs_menu_overlay"></div>
