@@ -17,18 +17,10 @@
 									My Account
 									<i class="fa fa-angle-down"></i>
 								</a>
-								<%
-								Object                obj       = session.getAttribute("KhachHang");
-								KhachHang             khachHang = null;
-
-								if(obj != null)
-								{
-									khachHang = (KhachHang) obj; // Gán nếu không null
-								}
-
-								if(khachHang == null)
-								{
-								%>
+								                    <%
+	               		KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
+						if(khachHang == null){		
+					%>					
 								<ul class="account_selection">
 									<li>
 										<a href="${pageContext.request.contextPath}/Homepage/DangNhap.jsp">
@@ -49,13 +41,7 @@
 								{
 								// Nếu là user
 								%>
-								<ul class="account_selection">
-									<li>
-										<a href="${pageContext.request.contextPath}/dang-xuat">
-											<i class="fa fa-sign-in" aria-hidden="true"></i>
-											Sign Out
-										</a>
-									</li>								
+								<ul class="account_selection">																
 									<li>
 									    <a href="${pageContext.request.contextPath}/Homepage/ProfileClient.jsp">
 									        <i class="fa fa-user" aria-hidden="true"></i>
@@ -63,10 +49,22 @@
 									    </a>
 									</li>
 									<li>
+									    <a href="${pageContext.request.contextPath}/Homepage/ChangeAvatar.jsp">
+									        <i class="fa fa-image" aria-hidden="true"></i>
+									        Change avatar
+									    </a>
+									</li>
+									<li>
 									    <a href="${pageContext.request.contextPath}/Homepage/ChangePassword.jsp">
 									        <i class="fa fa-key" aria-hidden="true"></i>
 									        Change password
 									    </a>
+									</li>
+									<li>
+										<a href="${pageContext.request.contextPath}/dang-xuat">
+											<i class="fa fa-sign-in" aria-hidden="true"></i>
+											Sign Out
+										</a>
 									</li>
 								</ul>
 								<%
