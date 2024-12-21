@@ -20,6 +20,14 @@
 </head>
 
 <body>	
+				<%
+				    KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
+				    if (khachHang == null) {
+				        // Nếu khách hàng không có trong session, có thể chuyển hướng tới trang login
+				        response.sendRedirect("${pageContext.request.contextPath}/Homepage/DangNhap.jsp");
+				        return; // Dừng việc tiếp tục xử lý trang này
+				    }
+				%>
 	<div class="super_container">
 		<!-- Tách riêng header ra file Header.jsp -->
 		<jsp:include page="Parts/Header.jsp" />
@@ -42,9 +50,6 @@
 						</div>
 					</div>
 				</div>
-				<%
-				 KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
-				 %>
 				<div class="p-10">
 				    <div class="main-body">
 				          <div class="row gutters-sm">
@@ -52,7 +57,7 @@
 				              <div class="card">
 				                <div class="card-body">
 				                  <div class="d-flex flex-column align-items-center text-center">
-				                    <img src="${pageContext.request.contextPath}/assets/img/dashboard/admin1.png" alt="Admin" class="rounded-circle" width="150">
+				                    <img src="${pageContext.request.contextPath}/assets/img/avatar/<%= khachHang.getDuongdananh() %>" alt="Advatar" class="avatar-square" width="300">
 				                    <div class="mt-3">
 				                      <% if(khachHang != null) { %>
 										    <h4><%= khachHang.getHovaten() %></h4>
