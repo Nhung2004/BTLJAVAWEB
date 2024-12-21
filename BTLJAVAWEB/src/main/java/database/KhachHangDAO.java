@@ -29,7 +29,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			while (rs.next())
 			{
 				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
-				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"));
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"), rs.getString("duongdananh"));
 				resultList.add(kh);
 			}
 
@@ -71,7 +71,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			while (rs.next())
 			{
 				KhachHang kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
-				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"));
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"),  rs.getString("duongdananh"));
 				resultList.add(kh);
 			}
 
@@ -114,7 +114,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			if(rs.next())
 			{
 				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
-				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"));
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"),  rs.getString("duongdananh"));
 			}
 
 		}
@@ -156,7 +156,7 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 			if(rs.next())
 			{
 				kh = new KhachHang(rs.getString("makhachhang"), rs.getString("tendangnhap"), rs.getString("matkhau"), rs.getString("hovaten"), rs.getString("gioitinh"), rs.getString("diachi"), rs.getString("diachinhanhang"),
-				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"));
+				        rs.getString("diachimuahang"), rs.getDate("ngaysinh"), rs.getString("sodienthoai"), rs.getString("email"), rs.getBoolean("dangkynhanbantin"), rs.getString("role"),  rs.getString("duongdananh"));
 			}
 
 		}
@@ -219,6 +219,51 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 				try
 				{
 					connectionPool.closeConnection(con, "insert");
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return result;
+	}
+	public int insertdangky(KhachHang kh)
+	{
+		int        result = 0;
+		Connection con    = null;
+
+		try
+		{
+			con = connectionPool.getConnection("insertdangky");
+			String            sql = "INSERT INTO KhachHang (makhachhang, tendangnhap, matkhau, hovaten,email) VALUES (?, ?, ?, ?, ?, ?)";
+			PreparedStatement st  = con.prepareStatement(sql);
+
+			st.setString(1, kh.getMakhachhang());
+			st.setString(2, kh.getTendangnhap());
+			st.setString(3, kh.getMatkhau());
+			st.setString(4, kh.getHovaten());
+			st.setString(5, kh.getGioitinh());
+			
+			
+			
+			st.setString(6, kh.getEmail());
+			
+
+			result = st.executeUpdate();
+
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		} finally
+		{
+			if(con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "insertdangky");
 				}
 				catch (SQLException e)
 				{
@@ -492,6 +537,38 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		return result;
 	}
+	public int updateImage(KhachHang t) {
+		int ketQua = 0;
+		try {
+			// Bước 1: tạo kết nối đến CSDL
+			Connection con = connectionPool.getConnection("updateimg");
+
+			// Bước 2: tạo ra đối tượng statement
+			String sql = "UPDATE khachhang SET duongdananh = ? WHERE makhachhang=?";
+
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, t.getDuongdananh());
+			st.setString(2, t.getMakhachhang());
+			// Bước 3: thực thi câu lệnh SQL
+
+			System.out.println(sql);
+			ketQua = st.executeUpdate();
+
+			// Bước 4:
+			System.out.println("Bạn đã thực thi: " + sql);
+			System.out.println("Có " + ketQua + " dòng bị thay đổi!");
+
+			// Bước 5:
+			connectionPool.closeConnection(con, "updateimg");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return ketQua;
+	}
+	
+	
 	public boolean changePassword(KhachHang kh) {
 		int        kq = 0;
 		Connection con    = null;
@@ -635,7 +712,8 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
                     rs.getString("sodienthoai"),
                     rs.getString("email"),
                     rs.getBoolean("dangkynhantin"),
-                    rs.getString("role")
+                    rs.getString("role"),
+                    rs.getString("duongdananh")
                 );
             }
         } catch (SQLException e) {
