@@ -70,7 +70,7 @@
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="${pageContext.request.contextPath}/assets/img/dashboard/admin1.png" alt="Profile" class="rounded-circle">
+              <img src="${pageContext.request.contextPath}/assets/img/avatar/<%= khachHang.getDuongdananh() %>" alt="Advatar" class="avatar-square"  >
               <h2><%= khachHang.getTendangnhap() %></h2>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -93,7 +93,11 @@
                 <li class="nav-item">
                   <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
                 </li>
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                </li>
               </ul>
+              
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">        
@@ -118,6 +122,29 @@
                     <div class="col-lg-3 col-md-4 label">Email</div>
                     <div class="col-lg-9 col-md-8"><%= khachHang.getEmail() %></div>
                   </div>
+                </div>
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                  <!-- Profile Edit Form -->
+                  <%
+							 String url1 = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+								+ request.getContextPath();
+					%>
+                  <form class="form" action="<%=url1 %>/ChangeImg" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="hanhDong" value="thay-doi-anh"/>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Update your profile picture</h3>
+            <img src="<%=url1 %>/assets/img/avatar/<%=khachHang.getDuongdananh()%>" alt="Avatar" class="avatar-square" width="300"/>
+            <div class="mb-3">
+                <label for="duongdananh" class="form-label">Choose a new profile picture</label>
+                <input type="file" class="form-control" id="duongdananh" name="duongdananh" accept="image/*">
+            </div>
+            <input class="btn btn-primary form-control" type="submit" value="Save new profile image" name="submit" id="submit" />
+        </div>
+    </div>
+</form><!-- End Profile Edit Form -->
+
                 </div>
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
               </div><!-- End Bordered Tabs -->
