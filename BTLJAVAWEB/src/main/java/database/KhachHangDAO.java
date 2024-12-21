@@ -492,6 +492,50 @@ public class KhachHangDAO implements DAOInterface<KhachHang>
 
 		return result;
 	}
+	public boolean changePassword(KhachHang kh) {
+		int        kq = 0;
+		Connection con    = null;
+		try {
+			// Bước 1: tạo kết nối đến CSDL
+			con = connectionPool.getConnection("updateClient");
+
+			// Bước 2: tạo ra đối tượng statement
+			String            sql = "UPDATE KhachHang SET  matkhau = ? WHERE makhachhang = ?";
+
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, kh.getMatkhau());
+			st.setString(2, kh.getMakhachhang());
+			// Bước 3: thực thi câu lệnh SQL
+
+			System.out.println(sql);
+			kq = st.executeUpdate();
+
+			// Bước 4:
+			System.out.println("Bạn đã thực thi: " + sql);
+			System.out.println("Có " + kq + " dòng bị thay đổi!");
+
+			// Bước 5:		
+		}
+		catch (SQLException e)
+		{
+			e.printStackTrace();
+		} finally
+		{
+			if(con != null)
+			{
+				try
+				{
+					connectionPool.closeConnection(con, "update");
+				}
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+		}
+
+		return kq>0;
+	}
 	public boolean kiemTraTenDangNhap(String tenDangNhap)
 	{
 		boolean    ketQua = false;
