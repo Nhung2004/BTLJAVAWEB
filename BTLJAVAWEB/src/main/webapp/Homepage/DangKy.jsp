@@ -62,7 +62,7 @@
 								<div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 									<h1 class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4">Account Register</h1>
 
-									<form class="mx-1 mx-md-4" action="${pageContext.request.contextPath}/dang-ky" method="get">
+									<form class="mx-1 mx-md-4" action="${pageContext.request.contextPath}/dang-ky" method="post">
 
 										<!-- Tên đăng nhập -->
 										<div class="d-flex flex-column align-items-start mb-4">
