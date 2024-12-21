@@ -19,10 +19,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/single_responsive.css">
 </head>
 
-<body>
-		<%
-		 KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
-		 %>
+<body>	
 	<div class="super_container">
 		<!-- Tách riêng header ra file Header.jsp -->
 		<jsp:include page="Parts/Header.jsp" />
@@ -45,6 +42,9 @@
 						</div>
 					</div>
 				</div>
+				<%
+				 KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
+				 %>
 				<div class="p-10">
 				    <div class="main-body">
 				          <div class="row gutters-sm">
@@ -70,7 +70,7 @@
 				                <div class="card-body">
 				                  <div class="row">
 				                    <div class="col-sm-3">
-				                      <h6 class="mb-0">Full name</h6>
+				                      <h6 class="mb-0" >Full name</h6>
 				                    </div>
 				                    <div class="col-sm-9 text-secondary">
 				                      <%= khachHang.getHovaten() %>
@@ -79,7 +79,7 @@
 				                  <hr>
 				                  <div class="row">
 				                    <div class="col-sm-3">
-				                      <h6 class="mb-0">Gender</h6>
+				                      <h6 class="mb-0" >Gender</h6>
 				                    </div>
 				                    <div class="col-sm-9 text-secondary">
 				                      <%= khachHang.getGioitinh()%>
@@ -133,7 +133,7 @@
 				                  <hr>
 				                  <div class="row">
 				                    <div class="col-sm-12">
-				                      <a class="btn btn-info " target="__blank" href="${pageContext.request.contextPath}/Homepage/EditClient.jsp">Edit</a>
+				                      <a class="btn btn-info " href="${pageContext.request.contextPath}/Homepage/EditClient.jsp">Edit</a>
 				                    </div>
 				                  </div>
 				                </div>
@@ -143,8 +143,6 @@
 				
 				        </div>
 				    </div>
-		    
-		
 		<!-- Newsletter -->
 
 		<div class="newsletter">
