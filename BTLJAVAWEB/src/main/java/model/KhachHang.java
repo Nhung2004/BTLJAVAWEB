@@ -17,7 +17,7 @@ public class KhachHang
 	private String  email;
 	private boolean dangkinhanbantin;
 	private String  role;
-
+	private String duongdananh;
 	public KhachHang(
 	        String makhachhang, String tendangnhap, String matkhau, String hovaten, String gioitinh, String diachi, String diachinhanhang, String diachimuahang, Date ngaysinh, String sodienthoai, String email, boolean dangkinhanbantin, String role
 	)
@@ -37,6 +37,27 @@ public class KhachHang
 		this.dangkinhanbantin = dangkinhanbantin;
 		this.role             = role;
 	}
+
+	public KhachHang(String makhachhang, String tendangnhap, String matkhau, String hovaten, String gioitinh,
+			String diachi, String diachinhanhang, String diachimuahang, Date ngaysinh, String sodienthoai, String email,
+			boolean dangkinhanbantin, String role, String duongdananh) {
+		super();
+		this.makhachhang = makhachhang;
+		this.tendangnhap = tendangnhap;
+		this.matkhau = matkhau;
+		this.hovaten = hovaten;
+		this.gioitinh = gioitinh;
+		this.diachi = diachi;
+		this.diachinhanhang = diachinhanhang;
+		this.diachimuahang = diachimuahang;
+		this.ngaysinh = ngaysinh;
+		this.sodienthoai = sodienthoai;
+		this.email = email;
+		this.dangkinhanbantin = dangkinhanbantin;
+		this.role = role;
+		this.duongdananh = duongdananh;
+	}
+
 
 	public KhachHang(
 	        String makhachhang, String tendangnhap, String matkhau, String sodienthoai, String email
@@ -194,6 +215,14 @@ public class KhachHang
 	public void setRole(String role)
 	{
 		this.role = role;
+	}
+	
+	public String getDuongdananh() {
+		return duongdananh;
+	}
+
+	public void setDuongdananh(String duongdananh) {
+		this.duongdananh = duongdananh;
 	}
 
 	@Override
