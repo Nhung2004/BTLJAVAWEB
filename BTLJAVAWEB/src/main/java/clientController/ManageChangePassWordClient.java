@@ -48,7 +48,7 @@ public class ManageChangePassWordClient extends HttpServlet {
 	        if (khachHang == null) {
 	            // Xử lý khi đối tượng khachHang không có trong session
 			baoLoi = "Bạn chưa đăng nhập vào hệ thống!";
-		}else {
+	        }else {
 			// Neu khach hang da dang nhap
 			if(!matkhauhientai_md5.equals(khachHang.getMatkhau())){
 				baoLoi = "Mật khẩu hiện tại không chính xác!";
