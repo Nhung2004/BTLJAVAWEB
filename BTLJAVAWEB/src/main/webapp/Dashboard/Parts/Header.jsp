@@ -206,7 +206,7 @@
 				// Nếu là admin
 				%>
 				<a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-					<img src="${pageContext.request.contextPath}/assets/img/dashboard/admin1.png" alt="Profile" class="rounded-circle">
+					<img src="${pageContext.request.contextPath}/assets/img/avatar/<%= khachHang.getDuongdananh() %>"  alt="Advatar" class="avatar-square" >
 					<span class="d-none d-md-block dropdown-toggle ps-2"><%=khachHang.getTendangnhap()%>
 					</span>
 				</a>
