@@ -60,18 +60,17 @@
                     </div>
                 </div>
             </div>
-            <div class="main-body p-10">
                 <div class="row">                
                     <!-- Edit form -->
                     <%
-               KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
-					if(khachHang == null){		
-				%>
-				<h1>Bạn chưa đăng nhập vào hệ thống. Vui lòng quay lại trang chủ!</h1>
-				<%
-						}else {
+	               		KhachHang khachHang = (KhachHang) session.getAttribute("KhachHang");
+						if(khachHang == null){		
+					%>
+					<h1>Bạn chưa đăng nhập vào hệ thống. Vui lòng quay lại trang chủ!</h1>
+					<%
+							}else {
 							String baoLoi = request.getAttribute("baoLoi") != null ? request.getAttribute("baoLoi").toString() : "";
-				%>
+					%>
 					<div class="col-lg-8">
 					    <div class="card">
 					        <div class="card-body">
