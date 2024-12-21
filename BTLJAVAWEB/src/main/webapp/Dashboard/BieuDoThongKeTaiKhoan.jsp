@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="keywords" content="">
-<title>Biểu đồ thống kê tài khoản</title>
+<title>Account Statistics by Month</title>
 
 <!-- Favicons -->
 <link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
@@ -92,6 +92,7 @@
 	<jsp:include page="Parts/Sidebar.jsp" />
 
 	<!-- Nội dung chính (Account Management) -->
+			
 	<main id="main" class="main">
 
 		<%
@@ -112,7 +113,17 @@
 		}
 		%>
 		<div class="container py-4">
-			<h2 class="text-center mb-4">Account Statistics by Month</h2>
+			<div class="pagetitle">
+				<h1>Account Statistics by Month</h1>
+				<nav>
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="${pageContext.request.contextPath}/Dashboard/Index.jsp">Home</a>
+						</li>
+						<li class="breadcrumb-item active">Account Statistics by Month</li>
+					</ol>
+				</nav>
+			</div>
 
 			<!-- Hiển thị tổng số tài khoản -->
 			<div class="card text-center mb-4" style="background-color: #ff4c4c; border-radius: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 250px; margin: 0 auto;">
