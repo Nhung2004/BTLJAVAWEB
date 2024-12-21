@@ -13,7 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="">
 <meta name="keywords" content="">
-<title>Users Management</title>
+<title>Accounts Management</title>
 
 <!-- Favicons -->
 <link href="${pageContext.request.contextPath}/assets/img/favicon.png" rel="icon">
@@ -48,7 +48,7 @@
 			<nav>
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item">
-						<a href="Index.jsp">Home</a>
+						<a href="Dashboard/Index.jsp">Home</a>
 					</li>
 					<li class="breadcrumb-item active">Accounts Management</li>
 				</ol>
