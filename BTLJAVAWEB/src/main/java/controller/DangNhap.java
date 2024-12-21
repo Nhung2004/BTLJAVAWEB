@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 import database.KhachHangDAO;
 import model.KhachHang;
+import util.MaHoa;
 
 @WebServlet("/dang-nhap")
 public class DangNhap extends HttpServlet {
@@ -31,36 +32,39 @@ public class DangNhap extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Retrieve username and password from form
+        // Lấy thông tin đăng nhập từ form
         String tendangnhap = request.getParameter("tendangnhap");
         String matkhau = request.getParameter("matkhau");
         String role = request.getParameter("role");
 
-        // Create a KhachHang object for validation
+        // Mã hóa mật khẩu bằng MD5
+        String matkhauMaHoa = MaHoa.maHoaMD5(matkhau);
+
+        // Tạo đối tượng KhachHang để kiểm tra
         KhachHang kh = new KhachHang();
         kh.setTendangnhap(tendangnhap);
-        kh.setMatkhau(matkhau);
+        kh.setMatkhau(matkhauMaHoa); // Sử dụng mật khẩu đã mã hóa
         kh.setRole(role);
 
-        // DAO for database access
+        // Sử dụng DAO để truy cập cơ sở dữ liệu
         KhachHangDAO khDAO = new KhachHangDAO();
         KhachHang khachhang = khDAO.selectByIDandPassword(kh);
 
-        if (khachhang != null) { // Successful login
+        if (khachhang != null) { // Đăng nhập thành công
             HttpSession session = request.getSession();
             session.setAttribute("KhachHang", khachhang);
 
             if ("admin".equals(khachhang.getRole())) {
-                // Redirect to admin dashboard
+                // Chuyển hướng đến trang admin
                 response.sendRedirect(request.getContextPath() + "/Dashboard/Index.jsp");
             } else {
-                // Redirect to user homepage
+                // Chuyển hướng đến trang chủ của người dùng
                 response.sendRedirect(request.getContextPath() + "/Homepage/TrangChu.jsp");
             }
-        } else { // Failed login
+        } else { // Đăng nhập thất bại
             request.setAttribute("baoloi", "Tên đăng nhập hoặc mật khẩu không đúng");
 
-            // Forward back to login page
+            // Chuyển hướng lại trang đăng nhập
             RequestDispatcher rd = request.getRequestDispatcher("/Homepage/DangNhap.jsp");
             rd.forward(request, response);
         }
