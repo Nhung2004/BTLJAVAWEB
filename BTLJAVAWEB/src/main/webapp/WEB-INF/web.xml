@@ -28,4 +28,11 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+	<context-param>
+  		<description>Luu tru cac file avatar cua khach hang</description>
+  		<param-name>avatar</param-name>
+  		<param-value>		
+  		C:\Users\vuxua\OneDrive\Tài liệu\GitHub\BTLJAVAWEB\BTLJAVAWEB\src\main\webapp\assets\img\avatar
+  		</param-value>
+  </context-param>
 </web-app>
