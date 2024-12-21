@@ -52,8 +52,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" 
-                                        class="rounded-circle p-1 bg-primary" width="110">
+                                    <img src="${pageContext.request.contextPath}/assets/img/avatar/<%= khachHang.getDuongdananh() %>" alt="Avarta" 
+                                        class="avatar-square" width="300">
                                     <div class="mt-3">
                                         <h4><%= khachHang.getHovaten() %></h4>
                                         <p class="text-secondary mb-1">Welcome to Bookstore 13</p>
